@@ -3,5 +3,13 @@
     "description": "Cinemasunshine Portal2018 ORM",
     "type": "library",
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "php": "~7.2"
+    },
+    "require-dev": {
+        "php-parallel-lint/php-parallel-lint": "^1.2"
+    },
+    "scripts": {
+        "phplint": "vendor/bin/parallel-lint --no-progress --exclude vendor ."
+    }
 }
