@@ -1,0 +1,7 @@
+{
+    "name": "cinemasunshine/portal2018-orm",
+    "description": "Cinemasunshine Portal2018 ORM",
+    "type": "library",
+    "minimum-stability": "stable",
+    "require": {}
+}
