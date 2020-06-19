@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Cinemasunshine\ORM\Entity;
 
 use Cinemasunshine\ORM\Entity\Traits\SoftDeleteTrait;
+use Cinemasunshine\ORM\Entity\Traits\TimestampableTrait;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -12,10 +13,12 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\MappedSuperclass
  * @ORM\Table(name="theater", options={"collate"="utf8mb4_general_ci"})
+ * @ORM\HasLifecycleCallbacks
  */
 class Theater
 {
     use SoftDeleteTrait;
+    use TimestampableTrait;
 
     public const MASTER_VERSION_V1 = 1;
     public const MASTER_VERSION_V2 = 2;
