@@ -6,6 +6,7 @@ namespace Tests\Entity;
 
 use Cinemasunshine\ORM\Entity\Theater;
 use Cinemasunshine\ORM\Entity\TheaterMeta;
+use Doctrine\Common\Collections\ArrayCollection;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -62,8 +63,14 @@ final class TheaterTest extends TestCase
 
         $idPropertyRef = $targetRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
-
         $this->assertEquals($id, $idPropertyRef->getValue($targetMock));
+
+        $adminUsersPropertyRef = $targetRef->getProperty('adminUsers');
+        $adminUsersPropertyRef->setAccessible(true);
+        $this->assertInstanceOf(
+            ArrayCollection::class,
+            $adminUsersPropertyRef->getValue($targetMock)
+        );
     }
 
     /**
@@ -358,5 +365,22 @@ final class TheaterTest extends TestCase
         $metaPropertyRef->setValue($targetMock, $meta);
 
         $this->assertEquals($meta, $targetMock->getMeta());
+    }
+
+    /**
+     * test getAdminUsers
+     *
+     * @return void
+     */
+    public function testGetAdminUsers()
+    {
+        $adminUsers = new ArrayCollection();
+        $targetMock = $this->createTargetPartialMock([]);
+        $targetRef = $this->createTargetReflection();
+        $adminUsersPropertyRef = $targetRef->getProperty('adminUsers');
+        $adminUsersPropertyRef->setAccessible(true);
+        $adminUsersPropertyRef->setValue($targetMock, $adminUsers);
+
+        $this->assertEquals($adminUsers, $targetMock->getAdminUsers());
     }
 }

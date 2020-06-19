@@ -6,6 +6,8 @@ namespace Cinemasunshine\ORM\Entity;
 
 use Cinemasunshine\ORM\Entity\Traits\SoftDeleteTrait;
 use Cinemasunshine\ORM\Entity\Traits\TimestampableTrait;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -93,6 +95,12 @@ class Theater
     protected $meta;
 
     /**
+     * @var Collection<int, AdminUser>
+     * @ORM\OneToMany(targetEntity="AdminUser", mappedBy="theater")
+     */
+    protected $adminUsers;
+
+    /**
      * constructor
      *
      * @param int $id
@@ -100,6 +108,7 @@ class Theater
     public function __construct(int $id)
     {
         $this->id = $id;
+        $this->adminUsers = new ArrayCollection();
     }
 
     /**
@@ -267,5 +276,15 @@ class Theater
     public function getMeta(): ?TheaterMeta
     {
         return $this->meta;
+    }
+
+    /**
+     * Return adminUsers
+     *
+     * @return Collection<int, AdminUser>
+     */
+    public function getAdminUsers(): Collection
+    {
+        return $this->adminUsers;
     }
 }
