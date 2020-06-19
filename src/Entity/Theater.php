@@ -77,6 +77,16 @@ class Theater
     protected $status;
 
     /**
+     * meta
+     *
+     * 設計の問題でnullを許容する形になってしまったが、nullにならないようデータで調整する。
+     *
+     * @var TheaterMeta|null
+     * @ORM\OneToOne(targetEntity="TheaterMeta", mappedBy="theater")
+     */
+    protected $meta;
+
+    /**
      * constructor
      *
      * @param int $id
@@ -241,5 +251,15 @@ class Theater
     public function setStatus(int $status)
     {
         $this->status = $status;
+    }
+
+    /**
+     * Return meta
+     *
+     * @return TheaterMeta|null
+     */
+    public function getMeta(): ?TheaterMeta
+    {
+        return $this->meta;
     }
 }

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tests\Entity;
 
 use Cinemasunshine\ORM\Entity\Theater;
+use Cinemasunshine\ORM\Entity\TheaterMeta;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -339,5 +340,23 @@ final class TheaterTest extends TestCase
         $statusPropertyRef->setAccessible(true);
 
         $this->assertEquals($status, $statusPropertyRef->getValue($targetMock));
+    }
+
+    /**
+     * test getMeta
+     *
+     * @test
+     * @return void
+     */
+    public function testGetMeta()
+    {
+        $meta = new TheaterMeta();
+        $targetMock = $this->createTargetPartialMock([]);
+        $targetRef = $this->createTargetReflection();
+        $metaPropertyRef = $targetRef->getProperty('meta');
+        $metaPropertyRef->setAccessible(true);
+        $metaPropertyRef->setValue($targetMock, $meta);
+
+        $this->assertEquals($meta, $targetMock->getMeta());
     }
 }
