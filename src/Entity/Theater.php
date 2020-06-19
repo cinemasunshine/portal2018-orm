@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Cinemasunshine\ORM\Entity;
 
+use Cinemasunshine\ORM\Entity\Traits\SoftDeleteTrait;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -14,6 +15,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Theater
 {
+    use SoftDeleteTrait;
+
     public const MASTER_VERSION_V1 = 1;
     public const MASTER_VERSION_V2 = 2;
 
