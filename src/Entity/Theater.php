@@ -101,6 +101,16 @@ class Theater
     protected $adminUsers;
 
     /**
+     * @var Collection<int, SpecialSite>
+     * @ORM\ManyToMany(targetEntity="SpecialSite", inversedBy="theaters")
+     * @ORM\JoinTable(name="theater_special_site",
+     *      joinColumns={@ORM\JoinColumn(name="theater_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="special_site_id", referencedColumnName="id")}
+     * )
+     */
+    protected $specialSites;
+
+    /**
      * constructor
      *
      * @param int $id
@@ -109,6 +119,7 @@ class Theater
     {
         $this->id = $id;
         $this->adminUsers = new ArrayCollection();
+        $this->specialSites = new ArrayCollection();
     }
 
     /**
@@ -286,5 +297,15 @@ class Theater
     public function getAdminUsers(): Collection
     {
         return $this->adminUsers;
+    }
+
+    /**
+     * Return specialSites
+     *
+     * @return Collection<int, SpecialSite>
+     */
+    public function getSpecialSites(): Collection
+    {
+        return $this->specialSites;
     }
 }

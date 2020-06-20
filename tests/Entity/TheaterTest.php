@@ -71,6 +71,13 @@ final class TheaterTest extends TestCase
             ArrayCollection::class,
             $adminUsersPropertyRef->getValue($targetMock)
         );
+
+        $specialSitesPropertyRef = $targetRef->getProperty('specialSites');
+        $specialSitesPropertyRef->setAccessible(true);
+        $this->assertInstanceOf(
+            ArrayCollection::class,
+            $specialSitesPropertyRef->getValue($targetMock)
+        );
     }
 
     /**
@@ -370,6 +377,7 @@ final class TheaterTest extends TestCase
     /**
      * test getAdminUsers
      *
+     * @test
      * @return void
      */
     public function testGetAdminUsers()
@@ -382,5 +390,23 @@ final class TheaterTest extends TestCase
         $adminUsersPropertyRef->setValue($targetMock, $adminUsers);
 
         $this->assertEquals($adminUsers, $targetMock->getAdminUsers());
+    }
+
+    /**
+     * test getSpecialSites
+     *
+     * @test
+     * @return void
+     */
+    public function testGetSpecialSites()
+    {
+        $specialSites = new ArrayCollection();
+        $targetMock = $this->createTargetPartialMock([]);
+        $targetRef = $this->createTargetReflection();
+        $specialSitesPropertyRef = $targetRef->getProperty('specialSites');
+        $specialSitesPropertyRef->setAccessible(true);
+        $specialSitesPropertyRef->setValue($targetMock, $specialSites);
+
+        $this->assertEquals($specialSites, $targetMock->getSpecialSites());
     }
 }
