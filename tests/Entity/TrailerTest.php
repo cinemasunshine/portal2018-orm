@@ -74,6 +74,13 @@ final class TrailerTest extends TestCase
             ArrayCollection::class,
             $specialSiteTrailersPropertyRef->getValue($targetMock)
         );
+
+        $theaterTrailersPropertyRef = $targetRef->getProperty('theaterTrailers');
+        $theaterTrailersPropertyRef->setAccessible(true);
+        $this->assertInstanceOf(
+            ArrayCollection::class,
+            $theaterTrailersPropertyRef->getValue($targetMock)
+        );
     }
 
     /**
@@ -351,5 +358,42 @@ final class TrailerTest extends TestCase
         $specialSiteTrailersPropertyRef->setAccessible(true);
 
         $this->assertEquals($specialSiteTrailers, $specialSiteTrailersPropertyRef->getValue($targetMock));
+    }
+
+    /**
+     * test getTheaterTrailers
+     *
+     * @test
+     * @return void
+     */
+    public function testGetTheaterTrailers()
+    {
+        $theaterTrailers = new ArrayCollection();
+        $targetMock = $this->createTargetPartialMock([]);
+        $targetRef = $this->createTargetReflection();
+        $theaterTrailersPropertyRef = $targetRef->getProperty('theaterTrailers');
+        $theaterTrailersPropertyRef->setAccessible(true);
+        $theaterTrailersPropertyRef->setValue($targetMock, $theaterTrailers);
+
+        $this->assertEquals($theaterTrailers, $targetMock->getTheaterTrailers());
+    }
+
+    /**
+     * test setTheaterTrailers
+     *
+     * @test
+     * @return void
+     */
+    public function testSetTheaterTrailers()
+    {
+        $theaterTrailers = new ArrayCollection();
+        $targetMock = $this->createTargetPartialMock([]);
+        $targetMock->setTheaterTrailers($theaterTrailers);
+
+        $targetRef = $this->createTargetReflection();
+        $theaterTrailersPropertyRef = $targetRef->getProperty('theaterTrailers');
+        $theaterTrailersPropertyRef->setAccessible(true);
+
+        $this->assertEquals($theaterTrailers, $theaterTrailersPropertyRef->getValue($targetMock));
     }
 }
