@@ -66,6 +66,13 @@ final class ScheduleTest extends TestCase
             ArrayCollection::class,
             $showingFormatsPropertyRef->getValue($targetMock)
         );
+
+        $showingTheatersPropertyRef = $targetRef->getProperty('showingTheaters');
+        $showingTheatersPropertyRef->setAccessible(true);
+        $this->assertInstanceOf(
+            ArrayCollection::class,
+            $showingTheatersPropertyRef->getValue($targetMock)
+        );
     }
 
     /**
@@ -447,5 +454,42 @@ final class ScheduleTest extends TestCase
         $showingFormatsPropertyRef->setAccessible(true);
 
         $this->assertEquals($showingFormats, $showingFormatsPropertyRef->getValue($targetMock));
+    }
+
+    /**
+     * test getShowingTheaters
+     *
+     * @test
+     * @return void
+     */
+    public function testGetShowingTheaters()
+    {
+        $showingTheaters = new ArrayCollection();
+        $targetMock = $this->createTargetPartialMock([]);
+        $targetRef = $this->createTargetReflection();
+        $showingTheatersPropertyRef = $targetRef->getProperty('showingTheaters');
+        $showingTheatersPropertyRef->setAccessible(true);
+        $showingTheatersPropertyRef->setValue($targetMock, $showingTheaters);
+
+        $this->assertEquals($showingTheaters, $targetMock->getShowingTheaters());
+    }
+
+    /**
+     * test setShowingTheaters
+     *
+     * @test
+     * @return void
+     */
+    public function testSetShowingTheaters()
+    {
+        $showingTheaters = new ArrayCollection();
+        $targetMock = $this->createTargetPartialMock([]);
+        $targetMock->setShowingTheaters($showingTheaters);
+
+        $targetRef = $this->createTargetReflection();
+        $showingTheatersPropertyRef = $targetRef->getProperty('showingTheaters');
+        $showingTheatersPropertyRef->setAccessible(true);
+
+        $this->assertEquals($showingTheaters, $showingTheatersPropertyRef->getValue($targetMock));
     }
 }

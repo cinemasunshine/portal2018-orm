@@ -76,11 +76,18 @@ class Schedule
     protected $showingFormats;
 
     /**
+     * @var Collection<int, ShowingTheater>
+     * @ORM\OneToMany(targetEntity="ShowingTheater", mappedBy="schedule", orphanRemoval=true)
+     */
+    protected $showingTheaters;
+
+    /**
      * constructor
      */
     public function __construct()
     {
         $this->showingFormats = new ArrayCollection();
+        $this->showingTheaters = new ArrayCollection();
     }
 
     /**
@@ -266,5 +273,26 @@ class Schedule
     public function setShowingFormats(Collection $showingFormats)
     {
         $this->showingFormats = $showingFormats;
+    }
+
+    /**
+     * Return showingTheaters
+     *
+     * @return Collection<int, ShowingTheater>
+     */
+    public function getShowingTheaters(): Collection
+    {
+        return $this->showingTheaters;
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @param Collection<int, ShowingTheater> $showingTheaters
+     * @return void
+     */
+    public function setShowingTheaters(Collection $showingTheaters)
+    {
+        $this->showingTheaters = $showingTheaters;
     }
 }
