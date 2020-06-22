@@ -7,6 +7,8 @@ namespace Cinemasunshine\ORM\Entity;
 use Cinemasunshine\ORM\Entity\Traits\SavedUserTrait;
 use Cinemasunshine\ORM\Entity\Traits\SoftDeleteTrait;
 use Cinemasunshine\ORM\Entity\Traits\TimestampableTrait;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -66,6 +68,20 @@ class Schedule
      * @ORM\Column(type="text", nullable=true)
      */
     protected $remark;
+
+    /**
+     * @var Collection<int, ShowingFormat>
+     * @ORM\OneToMany(targetEntity="ShowingFormat", mappedBy="schedule", orphanRemoval=true)
+     */
+    protected $showingFormats;
+
+    /**
+     * constructor
+     */
+    public function __construct()
+    {
+        $this->showingFormats = new ArrayCollection();
+    }
 
     /**
      * Return id
@@ -229,5 +245,26 @@ class Schedule
     public function setRemark(?string $remark)
     {
         $this->remark = $remark;
+    }
+
+    /**
+     * Return showingFormats
+     *
+     * @return Collection<int, ShowingFormat>
+     */
+    public function getShowingFormats(): Collection
+    {
+        return $this->showingFormats;
+    }
+
+    /**
+     * Set showingFormats
+     *
+     * @param Collection<int, ShowingFormat> $showingFormats
+     * @return void
+     */
+    public function setShowingFormats(Collection $showingFormats)
+    {
+        $this->showingFormats = $showingFormats;
     }
 }

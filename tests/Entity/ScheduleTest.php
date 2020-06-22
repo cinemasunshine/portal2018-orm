@@ -6,6 +6,7 @@ namespace Tests\Entity;
 
 use Cinemasunshine\ORM\Entity\Schedule;
 use Cinemasunshine\ORM\Entity\Title;
+use Doctrine\Common\Collections\ArrayCollection;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -42,6 +43,29 @@ final class ScheduleTest extends TestCase
     public function createTargetReflection()
     {
         return new \ReflectionClass(Schedule::class);
+    }
+
+    /**
+     * test construct
+     *
+     * @test
+     * @return void
+     */
+    public function testConstruct()
+    {
+        $targetMock = $this->createTargetMock();
+        $targetRef = $this->createTargetReflection();
+
+        /** @var \ReflectionMethod $constructorRef */
+        $constructorRef = $targetRef->getConstructor();
+        $constructorRef->invoke($targetMock);
+
+        $showingFormatsPropertyRef = $targetRef->getProperty('showingFormats');
+        $showingFormatsPropertyRef->setAccessible(true);
+        $this->assertInstanceOf(
+            ArrayCollection::class,
+            $showingFormatsPropertyRef->getValue($targetMock)
+        );
     }
 
     /**
@@ -386,5 +410,42 @@ final class ScheduleTest extends TestCase
         $remarkPropertyRef->setAccessible(true);
 
         $this->assertEquals($remark, $remarkPropertyRef->getValue($targetMock));
+    }
+
+    /**
+     * test getShowingFormats
+     *
+     * @test
+     * @return void
+     */
+    public function testGetShowingFormats()
+    {
+        $showingFormats = new ArrayCollection();
+        $targetMock = $this->createTargetPartialMock([]);
+        $targetRef = $this->createTargetReflection();
+        $showingFormatsPropertyRef = $targetRef->getProperty('showingFormats');
+        $showingFormatsPropertyRef->setAccessible(true);
+        $showingFormatsPropertyRef->setValue($targetMock, $showingFormats);
+
+        $this->assertEquals($showingFormats, $targetMock->getShowingFormats());
+    }
+
+    /**
+     * test setShowingFormats
+     *
+     * @test
+     * @return void
+     */
+    public function testSetShowingFormats()
+    {
+        $showingFormats = new ArrayCollection();
+        $targetMock = $this->createTargetPartialMock([]);
+        $targetMock->setShowingFormats($showingFormats);
+
+        $targetRef = $this->createTargetReflection();
+        $showingFormatsPropertyRef = $targetRef->getProperty('showingFormats');
+        $showingFormatsPropertyRef->setAccessible(true);
+
+        $this->assertEquals($showingFormats, $showingFormatsPropertyRef->getValue($targetMock));
     }
 }
