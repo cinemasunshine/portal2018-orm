@@ -7,6 +7,8 @@ namespace Cinemasunshine\ORM\Entity;
 use Cinemasunshine\ORM\Entity\Traits\SavedUserTrait;
 use Cinemasunshine\ORM\Entity\Traits\SoftDeleteTrait;
 use Cinemasunshine\ORM\Entity\Traits\TimestampableTrait;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -61,6 +63,20 @@ class Trailer
      * @ORM\Column(type="string", name="banner_link_url")
      */
     protected $bannerLinkUrl;
+
+    /**
+     * @var Collection<int, PageTrailer>
+     * @ORM\OneToMany(targetEntity="PageTrailer", mappedBy="trailer", orphanRemoval=true)
+     */
+    protected $pageTrailers;
+
+    /**
+     * constructor
+     */
+    public function __construct()
+    {
+        $this->pageTrailers = new ArrayCollection();
+    }
 
     /**
      * Return id
@@ -176,5 +192,26 @@ class Trailer
     public function setBannerLinkUrl(string $bannerLinkUrl)
     {
         $this->bannerLinkUrl = $bannerLinkUrl;
+    }
+
+    /**
+     * Return pageTrailers
+     *
+     * @return Collection<int, PageTrailer>
+     */
+    public function getPageTrailers(): Collection
+    {
+        return $this->pageTrailers;
+    }
+
+    /**
+     * Set pageTrailers
+     *
+     * @param Collection<int, PageTrailer> $pageTrailers
+     * @return void
+     */
+    public function setPageTrailers(Collection $pageTrailers)
+    {
+        $this->pageTrailers = $pageTrailers;
     }
 }

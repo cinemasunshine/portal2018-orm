@@ -7,6 +7,7 @@ namespace Tests\Entity;
 use Cinemasunshine\ORM\Entity\File;
 use Cinemasunshine\ORM\Entity\Title;
 use Cinemasunshine\ORM\Entity\Trailer;
+use Doctrine\Common\Collections\ArrayCollection;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -43,6 +44,29 @@ final class TrailerTest extends TestCase
     public function createTargetReflection()
     {
         return new \ReflectionClass(Trailer::class);
+    }
+
+    /**
+     * test construct
+     *
+     * @test
+     * @return void
+     */
+    public function testConstruct()
+    {
+        $targetMock = $this->createTargetMock();
+        $targetRef = $this->createTargetReflection();
+
+        /** @var \ReflectionMethod $constructorRef */
+        $constructorRef = $targetRef->getConstructor();
+        $constructorRef->invoke($targetMock);
+
+        $pageTrailersPropertyRef = $targetRef->getProperty('pageTrailers');
+        $pageTrailersPropertyRef->setAccessible(true);
+        $this->assertInstanceOf(
+            ArrayCollection::class,
+            $pageTrailersPropertyRef->getValue($targetMock)
+        );
     }
 
     /**
@@ -246,5 +270,42 @@ final class TrailerTest extends TestCase
         $bannerLinkUrlPropertyRef->setAccessible(true);
 
         $this->assertEquals($bannerLinkUrl, $bannerLinkUrlPropertyRef->getValue($targetMock));
+    }
+
+    /**
+     * test getPageTrailers
+     *
+     * @test
+     * @return void
+     */
+    public function testGetPageTrailers()
+    {
+        $pageTrailers = new ArrayCollection();
+        $targetMock = $this->createTargetPartialMock([]);
+        $targetRef = $this->createTargetReflection();
+        $pageTrailersPropertyRef = $targetRef->getProperty('pageTrailers');
+        $pageTrailersPropertyRef->setAccessible(true);
+        $pageTrailersPropertyRef->setValue($targetMock, $pageTrailers);
+
+        $this->assertEquals($pageTrailers, $targetMock->getPageTrailers());
+    }
+
+    /**
+     * test setPageTrailers
+     *
+     * @test
+     * @return void
+     */
+    public function testSetPageTrailers()
+    {
+        $pageTrailers = new ArrayCollection();
+        $targetMock = $this->createTargetPartialMock([]);
+        $targetMock->setPageTrailers($pageTrailers);
+
+        $targetRef = $this->createTargetReflection();
+        $pageTrailersPropertyRef = $targetRef->getProperty('pageTrailers');
+        $pageTrailersPropertyRef->setAccessible(true);
+
+        $this->assertEquals($pageTrailers, $pageTrailersPropertyRef->getValue($targetMock));
     }
 }
