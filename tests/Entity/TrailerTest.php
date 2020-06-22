@@ -67,6 +67,13 @@ final class TrailerTest extends TestCase
             ArrayCollection::class,
             $pageTrailersPropertyRef->getValue($targetMock)
         );
+
+        $specialSiteTrailersPropertyRef = $targetRef->getProperty('specialSiteTrailers');
+        $specialSiteTrailersPropertyRef->setAccessible(true);
+        $this->assertInstanceOf(
+            ArrayCollection::class,
+            $specialSiteTrailersPropertyRef->getValue($targetMock)
+        );
     }
 
     /**
@@ -307,5 +314,42 @@ final class TrailerTest extends TestCase
         $pageTrailersPropertyRef->setAccessible(true);
 
         $this->assertEquals($pageTrailers, $pageTrailersPropertyRef->getValue($targetMock));
+    }
+
+    /**
+     * test getSpecialSiteTrailers
+     *
+     * @test
+     * @return void
+     */
+    public function testGetSpecialSiteTrailers()
+    {
+        $specialSiteTrailers = new ArrayCollection();
+        $targetMock = $this->createTargetPartialMock([]);
+        $targetRef = $this->createTargetReflection();
+        $specialSiteTrailersPropertyRef = $targetRef->getProperty('specialSiteTrailers');
+        $specialSiteTrailersPropertyRef->setAccessible(true);
+        $specialSiteTrailersPropertyRef->setValue($targetMock, $specialSiteTrailers);
+
+        $this->assertEquals($specialSiteTrailers, $targetMock->getSpecialSiteTrailers());
+    }
+
+    /**
+     * test setSpecialSiteTrailers
+     *
+     * @test
+     * @return void
+     */
+    public function testSetSpecialSiteTrailers()
+    {
+        $specialSiteTrailers = new ArrayCollection();
+        $targetMock = $this->createTargetPartialMock([]);
+        $targetMock->setSpecialSiteTrailers($specialSiteTrailers);
+
+        $targetRef = $this->createTargetReflection();
+        $specialSiteTrailersPropertyRef = $targetRef->getProperty('specialSiteTrailers');
+        $specialSiteTrailersPropertyRef->setAccessible(true);
+
+        $this->assertEquals($specialSiteTrailers, $specialSiteTrailersPropertyRef->getValue($targetMock));
     }
 }

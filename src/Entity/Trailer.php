@@ -71,11 +71,18 @@ class Trailer
     protected $pageTrailers;
 
     /**
+     * @var Collection<int, SpecialSiteTrailer>
+     * @ORM\OneToMany(targetEntity="SpecialSiteTrailer", mappedBy="trailer", orphanRemoval=true)
+     */
+    protected $specialSiteTrailers;
+
+    /**
      * constructor
      */
     public function __construct()
     {
         $this->pageTrailers = new ArrayCollection();
+        $this->specialSiteTrailers = new ArrayCollection();
     }
 
     /**
@@ -213,5 +220,26 @@ class Trailer
     public function setPageTrailers(Collection $pageTrailers)
     {
         $this->pageTrailers = $pageTrailers;
+    }
+
+    /**
+     * Return specialSiteTrailers
+     *
+     * @return Collection<int, SpecialSiteTrailer>
+     */
+    public function getSpecialSiteTrailers(): Collection
+    {
+        return $this->specialSiteTrailers;
+    }
+
+    /**
+     * Set specialSiteTrailers
+     *
+     * @param Collection<int, SpecialSiteTrailer> $specialSiteTrailers
+     * @return void
+     */
+    public function setSpecialSiteTrailers(Collection $specialSiteTrailers)
+    {
+        $this->specialSiteTrailers = $specialSiteTrailers;
     }
 }
