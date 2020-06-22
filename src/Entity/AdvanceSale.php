@@ -7,6 +7,8 @@ namespace Cinemasunshine\ORM\Entity;
 use Cinemasunshine\ORM\Entity\Traits\SavedUserTrait;
 use Cinemasunshine\ORM\Entity\Traits\SoftDeleteTrait;
 use Cinemasunshine\ORM\Entity\Traits\TimestampableTrait;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -55,6 +57,20 @@ class AdvanceSale
      * @ORM\Column(type="string", name="publishing_expected_date_text", nullable=true)
      */
     protected $publishingExpectedDateText;
+
+    /**
+     * @var Collection<int, AdvanceTicket>
+     * @ORM\OneToMany(targetEntity="AdvanceTicket", mappedBy="advanceSale", indexBy="id")
+     */
+    protected $advanceTickets;
+
+    /**
+     * constructor
+     */
+    public function __construct()
+    {
+        $this->advanceTickets = new ArrayCollection();
+    }
 
     /**
      * Return id
@@ -155,5 +171,15 @@ class AdvanceSale
     public function setPublishingExpectedDateText(?string $publishingExpectedDateText)
     {
         $this->publishingExpectedDateText = $publishingExpectedDateText;
+    }
+
+    /**
+     * Return advanceTickets
+     *
+     * @return Collection<int, AdvanceTicket>
+     */
+    public function getAdvanceTickets(): Collection
+    {
+        return $this->advanceTickets;
     }
 }

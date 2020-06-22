@@ -7,6 +7,7 @@ namespace Tests\Entity;
 use Cinemasunshine\ORM\Entity\AdvanceSale;
 use Cinemasunshine\ORM\Entity\Theater;
 use Cinemasunshine\ORM\Entity\Title;
+use Doctrine\Common\Collections\ArrayCollection;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -43,6 +44,29 @@ final class AdvanceSaleTest extends TestCase
     public function createTargetReflection()
     {
         return new \ReflectionClass(AdvanceSale::class);
+    }
+
+    /**
+     * test construct
+     *
+     * @test
+     * @return void
+     */
+    public function testConstruct()
+    {
+        $targetMock = $this->createTargetMock();
+        $targetRef = $this->createTargetReflection();
+
+        /** @var \ReflectionMethod $constructorRef */
+        $constructorRef = $targetRef->getConstructor();
+        $constructorRef->invoke($targetMock);
+
+        $advanceTicketsPropertyRef = $targetRef->getProperty('advanceTickets');
+        $advanceTicketsPropertyRef->setAccessible(true);
+        $this->assertInstanceOf(
+            ArrayCollection::class,
+            $advanceTicketsPropertyRef->getValue($targetMock)
+        );
     }
 
     /**
@@ -235,5 +259,23 @@ final class AdvanceSaleTest extends TestCase
         $publishingExpectedDateTextPropertyRef->setAccessible(true);
 
         $this->assertEquals($publishingExpectedDateText, $publishingExpectedDateTextPropertyRef->getValue($targetMock));
+    }
+
+    /**
+     * test getAdvanceTickets
+     *
+     * @test
+     * @return void
+     */
+    public function testGetAdvanceTickets()
+    {
+        $advanceTickets = new ArrayCollection();
+        $targetMock = $this->createTargetPartialMock([]);
+        $targetRef = $this->createTargetReflection();
+        $advanceTicketsPropertyRef = $targetRef->getProperty('advanceTickets');
+        $advanceTicketsPropertyRef->setAccessible(true);
+        $advanceTicketsPropertyRef->setValue($targetMock, $advanceTickets);
+
+        $this->assertEquals($advanceTickets, $targetMock->getAdvanceTickets());
     }
 }
