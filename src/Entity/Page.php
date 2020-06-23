@@ -55,6 +55,12 @@ class Page
     protected $mainBanners;
 
     /**
+     * @var Collection<int, PageNews>
+     * @ORM\OneToMany(targetEntity="PageNews", mappedBy="page", orphanRemoval=true)
+     */
+    protected $newsList;
+
+    /**
      * constructor
      *
      * @param int $id
@@ -64,6 +70,7 @@ class Page
         $this->id = $id;
         $this->campaigns = new ArrayCollection();
         $this->mainBanners = new ArrayCollection();
+        $this->newsList = new ArrayCollection();
     }
 
     /**
@@ -136,5 +143,15 @@ class Page
     public function getMainBanners(): Collection
     {
         return $this->mainBanners;
+    }
+
+    /**
+     * Return newsList
+     *
+     * @return Collection<int, PageNews>
+     */
+    public function getNewsList(): Collection
+    {
+        return $this->newsList;
     }
 }

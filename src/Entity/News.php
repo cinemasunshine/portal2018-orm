@@ -7,6 +7,8 @@ namespace Cinemasunshine\ORM\Entity;
 use Cinemasunshine\ORM\Entity\Traits\SavedUserTrait;
 use Cinemasunshine\ORM\Entity\Traits\SoftDeleteTrait;
 use Cinemasunshine\ORM\Entity\Traits\TimestampableTrait;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -81,6 +83,20 @@ class News
      * @ORM\Column(type="datetime", name="end_dt")
      */
     protected $endDt;
+
+    /**
+     * @var Collection<int, PageNews>
+     * @ORM\OneToMany(targetEntity="PageNews", mappedBy="news")
+     */
+    protected $pages;
+
+    /**
+     * construct
+     */
+    public function __construct()
+    {
+        $this->pages = new ArrayCollection();
+    }
 
     /**
      * Return id
@@ -251,5 +267,15 @@ class News
         } else {
             throw new \InvalidArgumentException('Invalid type.');
         }
+    }
+
+    /**
+     * Return pages
+     *
+     * @return Collection<int, PageNews>
+     */
+    public function getPages(): Collection
+    {
+        return $this->pages;
     }
 }
