@@ -7,6 +7,8 @@ namespace Cinemasunshine\ORM\Entity;
 use Cinemasunshine\ORM\Entity\Traits\SavedUserTrait;
 use Cinemasunshine\ORM\Entity\Traits\SoftDeleteTrait;
 use Cinemasunshine\ORM\Entity\Traits\TimestampableTrait;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -42,6 +44,24 @@ class OyakoCinemaTitle
      * @ORM\Column(type="string", name="title_url")
      */
     protected $titleUrl;
+
+    /**
+     * @var Collection<int, OyakoCinemaSchedule>
+     * @ORM\OneToMany(
+     *     targetEntity="OyakoCinemaSchedule",
+     *     mappedBy="oyakoCinemaTitle",
+     *     orphanRemoval=true
+     * )
+     */
+    protected $oyakoCinemaSchedules;
+
+    /**
+     * constructor
+     */
+    public function __construct()
+    {
+        $this->oyakoCinemaSchedules = new ArrayCollection();
+    }
 
     /**
      * Return id
@@ -93,5 +113,15 @@ class OyakoCinemaTitle
     public function setTitleUrl(string $titleUrl)
     {
         $this->titleUrl = $titleUrl;
+    }
+
+    /**
+     * Return oyakoCinemaSchedules
+     *
+     * @return Collection<int, OyakoCinemaSchedule>
+     */
+    public function getOyakoCinemaSchedules(): Collection
+    {
+        return $this->oyakoCinemaSchedules;
     }
 }
