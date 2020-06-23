@@ -111,6 +111,12 @@ class Theater
     protected $specialSites;
 
     /**
+     * @var Collection<int, TheaterCampaign>
+     * @ORM\OneToMany(targetEntity="TheaterCampaign", mappedBy="theater", orphanRemoval=true)
+     */
+    protected $campaigns;
+
+    /**
      * constructor
      *
      * @param int $id
@@ -120,6 +126,7 @@ class Theater
         $this->id = $id;
         $this->adminUsers = new ArrayCollection();
         $this->specialSites = new ArrayCollection();
+        $this->campaigns = new ArrayCollection();
     }
 
     /**
@@ -307,5 +314,15 @@ class Theater
     public function getSpecialSites(): Collection
     {
         return $this->specialSites;
+    }
+
+    /**
+     * Return campaigns
+     *
+     * @return Collection<int, TheaterCampaign>
+     */
+    public function getCampaigns(): Collection
+    {
+        return $this->campaigns;
     }
 }

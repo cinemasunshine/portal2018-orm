@@ -83,12 +83,19 @@ class Campaign
     protected $specialSites;
 
     /**
+     * @var Collection<int, TheaterCampaign>
+     * @ORM\OneToMany(targetEntity="TheaterCampaign", mappedBy="campaign")
+     */
+    protected $theaters;
+
+    /**
      * constructor
      */
     public function __construct()
     {
         $this->pages = new ArrayCollection();
         $this->specialSites = new ArrayCollection();
+        $this->theaters = new ArrayCollection();
     }
 
     /**
@@ -259,5 +266,15 @@ class Campaign
     public function getSpecialSite(): Collection
     {
         return $this->specialSites;
+    }
+
+    /**
+     * Return theaters
+     *
+     * @return Collection<int, TheaterCampaign>
+     */
+    public function getTheaters(): Collection
+    {
+        return $this->theaters;
     }
 }
