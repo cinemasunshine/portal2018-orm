@@ -6,6 +6,8 @@ namespace Cinemasunshine\ORM\Entity;
 
 use Cinemasunshine\ORM\Entity\Traits\SoftDeleteTrait;
 use Cinemasunshine\ORM\Entity\Traits\TimestampableTrait;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -41,6 +43,12 @@ class Page
     protected $nameJa;
 
     /**
+     * @var Collection<int, PageCampaign>
+     * @ORM\OneToMany(targetEntity="PageCampaign", mappedBy="page", orphanRemoval=true)
+     */
+    protected $campaigns;
+
+    /**
      * constructor
      *
      * @param int $id
@@ -48,6 +56,7 @@ class Page
     public function __construct(int $id)
     {
         $this->id = $id;
+        $this->campaigns = new ArrayCollection();
     }
 
     /**
@@ -100,5 +109,15 @@ class Page
     public function setNameJa(string $nameJa)
     {
         $this->nameJa = $nameJa;
+    }
+
+    /**
+     * Return campaigns
+     *
+     * @return Collection<int, PageCampaign>
+     */
+    public function getCampaigns(): Collection
+    {
+        return $this->campaigns;
     }
 }

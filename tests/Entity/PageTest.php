@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tests\Entity;
 
 use Cinemasunshine\ORM\Entity\Page;
+use Doctrine\Common\Collections\ArrayCollection;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -62,6 +63,13 @@ final class PageTest extends TestCase
         $idPropertyRef = $targetRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
         $this->assertEquals($id, $idPropertyRef->getValue($targetMock));
+
+        $campaignsPropertyRef = $targetRef->getProperty('campaigns');
+        $campaignsPropertyRef->setAccessible(true);
+        $this->assertInstanceOf(
+            ArrayCollection::class,
+            $campaignsPropertyRef->getValue($targetMock)
+        );
     }
 
     /**
@@ -154,5 +162,23 @@ final class PageTest extends TestCase
         $nameJaPropertyRef->setAccessible(true);
 
         $this->assertEquals($nameJa, $nameJaPropertyRef->getValue($targetMock));
+    }
+
+    /**
+     * test getCampaigns
+     *
+     * @test
+     * @return void
+     */
+    public function testGetCampaigns()
+    {
+        $campaigns = new ArrayCollection();
+        $targetMock = $this->createTargetPartialMock([]);
+        $targetRef = $this->createTargetReflection();
+        $campaignsPropertyRef = $targetRef->getProperty('campaigns');
+        $campaignsPropertyRef->setAccessible(true);
+        $campaignsPropertyRef->setValue($targetMock, $campaigns);
+
+        $this->assertEquals($campaigns, $targetMock->getCampaigns());
     }
 }

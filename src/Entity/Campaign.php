@@ -7,6 +7,8 @@ namespace Cinemasunshine\ORM\Entity;
 use Cinemasunshine\ORM\Entity\Traits\SavedUserTrait;
 use Cinemasunshine\ORM\Entity\Traits\SoftDeleteTrait;
 use Cinemasunshine\ORM\Entity\Traits\TimestampableTrait;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -67,6 +69,20 @@ class Campaign
      * @ORM\Column(type="string")
      */
     protected $url;
+
+    /**
+     * @var Collection<int, PageCampaign>
+     * @ORM\OneToMany(targetEntity="PageCampaign", mappedBy="campaign")
+     */
+    protected $pages;
+
+    /**
+     * constructor
+     */
+    public function __construct()
+    {
+        $this->pages = new ArrayCollection();
+    }
 
     /**
      * Return id
@@ -216,5 +232,15 @@ class Campaign
     public function setUrl(string $url)
     {
         $this->url = $url;
+    }
+
+    /**
+     * Return pages
+     *
+     * @return Collection<int, PageCampaign>
+     */
+    public function getPages(): Collection
+    {
+        return $this->pages;
     }
 }
