@@ -91,11 +91,18 @@ class News
     protected $pages;
 
     /**
+     * @var Collection<int, SpecialSiteNews>
+     * @ORM\OneToMany(targetEntity="SpecialSiteNews", mappedBy="news")
+     */
+    protected $specialSites;
+
+    /**
      * construct
      */
     public function __construct()
     {
         $this->pages = new ArrayCollection();
+        $this->specialSites = new ArrayCollection();
     }
 
     /**
@@ -277,5 +284,15 @@ class News
     public function getPages(): Collection
     {
         return $this->pages;
+    }
+
+    /**
+     * Return specialSites
+     *
+     * @return Collection<int, SpecialSiteNews>
+     */
+    public function getSpecialSites(): Collection
+    {
+        return $this->specialSites;
     }
 }
