@@ -6,6 +6,7 @@ namespace Tests\Entity;
 
 use Cinemasunshine\ORM\Entity\File;
 use Cinemasunshine\ORM\Entity\MainBanner;
+use Doctrine\Common\Collections\ArrayCollection;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -13,6 +14,16 @@ use PHPUnit\Framework\TestCase;
  */
 final class MainBannerTest extends TestCase
 {
+    /**
+     * Create target mock
+     *
+     * @return MainBanner&\PHPUnit\Framework\MockObject\MockObject
+     */
+    public function createTargetMock()
+    {
+        return $this->createMock(MainBanner::class);
+    }
+
     /**
      * Create target partial mock
      *
@@ -32,6 +43,29 @@ final class MainBannerTest extends TestCase
     public function createTargetReflection()
     {
         return new \ReflectionClass(MainBanner::class);
+    }
+
+    /**
+     * test construct
+     *
+     * @test
+     * @return void
+     */
+    public function testConstruct()
+    {
+        $targetMock = $this->createTargetMock();
+        $targetRef = $this->createTargetReflection();
+
+        /** @var \ReflectionMethod $constructorRef */
+        $constructorRef = $targetRef->getConstructor();
+        $constructorRef->invoke($targetMock);
+
+        $pagesPropertyRef = $targetRef->getProperty('pages');
+        $pagesPropertyRef->setAccessible(true);
+        $this->assertInstanceOf(
+            ArrayCollection::class,
+            $pagesPropertyRef->getValue($targetMock)
+        );
     }
 
     /**
@@ -198,5 +232,23 @@ final class MainBannerTest extends TestCase
         $linkUrlPropertyRef->setAccessible(true);
 
         $this->assertEquals($linkUrl, $linkUrlPropertyRef->getValue($targetMock));
+    }
+
+    /**
+     * test getPages
+     *
+     * @test
+     * @return void
+     */
+    public function testGetPages()
+    {
+        $pages = new ArrayCollection();
+        $targetMock = $this->createTargetPartialMock([]);
+        $targetRef = $this->createTargetReflection();
+        $pagesPropertyRef = $targetRef->getProperty('pages');
+        $pagesPropertyRef->setAccessible(true);
+        $pagesPropertyRef->setValue($targetMock, $pages);
+
+        $this->assertEquals($pages, $targetMock->getPages());
     }
 }

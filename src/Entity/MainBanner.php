@@ -7,6 +7,8 @@ namespace Cinemasunshine\ORM\Entity;
 use Cinemasunshine\ORM\Entity\Traits\SavedUserTrait;
 use Cinemasunshine\ORM\Entity\Traits\SoftDeleteTrait;
 use Cinemasunshine\ORM\Entity\Traits\TimestampableTrait;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -57,6 +59,20 @@ class MainBanner
      * @ORM\Column(type="string", name="link_url", nullable=true)
      */
     protected $linkUrl;
+
+    /**
+     * @var Collection<int, PageMainBanner>
+     * @ORM\OneToMany(targetEntity="PageMainBanner", mappedBy="mainBanner")
+     */
+    protected $pages;
+
+    /**
+     * constructor
+     */
+    public function __construct()
+    {
+        $this->pages = new ArrayCollection();
+    }
 
     /**
      * Return id
@@ -150,5 +166,15 @@ class MainBanner
     public function setLinkUrl(?string $linkUrl)
     {
         $this->linkUrl = $linkUrl;
+    }
+
+    /**
+     * Return pages
+     *
+     * @return Collection<int, PageMainBanner>
+     */
+    public function getPages(): Collection
+    {
+        return $this->pages;
     }
 }
