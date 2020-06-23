@@ -124,6 +124,12 @@ class Theater
     protected $mainBanners;
 
     /**
+     * @var Collection<int, TheaterNews>
+     * @ORM\OneToMany(targetEntity="TheaterNews", mappedBy="theater", orphanRemoval=true)
+     */
+    protected $newsList;
+
+    /**
      * constructor
      *
      * @param int $id
@@ -135,6 +141,7 @@ class Theater
         $this->specialSites = new ArrayCollection();
         $this->campaigns = new ArrayCollection();
         $this->mainBanners = new ArrayCollection();
+        $this->newsList = new ArrayCollection();
     }
 
     /**
@@ -342,5 +349,15 @@ class Theater
     public function getMainBanners(): Collection
     {
         return $this->mainBanners;
+    }
+
+    /**
+     * Return newsList
+     *
+     * @return Collection<int, TheaterNews>
+     */
+    public function getNewsList(): Collection
+    {
+        return $this->newsList;
     }
 }
