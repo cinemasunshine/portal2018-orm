@@ -6,6 +6,7 @@ namespace Tests\Entity;
 
 use Cinemasunshine\ORM\Entity\OyakoCinemaSchedule;
 use Cinemasunshine\ORM\Entity\OyakoCinemaTitle;
+use Doctrine\Common\Collections\ArrayCollection;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -13,6 +14,16 @@ use PHPUnit\Framework\TestCase;
  */
 final class OyakoCinemaScheduleTest extends TestCase
 {
+    /**
+     * Create target mock
+     *
+     * @return OyakoCinemaSchedule&\PHPUnit\Framework\MockObject\MockObject
+     */
+    public function createTargetMock()
+    {
+        return $this->createMock(OyakoCinemaSchedule::class);
+    }
+
     /**
      * Create target partial mock
      *
@@ -32,6 +43,29 @@ final class OyakoCinemaScheduleTest extends TestCase
     public function createTargetReflection()
     {
         return new \ReflectionClass(OyakoCinemaSchedule::class);
+    }
+
+    /**
+     * test construct
+     *
+     * @test
+     * @return void
+     */
+    public function testConstruct()
+    {
+        $targetMock = $this->createTargetMock();
+        $targetRef = $this->createTargetReflection();
+
+        /** @var \ReflectionMethod $constructorRef */
+        $constructorRef = $targetRef->getConstructor();
+        $constructorRef->invoke($targetMock);
+
+        $oyakoCinemaTheatersPropertyRef = $targetRef->getProperty('oyakoCinemaTheaters');
+        $oyakoCinemaTheatersPropertyRef->setAccessible(true);
+        $this->assertInstanceOf(
+            ArrayCollection::class,
+            $oyakoCinemaTheatersPropertyRef->getValue($targetMock)
+        );
     }
 
     /**
@@ -150,5 +184,23 @@ final class OyakoCinemaScheduleTest extends TestCase
 
         /** @phpstan-ignore-next-line */
         $targetMock->setDate(null);
+    }
+
+    /**
+     * test getOyakoCinemaTheaters
+     *
+     * @test
+     * @return void
+     */
+    public function testGetOyakoCinemaTheaters()
+    {
+        $oyakoCinemaTheaters = new ArrayCollection();
+        $targetMock = $this->createTargetPartialMock([]);
+        $targetRef = $this->createTargetReflection();
+        $oyakoCinemaTheatersPropertyRef = $targetRef->getProperty('oyakoCinemaTheaters');
+        $oyakoCinemaTheatersPropertyRef->setAccessible(true);
+        $oyakoCinemaTheatersPropertyRef->setValue($targetMock, $oyakoCinemaTheaters);
+
+        $this->assertEquals($oyakoCinemaTheaters, $targetMock->getOyakoCinemaTheaters());
     }
 }

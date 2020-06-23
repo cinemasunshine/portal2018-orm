@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Cinemasunshine\ORM\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -35,6 +37,24 @@ class OyakoCinemaSchedule
      * @ORM\Column(type="date")
      */
     protected $date;
+
+    /**
+     * @var Collection<int, OyakoCinemaTheater>
+     * @ORM\OneToMany(
+     *     targetEntity="OyakoCinemaTheater",
+     *     mappedBy="oyakoCinemaSchedule",
+     *     orphanRemoval=true
+     * )
+     */
+    protected $oyakoCinemaTheaters;
+
+    /**
+     * constructor
+     */
+    public function __construct()
+    {
+        $this->oyakoCinemaTheaters = new ArrayCollection();
+    }
 
     /**
      * Return id
@@ -93,5 +113,15 @@ class OyakoCinemaSchedule
         } else {
             throw new \InvalidArgumentException('Invalid type.');
         }
+    }
+
+    /**
+     * Return oyakoCinemaTheaters
+     *
+     * @return Collection<int, OyakoCinemaTheater>
+     */
+    public function getOyakoCinemaTheaters(): Collection
+    {
+        return $this->oyakoCinemaTheaters;
     }
 }
