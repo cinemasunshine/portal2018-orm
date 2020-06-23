@@ -49,6 +49,12 @@ class SpecialSite
     protected $theaters;
 
     /**
+     * @var Collection<int, SpecialSiteCampaign>
+     * @ORM\OneToMany(targetEntity="SpecialSiteCampaign", mappedBy="specialSite", orphanRemoval=true)
+     */
+    protected $campaigns;
+
+    /**
      * constructor
      *
      * @param int $id
@@ -57,6 +63,7 @@ class SpecialSite
     {
         $this->id = $id;
         $this->theaters = new ArrayCollection();
+        $this->campaigns = new ArrayCollection();
     }
 
     /**
@@ -119,5 +126,15 @@ class SpecialSite
     public function getTheaters(): Collection
     {
         return $this->theaters;
+    }
+
+    /**
+     * Return campaigns
+     *
+     * @return Collection<int, SpecialSiteCampaign>
+     */
+    public function getCampaigns(): Collection
+    {
+        return $this->campaigns;
     }
 }

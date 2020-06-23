@@ -70,6 +70,13 @@ final class SpecialSiteTest extends TestCase
             ArrayCollection::class,
             $theatersPropertyRef->getValue($targetMock)
         );
+
+        $campaignsPropertyRef = $targetRef->getProperty('campaigns');
+        $campaignsPropertyRef->setAccessible(true);
+        $this->assertInstanceOf(
+            ArrayCollection::class,
+            $campaignsPropertyRef->getValue($targetMock)
+        );
     }
 
     /**
@@ -180,5 +187,23 @@ final class SpecialSiteTest extends TestCase
         $theatersPropertyRef->setValue($targetMock, $theaters);
 
         $this->assertEquals($theaters, $targetMock->getTheaters());
+    }
+
+    /**
+     * test getCampaigns
+     *
+     * @test
+     * @return void
+     */
+    public function testGetCampaigns()
+    {
+        $campaigns = new ArrayCollection();
+        $targetMock = $this->createTargetPartialMock([]);
+        $targetRef = $this->createTargetReflection();
+        $campaignsPropertyRef = $targetRef->getProperty('campaigns');
+        $campaignsPropertyRef->setAccessible(true);
+        $campaignsPropertyRef->setValue($targetMock, $campaigns);
+
+        $this->assertEquals($campaigns, $targetMock->getCampaigns());
     }
 }
