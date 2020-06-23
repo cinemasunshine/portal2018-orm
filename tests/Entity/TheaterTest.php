@@ -85,6 +85,13 @@ final class TheaterTest extends TestCase
             ArrayCollection::class,
             $campaignsPropertyRef->getValue($targetMock)
         );
+
+        $mainBannersPropertyRef = $targetRef->getProperty('mainBanners');
+        $mainBannersPropertyRef->setAccessible(true);
+        $this->assertInstanceOf(
+            ArrayCollection::class,
+            $mainBannersPropertyRef->getValue($targetMock)
+        );
     }
 
     /**
@@ -433,5 +440,23 @@ final class TheaterTest extends TestCase
         $campaignsPropertyRef->setValue($targetMock, $campaigns);
 
         $this->assertEquals($campaigns, $targetMock->getCampaigns());
+    }
+
+    /**
+     * test getMainBanners
+     *
+     * @test
+     * @return void
+     */
+    public function testGetMainBanners()
+    {
+        $mainBanners = new ArrayCollection();
+        $targetMock = $this->createTargetPartialMock([]);
+        $targetRef = $this->createTargetReflection();
+        $mainBannersPropertyRef = $targetRef->getProperty('mainBanners');
+        $mainBannersPropertyRef->setAccessible(true);
+        $mainBannersPropertyRef->setValue($targetMock, $mainBanners);
+
+        $this->assertEquals($mainBanners, $targetMock->getMainBanners());
     }
 }

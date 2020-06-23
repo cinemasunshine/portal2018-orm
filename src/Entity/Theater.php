@@ -6,6 +6,7 @@ namespace Cinemasunshine\ORM\Entity;
 
 use Cinemasunshine\ORM\Entity\Traits\SoftDeleteTrait;
 use Cinemasunshine\ORM\Entity\Traits\TimestampableTrait;
+use Doctrine\Common\Cache\ArrayCache;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -117,6 +118,12 @@ class Theater
     protected $campaigns;
 
     /**
+     * @var Collection<int, TheaterMainBanner>
+     * @ORM\OneToMany(targetEntity="TheaterMainBanner", mappedBy="theater", orphanRemoval=true)
+     */
+    protected $mainBanners;
+
+    /**
      * constructor
      *
      * @param int $id
@@ -127,6 +134,7 @@ class Theater
         $this->adminUsers = new ArrayCollection();
         $this->specialSites = new ArrayCollection();
         $this->campaigns = new ArrayCollection();
+        $this->mainBanners = new ArrayCollection();
     }
 
     /**
@@ -324,5 +332,15 @@ class Theater
     public function getCampaigns(): Collection
     {
         return $this->campaigns;
+    }
+
+    /**
+     * Return mainBanners
+     *
+     * @return Collection<int, TheaterMainBanner>
+     */
+    public function getMainBanners(): Collection
+    {
+        return $this->mainBanners;
     }
 }
