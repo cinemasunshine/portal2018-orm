@@ -55,6 +55,12 @@ class SpecialSite
     protected $campaigns;
 
     /**
+     * @var Collection<int, SpecialSiteMainBanner>
+     * @ORM\OneToMany(targetEntity="SpecialSiteMainBanner", mappedBy="specialSite", orphanRemoval=true)
+     */
+    protected $mainBanners;
+
+    /**
      * constructor
      *
      * @param int $id
@@ -64,6 +70,7 @@ class SpecialSite
         $this->id = $id;
         $this->theaters = new ArrayCollection();
         $this->campaigns = new ArrayCollection();
+        $this->mainBanners = new ArrayCollection();
     }
 
     /**
@@ -136,5 +143,15 @@ class SpecialSite
     public function getCampaigns(): Collection
     {
         return $this->campaigns;
+    }
+
+    /**
+     * Return  mainBanners
+     *
+     * @return Collection<int, SpecialSiteMainBanner>
+     */
+    public function getMainBanners(): Collection
+    {
+        return $this->mainBanners;
     }
 }

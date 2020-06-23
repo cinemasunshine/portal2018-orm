@@ -67,11 +67,18 @@ class MainBanner
     protected $pages;
 
     /**
+     * @var Collection<int, SpecialSiteMainBanner>
+     * @ORM\OneToMany(targetEntity="SpecialSiteMainBanner", mappedBy="mainBanner")
+     */
+    protected $specialSites;
+
+    /**
      * constructor
      */
     public function __construct()
     {
         $this->pages = new ArrayCollection();
+        $this->specialSites = new ArrayCollection();
     }
 
     /**
@@ -176,5 +183,15 @@ class MainBanner
     public function getPages(): Collection
     {
         return $this->pages;
+    }
+
+    /**
+     * Return specialSites
+     *
+     * @return Collection<int, SpecialSiteMainBanner>
+     */
+    public function getSpecialSites(): Collection
+    {
+        return $this->specialSites;
     }
 }
