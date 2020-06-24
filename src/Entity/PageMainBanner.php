@@ -35,7 +35,7 @@ class PageMainBanner
 
     /**
      * @var Page
-     * @ORM\ManyToOne(targetEntity="Page", inversedBy="newsList")
+     * @ORM\ManyToOne(targetEntity="Page", inversedBy="mainBanners")
      * @ORM\JoinColumn(name="page_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
     protected $page;
