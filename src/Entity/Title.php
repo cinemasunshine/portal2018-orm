@@ -7,6 +7,8 @@ namespace Cinemasunshine\ORM\Entity;
 use Cinemasunshine\ORM\Entity\Traits\SavedUserTrait;
 use Cinemasunshine\ORM\Entity\Traits\SoftDeleteTrait;
 use Cinemasunshine\ORM\Entity\Traits\TimestampableTrait;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -108,6 +110,20 @@ class Title
      * @ORM\Column(type="json", nullable=true)
      */
     protected $universal;
+
+    /**
+     * @var Collection<int, Campaign>
+     * @ORM\OneToMany(targetEntity="Campaign", mappedBy="title", indexBy="id")
+     */
+    protected $campaigns;
+
+    /**
+     * constructor
+     */
+    public function __construct()
+    {
+        $this->campaigns = new ArrayCollection();
+    }
 
     /**
      * Return id
@@ -397,5 +413,15 @@ class Title
     public function setUniversal(?array $universal)
     {
         $this->universal = $universal;
+    }
+
+    /**
+     * Return campaigns
+     *
+     * @return Collection<int, Campaign>
+     */
+    public function getCampaigns(): Collection
+    {
+        return $this->campaigns;
     }
 }

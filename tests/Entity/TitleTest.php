@@ -6,6 +6,7 @@ namespace Tests\Entity;
 
 use Cinemasunshine\ORM\Entity\File;
 use Cinemasunshine\ORM\Entity\Title;
+use Doctrine\Common\Collections\ArrayCollection;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -42,6 +43,29 @@ final class TitleTest extends TestCase
     public function createTargetReflection()
     {
         return new \ReflectionClass(Title::class);
+    }
+
+    /**
+     * test construct
+     *
+     * @test
+     * @return void
+     */
+    public function testConstruct()
+    {
+        $targetMock = $this->createTargetMock();
+        $targetRef = $this->createTargetReflection();
+
+        /** @var \ReflectionMethod $constructorRef */
+        $constructorRef = $targetRef->getConstructor();
+        $constructorRef->invoke($targetMock);
+
+        $campaignsPropertyRef = $targetRef->getProperty('campaigns');
+        $campaignsPropertyRef->setAccessible(true);
+        $this->assertInstanceOf(
+            ArrayCollection::class,
+            $campaignsPropertyRef->getValue($targetMock)
+        );
     }
 
     /**
@@ -573,5 +597,23 @@ final class TitleTest extends TestCase
         $universalPropertyRef->setAccessible(true);
 
         $this->assertEquals($universal, $universalPropertyRef->getValue($targetMock));
+    }
+
+    /**
+     * test getCampaigns
+     *
+     * @test
+     * @return void
+     */
+    public function testGetCampaigns()
+    {
+        $campaigns = new ArrayCollection();
+        $targetMock = $this->createTargetPartialMock([]);
+        $targetRef = $this->createTargetReflection();
+        $campaignsPropertyRef = $targetRef->getProperty('campaigns');
+        $campaignsPropertyRef->setAccessible(true);
+        $campaignsPropertyRef->setValue($targetMock, $campaigns);
+
+        $this->assertEquals($campaigns, $targetMock->getCampaigns());
     }
 }
