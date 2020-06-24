@@ -118,11 +118,18 @@ class Title
     protected $campaigns;
 
     /**
+     * @var Collection<int, Trailer>
+     * @ORM\OneToMany(targetEntity="Trailer", mappedBy="title", indexBy="id")
+     */
+    protected $trailers;
+
+    /**
      * constructor
      */
     public function __construct()
     {
         $this->campaigns = new ArrayCollection();
+        $this->trailers = new ArrayCollection();
     }
 
     /**
@@ -423,5 +430,15 @@ class Title
     public function getCampaigns(): Collection
     {
         return $this->campaigns;
+    }
+
+    /**
+     * Return trailers
+     *
+     * @return Collection<int, Trailer>
+     */
+    public function getTrailers(): Collection
+    {
+        return $this->trailers;
     }
 }

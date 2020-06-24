@@ -66,6 +66,13 @@ final class TitleTest extends TestCase
             ArrayCollection::class,
             $campaignsPropertyRef->getValue($targetMock)
         );
+
+        $trailersPropertyRef = $targetRef->getProperty('trailers');
+        $trailersPropertyRef->setAccessible(true);
+        $this->assertInstanceOf(
+            ArrayCollection::class,
+            $trailersPropertyRef->getValue($targetMock)
+        );
     }
 
     /**
@@ -615,5 +622,23 @@ final class TitleTest extends TestCase
         $campaignsPropertyRef->setValue($targetMock, $campaigns);
 
         $this->assertEquals($campaigns, $targetMock->getCampaigns());
+    }
+
+    /**
+     * test getTrailers
+     *
+     * @test
+     * @return void
+     */
+    public function testGetTrailers()
+    {
+        $trailers = new ArrayCollection();
+        $targetMock = $this->createTargetPartialMock([]);
+        $targetRef = $this->createTargetReflection();
+        $trailersPropertyRef = $targetRef->getProperty('trailers');
+        $trailersPropertyRef->setAccessible(true);
+        $trailersPropertyRef->setValue($targetMock, $trailers);
+
+        $this->assertEquals($trailers, $targetMock->getTrailers());
     }
 }
