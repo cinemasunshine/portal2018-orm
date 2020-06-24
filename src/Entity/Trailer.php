@@ -189,7 +189,6 @@ class Trailer
     /**
      * Return bannerLinkUrl
      *
-     * @test
      * @return string
      */
     public function getBannerLinkUrl(): string
