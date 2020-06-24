@@ -6,7 +6,6 @@ namespace Cinemasunshine\ORM\Entity;
 
 use Cinemasunshine\ORM\Entity\Traits\SoftDeleteTrait;
 use Cinemasunshine\ORM\Entity\Traits\TimestampableTrait;
-use Doctrine\Common\Cache\ArrayCache;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
