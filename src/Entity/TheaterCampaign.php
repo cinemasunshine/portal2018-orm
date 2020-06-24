@@ -28,14 +28,14 @@ class TheaterCampaign
 
     /**
      * @var Campaign
-     * @ORM\ManyToOne(targetEntity="Campaign")
+     * @ORM\ManyToOne(targetEntity="Campaign", inversedBy="theaters")
      * @ORM\JoinColumn(name="campaign_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
     protected $campaign;
 
     /**
      * @var Theater
-     * @ORM\ManyToOne(targetEntity="Theater", inversedBy="theaters")
+     * @ORM\ManyToOne(targetEntity="Theater", inversedBy="campaigns")
      * @ORM\JoinColumn(name="theater_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
     protected $theater;

@@ -51,7 +51,7 @@ class ShowingFormat
 
     /**
      * @var Schedule
-     * @ORM\ManyToOne(targetEntity="Schedule")
+     * @ORM\ManyToOne(targetEntity="Schedule", inversedBy="showingFormats")
      * @ORM\JoinColumn(name="schedule_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
     protected $schedule;

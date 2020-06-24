@@ -35,7 +35,7 @@ class SpecialSiteCampaign
 
     /**
      * @var SpecialSite
-     * @ORM\ManyToOne(targetEntity="SpecialSite")
+     * @ORM\ManyToOne(targetEntity="SpecialSite", inversedBy="campaigns")
      * @ORM\JoinColumn(name="special_site_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
     protected $specialSite;

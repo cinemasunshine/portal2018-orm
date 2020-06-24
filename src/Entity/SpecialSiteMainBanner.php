@@ -28,14 +28,14 @@ class SpecialSiteMainBanner
 
     /**
      * @var MainBanner
-     * @ORM\ManyToOne(targetEntity="MainBanner")
+     * @ORM\ManyToOne(targetEntity="MainBanner", inversedBy="specialSites")
      * @ORM\JoinColumn(name="main_banner_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
     protected $mainBanner;
 
     /**
      * @var SpecialSite
-     * @ORM\ManyToOne(targetEntity="SpecialSite")
+     * @ORM\ManyToOne(targetEntity="SpecialSite", inversedBy="mainBanners")
      * @ORM\JoinColumn(name="special_site_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
     protected $specialSite;

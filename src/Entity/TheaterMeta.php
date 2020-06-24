@@ -27,7 +27,7 @@ class TheaterMeta
 
     /**
      * @var Theater
-     * @ORM\OneToOne(targetEntity="Theater")
+     * @ORM\OneToOne(targetEntity="Theater", inversedBy="meta")
      * @ORM\JoinColumn(name="theater_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
     protected $theater;

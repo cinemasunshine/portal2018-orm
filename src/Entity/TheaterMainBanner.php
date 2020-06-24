@@ -28,14 +28,14 @@ class TheaterMainBanner
 
     /**
      * @var MainBanner
-     * @ORM\ManyToOne(targetEntity="MainBanner")
+     * @ORM\ManyToOne(targetEntity="MainBanner", inversedBy="theaters")
      * @ORM\JoinColumn(name="main_banner_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
     protected $mainBanner;
 
     /**
      * @var Theater
-     * @ORM\ManyToOne(targetEntity="Theater", inversedBy="theaters")
+     * @ORM\ManyToOne(targetEntity="Theater", inversedBy="mainBanners")
      * @ORM\JoinColumn(name="theater_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
     protected $theater;

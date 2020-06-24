@@ -41,7 +41,7 @@ class AdvanceTicket
 
     /**
      * @var AdvanceSale
-     * @ORM\ManyToOne(targetEntity="AdvanceSale")
+     * @ORM\ManyToOne(targetEntity="AdvanceSale", inversedBy="advanceTickets")
      * @ORM\JoinColumn(name="advance_sale_id", referencedColumnName="id", nullable=false, onDelete="RESTRICT")
      */
     protected $advanceSale;

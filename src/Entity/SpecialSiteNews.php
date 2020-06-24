@@ -28,14 +28,14 @@ class SpecialSiteNews
 
     /**
      * @var News
-     * @ORM\ManyToOne(targetEntity="News")
+     * @ORM\ManyToOne(targetEntity="News", inversedBy="specialSites")
      * @ORM\JoinColumn(name="news_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
     protected $news;
 
     /**
      * @var SpecialSite
-     * @ORM\ManyToOne(targetEntity="SpecialSite")
+     * @ORM\ManyToOne(targetEntity="SpecialSite", inversedBy="newsList")
      * @ORM\JoinColumn(name="special_site_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
     protected $specialSite;

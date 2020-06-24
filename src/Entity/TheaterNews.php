@@ -28,7 +28,7 @@ class TheaterNews
 
     /**
      * @var News
-     * @ORM\ManyToOne(targetEntity="News")
+     * @ORM\ManyToOne(targetEntity="News", inversedBy="theaters")
      * @ORM\JoinColumn(name="news_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      */
     protected $news;

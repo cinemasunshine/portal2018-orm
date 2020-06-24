@@ -34,7 +34,7 @@ class Campaign
 
     /**
      * @var Title|null
-     * @ORM\ManyToOne(targetEntity="Title")
+     * @ORM\ManyToOne(targetEntity="Title", inversedBy="campaigns")
      * @ORM\JoinColumn(name="title_id", referencedColumnName="id", nullable=true, onDelete="RESTRICT")
      */
     protected $title;
