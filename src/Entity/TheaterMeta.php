@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Cinemasunshine\ORM\Entity;
 
+use Cinemasunshine\ORM\Entity\Traits\TimestampableTrait;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -14,6 +15,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class TheaterMeta
 {
+    use TimestampableTrait;
+
     /**
      * @var int
      * @ORM\Id
