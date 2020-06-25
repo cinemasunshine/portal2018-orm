@@ -460,6 +460,9 @@ final class TitleTest extends TestCase
         $publishingExpectedDatePropertyRef = $targetRef->getProperty('publishingExpectedDate');
         $publishingExpectedDatePropertyRef->setAccessible(true);
 
+        $targetMock->setPublishingExpectedDate(null);
+        $this->assertEquals(null, $publishingExpectedDatePropertyRef->getValue($targetMock));
+
         $publishingExpectedDateObj = new \DateTime();
         $targetMock->setPublishingExpectedDate($publishingExpectedDateObj);
         $this->assertEquals(
