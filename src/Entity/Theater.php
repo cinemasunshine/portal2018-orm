@@ -113,18 +113,21 @@ class Theater
     /**
      * @var Collection<int, TheaterCampaign>
      * @ORM\OneToMany(targetEntity="TheaterCampaign", mappedBy="theater", orphanRemoval=true)
+     * @ORM\OrderBy({"displayOrder" = "ASC"})
      */
     protected $campaigns;
 
     /**
      * @var Collection<int, TheaterMainBanner>
      * @ORM\OneToMany(targetEntity="TheaterMainBanner", mappedBy="theater", orphanRemoval=true)
+     * @ORM\OrderBy({"displayOrder" = "ASC"})
      */
     protected $mainBanners;
 
     /**
      * @var Collection<int, TheaterNews>
      * @ORM\OneToMany(targetEntity="TheaterNews", mappedBy="theater", orphanRemoval=true)
+     * @ORM\OrderBy({"displayOrder" = "ASC"})
      */
     protected $newsList;
 

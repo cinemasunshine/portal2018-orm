@@ -51,18 +51,21 @@ class SpecialSite
     /**
      * @var Collection<int, SpecialSiteCampaign>
      * @ORM\OneToMany(targetEntity="SpecialSiteCampaign", mappedBy="specialSite", orphanRemoval=true)
+     * @ORM\OrderBy({"displayOrder" = "ASC"})
      */
     protected $campaigns;
 
     /**
      * @var Collection<int, SpecialSiteMainBanner>
      * @ORM\OneToMany(targetEntity="SpecialSiteMainBanner", mappedBy="specialSite", orphanRemoval=true)
+     * @ORM\OrderBy({"displayOrder" = "ASC"})
      */
     protected $mainBanners;
 
     /**
      * @var Collection<int, SpecialSiteNews>
      * @ORM\OneToMany(targetEntity="SpecialSiteNews", mappedBy="specialSite", orphanRemoval=true)
+     * @ORM\OrderBy({"displayOrder" = "ASC"})
      */
     protected $newsList;
 

@@ -45,18 +45,21 @@ class Page
     /**
      * @var Collection<int, PageCampaign>
      * @ORM\OneToMany(targetEntity="PageCampaign", mappedBy="page", orphanRemoval=true)
+     * @ORM\OrderBy({"displayOrder" = "ASC"})
      */
     protected $campaigns;
 
     /**
      * @var Collection<int, PageMainBanner>
      * @ORM\OneToMany(targetEntity="PageMainBanner", mappedBy="page", orphanRemoval=true)
+     * @ORM\OrderBy({"displayOrder" = "ASC"})
      */
     protected $mainBanners;
 
     /**
      * @var Collection<int, PageNews>
      * @ORM\OneToMany(targetEntity="PageNews", mappedBy="page", orphanRemoval=true)
+     * @ORM\OrderBy({"displayOrder" = "ASC"})
      */
     protected $newsList;
 
