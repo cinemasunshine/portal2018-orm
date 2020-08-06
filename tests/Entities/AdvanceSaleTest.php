@@ -192,6 +192,9 @@ final class AdvanceSaleTest extends TestCase
         $publishingExpectedDatePropertyRef = $targetRef->getProperty('publishingExpectedDate');
         $publishingExpectedDatePropertyRef->setAccessible(true);
 
+        $targetMock->setPublishingExpectedDate(null);
+        $this->assertEquals(null, $publishingExpectedDatePropertyRef->getValue($targetMock));
+
         $dtObject = new \DateTime();
         $targetMock->setPublishingExpectedDate($dtObject);
         $this->assertEquals($dtObject, $publishingExpectedDatePropertyRef->getValue($targetMock));
@@ -221,7 +224,7 @@ final class AdvanceSaleTest extends TestCase
         $targetMock = $this->createTargetPartialMock([]);
 
         /** @phpstan-ignore-next-line */
-        $targetMock->setPublishingExpectedDate(null);
+        $targetMock->setPublishingExpectedDate(123);
     }
 
     /**

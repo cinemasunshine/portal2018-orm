@@ -137,13 +137,13 @@ class AdvanceSale
     /**
      * Set publishingExpectedDate
      *
-     * @param \DateTime|string $publishingExpectedDate
+     * @param \DateTime|string|null $publishingExpectedDate
      * @return void
      * @throws \InvalidArgumentException
      */
     public function setPublishingExpectedDate($publishingExpectedDate)
     {
-        if ($publishingExpectedDate instanceof \DateTime) {
+        if (is_null($publishingExpectedDate) || $publishingExpectedDate instanceof \DateTime) {
             $this->publishingExpectedDate = $publishingExpectedDate;
         } elseif (is_string($publishingExpectedDate)) {
             $this->publishingExpectedDate = new \DateTime($publishingExpectedDate);
