@@ -53,8 +53,10 @@ final class ShowingFormatTest extends TestCase
     public function testGetId()
     {
         $id = 14;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $idPropertyRef = $targetRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
         $idPropertyRef->setValue($targetMock, $id);
@@ -71,8 +73,10 @@ final class ShowingFormatTest extends TestCase
     public function testGetSchedule()
     {
         $schedule = new Schedule();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $schedulePropertyRef = $targetRef->getProperty('schedule');
         $schedulePropertyRef->setAccessible(true);
         $schedulePropertyRef->setValue($targetMock, $schedule);
@@ -89,10 +93,12 @@ final class ShowingFormatTest extends TestCase
     public function testSetSchedule()
     {
         $schedule = new Schedule();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setSchedule($schedule);
 
         $targetRef = $this->createTargetReflection();
+
         $schedulePropertyRef = $targetRef->getProperty('schedule');
         $schedulePropertyRef->setAccessible(true);
 
@@ -108,8 +114,10 @@ final class ShowingFormatTest extends TestCase
     public function testGetSystem()
     {
         $system = 2;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $systemPropertyRef = $targetRef->getProperty('system');
         $systemPropertyRef->setAccessible(true);
         $systemPropertyRef->setValue($targetMock, $system);
@@ -126,10 +134,12 @@ final class ShowingFormatTest extends TestCase
     public function testSetSystem()
     {
         $system = 2;
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setSystem($system);
 
         $targetRef = $this->createTargetReflection();
+
         $systemPropertyRef = $targetRef->getProperty('system');
         $systemPropertyRef->setAccessible(true);
 
@@ -145,8 +155,10 @@ final class ShowingFormatTest extends TestCase
     public function testGetSound()
     {
         $sound = 3;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $soundPropertyRef = $targetRef->getProperty('sound');
         $soundPropertyRef->setAccessible(true);
         $soundPropertyRef->setValue($targetMock, $sound);
@@ -163,10 +175,12 @@ final class ShowingFormatTest extends TestCase
     public function testSetSound()
     {
         $sound = 3;
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setSound($sound);
 
         $targetRef = $this->createTargetReflection();
+
         $soundPropertyRef = $targetRef->getProperty('sound');
         $soundPropertyRef->setAccessible(true);
 
@@ -182,8 +196,10 @@ final class ShowingFormatTest extends TestCase
     public function testGetVoice()
     {
         $voice = 4;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $voicePropertyRef = $targetRef->getProperty('voice');
         $voicePropertyRef->setAccessible(true);
         $voicePropertyRef->setValue($targetMock, $voice);
@@ -200,10 +216,12 @@ final class ShowingFormatTest extends TestCase
     public function testSetVoice()
     {
         $voice = 4;
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setVoice($voice);
 
         $targetRef = $this->createTargetReflection();
+
         $voicePropertyRef = $targetRef->getProperty('voice');
         $voicePropertyRef->setAccessible(true);
 

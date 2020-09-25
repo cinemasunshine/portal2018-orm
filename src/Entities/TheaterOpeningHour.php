@@ -178,12 +178,13 @@ class TheaterOpeningHour
     public function toArray(): array
     {
         $data = [];
-        $data['type'] = $this->getType();
+
+        $data['type']      = $this->getType();
         $data['from_date'] = $this->getFromDate()->format('Y/m/d');
-        $data['to_date'] = is_null($this->getToDate())
+        $data['to_date']   = is_null($this->getToDate())
             ? null
             : $this->getToDate()->format('Y/m/d');
-        $data['time'] = $this->getTime()->format('H:i:s');
+        $data['time']      = $this->getTime()->format('H:i:s');
 
         return $data;
     }

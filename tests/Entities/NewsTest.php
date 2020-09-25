@@ -55,7 +55,7 @@ final class NewsTest extends TestCase
     public function testConstruct()
     {
         $targetMock = $this->createTargetMock();
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
 
         /** @var \ReflectionMethod $constructorRef */
         $constructorRef = $targetRef->getConstructor();
@@ -92,8 +92,10 @@ final class NewsTest extends TestCase
     public function testGetId()
     {
         $id = 26;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $idPropertyRef = $targetRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
         $idPropertyRef->setValue($targetMock, $id);
@@ -110,8 +112,10 @@ final class NewsTest extends TestCase
     public function testGetTitle()
     {
         $title = new Title();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $titlePropertyRef = $targetRef->getProperty('title');
         $titlePropertyRef->setAccessible(true);
         $titlePropertyRef->setValue($targetMock, $title);
@@ -128,10 +132,12 @@ final class NewsTest extends TestCase
     public function testSetTitle()
     {
         $title = new Title();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setTitle($title);
 
         $targetRef = $this->createTargetReflection();
+
         $titlePropertyRef = $targetRef->getProperty('title');
         $titlePropertyRef->setAccessible(true);
 
@@ -147,8 +153,10 @@ final class NewsTest extends TestCase
     public function testGetImage()
     {
         $image = new File();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $imagePropertyRef = $targetRef->getProperty('image');
         $imagePropertyRef->setAccessible(true);
         $imagePropertyRef->setValue($targetMock, $image);
@@ -165,10 +173,12 @@ final class NewsTest extends TestCase
     public function testSetImage()
     {
         $image = new File();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setImage($image);
 
         $targetRef = $this->createTargetReflection();
+
         $imagePropertyRef = $targetRef->getProperty('image');
         $imagePropertyRef->setAccessible(true);
 
@@ -184,8 +194,10 @@ final class NewsTest extends TestCase
     public function testGetCategory()
     {
         $category = 2;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $categoryPropertyRef = $targetRef->getProperty('category');
         $categoryPropertyRef->setAccessible(true);
         $categoryPropertyRef->setValue($targetMock, $category);
@@ -202,10 +214,12 @@ final class NewsTest extends TestCase
     public function testSetCategory()
     {
         $category = 2;
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setCategory($category);
 
         $targetRef = $this->createTargetReflection();
+
         $categoryPropertyRef = $targetRef->getProperty('category');
         $categoryPropertyRef->setAccessible(true);
 
@@ -221,8 +235,10 @@ final class NewsTest extends TestCase
     public function testGetHeadline()
     {
         $headline = 'news_headline';
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $headlinePropertyRef = $targetRef->getProperty('headline');
         $headlinePropertyRef->setAccessible(true);
         $headlinePropertyRef->setValue($targetMock, $headline);
@@ -239,10 +255,12 @@ final class NewsTest extends TestCase
     public function testSetHeadline()
     {
         $headline = 'news_headline';
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setHeadline($headline);
 
         $targetRef = $this->createTargetReflection();
+
         $headlinePropertyRef = $targetRef->getProperty('headline');
         $headlinePropertyRef->setAccessible(true);
 
@@ -258,8 +276,10 @@ final class NewsTest extends TestCase
     public function testGetBody()
     {
         $body = 'news_body';
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $bodyPropertyRef = $targetRef->getProperty('body');
         $bodyPropertyRef->setAccessible(true);
         $bodyPropertyRef->setValue($targetMock, $body);
@@ -276,10 +296,12 @@ final class NewsTest extends TestCase
     public function testSetBody()
     {
         $body = 'news_body';
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setBody($body);
 
         $targetRef = $this->createTargetReflection();
+
         $bodyPropertyRef = $targetRef->getProperty('body');
         $bodyPropertyRef->setAccessible(true);
 
@@ -295,8 +317,10 @@ final class NewsTest extends TestCase
     public function testGetStartDt()
     {
         $startDt = new \DateTime();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $startDtPropertyRef = $targetRef->getProperty('startDt');
         $startDtPropertyRef->setAccessible(true);
         $startDtPropertyRef->setValue($targetMock, $startDt);
@@ -313,7 +337,8 @@ final class NewsTest extends TestCase
     public function testSetStartDt()
     {
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $startDtPropertyRef = $targetRef->getProperty('startDt');
         $startDtPropertyRef->setAccessible(true);
 
@@ -358,8 +383,10 @@ final class NewsTest extends TestCase
     public function testGetEndDt()
     {
         $endDt = new \DateTime();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $endDtPropertyRef = $targetRef->getProperty('endDt');
         $endDtPropertyRef->setAccessible(true);
         $endDtPropertyRef->setValue($targetMock, $endDt);
@@ -376,7 +403,8 @@ final class NewsTest extends TestCase
     public function testSetEndDt()
     {
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $endDtPropertyRef = $targetRef->getProperty('endDt');
         $endDtPropertyRef->setAccessible(true);
 
@@ -421,8 +449,10 @@ final class NewsTest extends TestCase
     public function testGetPages()
     {
         $pages = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $pagesPropertyRef = $targetRef->getProperty('pages');
         $pagesPropertyRef->setAccessible(true);
         $pagesPropertyRef->setValue($targetMock, $pages);
@@ -439,8 +469,10 @@ final class NewsTest extends TestCase
     public function testGetSpecialSites()
     {
         $specialSites = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $specialSitesPropertyRef = $targetRef->getProperty('specialSites');
         $specialSitesPropertyRef->setAccessible(true);
         $specialSitesPropertyRef->setValue($targetMock, $specialSites);
@@ -457,8 +489,10 @@ final class NewsTest extends TestCase
     public function testGetTheaters()
     {
         $theaters = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $theatersPropertyRef = $targetRef->getProperty('theaters');
         $theatersPropertyRef->setAccessible(true);
         $theatersPropertyRef->setValue($targetMock, $theaters);

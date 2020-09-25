@@ -51,11 +51,11 @@ final class TheaterOpeningHourTest extends TestCase
      */
     public function testCreate()
     {
-        $type = 2;
+        $type     = 2;
         $fromDate = '2020/01/01';
-        $toDate = '2020/01/02';
-        $time = '10:00:00';
-        $data = [
+        $toDate   = '2020/01/02';
+        $time     = '10:00:00';
+        $data     = [
             'type' => $type,
             'from_date' => $fromDate,
             'to_date' => $toDate,
@@ -102,8 +102,10 @@ final class TheaterOpeningHourTest extends TestCase
     public function testGetType()
     {
         $type = 2;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $typePropertyRef = $targetRef->getProperty('type');
         $typePropertyRef->setAccessible(true);
         $typePropertyRef->setValue($targetMock, $type);
@@ -120,10 +122,12 @@ final class TheaterOpeningHourTest extends TestCase
     public function testSetType()
     {
         $type = 2;
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setType($type);
 
         $targetRef = $this->createTargetReflection();
+
         $typePropertyRef = $targetRef->getProperty('type');
         $typePropertyRef->setAccessible(true);
 
@@ -139,8 +143,10 @@ final class TheaterOpeningHourTest extends TestCase
     public function testGetFromDate()
     {
         $fromDate = new \DateTime();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $fromDatePropertyRef = $targetRef->getProperty('fromDate');
         $fromDatePropertyRef->setAccessible(true);
         $fromDatePropertyRef->setValue($targetMock, $fromDate);
@@ -157,7 +163,8 @@ final class TheaterOpeningHourTest extends TestCase
     public function testSetFromDate()
     {
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $fromDatePropertyRef = $targetRef->getProperty('fromDate');
         $fromDatePropertyRef->setAccessible(true);
 
@@ -202,8 +209,10 @@ final class TheaterOpeningHourTest extends TestCase
     public function testGetToDate()
     {
         $toDate = new \DateTime();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $toDatePropertyRef = $targetRef->getProperty('toDate');
         $toDatePropertyRef->setAccessible(true);
         $toDatePropertyRef->setValue($targetMock, $toDate);
@@ -220,7 +229,8 @@ final class TheaterOpeningHourTest extends TestCase
     public function testSetToDate()
     {
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $toDatePropertyRef = $targetRef->getProperty('toDate');
         $toDatePropertyRef->setAccessible(true);
 
@@ -268,8 +278,10 @@ final class TheaterOpeningHourTest extends TestCase
     public function testGetTime()
     {
         $time = new \DateTime('10:00:00');
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $timePropertyRef = $targetRef->getProperty('time');
         $timePropertyRef->setAccessible(true);
         $timePropertyRef->setValue($targetMock, $time);
@@ -286,7 +298,8 @@ final class TheaterOpeningHourTest extends TestCase
     public function testSetTime()
     {
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $timePropertyRef = $targetRef->getProperty('time');
         $timePropertyRef->setAccessible(true);
 
@@ -330,14 +343,14 @@ final class TheaterOpeningHourTest extends TestCase
      */
     public function testToArray()
     {
-        $type = 2;
+        $type     = 2;
         $fromDate = new \DateTime('2020/01/01');
-        $toDate = new \DateTime('2020/01/02');
-        $time = new \DateTime('10:00:00');
+        $toDate   = new \DateTime('2020/01/02');
+        $time     = new \DateTime('10:00:00');
 
         $targetMock = $this->createTargetPartialMock([]);
+        $targetRef  = $this->createTargetReflection();
 
-        $targetRef = $this->createTargetReflection();
         $typePropertyRef = $targetRef->getProperty('type');
         $typePropertyRef->setAccessible(true);
         $typePropertyRef->setValue($targetMock, $type);

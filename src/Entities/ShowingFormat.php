@@ -18,12 +18,12 @@ class ShowingFormat
 {
     use TimestampableTrait;
 
-    public const SYSTEM_2D         = 1;
-    public const SYSTEM_3D         = 2;
-    public const SYSTEM_4DX        = 3;
-    public const SYSTEM_4DX3D      = 4;
-    public const SYSTEM_IMAX       = 5;
-    public const SYSTEM_IMAX3D     = 6;
+    public const SYSTEM_2D     = 1;
+    public const SYSTEM_3D     = 2;
+    public const SYSTEM_4DX    = 3;
+    public const SYSTEM_4DX3D  = 4;
+    public const SYSTEM_IMAX   = 5;
+    public const SYSTEM_IMAX3D = 6;
     // const SYSTEM_BESTIA           = 7; 削除 SASAKI-449
     // const SYSTEM_BESTIA3D         = 8; 削除 SASAKI-449
     // const SYSTEM_BTSX             = 9; 削除 SASAKI-449
@@ -38,8 +38,8 @@ class ShowingFormat
     public const SOUND_NONE          = 99;
 
     public const VOICE_SUBTITLE = 1;
-    public const VOICE_DUB = 2;
-    public const VOICE_NONE = 3;
+    public const VOICE_DUB      = 2;
+    public const VOICE_NONE     = 3;
 
     /**
      * @var int

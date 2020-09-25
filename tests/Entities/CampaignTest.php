@@ -55,7 +55,7 @@ final class CampaignTest extends TestCase
     public function testConstruct()
     {
         $targetMock = $this->createTargetMock();
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
 
         /** @var \ReflectionMethod $constructorRef */
         $constructorRef = $targetRef->getConstructor();
@@ -92,8 +92,10 @@ final class CampaignTest extends TestCase
     public function testGetId()
     {
         $id = 21;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $idPropertyRef = $targetRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
         $idPropertyRef->setValue($targetMock, $id);
@@ -110,8 +112,10 @@ final class CampaignTest extends TestCase
     public function testGetTitle()
     {
         $title = new Title();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $titlePropertyRef = $targetRef->getProperty('title');
         $titlePropertyRef->setAccessible(true);
         $titlePropertyRef->setValue($targetMock, $title);
@@ -128,10 +132,12 @@ final class CampaignTest extends TestCase
     public function testSetTitle()
     {
         $title = new Title();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setTitle($title);
 
         $targetRef = $this->createTargetReflection();
+
         $titlePropertyRef = $targetRef->getProperty('title');
         $titlePropertyRef->setAccessible(true);
 
@@ -147,8 +153,10 @@ final class CampaignTest extends TestCase
     public function testGetImage()
     {
         $image = new File();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $imagePropertyRef = $targetRef->getProperty('image');
         $imagePropertyRef->setAccessible(true);
         $imagePropertyRef->setValue($targetMock, $image);
@@ -165,10 +173,12 @@ final class CampaignTest extends TestCase
     public function testSetImage()
     {
         $image = new File();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setImage($image);
 
         $targetRef = $this->createTargetReflection();
+
         $imagePropertyRef = $targetRef->getProperty('image');
         $imagePropertyRef->setAccessible(true);
 
@@ -184,8 +194,10 @@ final class CampaignTest extends TestCase
     public function testGetName()
     {
         $name = 'campaign_name';
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $namePropertyRef = $targetRef->getProperty('name');
         $namePropertyRef->setAccessible(true);
         $namePropertyRef->setValue($targetMock, $name);
@@ -202,10 +214,12 @@ final class CampaignTest extends TestCase
     public function testSetName()
     {
         $name = 'campaign_name';
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setName($name);
 
         $targetRef = $this->createTargetReflection();
+
         $namePropertyRef = $targetRef->getProperty('name');
         $namePropertyRef->setAccessible(true);
 
@@ -221,8 +235,10 @@ final class CampaignTest extends TestCase
     public function testGetStartDt()
     {
         $startDt = new \DateTime();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $startDtPropertyRef = $targetRef->getProperty('startDt');
         $startDtPropertyRef->setAccessible(true);
         $startDtPropertyRef->setValue($targetMock, $startDt);
@@ -239,7 +255,8 @@ final class CampaignTest extends TestCase
     public function testSetStartDt()
     {
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $startDtPropertyRef = $targetRef->getProperty('startDt');
         $startDtPropertyRef->setAccessible(true);
 
@@ -284,8 +301,10 @@ final class CampaignTest extends TestCase
     public function testGetEndDt()
     {
         $endDt = new \DateTime();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $endDtPropertyRef = $targetRef->getProperty('endDt');
         $endDtPropertyRef->setAccessible(true);
         $endDtPropertyRef->setValue($targetMock, $endDt);
@@ -302,7 +321,8 @@ final class CampaignTest extends TestCase
     public function testSetEndDt()
     {
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $endDtPropertyRef = $targetRef->getProperty('endDt');
         $endDtPropertyRef->setAccessible(true);
 
@@ -347,8 +367,10 @@ final class CampaignTest extends TestCase
     public function testGetUrl()
     {
         $url = 'https://example.com';
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $urlPropertyRef = $targetRef->getProperty('url');
         $urlPropertyRef->setAccessible(true);
         $urlPropertyRef->setValue($targetMock, $url);
@@ -365,10 +387,12 @@ final class CampaignTest extends TestCase
     public function testSetUrl()
     {
         $url = 'https://example.com';
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setUrl($url);
 
         $targetRef = $this->createTargetReflection();
+
         $urlPropertyRef = $targetRef->getProperty('url');
         $urlPropertyRef->setAccessible(true);
 
@@ -384,8 +408,10 @@ final class CampaignTest extends TestCase
     public function testGetPages()
     {
         $pages = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $pagesPropertyRef = $targetRef->getProperty('pages');
         $pagesPropertyRef->setAccessible(true);
         $pagesPropertyRef->setValue($targetMock, $pages);
@@ -402,8 +428,10 @@ final class CampaignTest extends TestCase
     public function testGetSpecialSite()
     {
         $specialSites = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $specialSitesPropertyRef = $targetRef->getProperty('specialSites');
         $specialSitesPropertyRef->setAccessible(true);
         $specialSitesPropertyRef->setValue($targetMock, $specialSites);
@@ -420,8 +448,10 @@ final class CampaignTest extends TestCase
     public function testGetTheaters()
     {
         $theaters = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $theatersPropertyRef = $targetRef->getProperty('theaters');
         $theatersPropertyRef->setAccessible(true);
         $theatersPropertyRef->setValue($targetMock, $theaters);

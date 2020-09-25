@@ -76,11 +76,11 @@ class SpecialSite
      */
     public function __construct(int $id)
     {
-        $this->id = $id;
-        $this->theaters = new ArrayCollection();
-        $this->campaigns = new ArrayCollection();
+        $this->id          = $id;
+        $this->theaters    = new ArrayCollection();
+        $this->campaigns   = new ArrayCollection();
         $this->mainBanners = new ArrayCollection();
-        $this->newsList = new ArrayCollection();
+        $this->newsList    = new ArrayCollection();
     }
 
     /**

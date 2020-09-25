@@ -31,6 +31,7 @@ final class TimestampableTraitTest extends TestCase
     public function testGetCreatedAt()
     {
         $createdAt = new \DateTime('2020/01/01 10:00:00');
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setCreatedAt($createdAt);
 
@@ -46,6 +47,7 @@ final class TimestampableTraitTest extends TestCase
     public function testSetCreatedAt()
     {
         $createdAt = new \DateTime('2020/01/01 10:00:00');
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setCreatedAt($createdAt);
 
@@ -77,6 +79,7 @@ final class TimestampableTraitTest extends TestCase
     public function testGetUpdatedAt()
     {
         $updatedAt = new \DateTime('2020/01/01 10:00:00');
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setUpdatedAt($updatedAt);
 
@@ -92,6 +95,7 @@ final class TimestampableTraitTest extends TestCase
     public function testSetUpdatedAt()
     {
         $updatedAt = new \DateTime('2020/01/01 10:00:00');
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setUpdatedAt($updatedAt);
 

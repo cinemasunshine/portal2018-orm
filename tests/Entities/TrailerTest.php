@@ -55,7 +55,7 @@ final class TrailerTest extends TestCase
     public function testConstruct()
     {
         $targetMock = $this->createTargetMock();
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
 
         /** @var \ReflectionMethod $constructorRef */
         $constructorRef = $targetRef->getConstructor();
@@ -92,8 +92,10 @@ final class TrailerTest extends TestCase
     public function testGetId()
     {
         $id = 6;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $idPropertyRef = $targetRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
         $idPropertyRef->setValue($targetMock, $id);
@@ -110,8 +112,10 @@ final class TrailerTest extends TestCase
     public function testGetTitle()
     {
         $title = new Title();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $titlePropertyRef = $targetRef->getProperty('title');
         $titlePropertyRef->setAccessible(true);
         $titlePropertyRef->setValue($targetMock, $title);
@@ -128,10 +132,12 @@ final class TrailerTest extends TestCase
     public function testSetTitle()
     {
         $title = new Title();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setTitle($title);
 
         $targetRef = $this->createTargetReflection();
+
         $titlePropertyRef = $targetRef->getProperty('title');
         $titlePropertyRef->setAccessible(true);
 
@@ -147,8 +153,10 @@ final class TrailerTest extends TestCase
     public function testGetName()
     {
         $name = 'trailer_name';
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $namePropertyRef = $targetRef->getProperty('name');
         $namePropertyRef->setAccessible(true);
         $namePropertyRef->setValue($targetMock, $name);
@@ -165,10 +173,12 @@ final class TrailerTest extends TestCase
     public function testSetName()
     {
         $name = 'trailer_name';
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setName($name);
 
         $targetRef = $this->createTargetReflection();
+
         $namePropertyRef = $targetRef->getProperty('name');
         $namePropertyRef->setAccessible(true);
 
@@ -184,8 +194,10 @@ final class TrailerTest extends TestCase
     public function testGetYoutube()
     {
         $youtube = 'trainer_youtube';
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $youtubePropertyRef = $targetRef->getProperty('youtube');
         $youtubePropertyRef->setAccessible(true);
         $youtubePropertyRef->setValue($targetMock, $youtube);
@@ -202,10 +214,12 @@ final class TrailerTest extends TestCase
     public function testSetYoutube()
     {
         $youtube = 'trainer_youtube';
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setYoutube($youtube);
 
         $targetRef = $this->createTargetReflection();
+
         $youtubePropertyRef = $targetRef->getProperty('youtube');
         $youtubePropertyRef->setAccessible(true);
 
@@ -221,8 +235,10 @@ final class TrailerTest extends TestCase
     public function testBannerImage()
     {
         $bannerImage = new File();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $bannerImagePropertyRef = $targetRef->getProperty('bannerImage');
         $bannerImagePropertyRef->setAccessible(true);
         $bannerImagePropertyRef->setValue($targetMock, $bannerImage);
@@ -239,10 +255,12 @@ final class TrailerTest extends TestCase
     public function testSetBannerImage()
     {
         $bannerImage = new File();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setBannerImage($bannerImage);
 
         $targetRef = $this->createTargetReflection();
+
         $bannerImagePropertyRef = $targetRef->getProperty('bannerImage');
         $bannerImagePropertyRef->setAccessible(true);
 
@@ -258,8 +276,10 @@ final class TrailerTest extends TestCase
     public function testGetBannerLinkUrl()
     {
         $bannerLinkUrl = 'https://example.com';
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $bannerLinkUrlPropertyRef = $targetRef->getProperty('bannerLinkUrl');
         $bannerLinkUrlPropertyRef->setAccessible(true);
         $bannerLinkUrlPropertyRef->setValue($targetMock, $bannerLinkUrl);
@@ -276,10 +296,12 @@ final class TrailerTest extends TestCase
     public function testSetBannerLinkUrl()
     {
         $bannerLinkUrl = 'https://example.com';
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setBannerLinkUrl($bannerLinkUrl);
 
         $targetRef = $this->createTargetReflection();
+
         $bannerLinkUrlPropertyRef = $targetRef->getProperty('bannerLinkUrl');
         $bannerLinkUrlPropertyRef->setAccessible(true);
 
@@ -295,8 +317,10 @@ final class TrailerTest extends TestCase
     public function testGetPageTrailers()
     {
         $pageTrailers = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $pageTrailersPropertyRef = $targetRef->getProperty('pageTrailers');
         $pageTrailersPropertyRef->setAccessible(true);
         $pageTrailersPropertyRef->setValue($targetMock, $pageTrailers);
@@ -313,10 +337,12 @@ final class TrailerTest extends TestCase
     public function testSetPageTrailers()
     {
         $pageTrailers = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setPageTrailers($pageTrailers);
 
         $targetRef = $this->createTargetReflection();
+
         $pageTrailersPropertyRef = $targetRef->getProperty('pageTrailers');
         $pageTrailersPropertyRef->setAccessible(true);
 
@@ -332,8 +358,10 @@ final class TrailerTest extends TestCase
     public function testGetSpecialSiteTrailers()
     {
         $specialSiteTrailers = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $specialSiteTrailersPropertyRef = $targetRef->getProperty('specialSiteTrailers');
         $specialSiteTrailersPropertyRef->setAccessible(true);
         $specialSiteTrailersPropertyRef->setValue($targetMock, $specialSiteTrailers);
@@ -350,10 +378,12 @@ final class TrailerTest extends TestCase
     public function testSetSpecialSiteTrailers()
     {
         $specialSiteTrailers = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setSpecialSiteTrailers($specialSiteTrailers);
 
         $targetRef = $this->createTargetReflection();
+
         $specialSiteTrailersPropertyRef = $targetRef->getProperty('specialSiteTrailers');
         $specialSiteTrailersPropertyRef->setAccessible(true);
 
@@ -369,8 +399,10 @@ final class TrailerTest extends TestCase
     public function testGetTheaterTrailers()
     {
         $theaterTrailers = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $theaterTrailersPropertyRef = $targetRef->getProperty('theaterTrailers');
         $theaterTrailersPropertyRef->setAccessible(true);
         $theaterTrailersPropertyRef->setValue($targetMock, $theaterTrailers);
@@ -387,10 +419,12 @@ final class TrailerTest extends TestCase
     public function testSetTheaterTrailers()
     {
         $theaterTrailers = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setTheaterTrailers($theaterTrailers);
 
         $targetRef = $this->createTargetReflection();
+
         $theaterTrailersPropertyRef = $targetRef->getProperty('theaterTrailers');
         $theaterTrailersPropertyRef->setAccessible(true);
 

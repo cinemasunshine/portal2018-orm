@@ -32,6 +32,7 @@ final class SavedUserTraitTest extends TestCase
     public function testGetCreatedUser()
     {
         $createdUser = new AdminUser();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setCreatedUser($createdUser);
 
@@ -47,6 +48,7 @@ final class SavedUserTraitTest extends TestCase
     public function testSetCreatedUser()
     {
         $createdUser = new AdminUser();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setCreatedUser($createdUser);
 
@@ -62,6 +64,7 @@ final class SavedUserTraitTest extends TestCase
     public function testGetUpdatedUser()
     {
         $updatedUser = new AdminUser();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setUpdatedUser($updatedUser);
 
@@ -77,6 +80,7 @@ final class SavedUserTraitTest extends TestCase
     public function testSetUpdatedUser()
     {
         $updatedUser = new AdminUser();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setUpdatedUser($updatedUser);
 

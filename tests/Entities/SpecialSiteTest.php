@@ -53,8 +53,9 @@ final class SpecialSiteTest extends TestCase
     public function testConstruct()
     {
         $id = 11;
+
         $targetMock = $this->createTargetMock();
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
 
         /** @var \ReflectionMethod $constructorRef */
         $constructorRef = $targetRef->getConstructor();
@@ -102,8 +103,10 @@ final class SpecialSiteTest extends TestCase
     public function testGetId()
     {
         $id = 12;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $idPropertyRef = $targetRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
         $idPropertyRef->setValue($targetMock, $id);
@@ -120,8 +123,10 @@ final class SpecialSiteTest extends TestCase
     public function testGetName()
     {
         $name = 'special_site_name';
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $namePropertyRef = $targetRef->getProperty('name');
         $namePropertyRef->setAccessible(true);
         $namePropertyRef->setValue($targetMock, $name);
@@ -138,10 +143,12 @@ final class SpecialSiteTest extends TestCase
     public function testSetName()
     {
         $name = 'special_site_name';
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setName($name);
 
         $targetRef = $this->createTargetReflection();
+
         $namePropertyRef = $targetRef->getProperty('name');
         $namePropertyRef->setAccessible(true);
 
@@ -157,8 +164,10 @@ final class SpecialSiteTest extends TestCase
     public function testGatNameJa()
     {
         $nameJa = 'special_site_name_ja';
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $nameJaPropertyRef = $targetRef->getProperty('nameJa');
         $nameJaPropertyRef->setAccessible(true);
         $nameJaPropertyRef->setValue($targetMock, $nameJa);
@@ -175,10 +184,12 @@ final class SpecialSiteTest extends TestCase
     public function testSetNameJa()
     {
         $nameJa = 'special_site_name_ja';
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setNameJa($nameJa);
 
         $targetRef = $this->createTargetReflection();
+
         $nameJaPropertyRef = $targetRef->getProperty('nameJa');
         $nameJaPropertyRef->setAccessible(true);
 
@@ -194,8 +205,10 @@ final class SpecialSiteTest extends TestCase
     public function testGetTheaters()
     {
         $theaters = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $theatersPropertyRef = $targetRef->getProperty('theaters');
         $theatersPropertyRef->setAccessible(true);
         $theatersPropertyRef->setValue($targetMock, $theaters);
@@ -212,8 +225,10 @@ final class SpecialSiteTest extends TestCase
     public function testGetCampaigns()
     {
         $campaigns = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $campaignsPropertyRef = $targetRef->getProperty('campaigns');
         $campaignsPropertyRef->setAccessible(true);
         $campaignsPropertyRef->setValue($targetMock, $campaigns);
@@ -230,8 +245,10 @@ final class SpecialSiteTest extends TestCase
     public function testGetMainBanners()
     {
         $mainBanners = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $mainBannersPropertyRef = $targetRef->getProperty('mainBanners');
         $mainBannersPropertyRef->setAccessible(true);
         $mainBannersPropertyRef->setValue($targetMock, $mainBanners);
@@ -248,8 +265,10 @@ final class SpecialSiteTest extends TestCase
     public function testGetNewsList()
     {
         $newsList = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $newsListPropertyRef = $targetRef->getProperty('newsList');
         $newsListPropertyRef->setAccessible(true);
         $newsListPropertyRef->setValue($targetMock, $newsList);

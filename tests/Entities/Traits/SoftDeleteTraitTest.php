@@ -31,6 +31,7 @@ final class SoftDeleteTraitTest extends TestCase
     public function testGetIsDeleted()
     {
         $isDeleted = false; // default
+
         $targetMock = $this->createTargetPartialMock([]);
 
         $this->assertEquals($isDeleted, $targetMock->getIsDeleted());
@@ -45,6 +46,7 @@ final class SoftDeleteTraitTest extends TestCase
     public function testIsDeleted()
     {
         $isDeleted = true;
+
         $targetMock = $this->createTargetPartialMock(['getIsDeleted']);
         $targetMock
             ->expects($this->once())
@@ -63,6 +65,7 @@ final class SoftDeleteTraitTest extends TestCase
     public function testSetIsDeleted()
     {
         $isDeleted = true;
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setIsDeleted($isDeleted);
 

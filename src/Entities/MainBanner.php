@@ -25,7 +25,7 @@ class MainBanner
     use TimestampableTrait;
 
     public const LINK_TYPE_NONE = 1;
-    public const LINK_TYPE_URL = 2;
+    public const LINK_TYPE_URL  = 2;
 
     /**
      * @var int
@@ -83,9 +83,9 @@ class MainBanner
      */
     public function __construct()
     {
-        $this->pages = new ArrayCollection();
+        $this->pages        = new ArrayCollection();
         $this->specialSites = new ArrayCollection();
-        $this->theaters = new ArrayCollection();
+        $this->theaters     = new ArrayCollection();
     }
 
     /**

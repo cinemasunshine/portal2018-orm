@@ -44,8 +44,10 @@ final class SpecialSiteMainBannerTest extends TestCase
     public function testGetId()
     {
         $id = 25;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $idPropertyRef = $targetRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
         $idPropertyRef->setValue($targetMock, $id);
@@ -62,8 +64,10 @@ final class SpecialSiteMainBannerTest extends TestCase
     public function testGetMainBanner()
     {
         $mainBanner = new MainBanner();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $mainBannerPropertyRef = $targetRef->getProperty('mainBanner');
         $mainBannerPropertyRef->setAccessible(true);
         $mainBannerPropertyRef->setValue($targetMock, $mainBanner);
@@ -80,10 +84,12 @@ final class SpecialSiteMainBannerTest extends TestCase
     public function testSetMainBanner()
     {
         $mainBanner = new MainBanner();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setMainBanner($mainBanner);
 
         $targetRef = $this->createTargetReflection();
+
         $mainBannerPropertyRef = $targetRef->getProperty('mainBanner');
         $mainBannerPropertyRef->setAccessible(true);
 
@@ -99,8 +105,10 @@ final class SpecialSiteMainBannerTest extends TestCase
     public function testGetSpecialSite()
     {
         $specialSite = new SpecialSite(3);
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $specialSitePropertyRef = $targetRef->getProperty('specialSite');
         $specialSitePropertyRef->setAccessible(true);
         $specialSitePropertyRef->setValue($targetMock, $specialSite);
@@ -117,10 +125,12 @@ final class SpecialSiteMainBannerTest extends TestCase
     public function testSetSpecialSite()
     {
         $specialSite = new SpecialSite(3);
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setSpecialSite($specialSite);
 
         $targetRef = $this->createTargetReflection();
+
         $specialSitePropertyRef = $targetRef->getProperty('specialSite');
         $specialSitePropertyRef->setAccessible(true);
 
@@ -136,8 +146,10 @@ final class SpecialSiteMainBannerTest extends TestCase
     public function testGetDisplayOrder()
     {
         $displayOrder = 6;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $displayOrderPropertyRef = $targetRef->getProperty('displayOrder');
         $displayOrderPropertyRef->setAccessible(true);
         $displayOrderPropertyRef->setValue($targetMock, $displayOrder);
@@ -154,10 +166,12 @@ final class SpecialSiteMainBannerTest extends TestCase
     public function testSetDisplayOrder()
     {
         $displayOrder = 6;
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setDisplayOrder($displayOrder);
 
         $targetRef = $this->createTargetReflection();
+
         $displayOrderPropertyRef = $targetRef->getProperty('displayOrder');
         $displayOrderPropertyRef->setAccessible(true);
 

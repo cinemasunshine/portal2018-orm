@@ -86,7 +86,7 @@ class Schedule
      */
     public function __construct()
     {
-        $this->showingFormats = new ArrayCollection();
+        $this->showingFormats  = new ArrayCollection();
         $this->showingTheaters = new ArrayCollection();
     }
 

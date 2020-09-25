@@ -54,7 +54,7 @@ final class TheaterMetaTest extends TestCase
     public function testConstruct()
     {
         $targetMock = $this->createTargetMock();
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
 
         /** @var \ReflectionMethod $constructorRef */
         $constructorRef = $targetRef->getConstructor();
@@ -75,8 +75,10 @@ final class TheaterMetaTest extends TestCase
     public function testGetId()
     {
         $id = 12;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $idPropertyRef = $targetRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
         $idPropertyRef->setValue($targetMock, $id);
@@ -93,8 +95,10 @@ final class TheaterMetaTest extends TestCase
     public function testGetTheater()
     {
         $theater = new Theater(11);
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $theaterPropertyRef = $targetRef->getProperty('theater');
         $theaterPropertyRef->setAccessible(true);
         $theaterPropertyRef->setValue($targetMock, $theater);
@@ -111,10 +115,12 @@ final class TheaterMetaTest extends TestCase
     public function testSetTheater()
     {
         $theater = new Theater(11);
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setTheater($theater);
 
         $targetRef = $this->createTargetReflection();
+
         $theaterPropertyRef = $targetRef->getProperty('theater');
         $theaterPropertyRef->setAccessible(true);
 
@@ -145,7 +151,8 @@ final class TheaterMetaTest extends TestCase
         ];
 
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $openingHoursPropertyRef = $targetRef->getProperty('openingHours');
         $openingHoursPropertyRef->setAccessible(true);
         $openingHoursPropertyRef->setValue($targetMock, $openingHours);
@@ -180,6 +187,7 @@ final class TheaterMetaTest extends TestCase
                 'time' => '12:30:00',
             ],
         ];
+
         $openingHours = [];
 
         foreach ($data as $row) {
@@ -190,6 +198,7 @@ final class TheaterMetaTest extends TestCase
         $targetMock->setOpeningHours($openingHours);
 
         $targetRef = $this->createTargetReflection();
+
         $openingHoursPropertyRef = $targetRef->getProperty('openingHours');
         $openingHoursPropertyRef->setAccessible(true);
 
@@ -205,8 +214,10 @@ final class TheaterMetaTest extends TestCase
     public function testGetTwitter()
     {
         $twitter = 'TwitterJP';
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $twitterPropertyRef = $targetRef->getProperty('twitter');
         $twitterPropertyRef->setAccessible(true);
         $twitterPropertyRef->setValue($targetMock, $twitter);
@@ -223,10 +234,12 @@ final class TheaterMetaTest extends TestCase
     public function testSetTwitter()
     {
         $twitter = 'TwitterJP';
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setTwitter($twitter);
 
         $targetRef = $this->createTargetReflection();
+
         $twitterPropertyRef = $targetRef->getProperty('twitter');
         $twitterPropertyRef->setAccessible(true);
 
@@ -242,8 +255,10 @@ final class TheaterMetaTest extends TestCase
     public function testGetFacebook()
     {
         $facebook = 'facebook';
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $facebookPropertyRef = $targetRef->getProperty('facebook');
         $facebookPropertyRef->setAccessible(true);
         $facebookPropertyRef->setValue($targetMock, $facebook);
@@ -260,10 +275,12 @@ final class TheaterMetaTest extends TestCase
     public function testSetFacebook()
     {
         $facebook = 'facebook';
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setFacebook($facebook);
 
         $targetRef = $this->createTargetReflection();
+
         $facebookPropertyRef = $targetRef->getProperty('facebook');
         $facebookPropertyRef->setAccessible(true);
 
@@ -279,8 +296,10 @@ final class TheaterMetaTest extends TestCase
     public function testGetOyakoCinemaUrl()
     {
         $oyakoCinemaUrl = 'https://example.com/';
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $oyakoCinemaUrlPropertyRef = $targetRef->getProperty('oyakoCinemaUrl');
         $oyakoCinemaUrlPropertyRef->setAccessible(true);
         $oyakoCinemaUrlPropertyRef->setValue($targetMock, $oyakoCinemaUrl);
@@ -297,10 +316,12 @@ final class TheaterMetaTest extends TestCase
     public function testSetOyakoCinemaUrl()
     {
         $oyakoCinemaUrl = 'https://example.com/';
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setOyakoCinemaUrl($oyakoCinemaUrl);
 
         $targetRef = $this->createTargetReflection();
+
         $oyakoCinemaUrlPropertyRef = $targetRef->getProperty('oyakoCinemaUrl');
         $oyakoCinemaUrlPropertyRef->setAccessible(true);
 

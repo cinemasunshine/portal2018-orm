@@ -53,8 +53,9 @@ final class PageTest extends TestCase
     public function testConstruct()
     {
         $id = 11;
+
         $targetMock = $this->createTargetMock();
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
 
         /** @var \ReflectionMethod $constructorRef */
         $constructorRef = $targetRef->getConstructor();
@@ -95,8 +96,10 @@ final class PageTest extends TestCase
     public function testGetId()
     {
         $id = 12;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $idPropertyRef = $targetRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
         $idPropertyRef->setValue($targetMock, $id);
@@ -113,8 +116,10 @@ final class PageTest extends TestCase
     public function testGetName()
     {
         $name = 'page_name';
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $namePropertyRef = $targetRef->getProperty('name');
         $namePropertyRef->setAccessible(true);
         $namePropertyRef->setValue($targetMock, $name);
@@ -131,10 +136,12 @@ final class PageTest extends TestCase
     public function testSetName()
     {
         $name = 'page_name';
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setName($name);
 
         $targetRef = $this->createTargetReflection();
+
         $namePropertyRef = $targetRef->getProperty('name');
         $namePropertyRef->setAccessible(true);
 
@@ -150,8 +157,10 @@ final class PageTest extends TestCase
     public function testGatNameJa()
     {
         $nameJa = 'page_name_ja';
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $nameJaPropertyRef = $targetRef->getProperty('nameJa');
         $nameJaPropertyRef->setAccessible(true);
         $nameJaPropertyRef->setValue($targetMock, $nameJa);
@@ -168,10 +177,12 @@ final class PageTest extends TestCase
     public function testSetNameJa()
     {
         $nameJa = 'page_name_ja';
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setNameJa($nameJa);
 
         $targetRef = $this->createTargetReflection();
+
         $nameJaPropertyRef = $targetRef->getProperty('nameJa');
         $nameJaPropertyRef->setAccessible(true);
 
@@ -187,8 +198,10 @@ final class PageTest extends TestCase
     public function testGetCampaigns()
     {
         $campaigns = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $campaignsPropertyRef = $targetRef->getProperty('campaigns');
         $campaignsPropertyRef->setAccessible(true);
         $campaignsPropertyRef->setValue($targetMock, $campaigns);
@@ -205,8 +218,10 @@ final class PageTest extends TestCase
     public function testGetMainBanners()
     {
         $mainBanners = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $mainBannersPropertyRef = $targetRef->getProperty('mainBanners');
         $mainBannersPropertyRef->setAccessible(true);
         $mainBannersPropertyRef->setValue($targetMock, $mainBanners);
@@ -223,8 +238,10 @@ final class PageTest extends TestCase
     public function testGetNewsList()
     {
         $newsList = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $newsListPropertyRef = $targetRef->getProperty('newsList');
         $newsListPropertyRef->setAccessible(true);
         $newsListPropertyRef->setValue($targetMock, $newsList);

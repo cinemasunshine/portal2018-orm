@@ -54,8 +54,9 @@ final class TheaterTest extends TestCase
     public function testConstruct()
     {
         $id = 11;
+
         $targetMock = $this->createTargetMock();
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
 
         /** @var \ReflectionMethod $constructorRef */
         $constructorRef = $targetRef->getConstructor();
@@ -110,8 +111,10 @@ final class TheaterTest extends TestCase
     public function testGetId()
     {
         $id = 12;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $idPropertyRef = $targetRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
         $idPropertyRef->setValue($targetMock, $id);
@@ -128,8 +131,10 @@ final class TheaterTest extends TestCase
     public function testGetName()
     {
         $name = 'theater_name';
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $namePropertyRef = $targetRef->getProperty('name');
         $namePropertyRef->setAccessible(true);
         $namePropertyRef->setValue($targetMock, $name);
@@ -146,10 +151,12 @@ final class TheaterTest extends TestCase
     public function testSetName()
     {
         $name = 'theater_name';
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setName($name);
 
         $targetRef = $this->createTargetReflection();
+
         $namePropertyRef = $targetRef->getProperty('name');
         $namePropertyRef->setAccessible(true);
 
@@ -165,8 +172,10 @@ final class TheaterTest extends TestCase
     public function testGatNameJa()
     {
         $nameJa = 'theater_name_ja';
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $nameJaPropertyRef = $targetRef->getProperty('nameJa');
         $nameJaPropertyRef->setAccessible(true);
         $nameJaPropertyRef->setValue($targetMock, $nameJa);
@@ -183,10 +192,12 @@ final class TheaterTest extends TestCase
     public function testSetNameJa()
     {
         $nameJa = 'theater_name_ja';
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setNameJa($nameJa);
 
         $targetRef = $this->createTargetReflection();
+
         $nameJaPropertyRef = $targetRef->getProperty('nameJa');
         $nameJaPropertyRef->setAccessible(true);
 
@@ -202,8 +213,10 @@ final class TheaterTest extends TestCase
     public function testGetArea()
     {
         $area = 1;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $areaPropertyRef = $targetRef->getProperty('area');
         $areaPropertyRef->setAccessible(true);
         $areaPropertyRef->setValue($targetMock, $area);
@@ -219,10 +232,12 @@ final class TheaterTest extends TestCase
     public function testSetArea()
     {
         $area = 1;
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setArea($area);
 
         $targetRef = $this->createTargetReflection();
+
         $areaPropertyRef = $targetRef->getProperty('area');
         $areaPropertyRef->setAccessible(true);
 
@@ -238,8 +253,10 @@ final class TheaterTest extends TestCase
     public function testGetMasterVersion()
     {
         $masterVersion = 1;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $masterVersionPropertyRef = $targetRef->getProperty('masterVersion');
         $masterVersionPropertyRef->setAccessible(true);
         $masterVersionPropertyRef->setValue($targetMock, $masterVersion);
@@ -256,10 +273,12 @@ final class TheaterTest extends TestCase
     public function testSetMasterVersion()
     {
         $masterVersion = 1;
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setMasterVersion($masterVersion);
 
         $targetRef = $this->createTargetReflection();
+
         $masterVersionPropertyRef = $targetRef->getProperty('masterVersion');
         $masterVersionPropertyRef->setAccessible(true);
 
@@ -275,8 +294,10 @@ final class TheaterTest extends TestCase
     public function testGetMasterCode()
     {
         $masterCode = '111';
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $masterCodePropertyRef = $targetRef->getProperty('masterCode');
         $masterCodePropertyRef->setAccessible(true);
         $masterCodePropertyRef->setValue($targetMock, $masterCode);
@@ -293,10 +314,12 @@ final class TheaterTest extends TestCase
     public function testSetMasterCode()
     {
         $masterCode = '111';
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setMasterCode($masterCode);
 
         $targetRef = $this->createTargetReflection();
+
         $masterCodePropertyRef = $targetRef->getProperty('masterCode');
         $masterCodePropertyRef->setAccessible(true);
 
@@ -312,8 +335,10 @@ final class TheaterTest extends TestCase
     public function testGetDisplayOrder()
     {
         $displayOrder = 3;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $displayOrderPropertyRef = $targetRef->getProperty('displayOrder');
         $displayOrderPropertyRef->setAccessible(true);
         $displayOrderPropertyRef->setValue($targetMock, $displayOrder);
@@ -330,10 +355,12 @@ final class TheaterTest extends TestCase
     public function testSetDisplayOrder()
     {
         $displayOrder = 3;
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setDisplayOrder($displayOrder);
 
         $targetRef = $this->createTargetReflection();
+
         $displayOrderPropertyRef = $targetRef->getProperty('displayOrder');
         $displayOrderPropertyRef->setAccessible(true);
 
@@ -349,8 +376,10 @@ final class TheaterTest extends TestCase
     public function testGetStatus()
     {
         $status = 2;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $statusPropertyRef = $targetRef->getProperty('status');
         $statusPropertyRef->setAccessible(true);
         $statusPropertyRef->setValue($targetMock, $status);
@@ -367,10 +396,12 @@ final class TheaterTest extends TestCase
     public function testSetStatus()
     {
         $status = 2;
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setStatus($status);
 
         $targetRef = $this->createTargetReflection();
+
         $statusPropertyRef = $targetRef->getProperty('status');
         $statusPropertyRef->setAccessible(true);
 
@@ -386,8 +417,10 @@ final class TheaterTest extends TestCase
     public function testGetMeta()
     {
         $meta = new TheaterMeta();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $metaPropertyRef = $targetRef->getProperty('meta');
         $metaPropertyRef->setAccessible(true);
         $metaPropertyRef->setValue($targetMock, $meta);
@@ -404,8 +437,10 @@ final class TheaterTest extends TestCase
     public function testGetAdminUsers()
     {
         $adminUsers = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $adminUsersPropertyRef = $targetRef->getProperty('adminUsers');
         $adminUsersPropertyRef->setAccessible(true);
         $adminUsersPropertyRef->setValue($targetMock, $adminUsers);
@@ -422,8 +457,10 @@ final class TheaterTest extends TestCase
     public function testGetSpecialSites()
     {
         $specialSites = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $specialSitesPropertyRef = $targetRef->getProperty('specialSites');
         $specialSitesPropertyRef->setAccessible(true);
         $specialSitesPropertyRef->setValue($targetMock, $specialSites);
@@ -440,8 +477,10 @@ final class TheaterTest extends TestCase
     public function testGetCampaigns()
     {
         $campaigns = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $campaignsPropertyRef = $targetRef->getProperty('campaigns');
         $campaignsPropertyRef->setAccessible(true);
         $campaignsPropertyRef->setValue($targetMock, $campaigns);
@@ -458,8 +497,10 @@ final class TheaterTest extends TestCase
     public function testGetMainBanners()
     {
         $mainBanners = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $mainBannersPropertyRef = $targetRef->getProperty('mainBanners');
         $mainBannersPropertyRef->setAccessible(true);
         $mainBannersPropertyRef->setValue($targetMock, $mainBanners);
@@ -476,8 +517,10 @@ final class TheaterTest extends TestCase
     public function testGetNewsList()
     {
         $newsList = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $newsListPropertyRef = $targetRef->getProperty('newsList');
         $newsListPropertyRef->setAccessible(true);
         $newsListPropertyRef->setValue($targetMock, $newsList);

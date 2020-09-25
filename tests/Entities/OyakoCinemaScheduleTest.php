@@ -54,7 +54,7 @@ final class OyakoCinemaScheduleTest extends TestCase
     public function testConstruct()
     {
         $targetMock = $this->createTargetMock();
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
 
         /** @var \ReflectionMethod $constructorRef */
         $constructorRef = $targetRef->getConstructor();
@@ -77,8 +77,10 @@ final class OyakoCinemaScheduleTest extends TestCase
     public function testGetId()
     {
         $id = 20;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $idPropertyRef = $targetRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
         $idPropertyRef->setValue($targetMock, $id);
@@ -95,8 +97,10 @@ final class OyakoCinemaScheduleTest extends TestCase
     public function testGetOyakoCinemaTitle()
     {
         $oyakoCinemaTitle = new OyakoCinemaTitle();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $oyakoCinemaTitlePropertyRef = $targetRef->getProperty('oyakoCinemaTitle');
         $oyakoCinemaTitlePropertyRef->setAccessible(true);
         $oyakoCinemaTitlePropertyRef->setValue($targetMock, $oyakoCinemaTitle);
@@ -113,10 +117,12 @@ final class OyakoCinemaScheduleTest extends TestCase
     public function testSetOyakoCinemaTitle()
     {
         $oyakoCinemaTitle = new OyakoCinemaTitle();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setOyakoCinemaTitle($oyakoCinemaTitle);
 
         $targetRef = $this->createTargetReflection();
+
         $oyakoCinemaTitlePropertyRef = $targetRef->getProperty('oyakoCinemaTitle');
         $oyakoCinemaTitlePropertyRef->setAccessible(true);
 
@@ -132,8 +138,10 @@ final class OyakoCinemaScheduleTest extends TestCase
     public function testGetDate()
     {
         $date = new \DateTime();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $datePropertyRef = $targetRef->getProperty('date');
         $datePropertyRef->setAccessible(true);
         $datePropertyRef->setValue($targetMock, $date);
@@ -150,7 +158,8 @@ final class OyakoCinemaScheduleTest extends TestCase
     public function testSetDate()
     {
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $datePropertyRef = $targetRef->getProperty('date');
         $datePropertyRef->setAccessible(true);
 
@@ -195,8 +204,10 @@ final class OyakoCinemaScheduleTest extends TestCase
     public function testGetOyakoCinemaTheaters()
     {
         $oyakoCinemaTheaters = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $oyakoCinemaTheatersPropertyRef = $targetRef->getProperty('oyakoCinemaTheaters');
         $oyakoCinemaTheatersPropertyRef->setAccessible(true);
         $oyakoCinemaTheatersPropertyRef->setValue($targetMock, $oyakoCinemaTheaters);

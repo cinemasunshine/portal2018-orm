@@ -51,6 +51,7 @@ final class ScheduleRepositoryTest extends TestCase
     public function testAddActiveQuery()
     {
         $alias = 'test';
+
         $queryBuilderMock = $this->createQueryBuilderMock();
         $queryBuilderMock
             ->method('andWhere')
@@ -58,6 +59,7 @@ final class ScheduleRepositoryTest extends TestCase
             ->willReturn($queryBuilderMock);
 
         $targetRef = $this->createTargetReflection();
+
         $addActiveQueryRef = $targetRef->getMethod('addActiveQuery');
         $addActiveQueryRef->setAccessible(true);
 
@@ -73,6 +75,7 @@ final class ScheduleRepositoryTest extends TestCase
     public function testAddPublicQuery()
     {
         $alias = 'test';
+
         $queryBuilderMock = $this->createQueryBuilderMock();
         $queryBuilderMock
             ->method('andWhere')
@@ -88,6 +91,7 @@ final class ScheduleRepositoryTest extends TestCase
             ->with($this->equalTo($queryBuilderMock), $this->equalTo($alias));
 
         $targetRef = $this->createTargetReflection();
+
         $addPublicQueryRef = $targetRef->getMethod('addPublicQuery');
         $addPublicQueryRef->setAccessible(true);
 
@@ -102,6 +106,7 @@ final class ScheduleRepositoryTest extends TestCase
     public function testAddNowShowingQuery()
     {
         $alias = 'test';
+
         $queryBuilderMock = $this->createQueryBuilderMock();
         $queryBuilderMock
             ->method('andWhere')
@@ -118,6 +123,7 @@ final class ScheduleRepositoryTest extends TestCase
             ->with($this->equalTo($queryBuilderMock), $this->equalTo($alias));
 
         $targetRef = $this->createTargetReflection();
+
         $addNowShowingQueryRef = $targetRef->getMethod('addNowShowingQuery');
         $addNowShowingQueryRef->setAccessible(true);
 
@@ -132,6 +138,7 @@ final class ScheduleRepositoryTest extends TestCase
     public function testAddComingSoonQuery()
     {
         $alias = 'test';
+
         $queryBuilderMock = $this->createQueryBuilderMock();
         $queryBuilderMock
             ->method('andWhere')
@@ -148,6 +155,7 @@ final class ScheduleRepositoryTest extends TestCase
             ->with($this->equalTo($queryBuilderMock), $this->equalTo($alias));
 
         $targetRef = $this->createTargetReflection();
+
         $addComingSoonQueryRef = $targetRef->getMethod('addComingSoonQuery');
         $addComingSoonQueryRef->setAccessible(true);
 

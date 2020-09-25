@@ -54,8 +54,10 @@ final class AdvanceTicketTest extends TestCase
     public function testGetId()
     {
         $id = 19;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $idPropertyRef = $targetRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
         $idPropertyRef->setValue($targetMock, $id);
@@ -72,8 +74,10 @@ final class AdvanceTicketTest extends TestCase
     public function testGetAdvanceSale()
     {
         $advanceSale = new AdvanceSale();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $advanceSalePropertyRef = $targetRef->getProperty('advanceSale');
         $advanceSalePropertyRef->setAccessible(true);
         $advanceSalePropertyRef->setValue($targetMock, $advanceSale);
@@ -90,10 +94,12 @@ final class AdvanceTicketTest extends TestCase
     public function testSetAdvanceSale()
     {
         $advanceSale = new AdvanceSale();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setAdvanceSale($advanceSale);
 
         $targetRef = $this->createTargetReflection();
+
         $advanceSalePropertyRef = $targetRef->getProperty('advanceSale');
         $advanceSalePropertyRef->setAccessible(true);
 
@@ -109,8 +115,10 @@ final class AdvanceTicketTest extends TestCase
     public function testGetPublishingStartDt()
     {
         $publishingStartDt = new \DateTime();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $publishingStartDtPropertyRef = $targetRef->getProperty('publishingStartDt');
         $publishingStartDtPropertyRef->setAccessible(true);
         $publishingStartDtPropertyRef->setValue($targetMock, $publishingStartDt);
@@ -127,7 +135,8 @@ final class AdvanceTicketTest extends TestCase
     public function testSetPublishingStartDt()
     {
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $publishingStartDtPropertyRef = $targetRef->getProperty('publishingStartDt');
         $publishingStartDtPropertyRef->setAccessible(true);
 
@@ -172,8 +181,10 @@ final class AdvanceTicketTest extends TestCase
     public function testGetReleaseDt()
     {
         $releaseDt = new \DateTime();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $releaseDtPropertyRef = $targetRef->getProperty('releaseDt');
         $releaseDtPropertyRef->setAccessible(true);
         $releaseDtPropertyRef->setValue($targetMock, $releaseDt);
@@ -190,7 +201,8 @@ final class AdvanceTicketTest extends TestCase
     public function testSetReleaseDt()
     {
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $releaseDtPropertyRef = $targetRef->getProperty('releaseDt');
         $releaseDtPropertyRef->setAccessible(true);
 
@@ -235,8 +247,10 @@ final class AdvanceTicketTest extends TestCase
     public function testGetReleaseDtText()
     {
         $releaseDtText = 'release_dt_text';
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $releaseDtTextPropertyRef = $targetRef->getProperty('releaseDtText');
         $releaseDtTextPropertyRef->setAccessible(true);
         $releaseDtTextPropertyRef->setValue($targetMock, $releaseDtText);
@@ -253,10 +267,12 @@ final class AdvanceTicketTest extends TestCase
     public function testSetReleaseDtText()
     {
         $releaseDtText = 'release_dt_text';
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setReleaseDtText($releaseDtText);
 
         $targetRef = $this->createTargetReflection();
+
         $releaseDtTextPropertyRef = $targetRef->getProperty('releaseDtText');
         $releaseDtTextPropertyRef->setAccessible(true);
 
@@ -272,8 +288,10 @@ final class AdvanceTicketTest extends TestCase
     public function testGetIsSalesEnd()
     {
         $isSalesEnd = true;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $isSalesEndPropertyRef = $targetRef->getProperty('isSalesEnd');
         $isSalesEndPropertyRef->setAccessible(true);
         $isSalesEndPropertyRef->setValue($targetMock, $isSalesEnd);
@@ -290,6 +308,7 @@ final class AdvanceTicketTest extends TestCase
     public function testIsSalseEnd()
     {
         $isSalesEnd = true;
+
         $targetMock = $this->createTargetPartialMock(['getIsSalesEnd']);
         $targetMock
             ->expects($this->once())
@@ -308,10 +327,12 @@ final class AdvanceTicketTest extends TestCase
     public function testSetIsSalesEnd()
     {
         $isSalesEnd = true;
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setIsSalesEnd($isSalesEnd);
 
         $targetRef = $this->createTargetReflection();
+
         $isSalesEndPropertyRef = $targetRef->getProperty('isSalesEnd');
         $isSalesEndPropertyRef->setAccessible(true);
 
@@ -327,8 +348,10 @@ final class AdvanceTicketTest extends TestCase
     public function testGetType()
     {
         $type = 3;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $typePropertyRef = $targetRef->getProperty('type');
         $typePropertyRef->setAccessible(true);
         $typePropertyRef->setValue($targetMock, $type);
@@ -345,10 +368,12 @@ final class AdvanceTicketTest extends TestCase
     public function testSetType()
     {
         $type = 3;
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setType($type);
 
         $targetRef = $this->createTargetReflection();
+
         $typePropertyRef = $targetRef->getProperty('type');
         $typePropertyRef->setAccessible(true);
 
@@ -364,8 +389,10 @@ final class AdvanceTicketTest extends TestCase
     public function testGetPriceText()
     {
         $priceText = '2,500';
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $priceTextPropertyRef = $targetRef->getProperty('priceText');
         $priceTextPropertyRef->setAccessible(true);
         $priceTextPropertyRef->setValue($targetMock, $priceText);
@@ -382,10 +409,12 @@ final class AdvanceTicketTest extends TestCase
     public function testSetPriceText()
     {
         $priceText = '2,500';
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setPriceText($priceText);
 
         $targetRef = $this->createTargetReflection();
+
         $priceTextPropertyRef = $targetRef->getProperty('priceText');
         $priceTextPropertyRef->setAccessible(true);
 
@@ -401,8 +430,10 @@ final class AdvanceTicketTest extends TestCase
     public function testGetSpecialGift()
     {
         $specialGift = 'special_gift';
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $specialGiftPropertyRef = $targetRef->getProperty('specialGift');
         $specialGiftPropertyRef->setAccessible(true);
         $specialGiftPropertyRef->setValue($targetMock, $specialGift);
@@ -419,10 +450,12 @@ final class AdvanceTicketTest extends TestCase
     public function testSetSpecialGift()
     {
         $specialGift = 'special_gift';
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setSpecialGift($specialGift);
 
         $targetRef = $this->createTargetReflection();
+
         $specialGiftPropertyRef = $targetRef->getProperty('specialGift');
         $specialGiftPropertyRef->setAccessible(true);
 
@@ -438,8 +471,10 @@ final class AdvanceTicketTest extends TestCase
     public function testGetSpecialGiftStock()
     {
         $specialGiftStock = 4;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $specialGiftStockPropertyRef = $targetRef->getProperty('specialGiftStock');
         $specialGiftStockPropertyRef->setAccessible(true);
         $specialGiftStockPropertyRef->setValue($targetMock, $specialGiftStock);
@@ -456,10 +491,12 @@ final class AdvanceTicketTest extends TestCase
     public function testSetSpecialGiftStock()
     {
         $specialGiftStock = 4;
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setSpecialGiftStock($specialGiftStock);
 
         $targetRef = $this->createTargetReflection();
+
         $specialGiftStockPropertyRef = $targetRef->getProperty('specialGiftStock');
         $specialGiftStockPropertyRef->setAccessible(true);
 
@@ -475,8 +512,10 @@ final class AdvanceTicketTest extends TestCase
     public function testGetSpecialGiftImage()
     {
         $specialGiftImage = new File();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $specialGiftImagePropertyRef = $targetRef->getProperty('specialGiftImage');
         $specialGiftImagePropertyRef->setAccessible(true);
         $specialGiftImagePropertyRef->setValue($targetMock, $specialGiftImage);
@@ -493,10 +532,12 @@ final class AdvanceTicketTest extends TestCase
     public function testSetSpecialGiftImage()
     {
         $specialGiftImage = new File();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setSpecialGiftImage($specialGiftImage);
 
         $targetRef = $this->createTargetReflection();
+
         $specialGiftImagePropertyRef = $targetRef->getProperty('specialGiftImage');
         $specialGiftImagePropertyRef->setAccessible(true);
 

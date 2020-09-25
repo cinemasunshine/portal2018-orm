@@ -53,8 +53,10 @@ final class TitleRankingTest extends TestCase
     public function testGetId()
     {
         $id = 13;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $idPropertyRef = $targetRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
         $idPropertyRef->setValue($targetMock, $id);
@@ -71,8 +73,10 @@ final class TitleRankingTest extends TestCase
     public function testGetFromDate()
     {
         $fromDate = new \DateTime();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $fromDatePropertyRef = $targetRef->getProperty('fromDate');
         $fromDatePropertyRef->setAccessible(true);
         $fromDatePropertyRef->setValue($targetMock, $fromDate);
@@ -89,7 +93,8 @@ final class TitleRankingTest extends TestCase
     public function testSetFromDate()
     {
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $fromDatePropertyRef = $targetRef->getProperty('fromDate');
         $fromDatePropertyRef->setAccessible(true);
 
@@ -137,8 +142,10 @@ final class TitleRankingTest extends TestCase
     public function testGetToDate()
     {
         $toDate = new \DateTime();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $toDatePropertyRef = $targetRef->getProperty('toDate');
         $toDatePropertyRef->setAccessible(true);
         $toDatePropertyRef->setValue($targetMock, $toDate);
@@ -155,7 +162,8 @@ final class TitleRankingTest extends TestCase
     public function testSetToDate()
     {
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $toDatePropertyRef = $targetRef->getProperty('toDate');
         $toDatePropertyRef->setAccessible(true);
 
@@ -204,8 +212,10 @@ final class TitleRankingTest extends TestCase
     protected function baseTestGetRankTitle(string $method, string $property)
     {
         $title = new Title();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $propertyRef = $targetRef->getProperty($property);
         $propertyRef->setAccessible(true);
         $propertyRef->setValue($targetMock, $title);
@@ -223,10 +233,12 @@ final class TitleRankingTest extends TestCase
     protected function baseTestSetRankTitle(string $method, string $property)
     {
         $title = new Title();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->$method($title);
 
         $targetRef = $this->createTargetReflection();
+
         $propertyRef = $targetRef->getProperty($property);
         $propertyRef->setAccessible(true);
 

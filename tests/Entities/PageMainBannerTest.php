@@ -44,8 +44,10 @@ final class PageMainBannerTest extends TestCase
     public function testGetId()
     {
         $id = 24;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $idPropertyRef = $targetRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
         $idPropertyRef->setValue($targetMock, $id);
@@ -62,8 +64,10 @@ final class PageMainBannerTest extends TestCase
     public function testGetMainBanner()
     {
         $mainBanner = new MainBanner();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $mainBannerPropertyRef = $targetRef->getProperty('mainBanner');
         $mainBannerPropertyRef->setAccessible(true);
         $mainBannerPropertyRef->setValue($targetMock, $mainBanner);
@@ -80,10 +84,12 @@ final class PageMainBannerTest extends TestCase
     public function testSetMainBanner()
     {
         $mainBanner = new MainBanner();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setMainBanner($mainBanner);
 
         $targetRef = $this->createTargetReflection();
+
         $mainBannerPropertyRef = $targetRef->getProperty('mainBanner');
         $mainBannerPropertyRef->setAccessible(true);
 
@@ -99,8 +105,10 @@ final class PageMainBannerTest extends TestCase
     public function testGetPage()
     {
         $page = new Page(6);
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $pagePropertyRef = $targetRef->getProperty('page');
         $pagePropertyRef->setAccessible(true);
         $pagePropertyRef->setValue($targetMock, $page);
@@ -117,10 +125,12 @@ final class PageMainBannerTest extends TestCase
     public function testSetPage()
     {
         $page = new Page(6);
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setPage($page);
 
         $targetRef = $this->createTargetReflection();
+
         $pagePropertyRef = $targetRef->getProperty('page');
         $pagePropertyRef->setAccessible(true);
 
@@ -136,8 +146,10 @@ final class PageMainBannerTest extends TestCase
     public function testGetDisplayOrder()
     {
         $displayOrder = 5;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $displayOrderPropertyRef = $targetRef->getProperty('displayOrder');
         $displayOrderPropertyRef->setAccessible(true);
         $displayOrderPropertyRef->setValue($targetMock, $displayOrder);
@@ -154,10 +166,12 @@ final class PageMainBannerTest extends TestCase
     public function testSetDisplayOrder()
     {
         $displayOrder = 5;
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setDisplayOrder($displayOrder);
 
         $targetRef = $this->createTargetReflection();
+
         $displayOrderPropertyRef = $targetRef->getProperty('displayOrder');
         $displayOrderPropertyRef->setAccessible(true);
 

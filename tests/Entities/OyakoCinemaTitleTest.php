@@ -54,7 +54,7 @@ final class OyakoCinemaTitleTest extends TestCase
     public function testConstruct()
     {
         $targetMock = $this->createTargetMock();
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
 
         /** @var \ReflectionMethod $constructorRef */
         $constructorRef = $targetRef->getConstructor();
@@ -77,8 +77,10 @@ final class OyakoCinemaTitleTest extends TestCase
     public function testGetId()
     {
         $id = 19;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $idPropertyRef = $targetRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
         $idPropertyRef->setValue($targetMock, $id);
@@ -95,8 +97,10 @@ final class OyakoCinemaTitleTest extends TestCase
     public function testGetTitle()
     {
         $title = new Title();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $titlePropertyRef = $targetRef->getProperty('title');
         $titlePropertyRef->setAccessible(true);
         $titlePropertyRef->setValue($targetMock, $title);
@@ -113,10 +117,12 @@ final class OyakoCinemaTitleTest extends TestCase
     public function testSetTitle()
     {
         $title = new Title();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setTitle($title);
 
         $targetRef = $this->createTargetReflection();
+
         $titlePropertyRef = $targetRef->getProperty('title');
         $titlePropertyRef->setAccessible(true);
 
@@ -132,8 +138,10 @@ final class OyakoCinemaTitleTest extends TestCase
     public function testGetTitleUrl()
     {
         $titleUrl = 'https://example.com/';
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $titleUrlPropertyRef = $targetRef->getProperty('titleUrl');
         $titleUrlPropertyRef->setAccessible(true);
         $titleUrlPropertyRef->setValue($targetMock, $titleUrl);
@@ -150,10 +158,12 @@ final class OyakoCinemaTitleTest extends TestCase
     public function testsetTitleUrl()
     {
         $titleUrl = 'https://example.com/';
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setTitleUrl($titleUrl);
 
         $targetRef = $this->createTargetReflection();
+
         $titleUrlPropertyRef = $targetRef->getProperty('titleUrl');
         $titleUrlPropertyRef->setAccessible(true);
 
@@ -169,8 +179,10 @@ final class OyakoCinemaTitleTest extends TestCase
     public function testGetOyakoCinemaSchedules()
     {
         $oyakoCinemaSchedules = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $oyakoCinemaSchedulesPropertyRef = $targetRef->getProperty('oyakoCinemaSchedules');
         $oyakoCinemaSchedulesPropertyRef->setAccessible(true);
         $oyakoCinemaSchedulesPropertyRef->setValue($targetMock, $oyakoCinemaSchedules);

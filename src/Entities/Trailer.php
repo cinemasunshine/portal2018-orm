@@ -87,9 +87,9 @@ class Trailer
      */
     public function __construct()
     {
-        $this->pageTrailers = new ArrayCollection();
+        $this->pageTrailers        = new ArrayCollection();
         $this->specialSiteTrailers = new ArrayCollection();
-        $this->theaterTrailers = new ArrayCollection();
+        $this->theaterTrailers     = new ArrayCollection();
     }
 
     /**

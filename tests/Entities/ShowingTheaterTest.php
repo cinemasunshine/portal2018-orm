@@ -54,8 +54,10 @@ final class ShowingTheaterTest extends TestCase
     public function testGetId()
     {
         $id = 15;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $idPropertyRef = $targetRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
         $idPropertyRef->setValue($targetMock, $id);
@@ -72,8 +74,10 @@ final class ShowingTheaterTest extends TestCase
     public function testGetSchedule()
     {
         $schedule = new Schedule();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $schedulePropertyRef = $targetRef->getProperty('schedule');
         $schedulePropertyRef->setAccessible(true);
         $schedulePropertyRef->setValue($targetMock, $schedule);
@@ -90,10 +94,12 @@ final class ShowingTheaterTest extends TestCase
     public function testSetSchedule()
     {
         $schedule = new Schedule();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setSchedule($schedule);
 
         $targetRef = $this->createTargetReflection();
+
         $schedulePropertyRef = $targetRef->getProperty('schedule');
         $schedulePropertyRef->setAccessible(true);
 
@@ -109,8 +115,10 @@ final class ShowingTheaterTest extends TestCase
     public function testGetTheater()
     {
         $theater = new Theater(2);
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $theaterPropertyRef = $targetRef->getProperty('theater');
         $theaterPropertyRef->setAccessible(true);
         $theaterPropertyRef->setValue($targetMock, $theater);
@@ -127,10 +135,12 @@ final class ShowingTheaterTest extends TestCase
     public function testSetTheater()
     {
         $theater = new Theater(2);
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setTheater($theater);
 
         $targetRef = $this->createTargetReflection();
+
         $theaterPropertyRef = $targetRef->getProperty('theater');
         $theaterPropertyRef->setAccessible(true);
 

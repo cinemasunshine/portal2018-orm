@@ -54,7 +54,7 @@ final class ScheduleTest extends TestCase
     public function testConstruct()
     {
         $targetMock = $this->createTargetMock();
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
 
         /** @var \ReflectionMethod $constructorRef */
         $constructorRef = $targetRef->getConstructor();
@@ -84,8 +84,10 @@ final class ScheduleTest extends TestCase
     public function testGetId()
     {
         $id = 8;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $idPropertyRef = $targetRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
         $idPropertyRef->setValue($targetMock, $id);
@@ -102,8 +104,10 @@ final class ScheduleTest extends TestCase
     public function testGetTitle()
     {
         $title = new Title();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $titlePropertyRef = $targetRef->getProperty('title');
         $titlePropertyRef->setAccessible(true);
         $titlePropertyRef->setValue($targetMock, $title);
@@ -120,10 +124,12 @@ final class ScheduleTest extends TestCase
     public function testSetTitle()
     {
         $title = new Title();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setTitle($title);
 
         $targetRef = $this->createTargetReflection();
+
         $titlePropertyRef = $targetRef->getProperty('title');
         $titlePropertyRef->setAccessible(true);
 
@@ -139,8 +145,10 @@ final class ScheduleTest extends TestCase
     public function testGetStartDate()
     {
         $startDate = new \DateTime();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $startDatePropertyRef = $targetRef->getProperty('startDate');
         $startDatePropertyRef->setAccessible(true);
         $startDatePropertyRef->setValue($targetMock, $startDate);
@@ -157,7 +165,8 @@ final class ScheduleTest extends TestCase
     public function testSetStartDate()
     {
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $startDatePropertyRef = $targetRef->getProperty('startDate');
         $startDatePropertyRef->setAccessible(true);
 
@@ -202,8 +211,10 @@ final class ScheduleTest extends TestCase
     public function testGetEndDate()
     {
         $endDate = new \DateTime();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $endDatePropertyRef = $targetRef->getProperty('endDate');
         $endDatePropertyRef->setAccessible(true);
         $endDatePropertyRef->setValue($targetMock, $endDate);
@@ -220,7 +231,8 @@ final class ScheduleTest extends TestCase
     public function testSetEndDate()
     {
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $endDatePropertyRef = $targetRef->getProperty('endDate');
         $endDatePropertyRef->setAccessible(true);
 
@@ -265,8 +277,10 @@ final class ScheduleTest extends TestCase
     public function testGetPublicStartDt()
     {
         $publicStartDt = new \DateTime();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $publicStartDtPropertyRef = $targetRef->getProperty('publicStartDt');
         $publicStartDtPropertyRef->setAccessible(true);
         $publicStartDtPropertyRef->setValue($targetMock, $publicStartDt);
@@ -283,7 +297,8 @@ final class ScheduleTest extends TestCase
     public function testSetPublicStartDt()
     {
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $publicStartDtPropertyRef = $targetRef->getProperty('publicStartDt');
         $publicStartDtPropertyRef->setAccessible(true);
 
@@ -328,8 +343,10 @@ final class ScheduleTest extends TestCase
     public function testGetPublicEndDt()
     {
         $publicEndDt = new \DateTime();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $publicEndDtPropertyRef = $targetRef->getProperty('publicEndDt');
         $publicEndDtPropertyRef->setAccessible(true);
         $publicEndDtPropertyRef->setValue($targetMock, $publicEndDt);
@@ -346,7 +363,8 @@ final class ScheduleTest extends TestCase
     public function testSetPublicEndDt()
     {
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $publicEndDtPropertyRef = $targetRef->getProperty('publicEndDt');
         $publicEndDtPropertyRef->setAccessible(true);
 
@@ -391,8 +409,10 @@ final class ScheduleTest extends TestCase
     public function testGetRemark()
     {
         $remark = 'schedule_remark';
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $remarkPropertyRef = $targetRef->getProperty('remark');
         $remarkPropertyRef->setAccessible(true);
         $remarkPropertyRef->setValue($targetMock, $remark);
@@ -409,10 +429,12 @@ final class ScheduleTest extends TestCase
     public function testSetRemark()
     {
         $remark = 'schedule_remark';
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setRemark($remark);
 
         $targetRef = $this->createTargetReflection();
+
         $remarkPropertyRef = $targetRef->getProperty('remark');
         $remarkPropertyRef->setAccessible(true);
 
@@ -428,8 +450,10 @@ final class ScheduleTest extends TestCase
     public function testGetShowingFormats()
     {
         $showingFormats = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $showingFormatsPropertyRef = $targetRef->getProperty('showingFormats');
         $showingFormatsPropertyRef->setAccessible(true);
         $showingFormatsPropertyRef->setValue($targetMock, $showingFormats);
@@ -446,10 +470,12 @@ final class ScheduleTest extends TestCase
     public function testSetShowingFormats()
     {
         $showingFormats = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setShowingFormats($showingFormats);
 
         $targetRef = $this->createTargetReflection();
+
         $showingFormatsPropertyRef = $targetRef->getProperty('showingFormats');
         $showingFormatsPropertyRef->setAccessible(true);
 
@@ -465,8 +491,10 @@ final class ScheduleTest extends TestCase
     public function testGetShowingTheaters()
     {
         $showingTheaters = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $showingTheatersPropertyRef = $targetRef->getProperty('showingTheaters');
         $showingTheatersPropertyRef->setAccessible(true);
         $showingTheatersPropertyRef->setValue($targetMock, $showingTheaters);
@@ -483,10 +511,12 @@ final class ScheduleTest extends TestCase
     public function testSetShowingTheaters()
     {
         $showingTheaters = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setShowingTheaters($showingTheaters);
 
         $targetRef = $this->createTargetReflection();
+
         $showingTheatersPropertyRef = $targetRef->getProperty('showingTheaters');
         $showingTheatersPropertyRef->setAccessible(true);
 

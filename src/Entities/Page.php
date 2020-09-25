@@ -70,10 +70,10 @@ class Page
      */
     public function __construct(int $id)
     {
-        $this->id = $id;
-        $this->campaigns = new ArrayCollection();
+        $this->id          = $id;
+        $this->campaigns   = new ArrayCollection();
         $this->mainBanners = new ArrayCollection();
-        $this->newsList = new ArrayCollection();
+        $this->newsList    = new ArrayCollection();
     }
 
     /**

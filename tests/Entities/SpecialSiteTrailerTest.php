@@ -54,8 +54,10 @@ final class SpecialSiteTrailerTest extends TestCase
     public function testGetId()
     {
         $id = 14;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $idPropertyRef = $targetRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
         $idPropertyRef->setValue($targetMock, $id);
@@ -72,8 +74,10 @@ final class SpecialSiteTrailerTest extends TestCase
     public function testGetTrailer()
     {
         $trailer = new Trailer();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $trailerPropertyRef = $targetRef->getProperty('trailer');
         $trailerPropertyRef->setAccessible(true);
         $trailerPropertyRef->setValue($targetMock, $trailer);
@@ -90,10 +94,12 @@ final class SpecialSiteTrailerTest extends TestCase
     public function testSetTrailer()
     {
         $trailer = new Trailer();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setTrailer($trailer);
 
         $targetRef = $this->createTargetReflection();
+
         $trailerPropertyRef = $targetRef->getProperty('trailer');
         $trailerPropertyRef->setAccessible(true);
 
@@ -109,8 +115,10 @@ final class SpecialSiteTrailerTest extends TestCase
     public function testGetSpecialSite()
     {
         $specialSite = new SpecialSite(3);
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $specialSitePropertyRef = $targetRef->getProperty('specialSite');
         $specialSitePropertyRef->setAccessible(true);
         $specialSitePropertyRef->setValue($targetMock, $specialSite);
@@ -127,10 +135,12 @@ final class SpecialSiteTrailerTest extends TestCase
     public function testSetSpecialSite()
     {
         $specialSite = new SpecialSite(3);
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setSpecialSite($specialSite);
 
         $targetRef = $this->createTargetReflection();
+
         $specialSitePropertyRef = $targetRef->getProperty('specialSite');
         $specialSitePropertyRef->setAccessible(true);
 

@@ -54,8 +54,10 @@ final class PageTrailerTest extends TestCase
     public function testGetId()
     {
         $id = 16;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $idPropertyRef = $targetRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
         $idPropertyRef->setValue($targetMock, $id);
@@ -72,8 +74,10 @@ final class PageTrailerTest extends TestCase
     public function testGetTrailer()
     {
         $trailer = new Trailer();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $trailerPropertyRef = $targetRef->getProperty('trailer');
         $trailerPropertyRef->setAccessible(true);
         $trailerPropertyRef->setValue($targetMock, $trailer);
@@ -90,10 +94,12 @@ final class PageTrailerTest extends TestCase
     public function testSetTrailer()
     {
         $trailer = new Trailer();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setTrailer($trailer);
 
         $targetRef = $this->createTargetReflection();
+
         $trailerPropertyRef = $targetRef->getProperty('trailer');
         $trailerPropertyRef->setAccessible(true);
 
@@ -109,8 +115,10 @@ final class PageTrailerTest extends TestCase
     public function testGetPage()
     {
         $page = new Page(2);
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $pagePropertyRef = $targetRef->getProperty('page');
         $pagePropertyRef->setAccessible(true);
         $pagePropertyRef->setValue($targetMock, $page);
@@ -127,10 +135,12 @@ final class PageTrailerTest extends TestCase
     public function testSetPage()
     {
         $page = new Page(2);
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setPage($page);
 
         $targetRef = $this->createTargetReflection();
+
         $pagePropertyRef = $targetRef->getProperty('page');
         $pagePropertyRef->setAccessible(true);
 

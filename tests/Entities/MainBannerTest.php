@@ -54,7 +54,7 @@ final class MainBannerTest extends TestCase
     public function testConstruct()
     {
         $targetMock = $this->createTargetMock();
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
 
         /** @var \ReflectionMethod $constructorRef */
         $constructorRef = $targetRef->getConstructor();
@@ -91,8 +91,10 @@ final class MainBannerTest extends TestCase
     public function testGetId()
     {
         $id = 23;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $idPropertyRef = $targetRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
         $idPropertyRef->setValue($targetMock, $id);
@@ -109,8 +111,10 @@ final class MainBannerTest extends TestCase
     public function testGetImage()
     {
         $image = new File();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $imagePropertyRef = $targetRef->getProperty('image');
         $imagePropertyRef->setAccessible(true);
         $imagePropertyRef->setValue($targetMock, $image);
@@ -127,10 +131,12 @@ final class MainBannerTest extends TestCase
     public function testSetImage()
     {
         $image = new File();
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setImage($image);
 
         $targetRef = $this->createTargetReflection();
+
         $imagePropertyRef = $targetRef->getProperty('image');
         $imagePropertyRef->setAccessible(true);
 
@@ -146,8 +152,10 @@ final class MainBannerTest extends TestCase
     public function testGetName()
     {
         $name = 'main_banner_name';
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $namePropertyRef = $targetRef->getProperty('name');
         $namePropertyRef->setAccessible(true);
         $namePropertyRef->setValue($targetMock, $name);
@@ -164,10 +172,12 @@ final class MainBannerTest extends TestCase
     public function testSetName()
     {
         $name = 'main_banner_name';
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setName($name);
 
         $targetRef = $this->createTargetReflection();
+
         $namePropertyRef = $targetRef->getProperty('name');
         $namePropertyRef->setAccessible(true);
 
@@ -183,8 +193,10 @@ final class MainBannerTest extends TestCase
     public function testGetLinkType()
     {
         $linkType = 2;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $linkTypePropertyRef = $targetRef->getProperty('linkType');
         $linkTypePropertyRef->setAccessible(true);
         $linkTypePropertyRef->setValue($targetMock, $linkType);
@@ -201,10 +213,12 @@ final class MainBannerTest extends TestCase
     public function testSetLinkType()
     {
         $linkType = 2;
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setLinkType($linkType);
 
         $targetRef = $this->createTargetReflection();
+
         $linkTypePropertyRef = $targetRef->getProperty('linkType');
         $linkTypePropertyRef->setAccessible(true);
 
@@ -220,8 +234,10 @@ final class MainBannerTest extends TestCase
     public function testGetLinkUrl()
     {
         $linkUrl = 'https://example.com';
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $linkUrlPropertyRef = $targetRef->getProperty('linkUrl');
         $linkUrlPropertyRef->setAccessible(true);
         $linkUrlPropertyRef->setValue($targetMock, $linkUrl);
@@ -238,10 +254,12 @@ final class MainBannerTest extends TestCase
     public function testSetLinkUrl()
     {
         $linkUrl = 'https://example.com';
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setLinkUrl($linkUrl);
 
         $targetRef = $this->createTargetReflection();
+
         $linkUrlPropertyRef = $targetRef->getProperty('linkUrl');
         $linkUrlPropertyRef->setAccessible(true);
 
@@ -257,8 +275,10 @@ final class MainBannerTest extends TestCase
     public function testGetPages()
     {
         $pages = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $pagesPropertyRef = $targetRef->getProperty('pages');
         $pagesPropertyRef->setAccessible(true);
         $pagesPropertyRef->setValue($targetMock, $pages);
@@ -275,8 +295,10 @@ final class MainBannerTest extends TestCase
     public function testGetSpecialSites()
     {
         $specialSites = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $specialSitesPropertyRef = $targetRef->getProperty('specialSites');
         $specialSitesPropertyRef->setAccessible(true);
         $specialSitesPropertyRef->setValue($targetMock, $specialSites);
@@ -293,8 +315,10 @@ final class MainBannerTest extends TestCase
     public function testGetTheaters()
     {
         $theaters = new ArrayCollection();
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $theatersPropertyRef = $targetRef->getProperty('theaters');
         $theatersPropertyRef->setAccessible(true);
         $theatersPropertyRef->setValue($targetMock, $theaters);

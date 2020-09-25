@@ -129,7 +129,7 @@ class Title
     public function __construct()
     {
         $this->campaigns = new ArrayCollection();
-        $this->trailers = new ArrayCollection();
+        $this->trailers  = new ArrayCollection();
     }
 
     /**

@@ -93,9 +93,9 @@ class Campaign
      */
     public function __construct()
     {
-        $this->pages = new ArrayCollection();
+        $this->pages        = new ArrayCollection();
         $this->specialSites = new ArrayCollection();
-        $this->theaters = new ArrayCollection();
+        $this->theaters     = new ArrayCollection();
     }
 
     /**

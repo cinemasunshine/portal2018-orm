@@ -42,8 +42,10 @@ final class FileTest extends TestCase
     public function testGetId()
     {
         $id = 12;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $idPropertyRef = $targetRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
         $idPropertyRef->setValue($targetMock, $id);
@@ -60,8 +62,10 @@ final class FileTest extends TestCase
     public function testGetName()
     {
         $name = 'file_name';
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $namePropertyRef = $targetRef->getProperty('name');
         $namePropertyRef->setAccessible(true);
         $namePropertyRef->setValue($targetMock, $name);
@@ -78,10 +82,12 @@ final class FileTest extends TestCase
     public function testSetName()
     {
         $name = 'file_name';
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setName($name);
 
         $targetRef = $this->createTargetReflection();
+
         $namePropertyRef = $targetRef->getProperty('name');
         $namePropertyRef->setAccessible(true);
 
@@ -97,8 +103,10 @@ final class FileTest extends TestCase
     public function testGetOriginalName()
     {
         $originalName = 'file_original_name';
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $originalNamePropertyRef = $targetRef->getProperty('originalName');
         $originalNamePropertyRef->setAccessible(true);
         $originalNamePropertyRef->setValue($targetMock, $originalName);
@@ -115,10 +123,12 @@ final class FileTest extends TestCase
     public function testSetOriginalName()
     {
         $originalName = 'file_original_name';
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setOriginalName($originalName);
 
         $targetRef = $this->createTargetReflection();
+
         $originalNamePropertyRef = $targetRef->getProperty('originalName');
         $originalNamePropertyRef->setAccessible(true);
 
@@ -134,8 +144,10 @@ final class FileTest extends TestCase
     public function testGetMimeType()
     {
         $mimeType = 'text/plain';
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $mimeTypePropertyRef = $targetRef->getProperty('mimeType');
         $mimeTypePropertyRef->setAccessible(true);
         $mimeTypePropertyRef->setValue($targetMock, $mimeType);
@@ -152,10 +164,12 @@ final class FileTest extends TestCase
     public function testSetMimeType()
     {
         $mimeType = 'text/plain';
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setMimeType($mimeType);
 
         $targetRef = $this->createTargetReflection();
+
         $mimeTypePropertyRef = $targetRef->getProperty('mimeType');
         $mimeTypePropertyRef->setAccessible(true);
 
@@ -171,8 +185,10 @@ final class FileTest extends TestCase
     public function testGetSize()
     {
         $size = 1234;
+
         $targetMock = $this->createTargetPartialMock([]);
-        $targetRef = $this->createTargetReflection();
+        $targetRef  = $this->createTargetReflection();
+
         $sizePropertyRef = $targetRef->getProperty('size');
         $sizePropertyRef->setAccessible(true);
         $sizePropertyRef->setValue($targetMock, $size);
@@ -189,10 +205,12 @@ final class FileTest extends TestCase
     public function testSetSize()
     {
         $size = 1234;
+
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setSize($size);
 
         $targetRef = $this->createTargetReflection();
+
         $sizePropertyRef = $targetRef->getProperty('size');
         $sizePropertyRef->setAccessible(true);
 
