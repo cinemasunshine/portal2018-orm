@@ -15,7 +15,7 @@ class ScheduleRepository extends EntityRepository
 {
     /**
      * @param QueryBuilder $qb
-     * @param string $alias
+     * @param string       $alias
      * @return void
      */
     protected function addActiveQuery(QueryBuilder $qb, string $alias)
@@ -25,7 +25,7 @@ class ScheduleRepository extends EntityRepository
 
     /**
      * @param QueryBuilder $qb
-     * @param string $alias
+     * @param string       $alias
      * @return void
      */
     protected function addPublicQuery(QueryBuilder $qb, string $alias)
@@ -39,7 +39,7 @@ class ScheduleRepository extends EntityRepository
 
     /**
      * @param QueryBuilder $qb
-     * @param string $alias
+     * @param string       $alias
      * @return void
      */
     protected function addNowShowingQuery(QueryBuilder $qb, string $alias)
@@ -53,7 +53,7 @@ class ScheduleRepository extends EntityRepository
 
     /**
      * @param QueryBuilder $qb
-     * @param string $alias
+     * @param string       $alias
      * @return void
      */
     protected function addComingSoonQuery(QueryBuilder $qb, string $alias)
