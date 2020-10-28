@@ -80,12 +80,12 @@ final class ScheduleRepositoryTest extends TestCase
         $queryBuilderMock
             ->method('andWhere')
             ->withConsecutive(
-                [ $this->equalTo($alias . '.publicStartDt <= CURRENT_TIMESTAMP()') ],
-                [ $this->equalTo($alias . '.publicEndDt > CURRENT_TIMESTAMP()') ]
+                [$this->equalTo($alias . '.publicStartDt <= CURRENT_TIMESTAMP()')],
+                [$this->equalTo($alias . '.publicEndDt > CURRENT_TIMESTAMP()')]
             )
             ->willReturn($queryBuilderMock);
 
-        $targetMock = $this->createTargetPartialMock([ 'addActiveQuery' ]);
+        $targetMock = $this->createTargetPartialMock(['addActiveQuery']);
         $targetMock
             ->method('addActiveQuery')
             ->with($this->equalTo($queryBuilderMock), $this->equalTo($alias));
@@ -117,7 +117,7 @@ final class ScheduleRepositoryTest extends TestCase
             ->with($this->equalTo($alias . '.startDate'), 'DESC')
             ->willReturn($queryBuilderMock);
 
-        $targetMock = $this->createTargetPartialMock([ 'addPublicQuery' ]);
+        $targetMock = $this->createTargetPartialMock(['addPublicQuery']);
         $targetMock
             ->method('addPublicQuery')
             ->with($this->equalTo($queryBuilderMock), $this->equalTo($alias));
@@ -149,7 +149,7 @@ final class ScheduleRepositoryTest extends TestCase
             ->with($this->equalTo($alias . '.startDate'), 'ASC')
             ->willReturn($queryBuilderMock);
 
-        $targetMock = $this->createTargetPartialMock([ 'addPublicQuery' ]);
+        $targetMock = $this->createTargetPartialMock(['addPublicQuery']);
         $targetMock
             ->method('addPublicQuery')
             ->with($this->equalTo($queryBuilderMock), $this->equalTo($alias));
