@@ -13,7 +13,7 @@
         "phpstan/phpstan": "^0.12.44",
         "phpstan/phpstan-phpunit": "^0.12.16",
         "phpstan/phpstan-doctrine": "^0.12.19",
-        "mp-okui/php-coding-standard": "v0.1.0-alpha"
+        "mp-okui/php-coding-standard": "v0.2.0-alpha"
     },
     "autoload": {
         "psr-4": {
