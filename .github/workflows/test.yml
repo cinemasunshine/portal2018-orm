@@ -34,9 +34,8 @@ jobs:
           key: php-${{ matrix.php-version }}-composer-dev-${{ hashFiles('composer.lock') }}
           restore-keys: php-${{ matrix.php-version }}-composer-dev-
 
-      # V2安定まで取り急ぎV1固定 SASAKI-607
-      - name: Using Composer version 1
-        run: sudo composer self-update --1
+      - name: Using Composer version 2
+        run: sudo composer self-update --2
 
       - name: Composer install (with dev)
         run: composer install --prefer-dist --no-progress --no-suggest
