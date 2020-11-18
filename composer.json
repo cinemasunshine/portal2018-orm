@@ -11,9 +11,9 @@
     "require-dev": {
         "php-parallel-lint/php-parallel-lint": "^1.2",
         "phpunit/phpunit": "^8.5",
-        "phpstan/phpstan": "^0.12.44",
+        "phpstan/phpstan": "^0.12.56",
         "phpstan/phpstan-phpunit": "^0.12.16",
-        "phpstan/phpstan-doctrine": "^0.12.19",
+        "phpstan/phpstan-doctrine": "^0.12.22",
         "mp-okui/php-coding-standard": "v0.2.0-alpha"
     },
     "autoload": {
