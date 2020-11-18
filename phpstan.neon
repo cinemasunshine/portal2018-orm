@@ -13,6 +13,10 @@ parameters:
 	ignoreErrors:
 		# https://github.com/phpstan/phpstan/issues/4078
 		-
+			message: "#^Method Tests\\\\Repositories\\\\ScheduleRepositoryTest\\:\\:createTargetReflection\\(\\) return type with generic class Cinemasunshine\\\\ORM\\\\Repositories\\\\ScheduleRepository does not specify its types\\: TScheduleEntity#"
+			path: tests/Repositories/ScheduleRepositoryTest.php
+			count: 1
+		-
 			message: "#^Method Tests\\\\Repositories\\\\TheaterRepositoryTest\\:\\:createTargetReflection\\(\\) return type with generic class Cinemasunshine\\\\ORM\\\\Repositories\\\\TheaterRepository does not specify its types\\: TTheaterEntity#"
 			path: tests/Repositories/TheaterRepositoryTest.php
 			count: 1

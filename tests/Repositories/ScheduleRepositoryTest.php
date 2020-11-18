@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Repositories;
 
+use Cinemasunshine\ORM\Entities\Schedule;
 use Cinemasunshine\ORM\Repositories\ScheduleRepository;
 use Doctrine\ORM\QueryBuilder;
 use PHPUnit\Framework\TestCase;
@@ -11,7 +12,7 @@ use PHPUnit\Framework\TestCase;
 final class ScheduleRepositoryTest extends TestCase
 {
     /**
-     * @return \PHPUnit\Framework\MockObject\MockObject&ScheduleRepository
+     * @return \PHPUnit\Framework\MockObject\MockObject&ScheduleRepository<Schedule>
      */
     protected function createTargetMock()
     {
@@ -20,7 +21,7 @@ final class ScheduleRepositoryTest extends TestCase
 
     /**
      * @param string[] $methods
-     * @return \PHPUnit\Framework\MockObject\MockObject&ScheduleRepository
+     * @return \PHPUnit\Framework\MockObject\MockObject&ScheduleRepository<Schedule>
      */
     public function createTargetPartialMock(array $methods)
     {
