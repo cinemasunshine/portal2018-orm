@@ -9,7 +9,8 @@ use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\QueryBuilder;
 
 /**
- * @extends EntityRepository<Schedule>
+ * @template TScheduleEntity of Schedule
+ * @extends EntityRepository<TScheduleEntity>
  */
 class ScheduleRepository extends EntityRepository
 {
