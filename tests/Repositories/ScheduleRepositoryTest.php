@@ -45,7 +45,6 @@ final class ScheduleRepositoryTest extends TestCase
 
     /**
      * @test
-     * @doesNotPerformAssertions
      * @return void
      */
     public function testAddActiveQuery()
@@ -54,6 +53,7 @@ final class ScheduleRepositoryTest extends TestCase
 
         $queryBuilderMock = $this->createQueryBuilderMock();
         $queryBuilderMock
+            ->expects($this->once())
             ->method('andWhere')
             ->with($this->equalTo($alias . '.isDeleted = false'))
             ->willReturn($queryBuilderMock);
@@ -69,7 +69,6 @@ final class ScheduleRepositoryTest extends TestCase
 
     /**
      * @test
-     * @doesNotPerformAssertions
      * @return void
      */
     public function testAddPublicQuery()
@@ -78,6 +77,7 @@ final class ScheduleRepositoryTest extends TestCase
 
         $queryBuilderMock = $this->createQueryBuilderMock();
         $queryBuilderMock
+            ->expects($this->exactly(2))
             ->method('andWhere')
             ->withConsecutive(
                 [$this->equalTo($alias . '.publicStartDt <= CURRENT_TIMESTAMP()')],
@@ -100,7 +100,6 @@ final class ScheduleRepositoryTest extends TestCase
 
     /**
      * @test
-     * @doesNotPerformAssertions
      * @return void
      */
     public function testAddNowShowingQuery()
@@ -109,10 +108,12 @@ final class ScheduleRepositoryTest extends TestCase
 
         $queryBuilderMock = $this->createQueryBuilderMock();
         $queryBuilderMock
+            ->expects($this->once())
             ->method('andWhere')
             ->with($this->equalTo($alias . '.startDate <= CURRENT_DATE()'))
             ->willReturn($queryBuilderMock);
         $queryBuilderMock
+            ->expects($this->once())
             ->method('orderBy')
             ->with($this->equalTo($alias . '.startDate'), 'DESC')
             ->willReturn($queryBuilderMock);
@@ -132,7 +133,6 @@ final class ScheduleRepositoryTest extends TestCase
 
     /**
      * @test
-     * @doesNotPerformAssertions
      * @return void
      */
     public function testAddComingSoonQuery()
@@ -141,10 +141,12 @@ final class ScheduleRepositoryTest extends TestCase
 
         $queryBuilderMock = $this->createQueryBuilderMock();
         $queryBuilderMock
+            ->expects($this->once())
             ->method('andWhere')
             ->with($this->equalTo($alias . '.startDate > CURRENT_DATE()'))
             ->willReturn($queryBuilderMock);
         $queryBuilderMock
+            ->expects($this->once())
             ->method('orderBy')
             ->with($this->equalTo($alias . '.startDate'), 'ASC')
             ->willReturn($queryBuilderMock);
