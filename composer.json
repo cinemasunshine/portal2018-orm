@@ -9,12 +9,15 @@
         "doctrine/orm": "^2.7.4"
     },
     "require-dev": {
+        "mp-okui/php-coding-standard": "v0.2.0-alpha",
         "php-parallel-lint/php-parallel-lint": "^1.2",
-        "phpunit/phpunit": "^8.5",
-        "phpstan/phpstan": "^0.12.56",
+        "phpstan/phpstan": "^0.12.59",
+        "phpstan/phpstan-doctrine": "^0.12.25",
         "phpstan/phpstan-phpunit": "^0.12.16",
-        "phpstan/phpstan-doctrine": "^0.12.22",
-        "mp-okui/php-coding-standard": "v0.2.0-alpha"
+        "phpunit/phpunit": "^8.5"
+    },
+    "config": {
+        "sort-packages": true
     },
     "autoload": {
         "psr-4": {
