@@ -38,6 +38,7 @@ final class AdminUserTest extends TestCase
      * test encryptPassword
      *
      * @test
+     *
      * @return void
      */
     public function testEncryptPassword()
@@ -54,6 +55,7 @@ final class AdminUserTest extends TestCase
      * test getId
      *
      * @test
+     *
      * @return void
      */
     public function testGetId()
@@ -74,6 +76,7 @@ final class AdminUserTest extends TestCase
      * test getName
      *
      * @test
+     *
      * @return void
      */
     public function testGetName()
@@ -94,6 +97,7 @@ final class AdminUserTest extends TestCase
      * test setName
      *
      * @test
+     *
      * @return void
      */
     public function testSetName()
@@ -115,6 +119,7 @@ final class AdminUserTest extends TestCase
      * test getDisplayName
      *
      * @test
+     *
      * @return void
      */
     public function testGetDisplayName()
@@ -135,6 +140,7 @@ final class AdminUserTest extends TestCase
      * test setDisplayName
      *
      * @test
+     *
      * @return void
      */
     public function testSetDisplayName()
@@ -156,6 +162,7 @@ final class AdminUserTest extends TestCase
      * test getPassword
      *
      * @test
+     *
      * @return void
      */
     public function testGetPassword()
@@ -176,6 +183,7 @@ final class AdminUserTest extends TestCase
      * test setPassword
      *
      * @test
+     *
      * @return void
      */
     public function testSetPassword()
@@ -200,6 +208,7 @@ final class AdminUserTest extends TestCase
      * test getGroup
      *
      * @test
+     *
      * @return void
      */
     public function testGetGroup()
@@ -220,6 +229,7 @@ final class AdminUserTest extends TestCase
      * test setGroup
      *
      * @test
+     *
      * @return void
      */
     public function testSetGroup()
@@ -241,6 +251,7 @@ final class AdminUserTest extends TestCase
      * set getTheater
      *
      * @test
+     *
      * @return void
      */
     public function testGetTheater()
@@ -261,6 +272,7 @@ final class AdminUserTest extends TestCase
      * test setTheater
      *
      * @test
+     *
      * @return void
      */
     public function testSetTheater()

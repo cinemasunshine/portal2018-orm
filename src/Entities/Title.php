@@ -25,101 +25,117 @@ class Title
     use TimestampableTrait;
 
     /**
-     * @var int
      * @ORM\Id
      * @ORM\Column(type="integer", options={"unsigned"=true})
      * @ORM\GeneratedValue
+     *
+     * @var int
      */
     protected $id;
 
     /**
-     * @var File|null
      * @ORM\OneToOne(targetEntity="File")
      * @ORM\JoinColumn(name="image_file_id", referencedColumnName="id", nullable=true, onDelete="RESTRICT")
+     *
+     * @var File|null
      */
     protected $image;
 
     /**
-     * @var string
      * @ORM\Column(type="string")
+     *
+     * @var string
      */
     protected $name;
 
     /**
-     * @var string|null
      * @ORM\Column(type="string", name="name_kana", nullable=true)
+     *
+     * @var string|null
      */
     protected $nameKana;
 
     /**
-     * @var string|null
      * @ORM\Column(type="string", name="name_original", nullable=true)
+     *
+     * @var string|null
      */
     protected $nameOriginal;
 
     /**
-     * @var string|null
      * @ORM\Column(type="string", nullable=true)
+     *
+     * @var string|null
      */
     protected $credit;
 
     /**
-     * @var string|null
      * @ORM\Column(type="text", nullable=true)
+     *
+     * @var string|null
      */
     protected $catchcopy;
 
     /**
-     * @var string|null
      * @ORM\Column(type="text", nullable=true)
+     *
+     * @var string|null
      */
     protected $introduction;
 
     /**
-     * @var string|null
      * @ORM\Column(type="string", nullable=true)
+     *
+     * @var string|null
      */
     protected $director;
 
     /**
-     * @var string|null
      * @ORM\Column(type="string", nullable=true)
+     *
+     * @var string|null
      */
     protected $cast;
 
     /**
-     * @var \DateTime|null
      * @ORM\Column(type="date", name="publishing_expected_date", nullable=true)
+     *
+     * @var \DateTime|null
      */
     protected $publishingExpectedDate;
 
     /**
-     * @var string|null
      * @ORM\Column(type="string", name="official_site", nullable=true)
+     *
+     * @var string|null
      */
     protected $officialSite;
 
     /**
-     * @var int|null
      * @ORM\Column(type="smallint", nullable=true, options={"unsigned"=true})
+     *
+     * @var int|null
      */
     protected $rating;
 
     /**
-     * @var int[]|null
      * @ORM\Column(type="json", nullable=true)
+     *
+     * @var int[]|null
      */
     protected $universal;
 
     /**
-     * @var Collection<int, Campaign>
      * @ORM\OneToMany(targetEntity="Campaign", mappedBy="title", indexBy="id")
+     *
+     * @var Collection<int, Campaign>
      */
     protected $campaigns;
 
     /**
-     * @var Collection<int, Trailer>
      * @ORM\OneToMany(targetEntity="Trailer", mappedBy="title", indexBy="id")
+     *
+     * @var Collection<int, Trailer>
      */
     protected $trailers;
 
@@ -346,6 +362,7 @@ class Title
      *
      * @param \DateTime|string|null $publishingExpectedDate
      * @return void
+     *
      * @throws \InvalidArgumentException
      */
     public function setPublishingExpectedDate($publishingExpectedDate)

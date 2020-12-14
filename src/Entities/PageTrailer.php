@@ -19,24 +19,27 @@ class PageTrailer
     use TimestampableTrait;
 
     /**
-     * @var int
      * @ORM\Id
      * @ORM\Column(type="integer", options={"unsigned"=true})
      * @ORM\GeneratedValue
+     *
+     * @var int
      */
     protected $id;
 
     /**
-     * @var Trailer
      * @ORM\ManyToOne(targetEntity="Trailer")
      * @ORM\JoinColumn(name="trailer_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
+     *
+     * @var Trailer
      */
     protected $trailer;
 
     /**
-     * @var Page
      * @ORM\ManyToOne(targetEntity="Page")
      * @ORM\JoinColumn(name="page_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
+     *
+     * @var Page
      */
     protected $page;
 

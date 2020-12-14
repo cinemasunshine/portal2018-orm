@@ -19,30 +19,34 @@ class PageCampaign
     use TimestampableTrait;
 
     /**
-     * @var int
      * @ORM\Id
      * @ORM\Column(type="integer", options={"unsigned"=true})
      * @ORM\GeneratedValue
+     *
+     * @var int
      */
     protected $id;
 
     /**
-     * @var Campaign
      * @ORM\ManyToOne(targetEntity="Campaign", inversedBy="pages")
      * @ORM\JoinColumn(name="campaign_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
+     *
+     * @var Campaign
      */
     protected $campaign;
 
     /**
-     * @var Page
      * @ORM\ManyToOne(targetEntity="Page", inversedBy="campaigns")
      * @ORM\JoinColumn(name="page_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
+     *
+     * @var Page
      */
     protected $page;
 
     /**
-     * @var int
      * @ORM\Column(type="smallint", name="display_order", options={"unsigned"=true})
+     *
+     * @var int
      */
     protected $displayOrder;
 

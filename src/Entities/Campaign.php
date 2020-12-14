@@ -25,66 +25,76 @@ class Campaign
     use TimestampableTrait;
 
     /**
-     * @var int
      * @ORM\Id
      * @ORM\Column(type="integer", options={"unsigned"=true})
      * @ORM\GeneratedValue
+     *
+     * @var int
      */
     protected $id;
 
     /**
-     * @var Title|null
      * @ORM\ManyToOne(targetEntity="Title", inversedBy="campaigns")
      * @ORM\JoinColumn(name="title_id", referencedColumnName="id", nullable=true, onDelete="RESTRICT")
+     *
+     * @var Title|null
      */
     protected $title;
 
     /**
-     * @var File
      * @ORM\OneToOne(targetEntity="File")
      * @ORM\JoinColumn(name="image_file_id", referencedColumnName="id", nullable=false, onDelete="RESTRICT")
+     *
+     * @var File
      */
     protected $image;
 
     /**
-     * @var string
      * @ORM\Column(type="string")
+     *
+     * @var string
      */
     protected $name;
 
     /**
-     * @var \DateTime
      * @ORM\Column(type="datetime", name="start_dt")
+     *
+     * @var \DateTime
      */
     protected $startDt;
 
     /**
-     * @var \DateTime
      * @ORM\Column(type="datetime", name="end_dt")
+     *
+     * @var \DateTime
      */
     protected $endDt;
 
     /**
-     * @var string
      * @ORM\Column(type="string")
+     *
+     * @var string
      */
     protected $url;
 
     /**
-     * @var Collection<int, PageCampaign>
      * @ORM\OneToMany(targetEntity="PageCampaign", mappedBy="campaign")
+     *
+     * @var Collection<int, PageCampaign>
      */
     protected $pages;
 
     /**
-     * @var Collection<int, SpecialSiteCampaign>
      * @ORM\OneToMany(targetEntity="SpecialSiteCampaign", mappedBy="campaign")
+     *
+     * @var Collection<int, SpecialSiteCampaign>
      */
     protected $specialSites;
 
     /**
-     * @var Collection<int, TheaterCampaign>
      * @ORM\OneToMany(targetEntity="TheaterCampaign", mappedBy="campaign")
+     *
+     * @var Collection<int, TheaterCampaign>
      */
     protected $theaters;
 
@@ -186,6 +196,7 @@ class Campaign
      *
      * @param \DateTime|string $startDt
      * @return void
+     *
      * @throws \InvalidArgumentException
      */
     public function setStartDt($startDt)
@@ -214,6 +225,7 @@ class Campaign
      *
      * @param \DateTime|string $endDt
      * @return void
+     *
      * @throws \InvalidArgumentException
      */
     public function setEndDt($endDt)

@@ -39,6 +39,7 @@ final class OyakoCinemaTheaterTest extends TestCase
      * test getId
      *
      * @test
+     *
      * @return void
      */
     public function testGetId()
@@ -59,6 +60,7 @@ final class OyakoCinemaTheaterTest extends TestCase
      * test getOyakoCinemaSchedule
      *
      * @test
+     *
      * @return void
      */
     public function testGetOyakoCinemaSchedule()
@@ -79,6 +81,7 @@ final class OyakoCinemaTheaterTest extends TestCase
      * test setOyakoCinemaSchedule
      *
      * @test
+     *
      * @return void
      */
     public function testSetOyakoCinemaSchedule()
@@ -100,6 +103,7 @@ final class OyakoCinemaTheaterTest extends TestCase
      * test getTheater
      *
      * @test
+     *
      * @return void
      */
     public function testGetTheater()
@@ -120,6 +124,7 @@ final class OyakoCinemaTheaterTest extends TestCase
      * test setTheater
      *
      * @test
+     *
      * @return void
      */
     public function testSetTheater()

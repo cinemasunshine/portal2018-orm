@@ -23,49 +23,56 @@ class SpecialSite
     use TimestampableTrait;
 
     /**
-     * @var int
      * @ORM\Id
      * @ORM\Column(type="smallint", options={"unsigned"=true})
      * @ORM\GeneratedValue(strategy="NONE")
+     *
+     * @var int
      */
     protected $id;
 
     /**
-     * @var string
      * @ORM\Column(type="string", unique=true)
+     *
+     * @var string
      */
     protected $name;
 
     /**
-     * @var string
      * @ORM\Column(type="string", name="name_ja")
+     *
+     * @var string
      */
     protected $nameJa;
 
     /**
-     * @var Collection<int, Theater>
      * @ORM\ManyToMany(targetEntity="Theater", mappedBy="specialSites")
+     *
+     * @var Collection<int, Theater>
      */
     protected $theaters;
 
     /**
-     * @var Collection<int, SpecialSiteCampaign>
      * @ORM\OneToMany(targetEntity="SpecialSiteCampaign", mappedBy="specialSite", orphanRemoval=true)
      * @ORM\OrderBy({"displayOrder" = "ASC"})
+     *
+     * @var Collection<int, SpecialSiteCampaign>
      */
     protected $campaigns;
 
     /**
-     * @var Collection<int, SpecialSiteMainBanner>
      * @ORM\OneToMany(targetEntity="SpecialSiteMainBanner", mappedBy="specialSite", orphanRemoval=true)
      * @ORM\OrderBy({"displayOrder" = "ASC"})
+     *
+     * @var Collection<int, SpecialSiteMainBanner>
      */
     protected $mainBanners;
 
     /**
-     * @var Collection<int, SpecialSiteNews>
      * @ORM\OneToMany(targetEntity="SpecialSiteNews", mappedBy="specialSite", orphanRemoval=true)
      * @ORM\OrderBy({"displayOrder" = "ASC"})
+     *
+     * @var Collection<int, SpecialSiteNews>
      */
     protected $newsList;
 

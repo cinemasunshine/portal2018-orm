@@ -26,6 +26,7 @@ final class SoftDeleteTraitTest extends TestCase
      * test getIsDeleted
      *
      * @test
+     *
      * @return void
      */
     public function testGetIsDeleted()
@@ -41,6 +42,7 @@ final class SoftDeleteTraitTest extends TestCase
      * test isDeleted
      *
      * @test
+     *
      * @return void
      */
     public function testIsDeleted()
@@ -60,6 +62,7 @@ final class SoftDeleteTraitTest extends TestCase
      * test setIsDeleted
      *
      * @test
+     *
      * @return void
      */
     public function testSetIsDeleted()

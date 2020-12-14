@@ -10,8 +10,9 @@ namespace Cinemasunshine\ORM\Entities\Traits;
 trait SoftDeleteTrait
 {
     /**
-     * @var bool
      * @ORM\Column(type="boolean", name="is_deleted", options={"default":false})
+     *
+     * @var bool
      */
     protected $isDeleted = false;
 

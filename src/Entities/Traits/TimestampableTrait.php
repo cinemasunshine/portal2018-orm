@@ -10,14 +10,16 @@ namespace Cinemasunshine\ORM\Entities\Traits;
 trait TimestampableTrait
 {
     /**
-     * @var \DateTime
      * @ORM\Column(type="datetime", name="created_at")
+     *
+     * @var \DateTime
      */
     protected $createdAt;
 
     /**
-     * @var \DateTime
      * @ORM\Column(type="datetime", name="updated_at")
+     *
+     * @var \DateTime
      */
     protected $updatedAt;
 
@@ -36,6 +38,7 @@ trait TimestampableTrait
      *
      * @param \DateTime|string $createdAt
      * @return void
+     *
      * @throws \InvalidArgumentException
      */
     public function setCreatedAt($createdAt)
@@ -64,6 +67,7 @@ trait TimestampableTrait
      *
      * @param \DateTime|string $updatedAt
      * @return void
+     *
      * @throws \InvalidArgumentException
      */
     public function setUpdatedAt($updatedAt)
@@ -81,6 +85,7 @@ trait TimestampableTrait
      * PrePersist Event
      *
      * @ORM\PrePersist
+     *
      * @return void
      */
     public function prePersistTimestamp()
@@ -93,6 +98,7 @@ trait TimestampableTrait
      * update
      *
      * @ORM\PreUpdate
+     *
      * @return void
      */
     public function updateTimestamp()

@@ -25,41 +25,47 @@ class AdminUser
     public const GROUP_THEATER = 3;
 
     /**
-     * @var int
      * @ORM\Id
      * @ORM\Column(type="smallint", options={"unsigned"=true})
      * @ORM\GeneratedValue
+     *
+     * @var int
      */
     protected $id;
 
     /**
-     * @var string
      * @ORM\Column(type="string", unique=true)
+     *
+     * @var string
      */
     protected $name;
 
     /**
-     * @var string
      * @ORM\Column(type="string", name="display_name")
+     *
+     * @var string
      */
     protected $displayName;
 
     /**
-     * @var string
      * @ORM\Column(type="string", length=60, options={"fixed":true})
+     *
+     * @var string
      */
     protected $password;
 
     /**
-     * @var int
      * @ORM\Column(type="smallint", name="`group`", options={"unsigned"=true})
+     *
+     * @var int
      */
     protected $group;
 
     /**
-     * @var Theater|null
      * @ORM\ManyToOne(targetEntity="Theater", inversedBy="adminUsers")
      * @ORM\JoinColumn(name="theater_id", referencedColumnName="id", nullable=true, onDelete="RESTRICT")
+     *
+     * @var Theater|null
      */
     protected $theater;
 
@@ -68,6 +74,7 @@ class AdminUser
      *
      * @param string $password
      * @return string encrypted password
+     *
      * @throws \RuntimeException
      */
     public static function encryptPassword(string $password): string

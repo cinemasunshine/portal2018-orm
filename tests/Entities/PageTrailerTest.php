@@ -49,6 +49,7 @@ final class PageTrailerTest extends TestCase
      * test getId
      *
      * @test
+     *
      * @return void
      */
     public function testGetId()
@@ -69,6 +70,7 @@ final class PageTrailerTest extends TestCase
      * test getTrailer
      *
      * @test
+     *
      * @return void
      */
     public function testGetTrailer()
@@ -89,6 +91,7 @@ final class PageTrailerTest extends TestCase
      * test setTrailer
      *
      * @test
+     *
      * @return void
      */
     public function testSetTrailer()
@@ -110,6 +113,7 @@ final class PageTrailerTest extends TestCase
      * test getPage
      *
      * @test
+     *
      * @return void
      */
     public function testGetPage()
@@ -130,6 +134,7 @@ final class PageTrailerTest extends TestCase
      * test setPage
      *
      * @test
+     *
      * @return void
      */
     public function testSetPage()

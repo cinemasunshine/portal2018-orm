@@ -42,35 +42,40 @@ class ShowingFormat
     public const VOICE_NONE     = 3;
 
     /**
-     * @var int
      * @ORM\Id
      * @ORM\Column(type="integer", options={"unsigned"=true})
      * @ORM\GeneratedValue
+     *
+     * @var int
      */
     protected $id;
 
     /**
-     * @var Schedule
      * @ORM\ManyToOne(targetEntity="Schedule", inversedBy="showingFormats")
      * @ORM\JoinColumn(name="schedule_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
+     *
+     * @var Schedule
      */
     protected $schedule;
 
     /**
-     * @var int
      * @ORM\Column(type="smallint", nullable=false, options={"unsigned"=true})
+     *
+     * @var int
      */
     protected $system;
 
     /**
-     * @var int
      * @ORM\Column(type="smallint", nullable=false, options={"unsigned"=true})
+     *
+     * @var int
      */
     protected $sound;
 
     /**
-     * @var int
      * @ORM\Column(type="smallint", nullable=false, options={"unsigned"=true})
+     *
+     * @var int
      */
     protected $voice;
 

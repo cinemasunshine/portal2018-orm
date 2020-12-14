@@ -48,6 +48,7 @@ final class PageTest extends TestCase
      * test construct
      *
      * @test
+     *
      * @return void
      */
     public function testConstruct()
@@ -91,6 +92,7 @@ final class PageTest extends TestCase
      * test getId
      *
      * @test
+     *
      * @return void
      */
     public function testGetId()
@@ -111,6 +113,7 @@ final class PageTest extends TestCase
      * test getName
      *
      * @test
+     *
      * @return void
      */
     public function testGetName()
@@ -131,6 +134,7 @@ final class PageTest extends TestCase
      * test setName
      *
      * @test
+     *
      * @return void
      */
     public function testSetName()
@@ -152,6 +156,7 @@ final class PageTest extends TestCase
      * test getNameJa
      *
      * @test
+     *
      * @return void
      */
     public function testGatNameJa()
@@ -172,6 +177,7 @@ final class PageTest extends TestCase
      * test setNameJa
      *
      * @test
+     *
      * @return void
      */
     public function testSetNameJa()
@@ -193,6 +199,7 @@ final class PageTest extends TestCase
      * test getCampaigns
      *
      * @test
+     *
      * @return void
      */
     public function testGetCampaigns()
@@ -213,6 +220,7 @@ final class PageTest extends TestCase
      * test getMainBanners
      *
      * @test
+     *
      * @return void
      */
     public function testGetMainBanners()
@@ -233,6 +241,7 @@ final class PageTest extends TestCase
      * test getNewsList
      *
      * @test
+     *
      * @return void
      */
     public function testGetNewsList()

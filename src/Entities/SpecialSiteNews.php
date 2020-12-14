@@ -19,30 +19,34 @@ class SpecialSiteNews
     use TimestampableTrait;
 
     /**
-     * @var int
      * @ORM\Id
      * @ORM\Column(type="integer", options={"unsigned"=true})
      * @ORM\GeneratedValue
+     *
+     * @var int
      */
     protected $id;
 
     /**
-     * @var News
      * @ORM\ManyToOne(targetEntity="News", inversedBy="specialSites")
      * @ORM\JoinColumn(name="news_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
+     *
+     * @var News
      */
     protected $news;
 
     /**
-     * @var SpecialSite
      * @ORM\ManyToOne(targetEntity="SpecialSite", inversedBy="newsList")
      * @ORM\JoinColumn(name="special_site_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
+     *
+     * @var SpecialSite
      */
     protected $specialSite;
 
     /**
-     * @var int
      * @ORM\Column(type="smallint", name="display_order", options={"unsigned"=true})
+     *
+     * @var int
      */
     protected $displayOrder;
 

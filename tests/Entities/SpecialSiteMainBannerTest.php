@@ -39,6 +39,7 @@ final class SpecialSiteMainBannerTest extends TestCase
      * test getId
      *
      * @test
+     *
      * @return void
      */
     public function testGetId()
@@ -59,6 +60,7 @@ final class SpecialSiteMainBannerTest extends TestCase
      * test getMainBanner
      *
      * @test
+     *
      * @return void
      */
     public function testGetMainBanner()
@@ -79,6 +81,7 @@ final class SpecialSiteMainBannerTest extends TestCase
      * test setMainBanner
      *
      * @test
+     *
      * @return void
      */
     public function testSetMainBanner()
@@ -100,6 +103,7 @@ final class SpecialSiteMainBannerTest extends TestCase
      * test getSpecialSite
      *
      * @test
+     *
      * @return void
      */
     public function testGetSpecialSite()
@@ -120,6 +124,7 @@ final class SpecialSiteMainBannerTest extends TestCase
      * test setSpecialSite
      *
      * @test
+     *
      * @return void
      */
     public function testSetSpecialSite()
@@ -141,6 +146,7 @@ final class SpecialSiteMainBannerTest extends TestCase
      * test getDisplayOrder
      *
      * @test
+     *
      * @return void
      */
     public function testGetDisplayOrder()
@@ -161,6 +167,7 @@ final class SpecialSiteMainBannerTest extends TestCase
      * test setDisplayOrder
      *
      * @test
+     *
      * @return void
      */
     public function testSetDisplayOrder()

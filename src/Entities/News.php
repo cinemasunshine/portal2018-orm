@@ -33,72 +33,83 @@ class News
     public const CATEGORY_4DX_SCREEN = 7; // SASAKI-432、SASAKI-525
 
     /**
-     * @var int
      * @ORM\Id
      * @ORM\Column(type="integer", options={"unsigned"=true})
      * @ORM\GeneratedValue
+     *
+     * @var int
      */
     protected $id;
 
     /**
-     * @var Title|null
      * @ORM\ManyToOne(targetEntity="Title")
      * @ORM\JoinColumn(name="title_id", referencedColumnName="id", nullable=true, onDelete="RESTRICT")
+     *
+     * @var Title|null
      */
     protected $title;
 
     /**
-     * @var File|null
      * @ORM\OneToOne(targetEntity="File")
      * @ORM\JoinColumn(name="image_file_id", referencedColumnName="id", nullable=true, onDelete="RESTRICT")
+     *
+     * @var File|null
      */
     protected $image;
 
     /**
-     * @var int
      * @ORM\Column(type="smallint", options={"unsigned"=true})
+     *
+     * @var int
      */
     protected $category;
 
     /**
-     * @var string
      * @ORM\Column(type="string")
+     *
+     * @var string
      */
     protected $headline;
 
     /**
-     * @var string
      * @ORM\Column(type="text")
+     *
+     * @var string
      */
     protected $body;
 
     /**
-     * @var \DateTime
      * @ORM\Column(type="datetime", name="start_dt")
+     *
+     * @var \DateTime
      */
     protected $startDt;
 
     /**
-     * @var \DateTime
      * @ORM\Column(type="datetime", name="end_dt")
+     *
+     * @var \DateTime
      */
     protected $endDt;
 
     /**
-     * @var Collection<int, PageNews>
      * @ORM\OneToMany(targetEntity="PageNews", mappedBy="news")
+     *
+     * @var Collection<int, PageNews>
      */
     protected $pages;
 
     /**
-     * @var Collection<int, SpecialSiteNews>
      * @ORM\OneToMany(targetEntity="SpecialSiteNews", mappedBy="news")
+     *
+     * @var Collection<int, SpecialSiteNews>
      */
     protected $specialSites;
 
     /**
-     * @var Collection<int, TheaterNews>
      * @ORM\OneToMany(targetEntity="TheaterNews", mappedBy="news")
+     *
+     * @var Collection<int, TheaterNews>
      */
     protected $theaters;
 
@@ -242,6 +253,7 @@ class News
      *
      * @param \DateTime|string $startDt
      * @return void
+     *
      * @throws \InvalidArgumentException
      */
     public function setStartDt($startDt)
@@ -270,6 +282,7 @@ class News
      *
      * @param \DateTime|string $endDt
      * @return void
+     *
      * @throws \InvalidArgumentException
      */
     public function setEndDt($endDt)

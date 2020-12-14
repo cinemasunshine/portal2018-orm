@@ -49,6 +49,7 @@ final class OyakoCinemaTitleTest extends TestCase
      * test construct
      *
      * @test
+     *
      * @return void
      */
     public function testConstruct()
@@ -72,6 +73,7 @@ final class OyakoCinemaTitleTest extends TestCase
      * test getId
      *
      * @test
+     *
      * @return void
      */
     public function testGetId()
@@ -92,6 +94,7 @@ final class OyakoCinemaTitleTest extends TestCase
      * test getTitle
      *
      * @test
+     *
      * @return void
      */
     public function testGetTitle()
@@ -112,6 +115,7 @@ final class OyakoCinemaTitleTest extends TestCase
      * test setTitle
      *
      * @test
+     *
      * @return void
      */
     public function testSetTitle()
@@ -133,6 +137,7 @@ final class OyakoCinemaTitleTest extends TestCase
      * test getTitleUrl
      *
      * @test
+     *
      * @return void
      */
     public function testGetTitleUrl()
@@ -153,6 +158,7 @@ final class OyakoCinemaTitleTest extends TestCase
      * test setTitleUrl
      *
      * @test
+     *
      * @return void
      */
     public function testsetTitleUrl()
@@ -174,6 +180,7 @@ final class OyakoCinemaTitleTest extends TestCase
      * test getOyakoCinemaSchedules
      *
      * @test
+     *
      * @return void
      */
     public function testGetOyakoCinemaSchedules()

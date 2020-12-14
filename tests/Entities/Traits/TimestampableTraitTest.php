@@ -26,6 +26,7 @@ final class TimestampableTraitTest extends TestCase
      * test getCreatedAt
      *
      * @test
+     *
      * @return void
      */
     public function testGetCreatedAt()
@@ -42,6 +43,7 @@ final class TimestampableTraitTest extends TestCase
      * test setCreatedAt
      *
      * @test
+     *
      * @return void
      */
     public function testSetCreatedAt()
@@ -58,6 +60,7 @@ final class TimestampableTraitTest extends TestCase
      * test setCreatedAt (invalid argument)
      *
      * @test
+     *
      * @return void
      */
     public function testSetCreatedAtInvalidArgument()
@@ -74,6 +77,7 @@ final class TimestampableTraitTest extends TestCase
      * test getUpdatedAt
      *
      * @test
+     *
      * @return void
      */
     public function testGetUpdatedAt()
@@ -90,6 +94,7 @@ final class TimestampableTraitTest extends TestCase
      * test getUpdatedAt
      *
      * @test
+     *
      * @return void
      */
     public function testSetUpdatedAt()
@@ -106,6 +111,7 @@ final class TimestampableTraitTest extends TestCase
      * test setUpdatedAt (invalid argument)
      *
      * @test
+     *
      * @return void
      */
     public function testSetUpdatedAtInvalidArgument()

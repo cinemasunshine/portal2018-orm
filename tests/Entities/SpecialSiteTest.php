@@ -48,6 +48,7 @@ final class SpecialSiteTest extends TestCase
      * test construct
      *
      * @test
+     *
      * @return void
      */
     public function testConstruct()
@@ -98,6 +99,7 @@ final class SpecialSiteTest extends TestCase
      * test getId
      *
      * @test
+     *
      * @return void
      */
     public function testGetId()
@@ -118,6 +120,7 @@ final class SpecialSiteTest extends TestCase
      * test getName
      *
      * @test
+     *
      * @return void
      */
     public function testGetName()
@@ -138,6 +141,7 @@ final class SpecialSiteTest extends TestCase
      * test setName
      *
      * @test
+     *
      * @return void
      */
     public function testSetName()
@@ -159,6 +163,7 @@ final class SpecialSiteTest extends TestCase
      * test getNameJa
      *
      * @test
+     *
      * @return void
      */
     public function testGatNameJa()
@@ -179,6 +184,7 @@ final class SpecialSiteTest extends TestCase
      * test setNameJa
      *
      * @test
+     *
      * @return void
      */
     public function testSetNameJa()
@@ -200,6 +206,7 @@ final class SpecialSiteTest extends TestCase
      * test getTheaters
      *
      * @test
+     *
      * @return void
      */
     public function testGetTheaters()
@@ -220,6 +227,7 @@ final class SpecialSiteTest extends TestCase
      * test getCampaigns
      *
      * @test
+     *
      * @return void
      */
     public function testGetCampaigns()
@@ -240,6 +248,7 @@ final class SpecialSiteTest extends TestCase
      * test getMainBanners
      *
      * @test
+     *
      * @return void
      */
     public function testGetMainBanners()
@@ -260,6 +269,7 @@ final class SpecialSiteTest extends TestCase
      * test getNewsList
      *
      * @test
+     *
      * @return void
      */
     public function testGetNewsList()

@@ -19,24 +19,27 @@ class SpecialSiteTrailer
     use TimestampableTrait;
 
     /**
-     * @var int
      * @ORM\Id
      * @ORM\Column(type="integer", options={"unsigned"=true})
      * @ORM\GeneratedValue
+     *
+     * @var int
      */
     protected $id;
 
     /**
-     * @var Trailer
      * @ORM\ManyToOne(targetEntity="Trailer")
      * @ORM\JoinColumn(name="trailer_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
+     *
+     * @var Trailer
      */
     protected $trailer;
 
     /**
-     * @var SpecialSite
      * @ORM\ManyToOne(targetEntity="SpecialSite")
      * @ORM\JoinColumn(name="special_site_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
+     *
+     * @var SpecialSite
      */
     protected $specialSite;
 

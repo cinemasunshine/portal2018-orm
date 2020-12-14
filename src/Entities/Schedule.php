@@ -25,59 +25,68 @@ class Schedule
     use TimestampableTrait;
 
     /**
-     * @var int
      * @ORM\Id
      * @ORM\Column(type="integer", options={"unsigned"=true})
      * @ORM\GeneratedValue
+     *
+     * @var int
      */
     protected $id;
 
     /**
-     * @var Title
      * @ORM\ManyToOne(targetEntity="Title")
      * @ORM\JoinColumn(name="title_id", referencedColumnName="id", nullable=false, onDelete="RESTRICT")
+     *
+     * @var Title
      */
     protected $title;
 
     /**
-     * @var \DateTime
      * @ORM\Column(type="date", name="start_date")
+     *
+     * @var \DateTime
      */
     protected $startDate;
 
     /**
-     * @var \DateTime
      * @ORM\Column(type="date", name="end_date")
+     *
+     * @var \DateTime
      */
     protected $endDate;
 
     /**
-     * @var \DateTime
      * @ORM\Column(type="datetime", name="public_start_dt")
+     *
+     * @var \DateTime
      */
     protected $publicStartDt;
 
     /**
-     * @var \DateTime
      * @ORM\Column(type="datetime", name="public_end_dt")
+     *
+     * @var \DateTime
      */
     protected $publicEndDt;
 
     /**
-     * @var string|null
      * @ORM\Column(type="text", nullable=true)
+     *
+     * @var string|null
      */
     protected $remark;
 
     /**
-     * @var Collection<int, ShowingFormat>
      * @ORM\OneToMany(targetEntity="ShowingFormat", mappedBy="schedule", orphanRemoval=true)
+     *
+     * @var Collection<int, ShowingFormat>
      */
     protected $showingFormats;
 
     /**
-     * @var Collection<int, ShowingTheater>
      * @ORM\OneToMany(targetEntity="ShowingTheater", mappedBy="schedule", orphanRemoval=true)
+     *
+     * @var Collection<int, ShowingTheater>
      */
     protected $showingTheaters;
 
@@ -136,6 +145,7 @@ class Schedule
      *
      * @param \DateTime|string $startDate
      * @return void
+     *
      * @throws \InvalidArgumentException
      */
     public function setStartDate($startDate)
@@ -164,6 +174,7 @@ class Schedule
      *
      * @param \DateTime|string $endDate
      * @return void
+     *
      * @throws \InvalidArgumentException
      */
     public function setEndDate($endDate)
@@ -192,6 +203,7 @@ class Schedule
      *
      * @param \DateTime|string $publicStartDt
      * @return void
+     *
      * @throws \InvalidArgumentException
      */
     public function setPublicStartDt($publicStartDt)
@@ -220,6 +232,7 @@ class Schedule
      *
      * @param \DateTime|string $publicEndDt
      * @return void
+     *
      * @throws \InvalidArgumentException
      */
     public function setPublicEndDt($publicEndDt)

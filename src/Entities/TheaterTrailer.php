@@ -19,24 +19,27 @@ class TheaterTrailer
     use TimestampableTrait;
 
     /**
-     * @var int
      * @ORM\Id
      * @ORM\Column(type="integer", options={"unsigned"=true})
      * @ORM\GeneratedValue
+     *
+     * @var int
      */
     protected $id;
 
     /**
-     * @var Trailer
      * @ORM\ManyToOne(targetEntity="Trailer")
      * @ORM\JoinColumn(name="trailer_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
+     *
+     * @var Trailer
      */
     protected $trailer;
 
     /**
-     * @var Theater
      * @ORM\ManyToOne(targetEntity="Theater")
      * @ORM\JoinColumn(name="theater_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
+     *
+     * @var Theater
      */
     protected $theater;
 

@@ -28,53 +28,61 @@ class MainBanner
     public const LINK_TYPE_URL  = 2;
 
     /**
-     * @var int
      * @ORM\Id
      * @ORM\Column(type="integer", options={"unsigned"=true})
      * @ORM\GeneratedValue
+     *
+     * @var int
      */
     protected $id;
 
     /**
-     * @var File
      * @ORM\OneToOne(targetEntity="File")
      * @ORM\JoinColumn(name="image_file_id", referencedColumnName="id", nullable=false, onDelete="RESTRICT")
+     *
+     * @var File
      */
     protected $image;
 
     /**
-     * @var string
      * @ORM\Column(type="string")
+     *
+     * @var string
      */
     protected $name;
 
     /**
-     * @var int
      * @ORM\Column(type="smallint", name="link_type", options={"unsigned"=true})
+     *
+     * @var int
      */
     protected $linkType;
 
     /**
-     * @var string|null
      * @ORM\Column(type="string", name="link_url", nullable=true)
+     *
+     * @var string|null
      */
     protected $linkUrl;
 
     /**
-     * @var Collection<int, PageMainBanner>
      * @ORM\OneToMany(targetEntity="PageMainBanner", mappedBy="mainBanner")
+     *
+     * @var Collection<int, PageMainBanner>
      */
     protected $pages;
 
     /**
-     * @var Collection<int, SpecialSiteMainBanner>
      * @ORM\OneToMany(targetEntity="SpecialSiteMainBanner", mappedBy="mainBanner")
+     *
+     * @var Collection<int, SpecialSiteMainBanner>
      */
     protected $specialSites;
 
     /**
-     * @var Collection<int, TheaterMainBanner>
      * @ORM\OneToMany(targetEntity="TheaterMainBanner", mappedBy="mainBanner")
+     *
+     * @var Collection<int, TheaterMainBanner>
      */
     protected $theaters;
 

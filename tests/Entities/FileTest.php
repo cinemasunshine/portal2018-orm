@@ -37,6 +37,7 @@ final class FileTest extends TestCase
      * test getId
      *
      * @test
+     *
      * @return void
      */
     public function testGetId()
@@ -57,6 +58,7 @@ final class FileTest extends TestCase
      * test getName
      *
      * @test
+     *
      * @return void
      */
     public function testGetName()
@@ -77,6 +79,7 @@ final class FileTest extends TestCase
      * test setName
      *
      * @test
+     *
      * @return void
      */
     public function testSetName()
@@ -98,6 +101,7 @@ final class FileTest extends TestCase
      * test getOriginalName
      *
      * @test
+     *
      * @return void
      */
     public function testGetOriginalName()
@@ -118,6 +122,7 @@ final class FileTest extends TestCase
      * test setOriginalName
      *
      * @test
+     *
      * @return void
      */
     public function testSetOriginalName()
@@ -139,6 +144,7 @@ final class FileTest extends TestCase
      * test getMimeType
      *
      * @test
+     *
      * @return void
      */
     public function testGetMimeType()
@@ -159,6 +165,7 @@ final class FileTest extends TestCase
      * test setMimeType
      *
      * @test
+     *
      * @return void
      */
     public function testSetMimeType()
@@ -180,6 +187,7 @@ final class FileTest extends TestCase
      * test getSize
      *
      * @test
+     *
      * @return void
      */
     public function testGetSize()
@@ -200,6 +208,7 @@ final class FileTest extends TestCase
      * test setSize
      *
      * @test
+     *
      * @return void
      */
     public function testSetSize()

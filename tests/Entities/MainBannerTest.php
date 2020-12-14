@@ -49,6 +49,7 @@ final class MainBannerTest extends TestCase
      * test construct
      *
      * @test
+     *
      * @return void
      */
     public function testConstruct()
@@ -86,6 +87,7 @@ final class MainBannerTest extends TestCase
      * test getId
      *
      * @test
+     *
      * @return void
      */
     public function testGetId()
@@ -106,6 +108,7 @@ final class MainBannerTest extends TestCase
      * test getImage
      *
      * @test
+     *
      * @return void
      */
     public function testGetImage()
@@ -126,6 +129,7 @@ final class MainBannerTest extends TestCase
      * test setImage
      *
      * @test
+     *
      * @return void
      */
     public function testSetImage()
@@ -147,6 +151,7 @@ final class MainBannerTest extends TestCase
      * test getName
      *
      * @test
+     *
      * @return void
      */
     public function testGetName()
@@ -167,6 +172,7 @@ final class MainBannerTest extends TestCase
      * test setName
      *
      * @test
+     *
      * @return void
      */
     public function testSetName()
@@ -188,6 +194,7 @@ final class MainBannerTest extends TestCase
      * test getLinkType
      *
      * @test
+     *
      * @return void
      */
     public function testGetLinkType()
@@ -208,6 +215,7 @@ final class MainBannerTest extends TestCase
      * test setLinkType
      *
      * @test
+     *
      * @return void
      */
     public function testSetLinkType()
@@ -229,6 +237,7 @@ final class MainBannerTest extends TestCase
      * test getLinkUrl
      *
      * @test
+     *
      * @return void
      */
     public function testGetLinkUrl()
@@ -249,6 +258,7 @@ final class MainBannerTest extends TestCase
      * test setLinkUrl
      *
      * @test
+     *
      * @return void
      */
     public function testSetLinkUrl()
@@ -270,6 +280,7 @@ final class MainBannerTest extends TestCase
      * test getPages
      *
      * @test
+     *
      * @return void
      */
     public function testGetPages()
@@ -290,6 +301,7 @@ final class MainBannerTest extends TestCase
      * test getSpecialSites
      *
      * @test
+     *
      * @return void
      */
     public function testGetSpecialSites()
@@ -310,6 +322,7 @@ final class MainBannerTest extends TestCase
      * test getTheaters
      *
      * @test
+     *
      * @return void
      */
     public function testGetTheaters()

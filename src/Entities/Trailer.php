@@ -25,60 +25,69 @@ class Trailer
     use TimestampableTrait;
 
     /**
-     * @var int
      * @ORM\Id
      * @ORM\Column(type="integer", options={"unsigned"=true})
      * @ORM\GeneratedValue
+     *
+     * @var int
      */
     protected $id;
 
     /**
-     * @var Title|null
      * @ORM\ManyToOne(targetEntity="Title", inversedBy="trailers")
      * @ORM\JoinColumn(name="title_id", referencedColumnName="id", nullable=true, onDelete="RESTRICT")
+     *
+     * @var Title|null
      */
     protected $title;
 
     /**
-     * @var string
      * @ORM\Column(type="string")
+     *
+     * @var string
      */
     protected $name;
 
     /**
-     * @var string
      * @ORM\Column(type="string")
+     *
+     * @var string
      */
     protected $youtube;
 
     /**
-     * @var File
      * @ORM\OneToOne(targetEntity="File")
      * @ORM\JoinColumn(name="banner_image_file_id", referencedColumnName="id", nullable=false, onDelete="RESTRICT")
+     *
+     * @var File
      */
     protected $bannerImage;
 
     /**
-     * @var string
      * @ORM\Column(type="string", name="banner_link_url")
+     *
+     * @var string
      */
     protected $bannerLinkUrl;
 
     /**
-     * @var Collection<int, PageTrailer>
      * @ORM\OneToMany(targetEntity="PageTrailer", mappedBy="trailer", orphanRemoval=true)
+     *
+     * @var Collection<int, PageTrailer>
      */
     protected $pageTrailers;
 
     /**
-     * @var Collection<int, SpecialSiteTrailer>
      * @ORM\OneToMany(targetEntity="SpecialSiteTrailer", mappedBy="trailer", orphanRemoval=true)
+     *
+     * @var Collection<int, SpecialSiteTrailer>
      */
     protected $specialSiteTrailers;
 
     /**
-     * @var Collection<int, TheaterTrailer>
      * @ORM\OneToMany(targetEntity="TheaterTrailer", mappedBy="trailer", orphanRemoval=true)
+     *
+     * @var Collection<int, TheaterTrailer>
      */
     protected $theaterTrailers;
 

@@ -19,30 +19,34 @@ class TheaterNews
     use TimestampableTrait;
 
     /**
-     * @var int
      * @ORM\Id
      * @ORM\Column(type="integer", options={"unsigned"=true})
      * @ORM\GeneratedValue
+     *
+     * @var int
      */
     protected $id;
 
     /**
-     * @var News
      * @ORM\ManyToOne(targetEntity="News", inversedBy="theaters")
      * @ORM\JoinColumn(name="news_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
+     *
+     * @var News
      */
     protected $news;
 
     /**
-     * @var Theater
      * @ORM\ManyToOne(targetEntity="Theater", inversedBy="newsList")
      * @ORM\JoinColumn(name="theater_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
+     *
+     * @var Theater
      */
     protected $theater;
 
     /**
-     * @var int
      * @ORM\Column(type="smallint", name="display_order", options={"unsigned"=true})
+     *
+     * @var int
      */
     protected $displayOrder;
 

@@ -49,6 +49,7 @@ final class SpecialSiteTrailerTest extends TestCase
      * test getId
      *
      * @test
+     *
      * @return void
      */
     public function testGetId()
@@ -69,6 +70,7 @@ final class SpecialSiteTrailerTest extends TestCase
      * test getTrailer
      *
      * @test
+     *
      * @return void
      */
     public function testGetTrailer()
@@ -89,6 +91,7 @@ final class SpecialSiteTrailerTest extends TestCase
      * test setTrailer
      *
      * @test
+     *
      * @return void
      */
     public function testSetTrailer()
@@ -110,6 +113,7 @@ final class SpecialSiteTrailerTest extends TestCase
      * test getSpecialSite
      *
      * @test
+     *
      * @return void
      */
     public function testGetSpecialSite()
@@ -130,6 +134,7 @@ final class SpecialSiteTrailerTest extends TestCase
      * test setSpecialSite
      *
      * @test
+     *
      * @return void
      */
     public function testSetSpecialSite()
