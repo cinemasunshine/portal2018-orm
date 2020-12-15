@@ -46,6 +46,7 @@ final class ScheduleRepositoryTest extends TestCase
 
     /**
      * @test
+     *
      * @return void
      */
     public function testAddActiveQuery()
@@ -70,6 +71,7 @@ final class ScheduleRepositoryTest extends TestCase
 
     /**
      * @test
+     *
      * @return void
      */
     public function testAddPublicQuery()
@@ -101,6 +103,7 @@ final class ScheduleRepositoryTest extends TestCase
 
     /**
      * @test
+     *
      * @return void
      */
     public function testAddNowShowingQuery()
@@ -134,6 +137,7 @@ final class ScheduleRepositoryTest extends TestCase
 
     /**
      * @test
+     *
      * @return void
      */
     public function testAddComingSoonQuery()

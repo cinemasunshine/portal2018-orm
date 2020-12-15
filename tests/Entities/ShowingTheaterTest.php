@@ -49,6 +49,7 @@ final class ShowingTheaterTest extends TestCase
      * test getId
      *
      * @test
+     *
      * @return void
      */
     public function testGetId()
@@ -69,6 +70,7 @@ final class ShowingTheaterTest extends TestCase
      * test getSchedule
      *
      * @test
+     *
      * @return void
      */
     public function testGetSchedule()
@@ -89,6 +91,7 @@ final class ShowingTheaterTest extends TestCase
      * test setSchedule
      *
      * @test
+     *
      * @return void
      */
     public function testSetSchedule()
@@ -110,6 +113,7 @@ final class ShowingTheaterTest extends TestCase
      * test getTheater
      *
      * @test
+     *
      * @return void
      */
     public function testGetTheater()
@@ -130,6 +134,7 @@ final class ShowingTheaterTest extends TestCase
      * test setTheater
      *
      * @test
+     *
      * @return void
      */
     public function testSetTheater()

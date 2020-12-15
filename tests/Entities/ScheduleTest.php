@@ -49,6 +49,7 @@ final class ScheduleTest extends TestCase
      * test construct
      *
      * @test
+     *
      * @return void
      */
     public function testConstruct()
@@ -79,6 +80,7 @@ final class ScheduleTest extends TestCase
      * test getId
      *
      * @test
+     *
      * @return void
      */
     public function testGetId()
@@ -99,6 +101,7 @@ final class ScheduleTest extends TestCase
      * test getTitle
      *
      * @test
+     *
      * @return void
      */
     public function testGetTitle()
@@ -119,6 +122,7 @@ final class ScheduleTest extends TestCase
      * test setTitle
      *
      * @test
+     *
      * @return void
      */
     public function testSetTitle()
@@ -140,6 +144,7 @@ final class ScheduleTest extends TestCase
      * test getStartDate
      *
      * @test
+     *
      * @return void
      */
     public function testGetStartDate()
@@ -160,6 +165,7 @@ final class ScheduleTest extends TestCase
      * test setStartDate
      *
      * @test
+     *
      * @return void
      */
     public function testSetStartDate()
@@ -190,6 +196,7 @@ final class ScheduleTest extends TestCase
      * test setStartDate (invalid argument)
      *
      * @test
+     *
      * @return void
      */
     public function testSetStartDateInvalidArgument()
@@ -206,6 +213,7 @@ final class ScheduleTest extends TestCase
      * test getEndDate
      *
      * @test
+     *
      * @return void
      */
     public function testGetEndDate()
@@ -226,6 +234,7 @@ final class ScheduleTest extends TestCase
      * test setEndDate
      *
      * @test
+     *
      * @return void
      */
     public function testSetEndDate()
@@ -256,6 +265,7 @@ final class ScheduleTest extends TestCase
      * test setEndDate (invalid argument)
      *
      * @test
+     *
      * @return void
      */
     public function testSetEndDateInvalidArgument()
@@ -272,6 +282,7 @@ final class ScheduleTest extends TestCase
      * test getPublicStartDt
      *
      * @test
+     *
      * @return void
      */
     public function testGetPublicStartDt()
@@ -292,6 +303,7 @@ final class ScheduleTest extends TestCase
      * test setPublicStartDt
      *
      * @test
+     *
      * @return void
      */
     public function testSetPublicStartDt()
@@ -322,6 +334,7 @@ final class ScheduleTest extends TestCase
      * test setPublicStartDt (invalid argument)
      *
      * @test
+     *
      * @return void
      */
     public function testSetPublicStartDtInvalidArgument()
@@ -338,6 +351,7 @@ final class ScheduleTest extends TestCase
      * test getPublicEndDt
      *
      * @test
+     *
      * @return void
      */
     public function testGetPublicEndDt()
@@ -358,6 +372,7 @@ final class ScheduleTest extends TestCase
      * test setPublicEndDt
      *
      * @test
+     *
      * @return void
      */
     public function testSetPublicEndDt()
@@ -388,6 +403,7 @@ final class ScheduleTest extends TestCase
      * test setPublicEndDt (invalid argument)
      *
      * @test
+     *
      * @return void
      */
     public function testSetPublicEndDtInvalidArgument()
@@ -404,6 +420,7 @@ final class ScheduleTest extends TestCase
      * test getRemark
      *
      * @test
+     *
      * @return void
      */
     public function testGetRemark()
@@ -424,6 +441,7 @@ final class ScheduleTest extends TestCase
      * test setRemark
      *
      * @test
+     *
      * @return void
      */
     public function testSetRemark()
@@ -445,6 +463,7 @@ final class ScheduleTest extends TestCase
      * test getShowingFormats
      *
      * @test
+     *
      * @return void
      */
     public function testGetShowingFormats()
@@ -465,6 +484,7 @@ final class ScheduleTest extends TestCase
      * test setShowingFormats
      *
      * @test
+     *
      * @return void
      */
     public function testSetShowingFormats()
@@ -486,6 +506,7 @@ final class ScheduleTest extends TestCase
      * test getShowingTheaters
      *
      * @test
+     *
      * @return void
      */
     public function testGetShowingTheaters()
@@ -506,6 +527,7 @@ final class ScheduleTest extends TestCase
      * test setShowingTheaters
      *
      * @test
+     *
      * @return void
      */
     public function testSetShowingTheaters()

@@ -49,6 +49,7 @@ final class TitleTest extends TestCase
      * test construct
      *
      * @test
+     *
      * @return void
      */
     public function testConstruct()
@@ -79,6 +80,7 @@ final class TitleTest extends TestCase
      * test getId
      *
      * @test
+     *
      * @return void
      */
     public function testGetId()
@@ -99,6 +101,7 @@ final class TitleTest extends TestCase
      * test getImage
      *
      * @test
+     *
      * @return void
      */
     public function testGetImage()
@@ -119,6 +122,7 @@ final class TitleTest extends TestCase
      * test setImage
      *
      * @test
+     *
      * @return void
      */
     public function testSetImage()
@@ -140,6 +144,7 @@ final class TitleTest extends TestCase
      * test getName
      *
      * @test
+     *
      * @return void
      */
     public function testGetName()
@@ -160,6 +165,7 @@ final class TitleTest extends TestCase
      * test setName
      *
      * @test
+     *
      * @return void
      */
     public function testSetName()
@@ -181,6 +187,7 @@ final class TitleTest extends TestCase
      * test getNameKana
      *
      * @test
+     *
      * @return void
      */
     public function testGetNameKana()
@@ -201,6 +208,7 @@ final class TitleTest extends TestCase
      * test setNameKana
      *
      * @test
+     *
      * @return void
      */
     public function testSetNameKana()
@@ -222,6 +230,7 @@ final class TitleTest extends TestCase
      * test getNameOriginal
      *
      * @test
+     *
      * @return void
      */
     public function testGetNameOriginal()
@@ -242,6 +251,7 @@ final class TitleTest extends TestCase
      * test setNameOriginal
      *
      * @test
+     *
      * @return void
      */
     public function testSetNameOriginal()
@@ -263,6 +273,7 @@ final class TitleTest extends TestCase
      * test getCredit
      *
      * @test
+     *
      * @return void
      */
     public function testGetCredit()
@@ -283,6 +294,7 @@ final class TitleTest extends TestCase
      * test setCredit
      *
      * @test
+     *
      * @return void
      */
     public function testSetCredit()
@@ -304,6 +316,7 @@ final class TitleTest extends TestCase
      * test getCatchcopy
      *
      * @test
+     *
      * @return void
      */
     public function testGetCatchcopy()
@@ -324,6 +337,7 @@ final class TitleTest extends TestCase
      * test setCatchcopy
      *
      * @test
+     *
      * @return void
      */
     public function testSetCatchcopy()
@@ -345,6 +359,7 @@ final class TitleTest extends TestCase
      * test getIntroduction
      *
      * @test
+     *
      * @return void
      */
     public function testGetIntroduction()
@@ -365,6 +380,7 @@ final class TitleTest extends TestCase
      * test setIntroduction
      *
      * @test
+     *
      * @return void
      */
     public function testSetIntroduction()
@@ -386,6 +402,7 @@ final class TitleTest extends TestCase
      * test getDirector
      *
      * @test
+     *
      * @return void
      */
     public function testGetDirector()
@@ -406,6 +423,7 @@ final class TitleTest extends TestCase
      * test setDirector
      *
      * @test
+     *
      * @return void
      */
     public function testSetDirector()
@@ -427,6 +445,7 @@ final class TitleTest extends TestCase
      * test getCast
      *
      * @test
+     *
      * @return void
      */
     public function testGetCast()
@@ -447,6 +466,7 @@ final class TitleTest extends TestCase
      * test setCast
      *
      * @test
+     *
      * @return void
      */
     public function testSetCast()
@@ -468,6 +488,7 @@ final class TitleTest extends TestCase
      * test getPublishingExpectedDate
      *
      * @test
+     *
      * @return void
      */
     public function testGetPublishingExpectedDate()
@@ -491,6 +512,7 @@ final class TitleTest extends TestCase
      * test setPublishingExpectedDate
      *
      * @test
+     *
      * @return void
      */
     public function testSetPublishingExpectedDate()
@@ -527,6 +549,7 @@ final class TitleTest extends TestCase
      * test setPublishingExpectedDate (invalid argument)
      *
      * @test
+     *
      * @return void
      */
     public function testSetPublishingExpectedDateInvalidArgument()
@@ -543,6 +566,7 @@ final class TitleTest extends TestCase
      * test getOfficialSite
      *
      * @test
+     *
      * @return void
      */
     public function testGetOfficialSite()
@@ -563,6 +587,7 @@ final class TitleTest extends TestCase
      * test setOfficialSite
      *
      * @test
+     *
      * @return void
      */
     public function testSetOfficialSite()
@@ -584,6 +609,7 @@ final class TitleTest extends TestCase
      * test getRating
      *
      * @test
+     *
      * @return void
      */
     public function testGetRating()
@@ -604,6 +630,7 @@ final class TitleTest extends TestCase
      * test setRating
      *
      * @test
+     *
      * @return void
      */
     public function testSetRating()
@@ -625,6 +652,7 @@ final class TitleTest extends TestCase
      * test getUniversal
      *
      * @test
+     *
      * @return void
      */
     public function testGetUniversal()
@@ -645,6 +673,7 @@ final class TitleTest extends TestCase
      * test setUniversal
      *
      * @test
+     *
      * @return void
      */
     public function testSetUniversal()
@@ -666,6 +695,7 @@ final class TitleTest extends TestCase
      * test getCampaigns
      *
      * @test
+     *
      * @return void
      */
     public function testGetCampaigns()
@@ -686,6 +716,7 @@ final class TitleTest extends TestCase
      * test getTrailers
      *
      * @test
+     *
      * @return void
      */
     public function testGetTrailers()

@@ -48,6 +48,7 @@ final class ShowingFormatTest extends TestCase
      * test getId
      *
      * @test
+     *
      * @return void
      */
     public function testGetId()
@@ -68,6 +69,7 @@ final class ShowingFormatTest extends TestCase
      * test getSchedule
      *
      * @test
+     *
      * @return void
      */
     public function testGetSchedule()
@@ -88,6 +90,7 @@ final class ShowingFormatTest extends TestCase
      * test setSchedule
      *
      * @test
+     *
      * @return void
      */
     public function testSetSchedule()
@@ -109,6 +112,7 @@ final class ShowingFormatTest extends TestCase
      * test getSystem
      *
      * @test
+     *
      * @return void
      */
     public function testGetSystem()
@@ -129,6 +133,7 @@ final class ShowingFormatTest extends TestCase
      * test setSystem
      *
      * @test
+     *
      * @return void
      */
     public function testSetSystem()
@@ -150,6 +155,7 @@ final class ShowingFormatTest extends TestCase
      * test getSound
      *
      * @test
+     *
      * @return void
      */
     public function testGetSound()
@@ -170,6 +176,7 @@ final class ShowingFormatTest extends TestCase
      * test setSound
      *
      * @test
+     *
      * @return void
      */
     public function testSetSound()
@@ -191,6 +198,7 @@ final class ShowingFormatTest extends TestCase
      * test getVoice
      *
      * @test
+     *
      * @return void
      */
     public function testGetVoice()
@@ -211,6 +219,7 @@ final class ShowingFormatTest extends TestCase
      * test setVoice
      *
      * @test
+     *
      * @return void
      */
     public function testSetVoice()

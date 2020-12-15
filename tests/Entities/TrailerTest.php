@@ -50,6 +50,7 @@ final class TrailerTest extends TestCase
      * test construct
      *
      * @test
+     *
      * @return void
      */
     public function testConstruct()
@@ -87,6 +88,7 @@ final class TrailerTest extends TestCase
      * test getId
      *
      * @test
+     *
      * @return void
      */
     public function testGetId()
@@ -107,6 +109,7 @@ final class TrailerTest extends TestCase
      * test getTitle
      *
      * @test
+     *
      * @return void
      */
     public function testGetTitle()
@@ -127,6 +130,7 @@ final class TrailerTest extends TestCase
      * test setTitle
      *
      * @test
+     *
      * @return void
      */
     public function testSetTitle()
@@ -148,6 +152,7 @@ final class TrailerTest extends TestCase
      * test getName
      *
      * @test
+     *
      * @return void
      */
     public function testGetName()
@@ -168,6 +173,7 @@ final class TrailerTest extends TestCase
      * test setName
      *
      * @test
+     *
      * @return void
      */
     public function testSetName()
@@ -189,6 +195,7 @@ final class TrailerTest extends TestCase
      * test getYoutube
      *
      * @test
+     *
      * @return void
      */
     public function testGetYoutube()
@@ -209,6 +216,7 @@ final class TrailerTest extends TestCase
      * test setYoutube
      *
      * @test
+     *
      * @return void
      */
     public function testSetYoutube()
@@ -230,6 +238,7 @@ final class TrailerTest extends TestCase
      * test getBannerImage
      *
      * @test
+     *
      * @return void
      */
     public function testBannerImage()
@@ -250,6 +259,7 @@ final class TrailerTest extends TestCase
      * test setBannerImage
      *
      * @test
+     *
      * @return void
      */
     public function testSetBannerImage()
@@ -271,6 +281,7 @@ final class TrailerTest extends TestCase
      * test getBannerLinkUrl
      *
      * @test
+     *
      * @return void
      */
     public function testGetBannerLinkUrl()
@@ -291,6 +302,7 @@ final class TrailerTest extends TestCase
      * test setBannerLinkUrl
      *
      * @test
+     *
      * @return void
      */
     public function testSetBannerLinkUrl()
@@ -312,6 +324,7 @@ final class TrailerTest extends TestCase
      * test getPageTrailers
      *
      * @test
+     *
      * @return void
      */
     public function testGetPageTrailers()
@@ -332,6 +345,7 @@ final class TrailerTest extends TestCase
      * test setPageTrailers
      *
      * @test
+     *
      * @return void
      */
     public function testSetPageTrailers()
@@ -353,6 +367,7 @@ final class TrailerTest extends TestCase
      * test getSpecialSiteTrailers
      *
      * @test
+     *
      * @return void
      */
     public function testGetSpecialSiteTrailers()
@@ -373,6 +388,7 @@ final class TrailerTest extends TestCase
      * test setSpecialSiteTrailers
      *
      * @test
+     *
      * @return void
      */
     public function testSetSpecialSiteTrailers()
@@ -394,6 +410,7 @@ final class TrailerTest extends TestCase
      * test getTheaterTrailers
      *
      * @test
+     *
      * @return void
      */
     public function testGetTheaterTrailers()
@@ -414,6 +431,7 @@ final class TrailerTest extends TestCase
      * test setTheaterTrailers
      *
      * @test
+     *
      * @return void
      */
     public function testSetTheaterTrailers()

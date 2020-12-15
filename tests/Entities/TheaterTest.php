@@ -49,6 +49,7 @@ final class TheaterTest extends TestCase
      * test construct
      *
      * @test
+     *
      * @return void
      */
     public function testConstruct()
@@ -106,6 +107,7 @@ final class TheaterTest extends TestCase
      * test getId
      *
      * @test
+     *
      * @return void
      */
     public function testGetId()
@@ -126,6 +128,7 @@ final class TheaterTest extends TestCase
      * test getName
      *
      * @test
+     *
      * @return void
      */
     public function testGetName()
@@ -146,6 +149,7 @@ final class TheaterTest extends TestCase
      * test setName
      *
      * @test
+     *
      * @return void
      */
     public function testSetName()
@@ -167,6 +171,7 @@ final class TheaterTest extends TestCase
      * test getNameJa
      *
      * @test
+     *
      * @return void
      */
     public function testGatNameJa()
@@ -187,6 +192,7 @@ final class TheaterTest extends TestCase
      * test setNameJa
      *
      * @test
+     *
      * @return void
      */
     public function testSetNameJa()
@@ -208,6 +214,7 @@ final class TheaterTest extends TestCase
      * test getArea
      *
      * @test
+     *
      * @return void
      */
     public function testGetArea()
@@ -248,6 +255,7 @@ final class TheaterTest extends TestCase
      * test getMasterVersion
      *
      * @test
+     *
      * @return void
      */
     public function testGetMasterVersion()
@@ -268,6 +276,7 @@ final class TheaterTest extends TestCase
      * test setMasterVersion
      *
      * @test
+     *
      * @return void
      */
     public function testSetMasterVersion()
@@ -289,6 +298,7 @@ final class TheaterTest extends TestCase
      * test getMasterCode
      *
      * @test
+     *
      * @return void
      */
     public function testGetMasterCode()
@@ -309,6 +319,7 @@ final class TheaterTest extends TestCase
      * test setMasterCode
      *
      * @test
+     *
      * @return void
      */
     public function testSetMasterCode()
@@ -330,6 +341,7 @@ final class TheaterTest extends TestCase
      * test getDisplayOrder
      *
      * @test
+     *
      * @return void
      */
     public function testGetDisplayOrder()
@@ -350,6 +362,7 @@ final class TheaterTest extends TestCase
      * test setDisplayOrder
      *
      * @test
+     *
      * @return void
      */
     public function testSetDisplayOrder()
@@ -371,6 +384,7 @@ final class TheaterTest extends TestCase
      * test getStatus
      *
      * @test
+     *
      * @return void
      */
     public function testGetStatus()
@@ -391,6 +405,7 @@ final class TheaterTest extends TestCase
      * test setStatus
      *
      * @test
+     *
      * @return void
      */
     public function testSetStatus()
@@ -412,6 +427,7 @@ final class TheaterTest extends TestCase
      * test getMeta
      *
      * @test
+     *
      * @return void
      */
     public function testGetMeta()
@@ -432,6 +448,7 @@ final class TheaterTest extends TestCase
      * test getAdminUsers
      *
      * @test
+     *
      * @return void
      */
     public function testGetAdminUsers()
@@ -452,6 +469,7 @@ final class TheaterTest extends TestCase
      * test getSpecialSites
      *
      * @test
+     *
      * @return void
      */
     public function testGetSpecialSites()
@@ -472,6 +490,7 @@ final class TheaterTest extends TestCase
      * test getCampaigns
      *
      * @test
+     *
      * @return void
      */
     public function testGetCampaigns()
@@ -492,6 +511,7 @@ final class TheaterTest extends TestCase
      * test getMainBanners
      *
      * @test
+     *
      * @return void
      */
     public function testGetMainBanners()
@@ -512,6 +532,7 @@ final class TheaterTest extends TestCase
      * test getNewsList
      *
      * @test
+     *
      * @return void
      */
     public function testGetNewsList()

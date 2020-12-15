@@ -39,6 +39,7 @@ final class SpecialSiteNewsTest extends TestCase
      * test getId
      *
      * @test
+     *
      * @return void
      */
     public function testGetId()
@@ -59,6 +60,7 @@ final class SpecialSiteNewsTest extends TestCase
      * test getNews
      *
      * @test
+     *
      * @return void
      */
     public function testGetNews()
@@ -79,6 +81,7 @@ final class SpecialSiteNewsTest extends TestCase
      * test setNews
      *
      * @test
+     *
      * @return void
      */
     public function testSetNews()
@@ -100,6 +103,7 @@ final class SpecialSiteNewsTest extends TestCase
      * test getSpecialSite
      *
      * @test
+     *
      * @return void
      */
     public function testGetSpecialSite()
@@ -120,6 +124,7 @@ final class SpecialSiteNewsTest extends TestCase
      * test setSpecialSite
      *
      * @test
+     *
      * @return void
      */
     public function testSetSpecialSite()
@@ -141,6 +146,7 @@ final class SpecialSiteNewsTest extends TestCase
      * test getDisplayOrder
      *
      * @test
+     *
      * @return void
      */
     public function testGetDisplayOrder()
@@ -161,6 +167,7 @@ final class SpecialSiteNewsTest extends TestCase
      * test setDisplayOrder
      *
      * @test
+     *
      * @return void
      */
     public function testSetDisplayOrder()

@@ -27,6 +27,7 @@ final class SavedUserTraitTest extends TestCase
      * test getCreatedUser
      *
      * @test
+     *
      * @return void
      */
     public function testGetCreatedUser()
@@ -43,6 +44,7 @@ final class SavedUserTraitTest extends TestCase
      * test setCreatedUser
      *
      * @test
+     *
      * @return void
      */
     public function testSetCreatedUser()
@@ -59,6 +61,7 @@ final class SavedUserTraitTest extends TestCase
      * test getUpdatedUser
      *
      * @test
+     *
      * @return void
      */
     public function testGetUpdatedUser()
@@ -75,6 +78,7 @@ final class SavedUserTraitTest extends TestCase
      * test setUpdatedUser
      *
      * @test
+     *
      * @return void
      */
     public function testSetUpdatedUser()

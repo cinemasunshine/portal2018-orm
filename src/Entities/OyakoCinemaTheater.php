@@ -16,24 +16,27 @@ use Doctrine\ORM\Mapping as ORM;
 class OyakoCinemaTheater
 {
     /**
-     * @var int
      * @ORM\Id
      * @ORM\Column(type="integer", options={"unsigned"=true})
      * @ORM\GeneratedValue
+     *
+     * @var int
      */
     protected $id;
 
     /**
-     * @var OyakoCinemaSchedule
      * @ORM\ManyToOne(targetEntity="OyakoCinemaSchedule", inversedBy="oyakoCinemaTheaters")
      * @ORM\JoinColumn(name="oyako_cinema_schedule_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
+     *
+     * @var OyakoCinemaSchedule
      */
     protected $oyakoCinemaSchedule;
 
     /**
-     * @var Theater
      * @ORM\ManyToOne(targetEntity="Theater")
      * @ORM\JoinColumn(name="theater_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
+     *
+     * @var Theater
      */
     protected $theater;
 

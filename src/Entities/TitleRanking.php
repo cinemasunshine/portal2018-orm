@@ -19,57 +19,65 @@ class TitleRanking
     use TimestampableTrait;
 
     /**
-     * @var int
      * @ORM\Id
      * @ORM\Column(type="smallint", options={"unsigned"=true})
      * @ORM\GeneratedValue
+     *
+     * @var int
      */
     protected $id;
 
     /**
-     * @var \DateTime|null
      * @ORM\Column(type="date", name="from_date", nullable=true)
+     *
+     * @var \DateTime|null
      */
     protected $fromDate;
 
     /**
-     * @var \DateTime|null
      * @ORM\Column(type="date", name="to_date", nullable=true)
+     *
+     * @var \DateTime|null
      */
     protected $toDate;
 
     /**
-     * @var Title|null
      * @ORM\ManyToOne(targetEntity="Title")
      * @ORM\JoinColumn(name="rank1_title_id", referencedColumnName="id", nullable=true, onDelete="RESTRICT")
+     *
+     * @var Title|null
      */
     protected $rank1Title;
 
     /**
-     * @var Title|null
      * @ORM\ManyToOne(targetEntity="Title")
      * @ORM\JoinColumn(name="rank2_title_id", referencedColumnName="id", nullable=true, onDelete="RESTRICT")
+     *
+     * @var Title|null
      */
     protected $rank2Title;
 
     /**
-     * @var Title|null
      * @ORM\ManyToOne(targetEntity="Title")
      * @ORM\JoinColumn(name="rank3_title_id", referencedColumnName="id", nullable=true, onDelete="RESTRICT")
+     *
+     * @var Title|null
      */
     protected $rank3Title;
 
     /**
-     * @var Title|null
      * @ORM\ManyToOne(targetEntity="Title")
      * @ORM\JoinColumn(name="rank4_title_id", referencedColumnName="id", nullable=true, onDelete="RESTRICT")
+     *
+     * @var Title|null
      */
     protected $rank4Title;
 
     /**
-     * @var Title|null
      * @ORM\ManyToOne(targetEntity="Title")
      * @ORM\JoinColumn(name="rank5_title_id", referencedColumnName="id", nullable=true, onDelete="RESTRICT")
+     *
+     * @var Title|null
      */
     protected $rank5Title;
 

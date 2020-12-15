@@ -50,6 +50,7 @@ final class NewsTest extends TestCase
      * test construct
      *
      * @test
+     *
      * @return void
      */
     public function testConstruct()
@@ -87,6 +88,7 @@ final class NewsTest extends TestCase
      * test getId
      *
      * @test
+     *
      * @return void
      */
     public function testGetId()
@@ -107,6 +109,7 @@ final class NewsTest extends TestCase
      * test getTitle
      *
      * @test
+     *
      * @return void
      */
     public function testGetTitle()
@@ -127,6 +130,7 @@ final class NewsTest extends TestCase
      * test setTitle
      *
      * @test
+     *
      * @return void
      */
     public function testSetTitle()
@@ -148,6 +152,7 @@ final class NewsTest extends TestCase
      * test getImage
      *
      * @test
+     *
      * @return void
      */
     public function testGetImage()
@@ -168,6 +173,7 @@ final class NewsTest extends TestCase
      * test setImage
      *
      * @test
+     *
      * @return void
      */
     public function testSetImage()
@@ -189,6 +195,7 @@ final class NewsTest extends TestCase
      * test getCategory
      *
      * @test
+     *
      * @return void
      */
     public function testGetCategory()
@@ -209,6 +216,7 @@ final class NewsTest extends TestCase
      * test setCategory
      *
      * @test
+     *
      * @return void
      */
     public function testSetCategory()
@@ -230,6 +238,7 @@ final class NewsTest extends TestCase
      * test getHeadline
      *
      * @test
+     *
      * @return void
      */
     public function testGetHeadline()
@@ -250,6 +259,7 @@ final class NewsTest extends TestCase
      * test setHeadline
      *
      * @test
+     *
      * @return void
      */
     public function testSetHeadline()
@@ -271,6 +281,7 @@ final class NewsTest extends TestCase
      * test getBody
      *
      * @test
+     *
      * @return void
      */
     public function testGetBody()
@@ -291,6 +302,7 @@ final class NewsTest extends TestCase
      * test setBody
      *
      * @test
+     *
      * @return void
      */
     public function testSetBody()
@@ -312,6 +324,7 @@ final class NewsTest extends TestCase
      * test getStartDt
      *
      * @test
+     *
      * @return void
      */
     public function testGetStartDt()
@@ -332,6 +345,7 @@ final class NewsTest extends TestCase
      * test setStartDt
      *
      * @test
+     *
      * @return void
      */
     public function testSetStartDt()
@@ -362,6 +376,7 @@ final class NewsTest extends TestCase
      * test setStartDt (invalid argument)
      *
      * @test
+     *
      * @return void
      */
     public function testSetStartDtInvalidArgument()
@@ -378,6 +393,7 @@ final class NewsTest extends TestCase
      * test getEndDt
      *
      * @test
+     *
      * @return void
      */
     public function testGetEndDt()
@@ -398,6 +414,7 @@ final class NewsTest extends TestCase
      * test setEndDt
      *
      * @test
+     *
      * @return void
      */
     public function testSetEndDt()
@@ -428,6 +445,7 @@ final class NewsTest extends TestCase
      * test setEndDt (invalid argument)
      *
      * @test
+     *
      * @return void
      */
     public function testSetEndDtInvalidArgument()
@@ -444,6 +462,7 @@ final class NewsTest extends TestCase
      * test getPages
      *
      * @test
+     *
      * @return void
      */
     public function testGetPages()
@@ -464,6 +483,7 @@ final class NewsTest extends TestCase
      * test getSpecialSites
      *
      * @test
+     *
      * @return void
      */
     public function testGetSpecialSites()
@@ -484,6 +504,7 @@ final class NewsTest extends TestCase
      * test getTheaters
      *
      * @test
+     *
      * @return void
      */
     public function testGetTheaters()

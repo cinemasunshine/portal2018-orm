@@ -46,6 +46,7 @@ final class TheaterRepositoryTest extends TestCase
 
     /**
      * @test
+     *
      * @return void
      */
     public function testAddActiveQuery()

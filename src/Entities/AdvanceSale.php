@@ -25,42 +25,48 @@ class AdvanceSale
     use TimestampableTrait;
 
     /**
-     * @var int
      * @ORM\Id
      * @ORM\Column(type="integer", options={"unsigned"=true})
      * @ORM\GeneratedValue
+     *
+     * @var int
      */
     protected $id;
 
     /**
-     * @var Theater
      * @ORM\ManyToOne(targetEntity="Theater")
      * @ORM\JoinColumn(name="theater_id", referencedColumnName="id", nullable=false, onDelete="RESTRICT")
+     *
+     * @var Theater
      */
     protected $theater;
 
     /**
-     * @var Title
      * @ORM\ManyToOne(targetEntity="Title")
      * @ORM\JoinColumn(name="title_id", referencedColumnName="id", nullable=false, onDelete="RESTRICT")
+     *
+     * @var Title
      */
     protected $title;
 
     /**
-     * @var \DateTime|null
      * @ORM\Column(type="date", name="publishing_expected_date", nullable=true)
+     *
+     * @var \DateTime|null
      */
     protected $publishingExpectedDate;
 
     /**
-     * @var string|null
      * @ORM\Column(type="string", name="publishing_expected_date_text", nullable=true)
+     *
+     * @var string|null
      */
     protected $publishingExpectedDateText;
 
     /**
-     * @var Collection<int, AdvanceTicket>
      * @ORM\OneToMany(targetEntity="AdvanceTicket", mappedBy="advanceSale", indexBy="id")
+     *
+     * @var Collection<int, AdvanceTicket>
      */
     protected $advanceTickets;
 
@@ -139,6 +145,7 @@ class AdvanceSale
      *
      * @param \DateTime|string|null $publishingExpectedDate
      * @return void
+     *
      * @throws \InvalidArgumentException
      */
     public function setPublishingExpectedDate($publishingExpectedDate)

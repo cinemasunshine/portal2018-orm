@@ -50,6 +50,7 @@ final class AdvanceSaleTest extends TestCase
      * test construct
      *
      * @test
+     *
      * @return void
      */
     public function testConstruct()
@@ -73,6 +74,7 @@ final class AdvanceSaleTest extends TestCase
      * test getId
      *
      * @test
+     *
      * @return void
      */
     public function testGetId()
@@ -93,6 +95,7 @@ final class AdvanceSaleTest extends TestCase
      * test getTheater
      *
      * @test
+     *
      * @return void
      */
     public function testGetTheater()
@@ -113,6 +116,7 @@ final class AdvanceSaleTest extends TestCase
      * test setTheater
      *
      * @test
+     *
      * @return void
      */
     public function testSetTheater()
@@ -134,6 +138,7 @@ final class AdvanceSaleTest extends TestCase
      * test getTitle
      *
      * @test
+     *
      * @return void
      */
     public function testGetTitle()
@@ -154,6 +159,7 @@ final class AdvanceSaleTest extends TestCase
      * test setTitle
      *
      * @test
+     *
      * @return void
      */
     public function testSetTitle()
@@ -175,6 +181,7 @@ final class AdvanceSaleTest extends TestCase
      * test getPublishingExpectedDate
      *
      * @test
+     *
      * @return void
      */
     public function testGetPublishingExpectedDate()
@@ -195,6 +202,7 @@ final class AdvanceSaleTest extends TestCase
      * test setPublishingExpectedDate
      *
      * @test
+     *
      * @return void
      */
     public function testSetPublishingExpectedDate()
@@ -228,6 +236,7 @@ final class AdvanceSaleTest extends TestCase
      * test setPublishingExpectedDate (invalid argument)
      *
      * @test
+     *
      * @return void
      */
     public function testSetPublishingExpectedDateInvalidArgument()
@@ -244,6 +253,7 @@ final class AdvanceSaleTest extends TestCase
      * test getPublishingExpectedDateText
      *
      * @test
+     *
      * @return void
      */
     public function testGetPublishingExpectedDateText()
@@ -262,6 +272,7 @@ final class AdvanceSaleTest extends TestCase
      * test setPublishingExpectedDateText
      *
      * @test
+     *
      * @return void
      */
     public function testSetPublishingExpectedDateText()
@@ -281,6 +292,7 @@ final class AdvanceSaleTest extends TestCase
      * test getAdvanceTickets
      *
      * @test
+     *
      * @return void
      */
     public function testGetAdvanceTickets()

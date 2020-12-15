@@ -48,6 +48,7 @@ final class TitleRankingTest extends TestCase
      * test getId
      *
      * @test
+     *
      * @return void
      */
     public function testGetId()
@@ -68,6 +69,7 @@ final class TitleRankingTest extends TestCase
      * test getFromDate
      *
      * @test
+     *
      * @return void
      */
     public function testGetFromDate()
@@ -88,6 +90,7 @@ final class TitleRankingTest extends TestCase
      * test setFromDate
      *
      * @test
+     *
      * @return void
      */
     public function testSetFromDate()
@@ -121,6 +124,7 @@ final class TitleRankingTest extends TestCase
      * test setFromDate (invalid argument)
      *
      * @test
+     *
      * @return void
      */
     public function testSetFromDateInvalidArgument()
@@ -137,6 +141,7 @@ final class TitleRankingTest extends TestCase
      * test getToDate
      *
      * @test
+     *
      * @return void
      */
     public function testGetToDate()
@@ -157,6 +162,7 @@ final class TitleRankingTest extends TestCase
      * test setToDate
      *
      * @test
+     *
      * @return void
      */
     public function testSetToDate()
@@ -190,6 +196,7 @@ final class TitleRankingTest extends TestCase
      * test setToDate (invalid argument)
      *
      * @test
+     *
      * @return void
      */
     public function testSetToDateInvalidArgument()
@@ -249,6 +256,7 @@ final class TitleRankingTest extends TestCase
      * test getRank1Title
      *
      * @test
+     *
      * @return void
      */
     public function testGetRank1Title()
@@ -260,6 +268,7 @@ final class TitleRankingTest extends TestCase
      * test setRank1Title
      *
      * @test
+     *
      * @return void
      */
     public function testSetRank1Title()
@@ -271,6 +280,7 @@ final class TitleRankingTest extends TestCase
      * test getRank2Title
      *
      * @test
+     *
      * @return void
      */
     public function testGetRank2Title()
@@ -282,6 +292,7 @@ final class TitleRankingTest extends TestCase
      * test setRank2Title
      *
      * @test
+     *
      * @return void
      */
     public function testSetRank2Title()
@@ -293,6 +304,7 @@ final class TitleRankingTest extends TestCase
      * test getRank3Title
      *
      * @test
+     *
      * @return void
      */
     public function testGetRank3Title()
@@ -304,6 +316,7 @@ final class TitleRankingTest extends TestCase
      * test setRank3Title
      *
      * @test
+     *
      * @return void
      */
     public function testSetRank3Title()
@@ -315,6 +328,7 @@ final class TitleRankingTest extends TestCase
      * test getRank4Title
      *
      * @test
+     *
      * @return void
      */
     public function testGetRank4Title()
@@ -326,6 +340,7 @@ final class TitleRankingTest extends TestCase
      * test setRank4Title
      *
      * @test
+     *
      * @return void
      */
     public function testSetRank4Title()
@@ -337,6 +352,7 @@ final class TitleRankingTest extends TestCase
      * test getRank5Title
      *
      * @test
+     *
      * @return void
      */
     public function testGetRank5Title()
@@ -348,6 +364,7 @@ final class TitleRankingTest extends TestCase
      * test setRank5Title
      *
      * @test
+     *
      * @return void
      */
     public function testSetRank5Title()

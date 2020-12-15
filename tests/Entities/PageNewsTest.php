@@ -39,6 +39,7 @@ final class PageNewsTest extends TestCase
      * test getId
      *
      * @test
+     *
      * @return void
      */
     public function testGetId()
@@ -59,6 +60,7 @@ final class PageNewsTest extends TestCase
      * test getNews
      *
      * @test
+     *
      * @return void
      */
     public function testGetNews()
@@ -79,6 +81,7 @@ final class PageNewsTest extends TestCase
      * test setNews
      *
      * @test
+     *
      * @return void
      */
     public function testSetNews()
@@ -100,6 +103,7 @@ final class PageNewsTest extends TestCase
      * test getPage
      *
      * @test
+     *
      * @return void
      */
     public function testGetPage()
@@ -120,6 +124,7 @@ final class PageNewsTest extends TestCase
      * test setPage
      *
      * @test
+     *
      * @return void
      */
     public function testSetPage()
@@ -141,6 +146,7 @@ final class PageNewsTest extends TestCase
      * test getDisplayOrder
      *
      * @test
+     *
      * @return void
      */
     public function testGetDisplayOrder()
@@ -161,6 +167,7 @@ final class PageNewsTest extends TestCase
      * test setDisplayOrder
      *
      * @test
+     *
      * @return void
      */
     public function testSetDisplayOrder()

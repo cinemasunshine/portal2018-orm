@@ -12,16 +12,18 @@ use Cinemasunshine\ORM\Entities\AdminUser;
 trait SavedUserTrait
 {
     /**
-     * @var AdminUser|null
      * @ORM\ManyToOne(targetEntity="AdminUser")
      * @ORM\JoinColumn(name="created_user_id", referencedColumnName="id", nullable=true, onDelete="RESTRICT")
+     *
+     * @var AdminUser|null
      */
     protected $createdUser;
 
     /**
-     * @var AdminUser|null
      * @ORM\ManyToOne(targetEntity="AdminUser")
      * @ORM\JoinColumn(name="updated_user_id", referencedColumnName="id", nullable=true, onDelete="RESTRICT")
+     *
+     * @var AdminUser|null
      */
     protected $updatedUser;
 

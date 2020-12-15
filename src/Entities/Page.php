@@ -23,43 +23,49 @@ class Page
     use TimestampableTrait;
 
     /**
-     * @var int
      * @ORM\Id
      * @ORM\Column(type="smallint", options={"unsigned"=true})
      * @ORM\GeneratedValue(strategy="NONE")
+     *
+     * @var int
      */
     protected $id;
 
     /**
-     * @var string
      * @ORM\Column(type="string", unique=true)
+     *
+     * @var string
      */
     protected $name;
 
     /**
-     * @var string
      * @ORM\Column(type="string", name="name_ja")
+     *
+     * @var string
      */
     protected $nameJa;
 
     /**
-     * @var Collection<int, PageCampaign>
      * @ORM\OneToMany(targetEntity="PageCampaign", mappedBy="page", orphanRemoval=true)
      * @ORM\OrderBy({"displayOrder" = "ASC"})
+     *
+     * @var Collection<int, PageCampaign>
      */
     protected $campaigns;
 
     /**
-     * @var Collection<int, PageMainBanner>
      * @ORM\OneToMany(targetEntity="PageMainBanner", mappedBy="page", orphanRemoval=true)
      * @ORM\OrderBy({"displayOrder" = "ASC"})
+     *
+     * @var Collection<int, PageMainBanner>
      */
     protected $mainBanners;
 
     /**
-     * @var Collection<int, PageNews>
      * @ORM\OneToMany(targetEntity="PageNews", mappedBy="page", orphanRemoval=true)
      * @ORM\OrderBy({"displayOrder" = "ASC"})
+     *
+     * @var Collection<int, PageNews>
      */
     protected $newsList;
 

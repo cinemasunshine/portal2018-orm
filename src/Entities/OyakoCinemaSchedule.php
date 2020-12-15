@@ -18,33 +18,37 @@ use Doctrine\ORM\Mapping as ORM;
 class OyakoCinemaSchedule
 {
     /**
-     * @var int
      * @ORM\Id
      * @ORM\Column(type="integer", options={"unsigned"=true})
      * @ORM\GeneratedValue
+     *
+     * @var int
      */
     protected $id;
 
     /**
-     * @var OyakoCinemaTitle
      * @ORM\ManyToOne(targetEntity="OyakoCinemaTitle", inversedBy="oyakoCinemaSchedules")
      * @ORM\JoinColumn(name="oyako_cinema_title_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
+     *
+     * @var OyakoCinemaTitle
      */
     protected $oyakoCinemaTitle;
 
     /**
-     * @var \DateTime
      * @ORM\Column(type="date")
+     *
+     * @var \DateTime
      */
     protected $date;
 
     /**
-     * @var Collection<int, OyakoCinemaTheater>
      * @ORM\OneToMany(
      *     targetEntity="OyakoCinemaTheater",
      *     mappedBy="oyakoCinemaSchedule",
      *     orphanRemoval=true
      * )
+     *
+     * @var Collection<int, OyakoCinemaTheater>
      */
     protected $oyakoCinemaTheaters;
 
@@ -102,6 +106,7 @@ class OyakoCinemaSchedule
      *
      * @param \DateTime|string $date
      * @return void
+     *
      * @throws \InvalidArgumentException
      */
     public function setDate($date)

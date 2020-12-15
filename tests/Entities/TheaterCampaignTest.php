@@ -39,6 +39,7 @@ final class TheaterCampaignTest extends TestCase
      * test getId
      *
      * @test
+     *
      * @return void
      */
     public function testGetId()
@@ -59,6 +60,7 @@ final class TheaterCampaignTest extends TestCase
      * test getCampaign
      *
      * @test
+     *
      * @return void
      */
     public function testGetCampaign()
@@ -79,6 +81,7 @@ final class TheaterCampaignTest extends TestCase
      * test setCampaign
      *
      * @test
+     *
      * @return void
      */
     public function testSetCampaign()
@@ -100,6 +103,7 @@ final class TheaterCampaignTest extends TestCase
      * test getTheater
      *
      * @test
+     *
      * @return void
      */
     public function testGetTheater()
@@ -120,6 +124,7 @@ final class TheaterCampaignTest extends TestCase
      * test setTheater
      *
      * @test
+     *
      * @return void
      */
     public function testSetTheater()
@@ -141,6 +146,7 @@ final class TheaterCampaignTest extends TestCase
      * test getDisplayOrder
      *
      * @test
+     *
      * @return void
      */
     public function testGetDisplayOrder()
@@ -161,6 +167,7 @@ final class TheaterCampaignTest extends TestCase
      * test setDisplayOrder
      *
      * @test
+     *
      * @return void
      */
     public function testSetDisplayOrder()

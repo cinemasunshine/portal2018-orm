@@ -49,6 +49,7 @@ final class TheaterMetaTest extends TestCase
      * test construct
      *
      * @test
+     *
      * @return void
      */
     public function testConstruct()
@@ -70,6 +71,7 @@ final class TheaterMetaTest extends TestCase
      * test getId
      *
      * @test
+     *
      * @return void
      */
     public function testGetId()
@@ -90,6 +92,7 @@ final class TheaterMetaTest extends TestCase
      * test getTheater
      *
      * @test
+     *
      * @return void
      */
     public function testGetTheater()
@@ -110,6 +113,7 @@ final class TheaterMetaTest extends TestCase
      * test setTheater
      *
      * @test
+     *
      * @return void
      */
     public function testSetTheater()
@@ -131,6 +135,7 @@ final class TheaterMetaTest extends TestCase
      * test getOpeningHours
      *
      * @test
+     *
      * @return void
      */
     public function testGetOpeningHours()
@@ -169,6 +174,7 @@ final class TheaterMetaTest extends TestCase
      * test setOpeningHours
      *
      * @test
+     *
      * @return void
      */
     public function testSetOpeningHours()
@@ -209,6 +215,7 @@ final class TheaterMetaTest extends TestCase
      * test getTwitter
      *
      * @test
+     *
      * @return void
      */
     public function testGetTwitter()
@@ -229,6 +236,7 @@ final class TheaterMetaTest extends TestCase
      * test setTwitter
      *
      * @test
+     *
      * @return void
      */
     public function testSetTwitter()
@@ -250,6 +258,7 @@ final class TheaterMetaTest extends TestCase
      * test getFacebook
      *
      * @test
+     *
      * @return void
      */
     public function testGetFacebook()
@@ -270,6 +279,7 @@ final class TheaterMetaTest extends TestCase
      * test setFacebook
      *
      * @test
+     *
      * @return void
      */
     public function testSetFacebook()
@@ -291,6 +301,7 @@ final class TheaterMetaTest extends TestCase
      * test getOyakoCinemaUrl
      *
      * @test
+     *
      * @return void
      */
     public function testGetOyakoCinemaUrl()
@@ -311,6 +322,7 @@ final class TheaterMetaTest extends TestCase
      * test setOyakoCinemaUrl
      *
      * @test
+     *
      * @return void
      */
     public function testSetOyakoCinemaUrl()

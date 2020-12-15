@@ -47,6 +47,7 @@ final class TheaterOpeningHourTest extends TestCase
      * test create
      *
      * @test
+     *
      * @return void
      */
     public function testCreate()
@@ -97,6 +98,7 @@ final class TheaterOpeningHourTest extends TestCase
      * test getType
      *
      * @test
+     *
      * @return void
      */
     public function testGetType()
@@ -117,6 +119,7 @@ final class TheaterOpeningHourTest extends TestCase
      * test setType
      *
      * @test
+     *
      * @return void
      */
     public function testSetType()
@@ -138,6 +141,7 @@ final class TheaterOpeningHourTest extends TestCase
      * test getFromDate
      *
      * @test
+     *
      * @return void
      */
     public function testGetFromDate()
@@ -158,6 +162,7 @@ final class TheaterOpeningHourTest extends TestCase
      * test setFromDate
      *
      * @test
+     *
      * @return void
      */
     public function testSetFromDate()
@@ -188,6 +193,7 @@ final class TheaterOpeningHourTest extends TestCase
      * test setFromDate (invalid argument)
      *
      * @test
+     *
      * @return void
      */
     public function testSetFromDateInvalidArgument()
@@ -204,6 +210,7 @@ final class TheaterOpeningHourTest extends TestCase
      * test getToDate
      *
      * @test
+     *
      * @return void
      */
     public function testGetToDate()
@@ -224,6 +231,7 @@ final class TheaterOpeningHourTest extends TestCase
      * test setToDate
      *
      * @test
+     *
      * @return void
      */
     public function testSetToDate()
@@ -257,6 +265,7 @@ final class TheaterOpeningHourTest extends TestCase
      * test setToDate (invalid argument)
      *
      * @test
+     *
      * @return void
      */
     public function testSetToDateInvalidArgument()
@@ -273,6 +282,7 @@ final class TheaterOpeningHourTest extends TestCase
      * test getTime
      *
      * @test
+     *
      * @return void
      */
     public function testGetTime()
@@ -293,6 +303,7 @@ final class TheaterOpeningHourTest extends TestCase
      * test setTime
      *
      * @test
+     *
      * @return void
      */
     public function testSetTime()
@@ -323,6 +334,7 @@ final class TheaterOpeningHourTest extends TestCase
      * test setTime (invalid argument)
      *
      * @test
+     *
      * @return void
      */
     public function testSetTimeInvalidArgument()
@@ -339,6 +351,7 @@ final class TheaterOpeningHourTest extends TestCase
      * test toArray
      *
      * @test
+     *
      * @return void
      */
     public function testToArray()

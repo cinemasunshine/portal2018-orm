@@ -32,72 +32,83 @@ class AdvanceTicket
     public const STATUS_SALE_END = 3;
 
     /**
-     * @var int
      * @ORM\Id
      * @ORM\Column(type="integer", options={"unsigned"=true})
      * @ORM\GeneratedValue
+     *
+     * @var int
      */
     protected $id;
 
     /**
-     * @var AdvanceSale
      * @ORM\ManyToOne(targetEntity="AdvanceSale", inversedBy="advanceTickets")
      * @ORM\JoinColumn(name="advance_sale_id", referencedColumnName="id", nullable=false, onDelete="RESTRICT")
+     *
+     * @var AdvanceSale
      */
     protected $advanceSale;
 
     /**
-     * @var \DateTime
      * @ORM\Column(type="datetime", name="publishing_start_dt")
+     *
+     * @var \DateTime
      */
     protected $publishingStartDt;
 
     /**
-     * @var \DateTime
      * @ORM\Column(type="datetime", name="release_dt")
+     *
+     * @var \DateTime
      */
     protected $releaseDt;
 
     /**
-     * @var string|null
      * @ORM\Column(type="string", name="release_dt_text", nullable=true)
+     *
+     * @var string|null
      */
     protected $releaseDtText;
 
     /**
-     * @var bool
      * @ORM\Column(type="boolean", name="is_sales_end", options={"default":false})
+     *
+     * @var bool
      */
     protected $isSalesEnd;
 
     /**
-     * @var int
      * @ORM\Column(type="smallint", options={"unsigned"=true})
+     *
+     * @var int
      */
     protected $type;
 
     /**
-     * @var string|null
      * @ORM\Column(type="string", name="price_text", nullable=true)
+     *
+     * @var string|null
      */
     protected $priceText;
 
     /**
-     * @var string|null
      * @ORM\Column(type="string", name="special_gift", nullable=true)
+     *
+     * @var string|null
      */
     protected $specialGift;
 
     /**
-     * @var int|null
      * @ORM\Column(type="smallint", name="special_gift_stock", nullable=true, options={"unsigned"=true})
+     *
+     * @var int|null
      */
     protected $specialGiftStock;
 
     /**
-     * @var File|null
      * @ORM\OneToOne(targetEntity="File")
      * @ORM\JoinColumn(name="special_gift_image", referencedColumnName="id", nullable=true, onDelete="RESTRICT")
+     *
+     * @var File|null
      */
     protected $specialGiftImage;
 
@@ -147,6 +158,7 @@ class AdvanceTicket
      *
      * @param \DateTime|string $publishingStartDt
      * @return void
+     *
      * @throws \InvalidArgumentException
      */
     public function setPublishingStartDt($publishingStartDt)
@@ -175,6 +187,7 @@ class AdvanceTicket
      *
      * @param \DateTime|string $releaseDt
      * @return void
+     *
      * @throws \InvalidArgumentException
      */
     public function setReleaseDt($releaseDt)

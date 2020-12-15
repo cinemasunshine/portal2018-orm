@@ -49,6 +49,7 @@ final class AdvanceTicketTest extends TestCase
      * test getId
      *
      * @test
+     *
      * @return void
      */
     public function testGetId()
@@ -69,6 +70,7 @@ final class AdvanceTicketTest extends TestCase
      * test getAdvanceSale
      *
      * @test
+     *
      * @return void
      */
     public function testGetAdvanceSale()
@@ -89,6 +91,7 @@ final class AdvanceTicketTest extends TestCase
      * test setAdvanceSale
      *
      * @test
+     *
      * @return void
      */
     public function testSetAdvanceSale()
@@ -110,6 +113,7 @@ final class AdvanceTicketTest extends TestCase
      * test getPublishingStartDt
      *
      * @test
+     *
      * @return void
      */
     public function testGetPublishingStartDt()
@@ -130,6 +134,7 @@ final class AdvanceTicketTest extends TestCase
      * test setPublishingStartDt
      *
      * @test
+     *
      * @return void
      */
     public function testSetPublishingStartDt()
@@ -160,6 +165,7 @@ final class AdvanceTicketTest extends TestCase
      * test setPublishingStartDt (invalid argument)
      *
      * @test
+     *
      * @return void
      */
     public function testSetPublishingStartDtInvalidArgument()
@@ -176,6 +182,7 @@ final class AdvanceTicketTest extends TestCase
      * test getReleaseDt
      *
      * @test
+     *
      * @return void
      */
     public function testGetReleaseDt()
@@ -196,6 +203,7 @@ final class AdvanceTicketTest extends TestCase
      * test setReleaseDt
      *
      * @test
+     *
      * @return void
      */
     public function testSetReleaseDt()
@@ -226,6 +234,7 @@ final class AdvanceTicketTest extends TestCase
      * test setReleaseDt (invalid argument)
      *
      * @test
+     *
      * @return void
      */
     public function testSetReleaseDtInvalidArgument()
@@ -242,6 +251,7 @@ final class AdvanceTicketTest extends TestCase
      * test getReleaseDtText
      *
      * @test
+     *
      * @return void
      */
     public function testGetReleaseDtText()
@@ -262,6 +272,7 @@ final class AdvanceTicketTest extends TestCase
      * test setReleaseDtText
      *
      * @test
+     *
      * @return void
      */
     public function testSetReleaseDtText()
@@ -283,6 +294,7 @@ final class AdvanceTicketTest extends TestCase
      * test getIsSalesEnd
      *
      * @test
+     *
      * @return void
      */
     public function testGetIsSalesEnd()
@@ -303,6 +315,7 @@ final class AdvanceTicketTest extends TestCase
      * test isSalseEnd
      *
      * @test
+     *
      * @return void
      */
     public function testIsSalseEnd()
@@ -322,6 +335,7 @@ final class AdvanceTicketTest extends TestCase
      * test setIsSalesEnd
      *
      * @test
+     *
      * @return void
      */
     public function testSetIsSalesEnd()
@@ -343,6 +357,7 @@ final class AdvanceTicketTest extends TestCase
      * test getType
      *
      * @test
+     *
      * @return void
      */
     public function testGetType()
@@ -363,6 +378,7 @@ final class AdvanceTicketTest extends TestCase
      * test setType
      *
      * @test
+     *
      * @return void
      */
     public function testSetType()
@@ -384,6 +400,7 @@ final class AdvanceTicketTest extends TestCase
      * test getPriceText
      *
      * @test
+     *
      * @return void
      */
     public function testGetPriceText()
@@ -404,6 +421,7 @@ final class AdvanceTicketTest extends TestCase
      * test setPriceText
      *
      * @test
+     *
      * @return void
      */
     public function testSetPriceText()
@@ -425,6 +443,7 @@ final class AdvanceTicketTest extends TestCase
      * test getSpecialGift
      *
      * @test
+     *
      * @return void
      */
     public function testGetSpecialGift()
@@ -445,6 +464,7 @@ final class AdvanceTicketTest extends TestCase
      * test setSpecialGift
      *
      * @test
+     *
      * @return void
      */
     public function testSetSpecialGift()
@@ -466,6 +486,7 @@ final class AdvanceTicketTest extends TestCase
      * test getSpecialGiftStock
      *
      * @test
+     *
      * @return void
      */
     public function testGetSpecialGiftStock()
@@ -486,6 +507,7 @@ final class AdvanceTicketTest extends TestCase
      * test setSpecialGiftStock
      *
      * @test
+     *
      * @return void
      */
     public function testSetSpecialGiftStock()
@@ -507,6 +529,7 @@ final class AdvanceTicketTest extends TestCase
      * test getSpecialGiftImage
      *
      * @test
+     *
      * @return void
      */
     public function testGetSpecialGiftImage()
@@ -527,6 +550,7 @@ final class AdvanceTicketTest extends TestCase
      * test setSpecialGiftImage
      *
      * @test
+     *
      * @return void
      */
     public function testSetSpecialGiftImage()

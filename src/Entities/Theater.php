@@ -35,52 +35,60 @@ class Theater
     public const STATUS_CLOSED  = 3; // 劇場閉館。実際の劇場が閉館した状態。
 
     /**
-     * @var int
      * @ORM\Id
      * @ORM\Column(type="smallint", options={"unsigned"=true})
      * @ORM\GeneratedValue(strategy="NONE")
+     *
+     * @var int
      */
     protected $id;
 
     /**
-     * @var string
      * @ORM\Column(type="string", unique=true)
+     *
+     * @var string
      */
     protected $name;
 
     /**
-     * @var string
      * @ORM\Column(type="string", name="name_ja")
+     *
+     * @var string
      */
     protected $nameJa;
 
     /**
-     * @var int
      * @ORM\Column(type="smallint", options={"unsigned"=true})
+     *
+     * @var int
      */
     protected $area;
 
     /**
-     * @var int
      * @ORM\Column(type="smallint", name="master_version", options={"unsigned"=true})
+     *
+     * @var int
      */
     protected $masterVersion;
 
     /**
-     * @var string|null
      * @ORM\Column(type="string", name="master_code", length=3, nullable=true, options={"fixed":true})
+     *
+     * @var string|null
      */
     protected $masterCode;
 
     /**
-     * @var int
      * @ORM\Column(type="smallint", name="display_order", options={"unsigned"=true})
+     *
+     * @var int
      */
     protected $displayOrder;
 
     /**
-     * @var int
      * @ORM\Column(type="smallint", name="status", options={"unsigned"=true})
+     *
+     * @var int
      */
     protected $status;
 
@@ -89,45 +97,51 @@ class Theater
      *
      * 設計の問題でnullを許容する形になってしまったが、nullにならないようデータで調整する。
      *
-     * @var TheaterMeta|null
      * @ORM\OneToOne(targetEntity="TheaterMeta", mappedBy="theater")
+     *
+     * @var TheaterMeta|null
      */
     protected $meta;
 
     /**
-     * @var Collection<int, AdminUser>
      * @ORM\OneToMany(targetEntity="AdminUser", mappedBy="theater")
+     *
+     * @var Collection<int, AdminUser>
      */
     protected $adminUsers;
 
     /**
-     * @var Collection<int, SpecialSite>
      * @ORM\ManyToMany(targetEntity="SpecialSite", inversedBy="theaters")
      * @ORM\JoinTable(name="theater_special_site",
      *      joinColumns={@ORM\JoinColumn(name="theater_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="special_site_id", referencedColumnName="id")}
      * )
+     *
+     * @var Collection<int, SpecialSite>
      */
     protected $specialSites;
 
     /**
-     * @var Collection<int, TheaterCampaign>
      * @ORM\OneToMany(targetEntity="TheaterCampaign", mappedBy="theater", orphanRemoval=true)
      * @ORM\OrderBy({"displayOrder" = "ASC"})
+     *
+     * @var Collection<int, TheaterCampaign>
      */
     protected $campaigns;
 
     /**
-     * @var Collection<int, TheaterMainBanner>
      * @ORM\OneToMany(targetEntity="TheaterMainBanner", mappedBy="theater", orphanRemoval=true)
      * @ORM\OrderBy({"displayOrder" = "ASC"})
+     *
+     * @var Collection<int, TheaterMainBanner>
      */
     protected $mainBanners;
 
     /**
-     * @var Collection<int, TheaterNews>
      * @ORM\OneToMany(targetEntity="TheaterNews", mappedBy="theater", orphanRemoval=true)
      * @ORM\OrderBy({"displayOrder" = "ASC"})
+     *
+     * @var Collection<int, TheaterNews>
      */
     protected $newsList;
 

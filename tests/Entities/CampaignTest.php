@@ -50,6 +50,7 @@ final class CampaignTest extends TestCase
      * test construct
      *
      * @test
+     *
      * @return void
      */
     public function testConstruct()
@@ -87,6 +88,7 @@ final class CampaignTest extends TestCase
      * test getId
      *
      * @test
+     *
      * @return void
      */
     public function testGetId()
@@ -107,6 +109,7 @@ final class CampaignTest extends TestCase
      * test getTitle
      *
      * @test
+     *
      * @return void
      */
     public function testGetTitle()
@@ -127,6 +130,7 @@ final class CampaignTest extends TestCase
      * test setTitle
      *
      * @test
+     *
      * @return void
      */
     public function testSetTitle()
@@ -148,6 +152,7 @@ final class CampaignTest extends TestCase
      * test getImage
      *
      * @test
+     *
      * @return void
      */
     public function testGetImage()
@@ -168,6 +173,7 @@ final class CampaignTest extends TestCase
      * test setImage
      *
      * @test
+     *
      * @return void
      */
     public function testSetImage()
@@ -189,6 +195,7 @@ final class CampaignTest extends TestCase
      * test getName
      *
      * @test
+     *
      * @return void
      */
     public function testGetName()
@@ -209,6 +216,7 @@ final class CampaignTest extends TestCase
      * test setName
      *
      * @test
+     *
      * @return void
      */
     public function testSetName()
@@ -230,6 +238,7 @@ final class CampaignTest extends TestCase
      * test getStartDt
      *
      * @test
+     *
      * @return void
      */
     public function testGetStartDt()
@@ -250,6 +259,7 @@ final class CampaignTest extends TestCase
      * test setStartDt
      *
      * @test
+     *
      * @return void
      */
     public function testSetStartDt()
@@ -280,6 +290,7 @@ final class CampaignTest extends TestCase
      * test setStartDt (invalid argument)
      *
      * @test
+     *
      * @return void
      */
     public function testSetStartDtInvalidArgument()
@@ -296,6 +307,7 @@ final class CampaignTest extends TestCase
      * test getEndDt
      *
      * @test
+     *
      * @return void
      */
     public function testGetEndDt()
@@ -316,6 +328,7 @@ final class CampaignTest extends TestCase
      * test setEndDt
      *
      * @test
+     *
      * @return void
      */
     public function testSetEndDt()
@@ -346,6 +359,7 @@ final class CampaignTest extends TestCase
      * test setEndDt (invalid argument)
      *
      * @test
+     *
      * @return void
      */
     public function testSetEndDtInvalidArgument()
@@ -362,6 +376,7 @@ final class CampaignTest extends TestCase
      * test getUrl
      *
      * @test
+     *
      * @return void
      */
     public function testGetUrl()
@@ -382,6 +397,7 @@ final class CampaignTest extends TestCase
      * test setUrl
      *
      * @test
+     *
      * @return void
      */
     public function testSetUrl()
@@ -403,6 +419,7 @@ final class CampaignTest extends TestCase
      * test getPages
      *
      * @test
+     *
      * @return void
      */
     public function testGetPages()
@@ -423,6 +440,7 @@ final class CampaignTest extends TestCase
      * test getSpecialSite
      *
      * @test
+     *
      * @return void
      */
     public function testGetSpecialSite()
@@ -443,6 +461,7 @@ final class CampaignTest extends TestCase
      * test getTheaters
      *
      * @test
+     *
      * @return void
      */
     public function testGetTheaters()

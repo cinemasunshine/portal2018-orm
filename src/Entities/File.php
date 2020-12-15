@@ -19,34 +19,39 @@ class File
     use TimestampableTrait;
 
     /**
-     * @var int
      * @ORM\Id
      * @ORM\Column(type="integer", options={"unsigned"=true})
      * @ORM\GeneratedValue
+     *
+     * @var int
      */
     protected $id;
 
     /**
-     * @var string
      * @ORM\Column(type="string", unique=true)
+     *
+     * @var string
      */
     protected $name;
 
     /**
-     * @var string
      * @ORM\Column(type="string", name="original_name")
+     *
+     * @var string
      */
     protected $originalName;
 
     /**
-     * @var string
      * @ORM\Column(type="string", name="mime_type")
+     *
+     * @var string
      */
     protected $mimeType;
 
     /**
-     * @var int
      * @ORM\Column(type="integer", options={"unsigned"=true})
+     *
+     * @var int
      */
     protected $size;
 

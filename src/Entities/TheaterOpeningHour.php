@@ -1,11 +1,5 @@
 <?php
 
-/**
- * TheaterOpeningHour.php
- *
- * @author Atsushi Okui <okui@motionpicture.jp>
- */
-
 declare(strict_types=1);
 
 namespace Cinemasunshine\ORM\Entities;
@@ -21,24 +15,16 @@ class TheaterOpeningHour
     public const TYPE_DATE = 1;
     public const TYPE_TERM = 2;
 
-    /**
-     * @var int
-     */
+    /** @var int */
     protected $type;
 
-    /**
-     * @var \DateTime
-     */
+    /** @var \DateTime */
     protected $fromDate;
 
-    /**
-     * @var \DateTime|null
-     */
+    /** @var \DateTime|null */
     protected $toDate;
 
-    /**
-     * @var \DateTime
-     */
+    /** @var \DateTime */
     protected $time;
 
     /**
@@ -101,6 +87,7 @@ class TheaterOpeningHour
      *
      * @param \DateTime|string $fromDate
      * @return void
+     *
      * @throws \InvalidArgumentException
      */
     public function setFromDate($fromDate)
@@ -129,6 +116,7 @@ class TheaterOpeningHour
      *
      * @param \DateTime|string|null $toDate
      * @return void
+     *
      * @throws \InvalidArgumentException
      */
     public function setToDate($toDate)
@@ -157,6 +145,7 @@ class TheaterOpeningHour
      *
      * @param \DateTime|string $time
      * @return void
+     *
      * @throws \InvalidArgumentException
      */
     public function setTime($time)
