@@ -1,9 +1,5 @@
 <?php
 
-/**
- * TheaterOpeningHour.php
- */
-
 declare(strict_types=1);
 
 namespace Cinemasunshine\ORM\Entities;
