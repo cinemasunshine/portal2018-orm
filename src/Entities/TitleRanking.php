@@ -5,7 +5,9 @@ declare(strict_types=1);
 namespace Cinemasunshine\ORM\Entities;
 
 use Cinemasunshine\ORM\Entities\Traits\TimestampableTrait;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use InvalidArgumentException;
 
 /**
  * TitleRanking entity
@@ -30,14 +32,14 @@ class TitleRanking
     /**
      * @ORM\Column(type="date", name="from_date", nullable=true)
      *
-     * @var \DateTime|null
+     * @var DateTime|null
      */
     protected $fromDate;
 
     /**
      * @ORM\Column(type="date", name="to_date", nullable=true)
      *
-     * @var \DateTime|null
+     * @var DateTime|null
      */
     protected $toDate;
 
@@ -94,9 +96,9 @@ class TitleRanking
     /**
      * Return fromDate
      *
-     * @return \DateTime|null
+     * @return DateTime|null
      */
-    public function getFromDate(): ?\DateTime
+    public function getFromDate(): ?DateTime
     {
         return $this->fromDate;
     }
@@ -104,26 +106,26 @@ class TitleRanking
     /**
      * Set fromDate
      *
-     * @param \DateTime|string|null $fromDate
+     * @param DateTime|string|null $fromDate
      * @return void
      */
     public function setFromDate($fromDate)
     {
-        if (is_null($fromDate) || $fromDate instanceof \DateTime) {
+        if (is_null($fromDate) || $fromDate instanceof DateTime) {
             $this->fromDate = $fromDate;
         } elseif (is_string($fromDate)) {
-            $this->fromDate = new \DateTime($fromDate);
+            $this->fromDate = new DateTime($fromDate);
         } else {
-            throw new \InvalidArgumentException('Invalid type.');
+            throw new InvalidArgumentException('Invalid type.');
         }
     }
 
     /**
      * Return toDate
      *
-     * @return \DateTime|null
+     * @return DateTime|null
      */
-    public function getToDate(): ?\DateTime
+    public function getToDate(): ?DateTime
     {
         return $this->toDate;
     }
@@ -131,17 +133,17 @@ class TitleRanking
     /**
      * Set toDate
      *
-     * @param \DateTime|string|null $toDate
+     * @param DateTime|string|null $toDate
      * @return void
      */
     public function setToDate($toDate)
     {
-        if (is_null($toDate) || $toDate instanceof \DateTime) {
+        if (is_null($toDate) || $toDate instanceof DateTime) {
             $this->toDate = $toDate;
         } elseif (is_string($toDate)) {
-            $this->toDate = new \DateTime($toDate);
+            $this->toDate = new DateTime($toDate);
         } else {
-            throw new \InvalidArgumentException('Invalid type.');
+            throw new InvalidArgumentException('Invalid type.');
         }
     }
 

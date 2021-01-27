@@ -7,7 +7,9 @@ namespace Tests\Entities;
 use Cinemasunshine\ORM\Entities\SpecialSite;
 use Cinemasunshine\ORM\Entities\SpecialSiteTrailer;
 use Cinemasunshine\ORM\Entities\Trailer;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 
 /**
  * SpecialSiteTrailer test
@@ -17,7 +19,7 @@ final class SpecialSiteTrailerTest extends TestCase
     /**
      * Create target mock
      *
-     * @return SpecialSiteTrailer&\PHPUnit\Framework\MockObject\MockObject
+     * @return SpecialSiteTrailer&MockObject
      */
     public function createTargetMock()
     {
@@ -28,7 +30,7 @@ final class SpecialSiteTrailerTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return SpecialSiteTrailer&\PHPUnit\Framework\MockObject\MockObject
+     * @return SpecialSiteTrailer&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -38,11 +40,11 @@ final class SpecialSiteTrailerTest extends TestCase
     /**
      * Create target reflection
      *
-     * @return \ReflectionClass<SpecialSiteTrailer>
+     * @return ReflectionClass<SpecialSiteTrailer>
      */
     public function createTargetReflection()
     {
-        return new \ReflectionClass(SpecialSiteTrailer::class);
+        return new ReflectionClass(SpecialSiteTrailer::class);
     }
 
     /**

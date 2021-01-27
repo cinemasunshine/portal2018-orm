@@ -7,7 +7,9 @@ namespace Tests\Entities;
 use Cinemasunshine\ORM\Entities\News;
 use Cinemasunshine\ORM\Entities\Theater;
 use Cinemasunshine\ORM\Entities\TheaterNews;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 
 /**
  * TheaterNews test
@@ -18,7 +20,7 @@ final class TheaterNewsTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return TheaterNews&\PHPUnit\Framework\MockObject\MockObject
+     * @return TheaterNews&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -28,11 +30,11 @@ final class TheaterNewsTest extends TestCase
     /**
      * Create target reflection
      *
-     * @return \ReflectionClass<TheaterNews>
+     * @return ReflectionClass<TheaterNews>
      */
     public function createTargetReflection()
     {
-        return new \ReflectionClass(TheaterNews::class);
+        return new ReflectionClass(TheaterNews::class);
     }
 
     /**

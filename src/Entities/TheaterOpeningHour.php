@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Cinemasunshine\ORM\Entities;
 
+use DateTime;
+use InvalidArgumentException;
+
 /**
  * TheaterOpeningHour entity
  *
@@ -18,13 +21,13 @@ class TheaterOpeningHour
     /** @var int */
     protected $type;
 
-    /** @var \DateTime */
+    /** @var DateTime */
     protected $fromDate;
 
-    /** @var \DateTime|null */
+    /** @var DateTime|null */
     protected $toDate;
 
-    /** @var \DateTime */
+    /** @var DateTime */
     protected $time;
 
     /**
@@ -75,9 +78,9 @@ class TheaterOpeningHour
     /**
      * Return fromDate
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getFromDate(): \DateTime
+    public function getFromDate(): DateTime
     {
         return $this->fromDate;
     }
@@ -85,28 +88,28 @@ class TheaterOpeningHour
     /**
      * Set fromDate
      *
-     * @param \DateTime|string $fromDate
+     * @param DateTime|string $fromDate
      * @return void
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function setFromDate($fromDate)
     {
-        if ($fromDate instanceof \DateTime) {
+        if ($fromDate instanceof DateTime) {
             $this->fromDate = $fromDate;
         } elseif (is_string($fromDate)) {
-            $this->fromDate = new \DateTime($fromDate);
+            $this->fromDate = new DateTime($fromDate);
         } else {
-            throw new \InvalidArgumentException('Invalid type.');
+            throw new InvalidArgumentException('Invalid type.');
         }
     }
 
     /**
      * Return toDate
      *
-     * @return \DateTime|null
+     * @return DateTime|null
      */
-    public function getToDate(): ?\DateTime
+    public function getToDate(): ?DateTime
     {
         return $this->toDate;
     }
@@ -114,28 +117,28 @@ class TheaterOpeningHour
     /**
      * Set toDate
      *
-     * @param \DateTime|string|null $toDate
+     * @param DateTime|string|null $toDate
      * @return void
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function setToDate($toDate)
     {
-        if (is_null($toDate) || $toDate instanceof \DateTime) {
+        if (is_null($toDate) || $toDate instanceof DateTime) {
             $this->toDate = $toDate;
         } elseif (is_string($toDate)) {
-            $this->toDate = new \DateTime($toDate);
+            $this->toDate = new DateTime($toDate);
         } else {
-            throw new \InvalidArgumentException('Invalid type.');
+            throw new InvalidArgumentException('Invalid type.');
         }
     }
 
     /**
      * Return time
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getTime(): \DateTime
+    public function getTime(): DateTime
     {
         return $this->time;
     }
@@ -143,19 +146,19 @@ class TheaterOpeningHour
     /**
      * Set time
      *
-     * @param \DateTime|string $time
+     * @param DateTime|string $time
      * @return void
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function setTime($time)
     {
-        if ($time instanceof \DateTime) {
+        if ($time instanceof DateTime) {
             $this->time = $time;
         } elseif (is_string($time)) {
-            $this->time = new \DateTime($time);
+            $this->time = new DateTime($time);
         } else {
-            throw new \InvalidArgumentException('Invalid type.');
+            throw new InvalidArgumentException('Invalid type.');
         }
     }
 

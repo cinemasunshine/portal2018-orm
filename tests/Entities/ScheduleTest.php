@@ -6,8 +6,13 @@ namespace Tests\Entities;
 
 use Cinemasunshine\ORM\Entities\Schedule;
 use Cinemasunshine\ORM\Entities\Title;
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
+use InvalidArgumentException;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
+use ReflectionMethod;
 
 /**
  * Schedule test
@@ -17,7 +22,7 @@ final class ScheduleTest extends TestCase
     /**
      * Create target mock
      *
-     * @return Schedule&\PHPUnit\Framework\MockObject\MockObject
+     * @return Schedule&MockObject
      */
     public function createTargetMock()
     {
@@ -28,7 +33,7 @@ final class ScheduleTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return Schedule&\PHPUnit\Framework\MockObject\MockObject
+     * @return Schedule&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -38,11 +43,11 @@ final class ScheduleTest extends TestCase
     /**
      * Create target reflection
      *
-     * @return \ReflectionClass<Schedule>
+     * @return ReflectionClass<Schedule>
      */
     public function createTargetReflection()
     {
-        return new \ReflectionClass(Schedule::class);
+        return new ReflectionClass(Schedule::class);
     }
 
     /**
@@ -57,7 +62,7 @@ final class ScheduleTest extends TestCase
         $targetMock = $this->createTargetMock();
         $targetRef  = $this->createTargetReflection();
 
-        /** @var \ReflectionMethod $constructorRef */
+        /** @var ReflectionMethod $constructorRef */
         $constructorRef = $targetRef->getConstructor();
         $constructorRef->invoke($targetMock);
 
@@ -149,7 +154,7 @@ final class ScheduleTest extends TestCase
      */
     public function testGetStartDate()
     {
-        $startDate = new \DateTime();
+        $startDate = new DateTime();
 
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -176,14 +181,14 @@ final class ScheduleTest extends TestCase
         $startDatePropertyRef = $targetRef->getProperty('startDate');
         $startDatePropertyRef->setAccessible(true);
 
-        $dtObject = new \DateTime();
+        $dtObject = new DateTime();
         $targetMock->setStartDate($dtObject);
         $this->assertEquals($dtObject, $startDatePropertyRef->getValue($targetMock));
 
         $dtString = '2020-01-01';
         $targetMock->setStartDate($dtString);
         $this->assertInstanceOf(
-            \DateTime::class,
+            DateTime::class,
             $startDatePropertyRef->getValue($targetMock)
         );
         $this->assertEquals(
@@ -201,7 +206,7 @@ final class ScheduleTest extends TestCase
      */
     public function testSetStartDateInvalidArgument()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         $targetMock = $this->createTargetPartialMock([]);
 
@@ -218,7 +223,7 @@ final class ScheduleTest extends TestCase
      */
     public function testGetEndDate()
     {
-        $endDate = new \DateTime();
+        $endDate = new DateTime();
 
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -245,14 +250,14 @@ final class ScheduleTest extends TestCase
         $endDatePropertyRef = $targetRef->getProperty('endDate');
         $endDatePropertyRef->setAccessible(true);
 
-        $dtObject = new \DateTime();
+        $dtObject = new DateTime();
         $targetMock->setEndDate($dtObject);
         $this->assertEquals($dtObject, $endDatePropertyRef->getValue($targetMock));
 
         $dtString = '2020-01-01';
         $targetMock->setEndDate($dtString);
         $this->assertInstanceOf(
-            \DateTime::class,
+            DateTime::class,
             $endDatePropertyRef->getValue($targetMock)
         );
         $this->assertEquals(
@@ -270,7 +275,7 @@ final class ScheduleTest extends TestCase
      */
     public function testSetEndDateInvalidArgument()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         $targetMock = $this->createTargetPartialMock([]);
 
@@ -287,7 +292,7 @@ final class ScheduleTest extends TestCase
      */
     public function testGetPublicStartDt()
     {
-        $publicStartDt = new \DateTime();
+        $publicStartDt = new DateTime();
 
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -314,14 +319,14 @@ final class ScheduleTest extends TestCase
         $publicStartDtPropertyRef = $targetRef->getProperty('publicStartDt');
         $publicStartDtPropertyRef->setAccessible(true);
 
-        $dtObject = new \DateTime();
+        $dtObject = new DateTime();
         $targetMock->setPublicStartDt($dtObject);
         $this->assertEquals($dtObject, $publicStartDtPropertyRef->getValue($targetMock));
 
         $dtString = '2020-01-01';
         $targetMock->setPublicStartDt($dtString);
         $this->assertInstanceOf(
-            \DateTime::class,
+            DateTime::class,
             $publicStartDtPropertyRef->getValue($targetMock)
         );
         $this->assertEquals(
@@ -339,7 +344,7 @@ final class ScheduleTest extends TestCase
      */
     public function testSetPublicStartDtInvalidArgument()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         $targetMock = $this->createTargetPartialMock([]);
 
@@ -356,7 +361,7 @@ final class ScheduleTest extends TestCase
      */
     public function testGetPublicEndDt()
     {
-        $publicEndDt = new \DateTime();
+        $publicEndDt = new DateTime();
 
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -383,14 +388,14 @@ final class ScheduleTest extends TestCase
         $publicEndDtPropertyRef = $targetRef->getProperty('publicEndDt');
         $publicEndDtPropertyRef->setAccessible(true);
 
-        $dtObject = new \DateTime();
+        $dtObject = new DateTime();
         $targetMock->setPublicEndDt($dtObject);
         $this->assertEquals($dtObject, $publicEndDtPropertyRef->getValue($targetMock));
 
         $dtString = '2020-01-01';
         $targetMock->setPublicEndDt($dtString);
         $this->assertInstanceOf(
-            \DateTime::class,
+            DateTime::class,
             $publicEndDtPropertyRef->getValue($targetMock)
         );
         $this->assertEquals(
@@ -408,7 +413,7 @@ final class ScheduleTest extends TestCase
      */
     public function testSetPublicEndDtInvalidArgument()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         $targetMock = $this->createTargetPartialMock([]);
 

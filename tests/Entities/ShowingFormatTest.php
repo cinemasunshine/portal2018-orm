@@ -6,7 +6,9 @@ namespace Tests\Entities;
 
 use Cinemasunshine\ORM\Entities\Schedule;
 use Cinemasunshine\ORM\Entities\ShowingFormat;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 
 /**
  * ShowingFormat test
@@ -16,7 +18,7 @@ final class ShowingFormatTest extends TestCase
     /**
      * Create target mock
      *
-     * @return ShowingFormat&\PHPUnit\Framework\MockObject\MockObject
+     * @return ShowingFormat&MockObject
      */
     public function createTargetMock()
     {
@@ -27,7 +29,7 @@ final class ShowingFormatTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return ShowingFormat&\PHPUnit\Framework\MockObject\MockObject
+     * @return ShowingFormat&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -37,11 +39,11 @@ final class ShowingFormatTest extends TestCase
     /**
      * Create target reflection
      *
-     * @return \ReflectionClass<ShowingFormat>
+     * @return ReflectionClass<ShowingFormat>
      */
     public function createTargetReflection()
     {
-        return new \ReflectionClass(ShowingFormat::class);
+        return new ReflectionClass(ShowingFormat::class);
     }
 
     /**

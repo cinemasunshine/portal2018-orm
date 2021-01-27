@@ -7,7 +7,9 @@ namespace Tests\Entities;
 use Cinemasunshine\ORM\Entities\OyakoCinemaSchedule;
 use Cinemasunshine\ORM\Entities\OyakoCinemaTheater;
 use Cinemasunshine\ORM\Entities\Theater;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 
 /**
  * OyakoCinemaTheater test
@@ -18,7 +20,7 @@ final class OyakoCinemaTheaterTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return OyakoCinemaTheater&\PHPUnit\Framework\MockObject\MockObject
+     * @return OyakoCinemaTheater&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -28,11 +30,11 @@ final class OyakoCinemaTheaterTest extends TestCase
     /**
      * Create target reflection
      *
-     * @return \ReflectionClass<OyakoCinemaTheater>
+     * @return ReflectionClass<OyakoCinemaTheater>
      */
     public function createTargetReflection()
     {
-        return new \ReflectionClass(OyakoCinemaTheater::class);
+        return new ReflectionClass(OyakoCinemaTheater::class);
     }
 
     /**

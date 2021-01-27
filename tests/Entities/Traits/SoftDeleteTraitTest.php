@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Entities\Traits;
 
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -15,7 +16,7 @@ final class SoftDeleteTraitTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return SoftDeleteTraitClass&\PHPUnit\Framework\MockObject\MockObject
+     * @return SoftDeleteTraitClass&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {

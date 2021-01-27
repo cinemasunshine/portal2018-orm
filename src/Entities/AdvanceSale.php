@@ -7,9 +7,11 @@ namespace Cinemasunshine\ORM\Entities;
 use Cinemasunshine\ORM\Entities\Traits\SavedUserTrait;
 use Cinemasunshine\ORM\Entities\Traits\SoftDeleteTrait;
 use Cinemasunshine\ORM\Entities\Traits\TimestampableTrait;
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use InvalidArgumentException;
 
 /**
  * AdvanceSale entity
@@ -52,7 +54,7 @@ class AdvanceSale
     /**
      * @ORM\Column(type="date", name="publishing_expected_date", nullable=true)
      *
-     * @var \DateTime|null
+     * @var DateTime|null
      */
     protected $publishingExpectedDate;
 
@@ -133,9 +135,9 @@ class AdvanceSale
     /**
      * Return publishingExpectedDate
      *
-     * @return \DateTime|null
+     * @return DateTime|null
      */
-    public function getPublishingExpectedDate(): ?\DateTime
+    public function getPublishingExpectedDate(): ?DateTime
     {
         return $this->publishingExpectedDate;
     }
@@ -143,19 +145,19 @@ class AdvanceSale
     /**
      * Set publishingExpectedDate
      *
-     * @param \DateTime|string|null $publishingExpectedDate
+     * @param DateTime|string|null $publishingExpectedDate
      * @return void
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function setPublishingExpectedDate($publishingExpectedDate)
     {
-        if (is_null($publishingExpectedDate) || $publishingExpectedDate instanceof \DateTime) {
+        if (is_null($publishingExpectedDate) || $publishingExpectedDate instanceof DateTime) {
             $this->publishingExpectedDate = $publishingExpectedDate;
         } elseif (is_string($publishingExpectedDate)) {
-            $this->publishingExpectedDate = new \DateTime($publishingExpectedDate);
+            $this->publishingExpectedDate = new DateTime($publishingExpectedDate);
         } else {
-            throw new \InvalidArgumentException('Invalid type.');
+            throw new InvalidArgumentException('Invalid type.');
         }
     }
 

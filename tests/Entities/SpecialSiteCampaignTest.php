@@ -7,7 +7,9 @@ namespace Tests\Entities;
 use Cinemasunshine\ORM\Entities\Campaign;
 use Cinemasunshine\ORM\Entities\SpecialSite;
 use Cinemasunshine\ORM\Entities\SpecialSiteCampaign;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 
 /**
  * SpecialSiteCampaign test
@@ -18,7 +20,7 @@ final class SpecialSiteCampaignTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return SpecialSiteCampaign&\PHPUnit\Framework\MockObject\MockObject
+     * @return SpecialSiteCampaign&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -28,11 +30,11 @@ final class SpecialSiteCampaignTest extends TestCase
     /**
      * Create target reflection
      *
-     * @return \ReflectionClass<SpecialSiteCampaign>
+     * @return ReflectionClass<SpecialSiteCampaign>
      */
     public function createTargetReflection()
     {
-        return new \ReflectionClass(SpecialSiteCampaign::class);
+        return new ReflectionClass(SpecialSiteCampaign::class);
     }
 
     /**

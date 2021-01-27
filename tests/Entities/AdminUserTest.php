@@ -6,7 +6,9 @@ namespace Tests\Entities;
 
 use Cinemasunshine\ORM\Entities\AdminUser;
 use Cinemasunshine\ORM\Entities\Theater;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 
 /**
  * AdminUser test
@@ -17,7 +19,7 @@ final class AdminUserTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return AdminUser&\PHPUnit\Framework\MockObject\MockObject
+     * @return AdminUser&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -27,11 +29,11 @@ final class AdminUserTest extends TestCase
     /**
      * Create target reflection
      *
-     * @return \ReflectionClass<AdminUser>
+     * @return ReflectionClass<AdminUser>
      */
     public function createTargetReflection()
     {
-        return new \ReflectionClass(AdminUser::class);
+        return new ReflectionClass(AdminUser::class);
     }
 
     /**

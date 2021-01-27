@@ -5,7 +5,9 @@ declare(strict_types=1);
 namespace Tests\Entities;
 
 use Cinemasunshine\ORM\Entities\File;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 
 /**
  * File test
@@ -16,7 +18,7 @@ final class FileTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return File&\PHPUnit\Framework\MockObject\MockObject
+     * @return File&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -26,11 +28,11 @@ final class FileTest extends TestCase
     /**
      * Create target reflection
      *
-     * @return \ReflectionClass<File>
+     * @return ReflectionClass<File>
      */
     public function createTargetReflection()
     {
-        return new \ReflectionClass(File::class);
+        return new ReflectionClass(File::class);
     }
 
     /**

@@ -7,6 +7,7 @@ namespace Cinemasunshine\ORM\Entities;
 use Cinemasunshine\ORM\Entities\Traits\SoftDeleteTrait;
 use Cinemasunshine\ORM\Entities\Traits\TimestampableTrait;
 use Doctrine\ORM\Mapping as ORM;
+use RuntimeException;
 
 /**
  * AdminUser entity
@@ -75,14 +76,14 @@ class AdminUser
      * @param string $password
      * @return string encrypted password
      *
-     * @throws \RuntimeException
+     * @throws RuntimeException
      */
     public static function encryptPassword(string $password): string
     {
         $encrypted = password_hash($password, PASSWORD_BCRYPT);
 
         if ($encrypted === false) {
-            throw new \RuntimeException('Pasword hash failed.');
+            throw new RuntimeException('Pasword hash failed.');
         }
 
         return $encrypted;

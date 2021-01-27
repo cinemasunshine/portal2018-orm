@@ -6,7 +6,11 @@ namespace Tests\Entities;
 
 use Cinemasunshine\ORM\Entities\Title;
 use Cinemasunshine\ORM\Entities\TitleRanking;
+use DateTime;
+use InvalidArgumentException;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 
 /**
  * TitleRanking test
@@ -16,7 +20,7 @@ final class TitleRankingTest extends TestCase
     /**
      * Create target mock
      *
-     * @return TitleRanking&\PHPUnit\Framework\MockObject\MockObject
+     * @return TitleRanking&MockObject
      */
     public function createTargetMock()
     {
@@ -27,7 +31,7 @@ final class TitleRankingTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return TitleRanking&\PHPUnit\Framework\MockObject\MockObject
+     * @return TitleRanking&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -37,11 +41,11 @@ final class TitleRankingTest extends TestCase
     /**
      * Create target reflection
      *
-     * @return \ReflectionClass<TitleRanking>
+     * @return ReflectionClass<TitleRanking>
      */
     public function createTargetReflection()
     {
-        return new \ReflectionClass(TitleRanking::class);
+        return new ReflectionClass(TitleRanking::class);
     }
 
     /**
@@ -74,7 +78,7 @@ final class TitleRankingTest extends TestCase
      */
     public function testGetFromDate()
     {
-        $fromDate = new \DateTime();
+        $fromDate = new DateTime();
 
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -104,14 +108,14 @@ final class TitleRankingTest extends TestCase
         $targetMock->setFromDate(null);
         $this->assertEquals(null, $fromDatePropertyRef->getValue($targetMock));
 
-        $dtObject = new \DateTime();
+        $dtObject = new DateTime();
         $targetMock->setFromDate($dtObject);
         $this->assertEquals($dtObject, $fromDatePropertyRef->getValue($targetMock));
 
         $dtString = '2020-01-01';
         $targetMock->setFromDate($dtString);
         $this->assertInstanceOf(
-            \DateTime::class,
+            DateTime::class,
             $fromDatePropertyRef->getValue($targetMock)
         );
         $this->assertEquals(
@@ -129,7 +133,7 @@ final class TitleRankingTest extends TestCase
      */
     public function testSetFromDateInvalidArgument()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         $targetMock = $this->createTargetPartialMock([]);
 
@@ -146,7 +150,7 @@ final class TitleRankingTest extends TestCase
      */
     public function testGetToDate()
     {
-        $toDate = new \DateTime();
+        $toDate = new DateTime();
 
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -176,14 +180,14 @@ final class TitleRankingTest extends TestCase
         $targetMock->setToDate(null);
         $this->assertEquals(null, $toDatePropertyRef->getValue($targetMock));
 
-        $dtObject = new \DateTime();
+        $dtObject = new DateTime();
         $targetMock->setToDate($dtObject);
         $this->assertEquals($dtObject, $toDatePropertyRef->getValue($targetMock));
 
         $dtString = '2020-01-01';
         $targetMock->setToDate($dtString);
         $this->assertInstanceOf(
-            \DateTime::class,
+            DateTime::class,
             $toDatePropertyRef->getValue($targetMock)
         );
         $this->assertEquals(
@@ -201,7 +205,7 @@ final class TitleRankingTest extends TestCase
      */
     public function testSetToDateInvalidArgument()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         $targetMock = $this->createTargetPartialMock([]);
 

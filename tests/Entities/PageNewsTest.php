@@ -5,9 +5,11 @@ declare(strict_types=1);
 namespace Tests\Entities;
 
 use Cinemasunshine\ORM\Entities\News;
-use Cinemasunshine\ORM\Entities\PageNews;
 use Cinemasunshine\ORM\Entities\Page;
+use Cinemasunshine\ORM\Entities\PageNews;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 
 /**
  * PageNews test
@@ -18,7 +20,7 @@ final class PageNewsTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return PageNews&\PHPUnit\Framework\MockObject\MockObject
+     * @return PageNews&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -28,11 +30,11 @@ final class PageNewsTest extends TestCase
     /**
      * Create target reflection
      *
-     * @return \ReflectionClass<PageNews>
+     * @return ReflectionClass<PageNews>
      */
     public function createTargetReflection()
     {
-        return new \ReflectionClass(PageNews::class);
+        return new ReflectionClass(PageNews::class);
     }
 
     /**

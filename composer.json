@@ -9,7 +9,7 @@
         "doctrine/orm": "^2.7.4"
     },
     "require-dev": {
-        "mp-okui/php-coding-standard": "v0.6.0-alpha",
+        "mp-okui/php-coding-standard": "v0.7.0-alpha",
         "php-parallel-lint/php-parallel-lint": "^1.2",
         "phpstan/phpstan": "^0.12.63",
         "phpstan/phpstan-doctrine": "^0.12.26",

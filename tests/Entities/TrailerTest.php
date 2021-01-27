@@ -8,7 +8,10 @@ use Cinemasunshine\ORM\Entities\File;
 use Cinemasunshine\ORM\Entities\Title;
 use Cinemasunshine\ORM\Entities\Trailer;
 use Doctrine\Common\Collections\ArrayCollection;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
+use ReflectionMethod;
 
 /**
  * Trailer test
@@ -18,7 +21,7 @@ final class TrailerTest extends TestCase
     /**
      * Create target mock
      *
-     * @return Trailer&\PHPUnit\Framework\MockObject\MockObject
+     * @return Trailer&MockObject
      */
     public function createTargetMock()
     {
@@ -29,7 +32,7 @@ final class TrailerTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return Trailer&\PHPUnit\Framework\MockObject\MockObject
+     * @return Trailer&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -39,11 +42,11 @@ final class TrailerTest extends TestCase
     /**
      * Create target reflection
      *
-     * @return \ReflectionClass<Trailer>
+     * @return ReflectionClass<Trailer>
      */
     public function createTargetReflection()
     {
-        return new \ReflectionClass(Trailer::class);
+        return new ReflectionClass(Trailer::class);
     }
 
     /**
@@ -58,7 +61,7 @@ final class TrailerTest extends TestCase
         $targetMock = $this->createTargetMock();
         $targetRef  = $this->createTargetReflection();
 
-        /** @var \ReflectionMethod $constructorRef */
+        /** @var ReflectionMethod $constructorRef */
         $constructorRef = $targetRef->getConstructor();
         $constructorRef->invoke($targetMock);
 

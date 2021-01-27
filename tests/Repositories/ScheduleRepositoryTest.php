@@ -7,12 +7,14 @@ namespace Tests\Repositories;
 use Cinemasunshine\ORM\Entities\Schedule;
 use Cinemasunshine\ORM\Repositories\ScheduleRepository;
 use Doctrine\ORM\QueryBuilder;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 
 final class ScheduleRepositoryTest extends TestCase
 {
     /**
-     * @return \PHPUnit\Framework\MockObject\MockObject&ScheduleRepository<Schedule>
+     * @return MockObject&ScheduleRepository<Schedule>
      */
     protected function createTargetMock()
     {
@@ -21,7 +23,7 @@ final class ScheduleRepositoryTest extends TestCase
 
     /**
      * @param string[] $methods
-     * @return \PHPUnit\Framework\MockObject\MockObject&ScheduleRepository<Schedule>
+     * @return MockObject&ScheduleRepository<Schedule>
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -29,15 +31,15 @@ final class ScheduleRepositoryTest extends TestCase
     }
 
     /**
-     * @return \ReflectionClass<ScheduleRepository>
+     * @return ReflectionClass<ScheduleRepository>
      */
     protected function createTargetReflection()
     {
-        return new \ReflectionClass(ScheduleRepository::class);
+        return new ReflectionClass(ScheduleRepository::class);
     }
 
     /**
-     * @return \PHPUnit\Framework\MockObject\MockObject&QueryBuilder
+     * @return MockObject&QueryBuilder
      */
     protected function createQueryBuilderMock()
     {

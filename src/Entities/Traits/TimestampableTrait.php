@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Cinemasunshine\ORM\Entities\Traits;
 
+use DateTime;
+use InvalidArgumentException;
+
 /**
  * Timestampable trait
  */
@@ -12,23 +15,23 @@ trait TimestampableTrait
     /**
      * @ORM\Column(type="datetime", name="created_at")
      *
-     * @var \DateTime
+     * @var DateTime
      */
     protected $createdAt;
 
     /**
      * @ORM\Column(type="datetime", name="updated_at")
      *
-     * @var \DateTime
+     * @var DateTime
      */
     protected $updatedAt;
 
     /**
      * Return createdAt
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getCreatedAt(): \DateTime
+    public function getCreatedAt(): DateTime
     {
         return $this->createdAt;
     }
@@ -36,28 +39,28 @@ trait TimestampableTrait
     /**
      * Set createdAt
      *
-     * @param \DateTime|string $createdAt
+     * @param DateTime|string $createdAt
      * @return void
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function setCreatedAt($createdAt)
     {
-        if ($createdAt instanceof \DateTime) {
+        if ($createdAt instanceof DateTime) {
             $this->createdAt = $createdAt;
         } elseif (is_string($createdAt)) {
-            $this->createdAt = new \DateTime($createdAt);
+            $this->createdAt = new DateTime($createdAt);
         } else {
-            throw new \InvalidArgumentException('Invalid type.');
+            throw new InvalidArgumentException('Invalid type.');
         }
     }
 
     /**
      * Return updatedAt
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getUpdatedAt(): \DateTime
+    public function getUpdatedAt(): DateTime
     {
         return $this->updatedAt;
     }
@@ -65,19 +68,19 @@ trait TimestampableTrait
     /**
      * Set updatedAt
      *
-     * @param \DateTime|string $updatedAt
+     * @param DateTime|string $updatedAt
      * @return void
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function setUpdatedAt($updatedAt)
     {
-        if ($updatedAt instanceof \DateTime) {
+        if ($updatedAt instanceof DateTime) {
             $this->updatedAt = $updatedAt;
         } elseif (is_string($updatedAt)) {
-            $this->updatedAt = new \DateTime($updatedAt);
+            $this->updatedAt = new DateTime($updatedAt);
         } else {
-            throw new \InvalidArgumentException('Invalid type.');
+            throw new InvalidArgumentException('Invalid type.');
         }
     }
 

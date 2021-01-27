@@ -7,7 +7,10 @@ namespace Tests\Entities;
 use Cinemasunshine\ORM\Entities\OyakoCinemaTitle;
 use Cinemasunshine\ORM\Entities\Title;
 use Doctrine\Common\Collections\ArrayCollection;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
+use ReflectionMethod;
 
 /**
  * OyakoCinemaTitle test
@@ -17,7 +20,7 @@ final class OyakoCinemaTitleTest extends TestCase
     /**
      * Create target mock
      *
-     * @return OyakoCinemaTitle&\PHPUnit\Framework\MockObject\MockObject
+     * @return OyakoCinemaTitle&MockObject
      */
     public function createTargetMock()
     {
@@ -28,7 +31,7 @@ final class OyakoCinemaTitleTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return OyakoCinemaTitle&\PHPUnit\Framework\MockObject\MockObject
+     * @return OyakoCinemaTitle&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -38,11 +41,11 @@ final class OyakoCinemaTitleTest extends TestCase
     /**
      * Create target reflection
      *
-     * @return \ReflectionClass<OyakoCinemaTitle>
+     * @return ReflectionClass<OyakoCinemaTitle>
      */
     public function createTargetReflection()
     {
-        return new \ReflectionClass(OyakoCinemaTitle::class);
+        return new ReflectionClass(OyakoCinemaTitle::class);
     }
 
     /**
@@ -57,7 +60,7 @@ final class OyakoCinemaTitleTest extends TestCase
         $targetMock = $this->createTargetMock();
         $targetRef  = $this->createTargetReflection();
 
-        /** @var \ReflectionMethod $constructorRef */
+        /** @var ReflectionMethod $constructorRef */
         $constructorRef = $targetRef->getConstructor();
         $constructorRef->invoke($targetMock);
 

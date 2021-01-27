@@ -7,7 +7,10 @@ namespace Tests\Entities;
 use Cinemasunshine\ORM\Entities\Theater;
 use Cinemasunshine\ORM\Entities\TheaterMeta;
 use Doctrine\Common\Collections\ArrayCollection;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
+use ReflectionMethod;
 
 /**
  * Theater test
@@ -17,7 +20,7 @@ final class TheaterTest extends TestCase
     /**
      * Create target mock
      *
-     * @return Theater&\PHPUnit\Framework\MockObject\MockObject
+     * @return Theater&MockObject
      */
     public function createTargetMock()
     {
@@ -28,7 +31,7 @@ final class TheaterTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return Theater&\PHPUnit\Framework\MockObject\MockObject
+     * @return Theater&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -38,11 +41,11 @@ final class TheaterTest extends TestCase
     /**
      * Create target reflection
      *
-     * @return \ReflectionClass<Theater>
+     * @return ReflectionClass<Theater>
      */
     public function createTargetReflection()
     {
-        return new \ReflectionClass(Theater::class);
+        return new ReflectionClass(Theater::class);
     }
 
     /**
@@ -59,7 +62,7 @@ final class TheaterTest extends TestCase
         $targetMock = $this->createTargetMock();
         $targetRef  = $this->createTargetReflection();
 
-        /** @var \ReflectionMethod $constructorRef */
+        /** @var ReflectionMethod $constructorRef */
         $constructorRef = $targetRef->getConstructor();
         $constructorRef->invoke($targetMock, $id);
 

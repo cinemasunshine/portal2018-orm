@@ -6,7 +6,10 @@ namespace Tests\Entities;
 
 use Cinemasunshine\ORM\Entities\SpecialSite;
 use Doctrine\Common\Collections\ArrayCollection;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
+use ReflectionMethod;
 
 /**
  * SpecialSite test
@@ -16,7 +19,7 @@ final class SpecialSiteTest extends TestCase
     /**
      * Create target mock
      *
-     * @return SpecialSite&\PHPUnit\Framework\MockObject\MockObject
+     * @return SpecialSite&MockObject
      */
     public function createTargetMock()
     {
@@ -27,7 +30,7 @@ final class SpecialSiteTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return SpecialSite&\PHPUnit\Framework\MockObject\MockObject
+     * @return SpecialSite&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -37,11 +40,11 @@ final class SpecialSiteTest extends TestCase
     /**
      * Create target reflection
      *
-     * @return \ReflectionClass<SpecialSite>
+     * @return ReflectionClass<SpecialSite>
      */
     public function createTargetReflection()
     {
-        return new \ReflectionClass(SpecialSite::class);
+        return new ReflectionClass(SpecialSite::class);
     }
 
     /**
@@ -58,7 +61,7 @@ final class SpecialSiteTest extends TestCase
         $targetMock = $this->createTargetMock();
         $targetRef  = $this->createTargetReflection();
 
-        /** @var \ReflectionMethod $constructorRef */
+        /** @var ReflectionMethod $constructorRef */
         $constructorRef = $targetRef->getConstructor();
         $constructorRef->invoke($targetMock, $id);
 

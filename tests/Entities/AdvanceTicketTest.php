@@ -4,10 +4,14 @@ declare(strict_types=1);
 
 namespace Tests\Entities;
 
-use Cinemasunshine\ORM\Entities\File;
 use Cinemasunshine\ORM\Entities\AdvanceSale;
 use Cinemasunshine\ORM\Entities\AdvanceTicket;
+use Cinemasunshine\ORM\Entities\File;
+use DateTime;
+use InvalidArgumentException;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 
 /**
  * AdvanceTicket test
@@ -17,7 +21,7 @@ final class AdvanceTicketTest extends TestCase
     /**
      * Create target mock
      *
-     * @return AdvanceTicket&\PHPUnit\Framework\MockObject\MockObject
+     * @return AdvanceTicket&MockObject
      */
     public function createTargetMock()
     {
@@ -28,7 +32,7 @@ final class AdvanceTicketTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return AdvanceTicket&\PHPUnit\Framework\MockObject\MockObject
+     * @return AdvanceTicket&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -38,11 +42,11 @@ final class AdvanceTicketTest extends TestCase
     /**
      * Create target reflection
      *
-     * @return \ReflectionClass<AdvanceTicket>
+     * @return ReflectionClass<AdvanceTicket>
      */
     public function createTargetReflection()
     {
-        return new \ReflectionClass(AdvanceTicket::class);
+        return new ReflectionClass(AdvanceTicket::class);
     }
 
     /**
@@ -118,7 +122,7 @@ final class AdvanceTicketTest extends TestCase
      */
     public function testGetPublishingStartDt()
     {
-        $publishingStartDt = new \DateTime();
+        $publishingStartDt = new DateTime();
 
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -145,14 +149,14 @@ final class AdvanceTicketTest extends TestCase
         $publishingStartDtPropertyRef = $targetRef->getProperty('publishingStartDt');
         $publishingStartDtPropertyRef->setAccessible(true);
 
-        $dtObject = new \DateTime();
+        $dtObject = new DateTime();
         $targetMock->setPublishingStartDt($dtObject);
         $this->assertEquals($dtObject, $publishingStartDtPropertyRef->getValue($targetMock));
 
         $dtString = '2020-01-01';
         $targetMock->setPublishingStartDt($dtString);
         $this->assertInstanceOf(
-            \DateTime::class,
+            DateTime::class,
             $publishingStartDtPropertyRef->getValue($targetMock)
         );
         $this->assertEquals(
@@ -170,7 +174,7 @@ final class AdvanceTicketTest extends TestCase
      */
     public function testSetPublishingStartDtInvalidArgument()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         $targetMock = $this->createTargetPartialMock([]);
 
@@ -187,7 +191,7 @@ final class AdvanceTicketTest extends TestCase
      */
     public function testGetReleaseDt()
     {
-        $releaseDt = new \DateTime();
+        $releaseDt = new DateTime();
 
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -214,14 +218,14 @@ final class AdvanceTicketTest extends TestCase
         $releaseDtPropertyRef = $targetRef->getProperty('releaseDt');
         $releaseDtPropertyRef->setAccessible(true);
 
-        $dtObject = new \DateTime();
+        $dtObject = new DateTime();
         $targetMock->setReleaseDt($dtObject);
         $this->assertEquals($dtObject, $releaseDtPropertyRef->getValue($targetMock));
 
         $dtString = '2020-01-01';
         $targetMock->setReleaseDt($dtString);
         $this->assertInstanceOf(
-            \DateTime::class,
+            DateTime::class,
             $releaseDtPropertyRef->getValue($targetMock)
         );
         $this->assertEquals(
@@ -239,7 +243,7 @@ final class AdvanceTicketTest extends TestCase
      */
     public function testSetReleaseDtInvalidArgument()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         $targetMock = $this->createTargetPartialMock([]);
 
