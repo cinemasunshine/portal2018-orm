@@ -4,10 +4,13 @@ declare(strict_types=1);
 
 namespace Tests\Entities;
 
-use Cinemasunshine\ORM\Entities\TheaterMeta;
 use Cinemasunshine\ORM\Entities\Theater;
+use Cinemasunshine\ORM\Entities\TheaterMeta;
 use Cinemasunshine\ORM\Entities\TheaterOpeningHour;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
+use ReflectionMethod;
 
 /**
  * TheaterMeta test
@@ -17,7 +20,7 @@ final class TheaterMetaTest extends TestCase
     /**
      * Create target mock
      *
-     * @return TheaterMeta&\PHPUnit\Framework\MockObject\MockObject
+     * @return TheaterMeta&MockObject
      */
     public function createTargetMock()
     {
@@ -28,7 +31,7 @@ final class TheaterMetaTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return TheaterMeta&\PHPUnit\Framework\MockObject\MockObject
+     * @return TheaterMeta&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -38,11 +41,11 @@ final class TheaterMetaTest extends TestCase
     /**
      * Create target reflection
      *
-     * @return \ReflectionClass<TheaterMeta>
+     * @return ReflectionClass<TheaterMeta>
      */
     public function createTargetReflection()
     {
-        return new \ReflectionClass(TheaterMeta::class);
+        return new ReflectionClass(TheaterMeta::class);
     }
 
     /**
@@ -57,7 +60,7 @@ final class TheaterMetaTest extends TestCase
         $targetMock = $this->createTargetMock();
         $targetRef  = $this->createTargetReflection();
 
-        /** @var \ReflectionMethod $constructorRef */
+        /** @var ReflectionMethod $constructorRef */
         $constructorRef = $targetRef->getConstructor();
         $constructorRef->invoke($targetMock);
 

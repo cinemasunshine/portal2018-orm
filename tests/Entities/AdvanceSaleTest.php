@@ -7,8 +7,13 @@ namespace Tests\Entities;
 use Cinemasunshine\ORM\Entities\AdvanceSale;
 use Cinemasunshine\ORM\Entities\Theater;
 use Cinemasunshine\ORM\Entities\Title;
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
+use InvalidArgumentException;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
+use ReflectionMethod;
 
 /**
  * AdvanceSale test
@@ -18,7 +23,7 @@ final class AdvanceSaleTest extends TestCase
     /**
      * Create target mock
      *
-     * @return AdvanceSale&\PHPUnit\Framework\MockObject\MockObject
+     * @return AdvanceSale&MockObject
      */
     public function createTargetMock()
     {
@@ -29,7 +34,7 @@ final class AdvanceSaleTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return AdvanceSale&\PHPUnit\Framework\MockObject\MockObject
+     * @return AdvanceSale&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -39,11 +44,11 @@ final class AdvanceSaleTest extends TestCase
     /**
      * Create target reflection
      *
-     * @return \ReflectionClass<AdvanceSale>
+     * @return ReflectionClass<AdvanceSale>
      */
     public function createTargetReflection()
     {
-        return new \ReflectionClass(AdvanceSale::class);
+        return new ReflectionClass(AdvanceSale::class);
     }
 
     /**
@@ -58,7 +63,7 @@ final class AdvanceSaleTest extends TestCase
         $targetMock = $this->createTargetMock();
         $targetRef  = $this->createTargetReflection();
 
-        /** @var \ReflectionMethod $constructorRef */
+        /** @var ReflectionMethod $constructorRef */
         $constructorRef = $targetRef->getConstructor();
         $constructorRef->invoke($targetMock);
 
@@ -186,7 +191,7 @@ final class AdvanceSaleTest extends TestCase
      */
     public function testGetPublishingExpectedDate()
     {
-        $publishingExpectedDate = new \DateTime();
+        $publishingExpectedDate = new DateTime();
 
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -216,14 +221,14 @@ final class AdvanceSaleTest extends TestCase
         $targetMock->setPublishingExpectedDate(null);
         $this->assertEquals(null, $publishingExpectedDatePropertyRef->getValue($targetMock));
 
-        $dtObject = new \DateTime();
+        $dtObject = new DateTime();
         $targetMock->setPublishingExpectedDate($dtObject);
         $this->assertEquals($dtObject, $publishingExpectedDatePropertyRef->getValue($targetMock));
 
         $dtString = '2020-01-01';
         $targetMock->setPublishingExpectedDate($dtString);
         $this->assertInstanceOf(
-            \DateTime::class,
+            DateTime::class,
             $publishingExpectedDatePropertyRef->getValue($targetMock)
         );
         $this->assertEquals(
@@ -241,7 +246,7 @@ final class AdvanceSaleTest extends TestCase
      */
     public function testSetPublishingExpectedDateInvalidArgument()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         $targetMock = $this->createTargetPartialMock([]);
 

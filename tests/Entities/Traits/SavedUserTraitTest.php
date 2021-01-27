@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tests\Entities\Traits;
 
 use Cinemasunshine\ORM\Entities\AdminUser;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -16,7 +17,7 @@ final class SavedUserTraitTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return SavedUserTraitClass&\PHPUnit\Framework\MockObject\MockObject
+     * @return SavedUserTraitClass&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {

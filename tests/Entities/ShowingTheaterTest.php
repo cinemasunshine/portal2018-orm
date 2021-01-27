@@ -7,7 +7,9 @@ namespace Tests\Entities;
 use Cinemasunshine\ORM\Entities\Schedule;
 use Cinemasunshine\ORM\Entities\ShowingTheater;
 use Cinemasunshine\ORM\Entities\Theater;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 
 /**
  * ShowingTheater test
@@ -17,7 +19,7 @@ final class ShowingTheaterTest extends TestCase
     /**
      * Create target mock
      *
-     * @return ShowingTheater&\PHPUnit\Framework\MockObject\MockObject
+     * @return ShowingTheater&MockObject
      */
     public function createTargetMock()
     {
@@ -28,7 +30,7 @@ final class ShowingTheaterTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return ShowingTheater&\PHPUnit\Framework\MockObject\MockObject
+     * @return ShowingTheater&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -38,11 +40,11 @@ final class ShowingTheaterTest extends TestCase
     /**
      * Create target reflection
      *
-     * @return \ReflectionClass<ShowingTheater>
+     * @return ReflectionClass<ShowingTheater>
      */
     public function createTargetReflection()
     {
-        return new \ReflectionClass(ShowingTheater::class);
+        return new ReflectionClass(ShowingTheater::class);
     }
 
     /**

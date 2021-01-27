@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Tests\Entities\Traits;
 
+use DateTime;
+use InvalidArgumentException;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -15,7 +18,7 @@ final class TimestampableTraitTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return TimestampableTraitClass&\PHPUnit\Framework\MockObject\MockObject
+     * @return TimestampableTraitClass&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -31,7 +34,7 @@ final class TimestampableTraitTest extends TestCase
      */
     public function testGetCreatedAt()
     {
-        $createdAt = new \DateTime('2020/01/01 10:00:00');
+        $createdAt = new DateTime('2020/01/01 10:00:00');
 
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setCreatedAt($createdAt);
@@ -48,7 +51,7 @@ final class TimestampableTraitTest extends TestCase
      */
     public function testSetCreatedAt()
     {
-        $createdAt = new \DateTime('2020/01/01 10:00:00');
+        $createdAt = new DateTime('2020/01/01 10:00:00');
 
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setCreatedAt($createdAt);
@@ -65,7 +68,7 @@ final class TimestampableTraitTest extends TestCase
      */
     public function testSetCreatedAtInvalidArgument()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         $targetMock = $this->createTargetPartialMock([]);
 
@@ -82,7 +85,7 @@ final class TimestampableTraitTest extends TestCase
      */
     public function testGetUpdatedAt()
     {
-        $updatedAt = new \DateTime('2020/01/01 10:00:00');
+        $updatedAt = new DateTime('2020/01/01 10:00:00');
 
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setUpdatedAt($updatedAt);
@@ -99,7 +102,7 @@ final class TimestampableTraitTest extends TestCase
      */
     public function testSetUpdatedAt()
     {
-        $updatedAt = new \DateTime('2020/01/01 10:00:00');
+        $updatedAt = new DateTime('2020/01/01 10:00:00');
 
         $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setUpdatedAt($updatedAt);
@@ -116,7 +119,7 @@ final class TimestampableTraitTest extends TestCase
      */
     public function testSetUpdatedAtInvalidArgument()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         $targetMock = $this->createTargetPartialMock([]);
 

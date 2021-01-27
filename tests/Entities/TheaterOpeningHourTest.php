@@ -5,7 +5,11 @@ declare(strict_types=1);
 namespace Tests\Entities;
 
 use Cinemasunshine\ORM\Entities\TheaterOpeningHour;
+use DateTime;
+use InvalidArgumentException;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 
 /**
  * TheaterOpeningHour test
@@ -15,7 +19,7 @@ final class TheaterOpeningHourTest extends TestCase
     /**
      * Create target mock
      *
-     * @return TheaterOpeningHour&\PHPUnit\Framework\MockObject\MockObject
+     * @return TheaterOpeningHour&MockObject
      */
     public function createTargetMock()
     {
@@ -26,7 +30,7 @@ final class TheaterOpeningHourTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return TheaterOpeningHour&\PHPUnit\Framework\MockObject\MockObject
+     * @return TheaterOpeningHour&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -36,11 +40,11 @@ final class TheaterOpeningHourTest extends TestCase
     /**
      * Create target reflection
      *
-     * @return \ReflectionClass<TheaterOpeningHour>
+     * @return ReflectionClass<TheaterOpeningHour>
      */
     public function createTargetReflection()
     {
-        return new \ReflectionClass(TheaterOpeningHour::class);
+        return new ReflectionClass(TheaterOpeningHour::class);
     }
 
     /**
@@ -146,7 +150,7 @@ final class TheaterOpeningHourTest extends TestCase
      */
     public function testGetFromDate()
     {
-        $fromDate = new \DateTime();
+        $fromDate = new DateTime();
 
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -173,14 +177,14 @@ final class TheaterOpeningHourTest extends TestCase
         $fromDatePropertyRef = $targetRef->getProperty('fromDate');
         $fromDatePropertyRef->setAccessible(true);
 
-        $dtObject = new \DateTime();
+        $dtObject = new DateTime();
         $targetMock->setFromDate($dtObject);
         $this->assertEquals($dtObject, $fromDatePropertyRef->getValue($targetMock));
 
         $dtString = '2020-01-01';
         $targetMock->setFromDate($dtString);
         $this->assertInstanceOf(
-            \DateTime::class,
+            DateTime::class,
             $fromDatePropertyRef->getValue($targetMock)
         );
         $this->assertEquals(
@@ -198,7 +202,7 @@ final class TheaterOpeningHourTest extends TestCase
      */
     public function testSetFromDateInvalidArgument()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         $targetMock = $this->createTargetPartialMock([]);
 
@@ -215,7 +219,7 @@ final class TheaterOpeningHourTest extends TestCase
      */
     public function testGetToDate()
     {
-        $toDate = new \DateTime();
+        $toDate = new DateTime();
 
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -245,14 +249,14 @@ final class TheaterOpeningHourTest extends TestCase
         $targetMock->setToDate(null);
         $this->assertEquals(null, $toDatePropertyRef->getValue($targetMock));
 
-        $dtObject = new \DateTime();
+        $dtObject = new DateTime();
         $targetMock->setToDate($dtObject);
         $this->assertEquals($dtObject, $toDatePropertyRef->getValue($targetMock));
 
         $dtString = '2020-01-01';
         $targetMock->setToDate($dtString);
         $this->assertInstanceOf(
-            \DateTime::class,
+            DateTime::class,
             $toDatePropertyRef->getValue($targetMock)
         );
         $this->assertEquals(
@@ -270,7 +274,7 @@ final class TheaterOpeningHourTest extends TestCase
      */
     public function testSetToDateInvalidArgument()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         $targetMock = $this->createTargetPartialMock([]);
 
@@ -287,7 +291,7 @@ final class TheaterOpeningHourTest extends TestCase
      */
     public function testGetTime()
     {
-        $time = new \DateTime('10:00:00');
+        $time = new DateTime('10:00:00');
 
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -314,14 +318,14 @@ final class TheaterOpeningHourTest extends TestCase
         $timePropertyRef = $targetRef->getProperty('time');
         $timePropertyRef->setAccessible(true);
 
-        $timeObject = new \DateTime();
+        $timeObject = new DateTime();
         $targetMock->setTime($timeObject);
         $this->assertEquals($timeObject, $timePropertyRef->getValue($targetMock));
 
         $timeString = '10:00:00';
         $targetMock->setTime($timeString);
         $this->assertInstanceOf(
-            \DateTime::class,
+            DateTime::class,
             $timePropertyRef->getValue($targetMock)
         );
         $this->assertEquals(
@@ -339,7 +343,7 @@ final class TheaterOpeningHourTest extends TestCase
      */
     public function testSetTimeInvalidArgument()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         $targetMock = $this->createTargetPartialMock([]);
 
@@ -357,9 +361,9 @@ final class TheaterOpeningHourTest extends TestCase
     public function testToArray()
     {
         $type     = 2;
-        $fromDate = new \DateTime('2020/01/01');
-        $toDate   = new \DateTime('2020/01/02');
-        $time     = new \DateTime('10:00:00');
+        $fromDate = new DateTime('2020/01/01');
+        $toDate   = new DateTime('2020/01/02');
+        $time     = new DateTime('10:00:00');
 
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();

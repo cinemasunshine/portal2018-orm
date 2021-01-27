@@ -7,9 +7,11 @@ namespace Cinemasunshine\ORM\Entities;
 use Cinemasunshine\ORM\Entities\Traits\SavedUserTrait;
 use Cinemasunshine\ORM\Entities\Traits\SoftDeleteTrait;
 use Cinemasunshine\ORM\Entities\Traits\TimestampableTrait;
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use InvalidArgumentException;
 
 /**
  * News entity
@@ -81,14 +83,14 @@ class News
     /**
      * @ORM\Column(type="datetime", name="start_dt")
      *
-     * @var \DateTime
+     * @var DateTime
      */
     protected $startDt;
 
     /**
      * @ORM\Column(type="datetime", name="end_dt")
      *
-     * @var \DateTime
+     * @var DateTime
      */
     protected $endDt;
 
@@ -241,9 +243,9 @@ class News
     /**
      * Return startDt
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getStartDt(): \DateTime
+    public function getStartDt(): DateTime
     {
         return $this->startDt;
     }
@@ -251,28 +253,28 @@ class News
     /**
      * Set startDt
      *
-     * @param \DateTime|string $startDt
+     * @param DateTime|string $startDt
      * @return void
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function setStartDt($startDt)
     {
-        if ($startDt instanceof \DateTime) {
+        if ($startDt instanceof DateTime) {
             $this->startDt = $startDt;
         } elseif (is_string($startDt)) {
-            $this->startDt = new \DateTime($startDt);
+            $this->startDt = new DateTime($startDt);
         } else {
-            throw new \InvalidArgumentException('Invalid type.');
+            throw new InvalidArgumentException('Invalid type.');
         }
     }
 
     /**
      * Return endDt
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getEndDt(): \DateTime
+    public function getEndDt(): DateTime
     {
         return $this->endDt;
     }
@@ -280,19 +282,19 @@ class News
     /**
      * Set endDt
      *
-     * @param \DateTime|string $endDt
+     * @param DateTime|string $endDt
      * @return void
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function setEndDt($endDt)
     {
-        if ($endDt instanceof \DateTime) {
+        if ($endDt instanceof DateTime) {
             $this->endDt = $endDt;
         } elseif (is_string($endDt)) {
-            $this->endDt = new \DateTime($endDt);
+            $this->endDt = new DateTime($endDt);
         } else {
-            throw new \InvalidArgumentException('Invalid type.');
+            throw new InvalidArgumentException('Invalid type.');
         }
     }
 

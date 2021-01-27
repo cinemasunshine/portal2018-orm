@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace Cinemasunshine\ORM\Entities;
 
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use InvalidArgumentException;
 
 /**
  * OyakoCinemaSchedule entity
@@ -37,7 +39,7 @@ class OyakoCinemaSchedule
     /**
      * @ORM\Column(type="date")
      *
-     * @var \DateTime
+     * @var DateTime
      */
     protected $date;
 
@@ -94,9 +96,9 @@ class OyakoCinemaSchedule
     /**
      * Return date
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getDate(): \DateTime
+    public function getDate(): DateTime
     {
         return $this->date;
     }
@@ -104,19 +106,19 @@ class OyakoCinemaSchedule
     /**
      * set date
      *
-     * @param \DateTime|string $date
+     * @param DateTime|string $date
      * @return void
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function setDate($date)
     {
-        if ($date instanceof \DateTime) {
+        if ($date instanceof DateTime) {
             $this->date = $date;
         } elseif (is_string($date)) {
-            $this->date = new \DateTime($date);
+            $this->date = new DateTime($date);
         } else {
-            throw new \InvalidArgumentException('Invalid type.');
+            throw new InvalidArgumentException('Invalid type.');
         }
     }
 

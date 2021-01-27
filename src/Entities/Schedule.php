@@ -7,9 +7,11 @@ namespace Cinemasunshine\ORM\Entities;
 use Cinemasunshine\ORM\Entities\Traits\SavedUserTrait;
 use Cinemasunshine\ORM\Entities\Traits\SoftDeleteTrait;
 use Cinemasunshine\ORM\Entities\Traits\TimestampableTrait;
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use InvalidArgumentException;
 
 /**
  * Schedule entity
@@ -44,28 +46,28 @@ class Schedule
     /**
      * @ORM\Column(type="date", name="start_date")
      *
-     * @var \DateTime
+     * @var DateTime
      */
     protected $startDate;
 
     /**
      * @ORM\Column(type="date", name="end_date")
      *
-     * @var \DateTime
+     * @var DateTime
      */
     protected $endDate;
 
     /**
      * @ORM\Column(type="datetime", name="public_start_dt")
      *
-     * @var \DateTime
+     * @var DateTime
      */
     protected $publicStartDt;
 
     /**
      * @ORM\Column(type="datetime", name="public_end_dt")
      *
-     * @var \DateTime
+     * @var DateTime
      */
     protected $publicEndDt;
 
@@ -133,9 +135,9 @@ class Schedule
     /**
      * Return startDate
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getStartDate(): \DateTime
+    public function getStartDate(): DateTime
     {
         return $this->startDate;
     }
@@ -143,28 +145,28 @@ class Schedule
     /**
      * Set startDate
      *
-     * @param \DateTime|string $startDate
+     * @param DateTime|string $startDate
      * @return void
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function setStartDate($startDate)
     {
-        if ($startDate instanceof \DateTime) {
+        if ($startDate instanceof DateTime) {
             $this->startDate = $startDate;
         } elseif (is_string($startDate)) {
-            $this->startDate = new \DateTime($startDate);
+            $this->startDate = new DateTime($startDate);
         } else {
-            throw new \InvalidArgumentException('Invalid type.');
+            throw new InvalidArgumentException('Invalid type.');
         }
     }
 
     /**
      * Return endDate
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getEndDate(): \DateTime
+    public function getEndDate(): DateTime
     {
         return $this->endDate;
     }
@@ -172,28 +174,28 @@ class Schedule
     /**
      * Set endDate
      *
-     * @param \DateTime|string $endDate
+     * @param DateTime|string $endDate
      * @return void
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function setEndDate($endDate)
     {
-        if ($endDate instanceof \DateTime) {
+        if ($endDate instanceof DateTime) {
             $this->endDate = $endDate;
         } elseif (is_string($endDate)) {
-            $this->endDate = new \DateTime($endDate);
+            $this->endDate = new DateTime($endDate);
         } else {
-            throw new \InvalidArgumentException('Invalid type.');
+            throw new InvalidArgumentException('Invalid type.');
         }
     }
 
     /**
      * Return publicStartDt
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getPublicStartDt(): \DateTime
+    public function getPublicStartDt(): DateTime
     {
         return $this->publicStartDt;
     }
@@ -201,28 +203,28 @@ class Schedule
     /**
      * Set publicStartDt
      *
-     * @param \DateTime|string $publicStartDt
+     * @param DateTime|string $publicStartDt
      * @return void
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function setPublicStartDt($publicStartDt)
     {
-        if ($publicStartDt instanceof \DateTime) {
+        if ($publicStartDt instanceof DateTime) {
             $this->publicStartDt = $publicStartDt;
         } elseif (is_string($publicStartDt)) {
-            $this->publicStartDt = new \DateTime($publicStartDt);
+            $this->publicStartDt = new DateTime($publicStartDt);
         } else {
-            throw new \InvalidArgumentException('Invalid type.');
+            throw new InvalidArgumentException('Invalid type.');
         }
     }
 
     /**
      * Return publicEndDt
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getPublicEndDt(): \DateTime
+    public function getPublicEndDt(): DateTime
     {
         return $this->publicEndDt;
     }
@@ -230,19 +232,19 @@ class Schedule
     /**
      * Set publicEndDt
      *
-     * @param \DateTime|string $publicEndDt
+     * @param DateTime|string $publicEndDt
      * @return void
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function setPublicEndDt($publicEndDt)
     {
-        if ($publicEndDt instanceof \DateTime) {
+        if ($publicEndDt instanceof DateTime) {
             $this->publicEndDt = $publicEndDt;
         } elseif (is_string($publicEndDt)) {
-            $this->publicEndDt = new \DateTime($publicEndDt);
+            $this->publicEndDt = new DateTime($publicEndDt);
         } else {
-            throw new \InvalidArgumentException('Invalid type.');
+            throw new InvalidArgumentException('Invalid type.');
         }
     }
 

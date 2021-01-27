@@ -7,7 +7,9 @@ namespace Tests\Entities;
 use Cinemasunshine\ORM\Entities\MainBanner;
 use Cinemasunshine\ORM\Entities\Theater;
 use Cinemasunshine\ORM\Entities\TheaterMainBanner;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 
 /**
  * TheaterMainBanner test
@@ -18,7 +20,7 @@ final class TheaterMainBannerTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return TheaterMainBanner&\PHPUnit\Framework\MockObject\MockObject
+     * @return TheaterMainBanner&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -28,11 +30,11 @@ final class TheaterMainBannerTest extends TestCase
     /**
      * Create target reflection
      *
-     * @return \ReflectionClass<TheaterMainBanner>
+     * @return ReflectionClass<TheaterMainBanner>
      */
     public function createTargetReflection()
     {
-        return new \ReflectionClass(TheaterMainBanner::class);
+        return new ReflectionClass(TheaterMainBanner::class);
     }
 
     /**

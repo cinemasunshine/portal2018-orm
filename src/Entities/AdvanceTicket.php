@@ -6,7 +6,9 @@ namespace Cinemasunshine\ORM\Entities;
 
 use Cinemasunshine\ORM\Entities\Traits\SoftDeleteTrait;
 use Cinemasunshine\ORM\Entities\Traits\TimestampableTrait;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use InvalidArgumentException;
 
 /**
  * AdvanceTicket entity
@@ -51,14 +53,14 @@ class AdvanceTicket
     /**
      * @ORM\Column(type="datetime", name="publishing_start_dt")
      *
-     * @var \DateTime
+     * @var DateTime
      */
     protected $publishingStartDt;
 
     /**
      * @ORM\Column(type="datetime", name="release_dt")
      *
-     * @var \DateTime
+     * @var DateTime
      */
     protected $releaseDt;
 
@@ -146,9 +148,9 @@ class AdvanceTicket
     /**
      * Return publishingStartDt
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getPublishingStartDt(): \DateTime
+    public function getPublishingStartDt(): DateTime
     {
         return $this->publishingStartDt;
     }
@@ -156,28 +158,28 @@ class AdvanceTicket
     /**
      * Set publishingStartDt
      *
-     * @param \DateTime|string $publishingStartDt
+     * @param DateTime|string $publishingStartDt
      * @return void
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function setPublishingStartDt($publishingStartDt)
     {
-        if ($publishingStartDt instanceof \DateTime) {
+        if ($publishingStartDt instanceof DateTime) {
             $this->publishingStartDt = $publishingStartDt;
         } elseif (is_string($publishingStartDt)) {
-            $this->publishingStartDt = new \DateTime($publishingStartDt);
+            $this->publishingStartDt = new DateTime($publishingStartDt);
         } else {
-            throw new \InvalidArgumentException('Invalid type.');
+            throw new InvalidArgumentException('Invalid type.');
         }
     }
 
     /**
      * Return releaseDt
      *
-     * @return \DateTime
+     * @return DateTime
      */
-    public function getReleaseDt(): \DateTime
+    public function getReleaseDt(): DateTime
     {
         return $this->releaseDt;
     }
@@ -185,19 +187,19 @@ class AdvanceTicket
     /**
      * Set releaseDt
      *
-     * @param \DateTime|string $releaseDt
+     * @param DateTime|string $releaseDt
      * @return void
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function setReleaseDt($releaseDt)
     {
-        if ($releaseDt instanceof \DateTime) {
+        if ($releaseDt instanceof DateTime) {
             $this->releaseDt = $releaseDt;
         } elseif (is_string($releaseDt)) {
-            $this->releaseDt = new \DateTime($releaseDt);
+            $this->releaseDt = new DateTime($releaseDt);
         } else {
-            throw new \InvalidArgumentException('Invalid type.');
+            throw new InvalidArgumentException('Invalid type.');
         }
     }
 

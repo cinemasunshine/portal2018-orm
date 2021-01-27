@@ -7,7 +7,9 @@ namespace Tests\Entities;
 use Cinemasunshine\ORM\Entities\News;
 use Cinemasunshine\ORM\Entities\SpecialSite;
 use Cinemasunshine\ORM\Entities\SpecialSiteNews;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 
 /**
  * SpecialSiteNews test
@@ -18,7 +20,7 @@ final class SpecialSiteNewsTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return SpecialSiteNews&\PHPUnit\Framework\MockObject\MockObject
+     * @return SpecialSiteNews&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -28,11 +30,11 @@ final class SpecialSiteNewsTest extends TestCase
     /**
      * Create target reflection
      *
-     * @return \ReflectionClass<SpecialSiteNews>
+     * @return ReflectionClass<SpecialSiteNews>
      */
     public function createTargetReflection()
     {
-        return new \ReflectionClass(SpecialSiteNews::class);
+        return new ReflectionClass(SpecialSiteNews::class);
     }
 
     /**

@@ -7,7 +7,10 @@ namespace Tests\Entities;
 use Cinemasunshine\ORM\Entities\File;
 use Cinemasunshine\ORM\Entities\MainBanner;
 use Doctrine\Common\Collections\ArrayCollection;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
+use ReflectionMethod;
 
 /**
  * MainBanner test
@@ -17,7 +20,7 @@ final class MainBannerTest extends TestCase
     /**
      * Create target mock
      *
-     * @return MainBanner&\PHPUnit\Framework\MockObject\MockObject
+     * @return MainBanner&MockObject
      */
     public function createTargetMock()
     {
@@ -28,7 +31,7 @@ final class MainBannerTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return MainBanner&\PHPUnit\Framework\MockObject\MockObject
+     * @return MainBanner&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -38,11 +41,11 @@ final class MainBannerTest extends TestCase
     /**
      * Create target reflection
      *
-     * @return \ReflectionClass<MainBanner>
+     * @return ReflectionClass<MainBanner>
      */
     public function createTargetReflection()
     {
-        return new \ReflectionClass(MainBanner::class);
+        return new ReflectionClass(MainBanner::class);
     }
 
     /**
@@ -57,7 +60,7 @@ final class MainBannerTest extends TestCase
         $targetMock = $this->createTargetMock();
         $targetRef  = $this->createTargetReflection();
 
-        /** @var \ReflectionMethod $constructorRef */
+        /** @var ReflectionMethod $constructorRef */
         $constructorRef = $targetRef->getConstructor();
         $constructorRef->invoke($targetMock);
 

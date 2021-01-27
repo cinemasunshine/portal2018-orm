@@ -7,12 +7,14 @@ namespace Tests\Repositories;
 use Cinemasunshine\ORM\Entities\Theater;
 use Cinemasunshine\ORM\Repositories\TheaterRepository;
 use Doctrine\ORM\QueryBuilder;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 
 final class TheaterRepositoryTest extends TestCase
 {
     /**
-     * @return \PHPUnit\Framework\MockObject\MockObject&TheaterRepository<Theater>
+     * @return MockObject&TheaterRepository<Theater>
      */
     protected function createTargetMock()
     {
@@ -21,7 +23,7 @@ final class TheaterRepositoryTest extends TestCase
 
     /**
      * @param string[] $methods
-     * @return \PHPUnit\Framework\MockObject\MockObject&TheaterRepository<Theater>
+     * @return MockObject&TheaterRepository<Theater>
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -29,15 +31,15 @@ final class TheaterRepositoryTest extends TestCase
     }
 
     /**
-     * @return \ReflectionClass<TheaterRepository>
+     * @return ReflectionClass<TheaterRepository>
      */
     protected function createTargetReflection()
     {
-        return new \ReflectionClass(TheaterRepository::class);
+        return new ReflectionClass(TheaterRepository::class);
     }
 
     /**
-     * @return \PHPUnit\Framework\MockObject\MockObject&QueryBuilder
+     * @return MockObject&QueryBuilder
      */
     protected function createQueryBuilderMock()
     {

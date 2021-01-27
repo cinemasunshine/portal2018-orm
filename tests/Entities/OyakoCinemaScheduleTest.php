@@ -6,8 +6,13 @@ namespace Tests\Entities;
 
 use Cinemasunshine\ORM\Entities\OyakoCinemaSchedule;
 use Cinemasunshine\ORM\Entities\OyakoCinemaTitle;
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
+use InvalidArgumentException;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
+use ReflectionMethod;
 
 /**
  * OyakoCinemaSchedule test
@@ -17,7 +22,7 @@ final class OyakoCinemaScheduleTest extends TestCase
     /**
      * Create target mock
      *
-     * @return OyakoCinemaSchedule&\PHPUnit\Framework\MockObject\MockObject
+     * @return OyakoCinemaSchedule&MockObject
      */
     public function createTargetMock()
     {
@@ -28,7 +33,7 @@ final class OyakoCinemaScheduleTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return OyakoCinemaSchedule&\PHPUnit\Framework\MockObject\MockObject
+     * @return OyakoCinemaSchedule&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -38,11 +43,11 @@ final class OyakoCinemaScheduleTest extends TestCase
     /**
      * Create target reflection
      *
-     * @return \ReflectionClass<OyakoCinemaSchedule>
+     * @return ReflectionClass<OyakoCinemaSchedule>
      */
     public function createTargetReflection()
     {
-        return new \ReflectionClass(OyakoCinemaSchedule::class);
+        return new ReflectionClass(OyakoCinemaSchedule::class);
     }
 
     /**
@@ -57,7 +62,7 @@ final class OyakoCinemaScheduleTest extends TestCase
         $targetMock = $this->createTargetMock();
         $targetRef  = $this->createTargetReflection();
 
-        /** @var \ReflectionMethod $constructorRef */
+        /** @var ReflectionMethod $constructorRef */
         $constructorRef = $targetRef->getConstructor();
         $constructorRef->invoke($targetMock);
 
@@ -142,7 +147,7 @@ final class OyakoCinemaScheduleTest extends TestCase
      */
     public function testGetDate()
     {
-        $date = new \DateTime();
+        $date = new DateTime();
 
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -169,14 +174,14 @@ final class OyakoCinemaScheduleTest extends TestCase
         $datePropertyRef = $targetRef->getProperty('date');
         $datePropertyRef->setAccessible(true);
 
-        $dtObject = new \DateTime();
+        $dtObject = new DateTime();
         $targetMock->setDate($dtObject);
         $this->assertEquals($dtObject, $datePropertyRef->getValue($targetMock));
 
         $dtString = '2020-01-01';
         $targetMock->setDate($dtString);
         $this->assertInstanceOf(
-            \DateTime::class,
+            DateTime::class,
             $datePropertyRef->getValue($targetMock)
         );
         $this->assertEquals(
@@ -194,7 +199,7 @@ final class OyakoCinemaScheduleTest extends TestCase
      */
     public function testSetDateInvalidArgument()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         $targetMock = $this->createTargetPartialMock([]);
 

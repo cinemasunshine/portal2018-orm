@@ -6,7 +6,10 @@ namespace Tests\Entities;
 
 use Cinemasunshine\ORM\Entities\Page;
 use Doctrine\Common\Collections\ArrayCollection;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
+use ReflectionMethod;
 
 /**
  * Page test
@@ -16,7 +19,7 @@ final class PageTest extends TestCase
     /**
      * Create target mock
      *
-     * @return Page&\PHPUnit\Framework\MockObject\MockObject
+     * @return Page&MockObject
      */
     public function createTargetMock()
     {
@@ -27,7 +30,7 @@ final class PageTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return Page&\PHPUnit\Framework\MockObject\MockObject
+     * @return Page&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -37,11 +40,11 @@ final class PageTest extends TestCase
     /**
      * Create target reflection
      *
-     * @return \ReflectionClass<Page>
+     * @return ReflectionClass<Page>
      */
     public function createTargetReflection()
     {
-        return new \ReflectionClass(Page::class);
+        return new ReflectionClass(Page::class);
     }
 
     /**
@@ -58,7 +61,7 @@ final class PageTest extends TestCase
         $targetMock = $this->createTargetMock();
         $targetRef  = $this->createTargetReflection();
 
-        /** @var \ReflectionMethod $constructorRef */
+        /** @var ReflectionMethod $constructorRef */
         $constructorRef = $targetRef->getConstructor();
         $constructorRef->invoke($targetMock, $id);
 

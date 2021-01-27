@@ -7,8 +7,13 @@ namespace Tests\Entities;
 use Cinemasunshine\ORM\Entities\Campaign;
 use Cinemasunshine\ORM\Entities\File;
 use Cinemasunshine\ORM\Entities\Title;
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
+use InvalidArgumentException;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
+use ReflectionMethod;
 
 /**
  * Campaign test
@@ -18,7 +23,7 @@ final class CampaignTest extends TestCase
     /**
      * Create target mock
      *
-     * @return Campaign&\PHPUnit\Framework\MockObject\MockObject
+     * @return Campaign&MockObject
      */
     public function createTargetMock()
     {
@@ -29,7 +34,7 @@ final class CampaignTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return Campaign&\PHPUnit\Framework\MockObject\MockObject
+     * @return Campaign&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -39,11 +44,11 @@ final class CampaignTest extends TestCase
     /**
      * Create target reflection
      *
-     * @return \ReflectionClass<Campaign>
+     * @return ReflectionClass<Campaign>
      */
     public function createTargetReflection()
     {
-        return new \ReflectionClass(Campaign::class);
+        return new ReflectionClass(Campaign::class);
     }
 
     /**
@@ -58,7 +63,7 @@ final class CampaignTest extends TestCase
         $targetMock = $this->createTargetMock();
         $targetRef  = $this->createTargetReflection();
 
-        /** @var \ReflectionMethod $constructorRef */
+        /** @var ReflectionMethod $constructorRef */
         $constructorRef = $targetRef->getConstructor();
         $constructorRef->invoke($targetMock);
 
@@ -243,7 +248,7 @@ final class CampaignTest extends TestCase
      */
     public function testGetStartDt()
     {
-        $startDt = new \DateTime();
+        $startDt = new DateTime();
 
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -270,14 +275,14 @@ final class CampaignTest extends TestCase
         $startDtPropertyRef = $targetRef->getProperty('startDt');
         $startDtPropertyRef->setAccessible(true);
 
-        $dtObject = new \DateTime();
+        $dtObject = new DateTime();
         $targetMock->setStartDt($dtObject);
         $this->assertEquals($dtObject, $startDtPropertyRef->getValue($targetMock));
 
         $dtString = '2020-01-01';
         $targetMock->setStartDt($dtString);
         $this->assertInstanceOf(
-            \DateTime::class,
+            DateTime::class,
             $startDtPropertyRef->getValue($targetMock)
         );
         $this->assertEquals(
@@ -295,7 +300,7 @@ final class CampaignTest extends TestCase
      */
     public function testSetStartDtInvalidArgument()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         $targetMock = $this->createTargetPartialMock([]);
 
@@ -312,7 +317,7 @@ final class CampaignTest extends TestCase
      */
     public function testGetEndDt()
     {
-        $endDt = new \DateTime();
+        $endDt = new DateTime();
 
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -339,14 +344,14 @@ final class CampaignTest extends TestCase
         $endDtPropertyRef = $targetRef->getProperty('endDt');
         $endDtPropertyRef->setAccessible(true);
 
-        $dtObject = new \DateTime();
+        $dtObject = new DateTime();
         $targetMock->setEndDt($dtObject);
         $this->assertEquals($dtObject, $endDtPropertyRef->getValue($targetMock));
 
         $dtString = '2020-01-01';
         $targetMock->setEndDt($dtString);
         $this->assertInstanceOf(
-            \DateTime::class,
+            DateTime::class,
             $endDtPropertyRef->getValue($targetMock)
         );
         $this->assertEquals(
@@ -364,7 +369,7 @@ final class CampaignTest extends TestCase
      */
     public function testSetEndDtInvalidArgument()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         $targetMock = $this->createTargetPartialMock([]);
 

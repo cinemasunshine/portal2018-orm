@@ -7,7 +7,9 @@ namespace Tests\Entities;
 use Cinemasunshine\ORM\Entities\Page;
 use Cinemasunshine\ORM\Entities\PageTrailer;
 use Cinemasunshine\ORM\Entities\Trailer;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
 
 /**
  * PageTrailer test
@@ -17,7 +19,7 @@ final class PageTrailerTest extends TestCase
     /**
      * Create target mock
      *
-     * @return PageTrailer&\PHPUnit\Framework\MockObject\MockObject
+     * @return PageTrailer&MockObject
      */
     public function createTargetMock()
     {
@@ -28,7 +30,7 @@ final class PageTrailerTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return PageTrailer&\PHPUnit\Framework\MockObject\MockObject
+     * @return PageTrailer&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -38,11 +40,11 @@ final class PageTrailerTest extends TestCase
     /**
      * Create target reflection
      *
-     * @return \ReflectionClass<PageTrailer>
+     * @return ReflectionClass<PageTrailer>
      */
     public function createTargetReflection()
     {
-        return new \ReflectionClass(PageTrailer::class);
+        return new ReflectionClass(PageTrailer::class);
     }
 
     /**

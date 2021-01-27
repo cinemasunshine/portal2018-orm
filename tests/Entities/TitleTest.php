@@ -6,8 +6,13 @@ namespace Tests\Entities;
 
 use Cinemasunshine\ORM\Entities\File;
 use Cinemasunshine\ORM\Entities\Title;
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
+use InvalidArgumentException;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
+use ReflectionMethod;
 
 /**
  * Title test
@@ -17,7 +22,7 @@ final class TitleTest extends TestCase
     /**
      * Create target mock
      *
-     * @return Title&\PHPUnit\Framework\MockObject\MockObject
+     * @return Title&MockObject
      */
     public function createTargetMock()
     {
@@ -28,7 +33,7 @@ final class TitleTest extends TestCase
      * Create target partial mock
      *
      * @param string[] $methods
-     * @return Title&\PHPUnit\Framework\MockObject\MockObject
+     * @return Title&MockObject
      */
     public function createTargetPartialMock(array $methods)
     {
@@ -38,11 +43,11 @@ final class TitleTest extends TestCase
     /**
      * Create target reflection
      *
-     * @return \ReflectionClass<Title>
+     * @return ReflectionClass<Title>
      */
     public function createTargetReflection()
     {
-        return new \ReflectionClass(Title::class);
+        return new ReflectionClass(Title::class);
     }
 
     /**
@@ -57,7 +62,7 @@ final class TitleTest extends TestCase
         $targetMock = $this->createTargetMock();
         $targetRef  = $this->createTargetReflection();
 
-        /** @var \ReflectionMethod $constructorRef */
+        /** @var ReflectionMethod $constructorRef */
         $constructorRef = $targetRef->getConstructor();
         $constructorRef->invoke($targetMock);
 
@@ -493,7 +498,7 @@ final class TitleTest extends TestCase
      */
     public function testGetPublishingExpectedDate()
     {
-        $publishingExpectedDate = new \DateTime();
+        $publishingExpectedDate = new DateTime();
 
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -526,7 +531,7 @@ final class TitleTest extends TestCase
         $targetMock->setPublishingExpectedDate(null);
         $this->assertEquals(null, $publishingExpectedDatePropertyRef->getValue($targetMock));
 
-        $publishingExpectedDateObj = new \DateTime();
+        $publishingExpectedDateObj = new DateTime();
         $targetMock->setPublishingExpectedDate($publishingExpectedDateObj);
         $this->assertEquals(
             $publishingExpectedDateObj,
@@ -536,7 +541,7 @@ final class TitleTest extends TestCase
         $publishingExpectedDateStr = '2020/01/01';
         $targetMock->setPublishingExpectedDate($publishingExpectedDateStr);
         $this->assertInstanceOf(
-            \DateTime::class,
+            DateTime::class,
             $publishingExpectedDatePropertyRef->getValue($targetMock)
         );
         $this->assertEquals(
@@ -554,7 +559,7 @@ final class TitleTest extends TestCase
      */
     public function testSetPublishingExpectedDateInvalidArgument()
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         $targetMock = $this->createTargetPartialMock([]);
 
