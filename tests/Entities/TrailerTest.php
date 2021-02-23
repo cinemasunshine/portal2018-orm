@@ -13,14 +13,9 @@ use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use ReflectionMethod;
 
-/**
- * Trailer test
- */
 final class TrailerTest extends TestCase
 {
     /**
-     * Create target mock
-     *
      * @return Trailer&MockObject
      */
     public function createTargetMock()
@@ -29,8 +24,6 @@ final class TrailerTest extends TestCase
     }
 
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return Trailer&MockObject
      */
@@ -40,23 +33,17 @@ final class TrailerTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<Trailer>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(Trailer::class);
     }
 
     /**
-     * test construct
-     *
      * @test
-     *
-     * @return void
      */
-    public function testConstruct()
+    public function testConstruct(): void
     {
         $targetMock = $this->createTargetMock();
         $targetRef  = $this->createTargetReflection();
@@ -88,13 +75,9 @@ final class TrailerTest extends TestCase
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 6;
 
@@ -109,13 +92,9 @@ final class TrailerTest extends TestCase
     }
 
     /**
-     * test getTitle
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetTitle()
+    public function testGetTitle(): void
     {
         $title = new Title();
 
@@ -130,13 +109,9 @@ final class TrailerTest extends TestCase
     }
 
     /**
-     * test setTitle
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetTitle()
+    public function testSetTitle(): void
     {
         $title = new Title();
 
@@ -152,13 +127,9 @@ final class TrailerTest extends TestCase
     }
 
     /**
-     * test getName
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetName()
+    public function testGetName(): void
     {
         $name = 'trailer_name';
 
@@ -173,13 +144,9 @@ final class TrailerTest extends TestCase
     }
 
     /**
-     * test setName
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetName()
+    public function testSetName(): void
     {
         $name = 'trailer_name';
 
@@ -195,13 +162,9 @@ final class TrailerTest extends TestCase
     }
 
     /**
-     * test getYoutube
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetYoutube()
+    public function testGetYoutube(): void
     {
         $youtube = 'trainer_youtube';
 
@@ -216,13 +179,9 @@ final class TrailerTest extends TestCase
     }
 
     /**
-     * test setYoutube
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetYoutube()
+    public function testSetYoutube(): void
     {
         $youtube = 'trainer_youtube';
 
@@ -238,13 +197,9 @@ final class TrailerTest extends TestCase
     }
 
     /**
-     * test getBannerImage
-     *
      * @test
-     *
-     * @return void
      */
-    public function testBannerImage()
+    public function testBannerImage(): void
     {
         $bannerImage = new File();
 
@@ -259,13 +214,9 @@ final class TrailerTest extends TestCase
     }
 
     /**
-     * test setBannerImage
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetBannerImage()
+    public function testSetBannerImage(): void
     {
         $bannerImage = new File();
 
@@ -281,13 +232,9 @@ final class TrailerTest extends TestCase
     }
 
     /**
-     * test getBannerLinkUrl
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetBannerLinkUrl()
+    public function testGetBannerLinkUrl(): void
     {
         $bannerLinkUrl = 'https://example.com';
 
@@ -302,13 +249,9 @@ final class TrailerTest extends TestCase
     }
 
     /**
-     * test setBannerLinkUrl
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetBannerLinkUrl()
+    public function testSetBannerLinkUrl(): void
     {
         $bannerLinkUrl = 'https://example.com';
 
@@ -324,13 +267,9 @@ final class TrailerTest extends TestCase
     }
 
     /**
-     * test getPageTrailers
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetPageTrailers()
+    public function testGetPageTrailers(): void
     {
         $pageTrailers = new ArrayCollection();
 
@@ -345,13 +284,9 @@ final class TrailerTest extends TestCase
     }
 
     /**
-     * test setPageTrailers
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetPageTrailers()
+    public function testSetPageTrailers(): void
     {
         $pageTrailers = new ArrayCollection();
 
@@ -367,13 +302,9 @@ final class TrailerTest extends TestCase
     }
 
     /**
-     * test getSpecialSiteTrailers
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetSpecialSiteTrailers()
+    public function testGetSpecialSiteTrailers(): void
     {
         $specialSiteTrailers = new ArrayCollection();
 
@@ -388,13 +319,9 @@ final class TrailerTest extends TestCase
     }
 
     /**
-     * test setSpecialSiteTrailers
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetSpecialSiteTrailers()
+    public function testSetSpecialSiteTrailers(): void
     {
         $specialSiteTrailers = new ArrayCollection();
 
@@ -410,13 +337,9 @@ final class TrailerTest extends TestCase
     }
 
     /**
-     * test getTheaterTrailers
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetTheaterTrailers()
+    public function testGetTheaterTrailers(): void
     {
         $theaterTrailers = new ArrayCollection();
 
@@ -431,13 +354,9 @@ final class TrailerTest extends TestCase
     }
 
     /**
-     * test setTheaterTrailers
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetTheaterTrailers()
+    public function testSetTheaterTrailers(): void
     {
         $theaterTrailers = new ArrayCollection();
 

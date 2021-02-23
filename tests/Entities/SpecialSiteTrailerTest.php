@@ -11,14 +11,9 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
-/**
- * SpecialSiteTrailer test
- */
 final class SpecialSiteTrailerTest extends TestCase
 {
     /**
-     * Create target mock
-     *
      * @return SpecialSiteTrailer&MockObject
      */
     public function createTargetMock()
@@ -27,8 +22,6 @@ final class SpecialSiteTrailerTest extends TestCase
     }
 
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return SpecialSiteTrailer&MockObject
      */
@@ -38,23 +31,17 @@ final class SpecialSiteTrailerTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<SpecialSiteTrailer>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(SpecialSiteTrailer::class);
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 14;
 
@@ -69,13 +56,9 @@ final class SpecialSiteTrailerTest extends TestCase
     }
 
     /**
-     * test getTrailer
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetTrailer()
+    public function testGetTrailer(): void
     {
         $trailer = new Trailer();
 
@@ -90,13 +73,9 @@ final class SpecialSiteTrailerTest extends TestCase
     }
 
     /**
-     * test setTrailer
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetTrailer()
+    public function testSetTrailer(): void
     {
         $trailer = new Trailer();
 
@@ -112,13 +91,9 @@ final class SpecialSiteTrailerTest extends TestCase
     }
 
     /**
-     * test getSpecialSite
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetSpecialSite()
+    public function testGetSpecialSite(): void
     {
         $specialSite = new SpecialSite(3);
 
@@ -133,13 +108,9 @@ final class SpecialSiteTrailerTest extends TestCase
     }
 
     /**
-     * test setSpecialSite
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetSpecialSite()
+    public function testSetSpecialSite(): void
     {
         $specialSite = new SpecialSite(3);
 

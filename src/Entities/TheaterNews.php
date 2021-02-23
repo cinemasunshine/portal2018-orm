@@ -50,75 +50,37 @@ class TheaterNews
      */
     protected $displayOrder;
 
-    /**
-     * Return id
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return news
-     *
-     * @return News
-     */
     public function getNews(): News
     {
         return $this->news;
     }
 
-    /**
-     * Set news
-     *
-     * @param News $news
-     * @return void
-     */
-    public function setNews(News $news)
+    public function setNews(News $news): void
     {
         $this->news = $news;
     }
 
-    /**
-     * Return theater
-     *
-     * @return Theater
-     */
     public function getTheater(): Theater
     {
         return $this->theater;
     }
 
-    /**
-     * Set theater
-     *
-     * @param Theater $theater
-     * @return void
-     */
-    public function setTheater(Theater $theater)
+    public function setTheater(Theater $theater): void
     {
         $this->theater = $theater;
     }
 
-    /**
-     * Return displayOrder
-     *
-     * @return integer
-     */
     public function getDisplayOrder(): int
     {
         return $this->displayOrder;
     }
 
-    /**
-     * Set displayOrder
-     *
-     * @param integer $displayOrder
-     * @return void
-     */
-    public function setDisplayOrder(int $displayOrder)
+    public function setDisplayOrder(int $displayOrder): void
     {
         $this->displayOrder = $displayOrder;
     }

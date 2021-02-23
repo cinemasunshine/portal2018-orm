@@ -50,75 +50,37 @@ class SpecialSiteNews
      */
     protected $displayOrder;
 
-    /**
-     * Return int
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return news
-     *
-     * @return News
-     */
     public function getNews(): News
     {
         return $this->news;
     }
 
-    /**
-     * Set news
-     *
-     * @param News $news
-     * @return void
-     */
-    public function setNews(News $news)
+    public function setNews(News $news): void
     {
         $this->news = $news;
     }
 
-    /**
-     * Return specialSite
-     *
-     * @return SpecialSite
-     */
     public function getSpecialSite(): SpecialSite
     {
         return $this->specialSite;
     }
 
-    /**
-     * Set specialSite
-     *
-     * @param SpecialSite $specialSite
-     * @return void
-     */
-    public function setSpecialSite(SpecialSite $specialSite)
+    public function setSpecialSite(SpecialSite $specialSite): void
     {
         $this->specialSite = $specialSite;
     }
 
-    /**
-     * Return displayOrder
-     *
-     * @return integer
-     */
     public function getDisplayOrder(): int
     {
         return $this->displayOrder;
     }
 
-    /**
-     * Set displayOrder
-     *
-     * @param integer $displayOrder
-     * @return void
-     */
-    public function setDisplayOrder(int $displayOrder)
+    public function setDisplayOrder(int $displayOrder): void
     {
         $this->displayOrder = $displayOrder;
     }

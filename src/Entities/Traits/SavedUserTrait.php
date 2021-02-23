@@ -6,9 +6,6 @@ namespace Cinemasunshine\ORM\Entities\Traits;
 
 use Cinemasunshine\ORM\Entities\AdminUser;
 
-/**
- * SavedUser trait
- */
 trait SavedUserTrait
 {
     /**
@@ -27,44 +24,22 @@ trait SavedUserTrait
      */
     protected $updatedUser;
 
-    /**
-     * Return createdUser
-     *
-     * @return AdminUser|null
-     */
     public function getCreatedUser(): ?AdminUser
     {
         return $this->createdUser;
     }
 
-    /**
-     * Set createdUser
-     *
-     * @param AdminUser|null $createdUser
-     * @return void
-     */
-    public function setCreatedUser(?AdminUser $createdUser)
+    public function setCreatedUser(?AdminUser $createdUser): void
     {
         $this->createdUser = $createdUser;
     }
 
-    /**
-     * Return updatedUser
-     *
-     * @return AdminUser|null
-     */
     public function getUpdatedUser(): ?AdminUser
     {
         return $this->updatedUser;
     }
 
-    /**
-     * Set updatedUser
-     *
-     * @param AdminUser|null $updatedUser
-     * @return void
-     */
-    public function setUpdatedUser(?AdminUser $updatedUser)
+    public function setUpdatedUser(?AdminUser $updatedUser): void
     {
         $this->updatedUser = $updatedUser;
     }

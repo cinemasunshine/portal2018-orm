@@ -33,7 +33,7 @@ final class TheaterRepositoryTest extends TestCase
     /**
      * @return ReflectionClass<TheaterRepository>
      */
-    protected function createTargetReflection()
+    protected function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(TheaterRepository::class);
     }
@@ -48,10 +48,8 @@ final class TheaterRepositoryTest extends TestCase
 
     /**
      * @test
-     *
-     * @return void
      */
-    public function testAddActiveQuery()
+    public function testAddActiveQuery(): void
     {
         $alias = 'test';
 

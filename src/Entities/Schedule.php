@@ -92,65 +92,38 @@ class Schedule
      */
     protected $showingTheaters;
 
-    /**
-     * constructor
-     */
     public function __construct()
     {
         $this->showingFormats  = new ArrayCollection();
         $this->showingTheaters = new ArrayCollection();
     }
 
-    /**
-     * Return id
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return title
-     *
-     * @return Title
-     */
     public function getTitle(): Title
     {
         return $this->title;
     }
 
-    /**
-     * Set title
-     *
-     * @param Title $title
-     * @return void
-     */
-    public function setTitle(Title $title)
+    public function setTitle(Title $title): void
     {
         $this->title = $title;
     }
 
-    /**
-     * Return startDate
-     *
-     * @return DateTime
-     */
     public function getStartDate(): DateTime
     {
         return $this->startDate;
     }
 
     /**
-     * Set startDate
-     *
      * @param DateTime|string $startDate
-     * @return void
      *
      * @throws InvalidArgumentException
      */
-    public function setStartDate($startDate)
+    public function setStartDate($startDate): void
     {
         if ($startDate instanceof DateTime) {
             $this->startDate = $startDate;
@@ -161,25 +134,17 @@ class Schedule
         }
     }
 
-    /**
-     * Return endDate
-     *
-     * @return DateTime
-     */
     public function getEndDate(): DateTime
     {
         return $this->endDate;
     }
 
     /**
-     * Set endDate
-     *
      * @param DateTime|string $endDate
-     * @return void
      *
      * @throws InvalidArgumentException
      */
-    public function setEndDate($endDate)
+    public function setEndDate($endDate): void
     {
         if ($endDate instanceof DateTime) {
             $this->endDate = $endDate;
@@ -190,25 +155,17 @@ class Schedule
         }
     }
 
-    /**
-     * Return publicStartDt
-     *
-     * @return DateTime
-     */
     public function getPublicStartDt(): DateTime
     {
         return $this->publicStartDt;
     }
 
     /**
-     * Set publicStartDt
-     *
      * @param DateTime|string $publicStartDt
-     * @return void
      *
      * @throws InvalidArgumentException
      */
-    public function setPublicStartDt($publicStartDt)
+    public function setPublicStartDt($publicStartDt): void
     {
         if ($publicStartDt instanceof DateTime) {
             $this->publicStartDt = $publicStartDt;
@@ -219,25 +176,17 @@ class Schedule
         }
     }
 
-    /**
-     * Return publicEndDt
-     *
-     * @return DateTime
-     */
     public function getPublicEndDt(): DateTime
     {
         return $this->publicEndDt;
     }
 
     /**
-     * Set publicEndDt
-     *
      * @param DateTime|string $publicEndDt
-     * @return void
      *
      * @throws InvalidArgumentException
      */
-    public function setPublicEndDt($publicEndDt)
+    public function setPublicEndDt($publicEndDt): void
     {
         if ($publicEndDt instanceof DateTime) {
             $this->publicEndDt = $publicEndDt;
@@ -248,30 +197,17 @@ class Schedule
         }
     }
 
-    /**
-     * Return remark
-     *
-     * @return string|null
-     */
     public function getRemark(): ?string
     {
         return $this->remark;
     }
 
-    /**
-     * Set remark
-     *
-     * @param string|null $remark
-     * @return void
-     */
-    public function setRemark(?string $remark)
+    public function setRemark(?string $remark): void
     {
         $this->remark = $remark;
     }
 
     /**
-     * Return showingFormats
-     *
      * @return Collection<int, ShowingFormat>
      */
     public function getShowingFormats(): Collection
@@ -280,19 +216,14 @@ class Schedule
     }
 
     /**
-     * Set showingFormats
-     *
      * @param Collection<int, ShowingFormat> $showingFormats
-     * @return void
      */
-    public function setShowingFormats(Collection $showingFormats)
+    public function setShowingFormats(Collection $showingFormats): void
     {
         $this->showingFormats = $showingFormats;
     }
 
     /**
-     * Return showingTheaters
-     *
      * @return Collection<int, ShowingTheater>
      */
     public function getShowingTheaters(): Collection
@@ -301,12 +232,9 @@ class Schedule
     }
 
     /**
-     * Undocumented function
-     *
      * @param Collection<int, ShowingTheater> $showingTheaters
-     * @return void
      */
-    public function setShowingTheaters(Collection $showingTheaters)
+    public function setShowingTheaters(Collection $showingTheaters): void
     {
         $this->showingTheaters = $showingTheaters;
     }

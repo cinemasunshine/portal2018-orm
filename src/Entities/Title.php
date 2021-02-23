@@ -141,233 +141,118 @@ class Title
      */
     protected $trailers;
 
-    /**
-     * constructor
-     */
     public function __construct()
     {
         $this->campaigns = new ArrayCollection();
         $this->trailers  = new ArrayCollection();
     }
 
-    /**
-     * Return id
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return image
-     *
-     * @return File|null
-     */
     public function getImage(): ?File
     {
         return $this->image;
     }
 
-    /**
-     * Set image
-     *
-     * @param File|null $image
-     * @return void
-     */
-    public function setImage(?File $image)
+    public function setImage(?File $image): void
     {
         $this->image = $image;
     }
 
-    /**
-     * Return name
-     *
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * Set name
-     *
-     * @param string $name
-     * @return void
-     */
-    public function setName(string $name)
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-    /**
-     * Return nameKana
-     *
-     * @return string|null
-     */
     public function getNameKana(): ?string
     {
         return $this->nameKana;
     }
 
-    /**
-     * Set nameKana
-     *
-     * @param string|null $nameKana
-     * @return void
-     */
-    public function setNameKana(?string $nameKana)
+    public function setNameKana(?string $nameKana): void
     {
         $this->nameKana = $nameKana;
     }
 
-    /**
-     * Return nameOriginal
-     *
-     * @return string|null
-     */
     public function getNameOriginal(): ?string
     {
         return $this->nameOriginal;
     }
 
-    /**
-     * Set nameOriginal
-     *
-     * @param string|null $nameOriginal
-     * @return void
-     */
-    public function setNameOriginal(?string $nameOriginal)
+    public function setNameOriginal(?string $nameOriginal): void
     {
         $this->nameOriginal = $nameOriginal;
     }
 
-    /**
-     * Return credit
-     *
-     * @return string|null
-     */
     public function getCredit(): ?string
     {
         return $this->credit;
     }
 
-    /**
-     * Set credit
-     *
-     * @param string|null $credit
-     * @return void
-     */
-    public function setCredit(?string $credit)
+    public function setCredit(?string $credit): void
     {
         $this->credit = $credit;
     }
 
-    /**
-     * Return catchcopy
-     *
-     * @return string|null
-     */
     public function getCatchcopy(): ?string
     {
         return $this->catchcopy;
     }
 
-    /**
-     * Set catchcopy
-     *
-     * @param string|null $catchcopy
-     * @return void
-     */
-    public function setCatchcopy(?string $catchcopy)
+    public function setCatchcopy(?string $catchcopy): void
     {
         $this->catchcopy = $catchcopy;
     }
 
-    /**
-     * Return introduction
-     *
-     * @return string|null
-     */
     public function getIntroduction(): ?string
     {
         return $this->introduction;
     }
 
-    /**
-     * Set introduction
-     *
-     * @param string|null $introduction
-     * @return void
-     */
-    public function setIntroduction(?string $introduction)
+    public function setIntroduction(?string $introduction): void
     {
         $this->introduction = $introduction;
     }
 
-    /**
-     * Return director
-     *
-     * @return string|null
-     */
     public function getDirector(): ?string
     {
         return $this->director;
     }
 
-    /**
-     * Set director
-     *
-     * @param string|null $director
-     * @return void
-     */
-    public function setDirector(?string $director)
+    public function setDirector(?string $director): void
     {
         $this->director = $director;
     }
 
-    /**
-     * Return cast
-     *
-     * @return string|null
-     */
     public function getCast(): ?string
     {
         return $this->cast;
     }
 
-    /**
-     * Set cast
-     *
-     * @param string|null $cast
-     * @return void
-     */
-    public function setCast(?string $cast)
+    public function setCast(?string $cast): void
     {
         $this->cast = $cast;
     }
 
-    /**
-     * Return publishingExpectedDate
-     *
-     * @return DateTime|null
-     */
     public function getPublishingExpectedDate(): ?DateTime
     {
         return $this->publishingExpectedDate;
     }
 
     /**
-     * Set publishingExpectedDate
-     *
      * @param DateTime|string|null $publishingExpectedDate
-     * @return void
      *
      * @throws InvalidArgumentException
      */
-    public function setPublishingExpectedDate($publishingExpectedDate)
+    public function setPublishingExpectedDate($publishingExpectedDate): void
     {
         if (is_null($publishingExpectedDate) || $publishingExpectedDate instanceof DateTime) {
             $this->publishingExpectedDate = $publishingExpectedDate;
@@ -378,51 +263,27 @@ class Title
         }
     }
 
-    /**
-     * Return officialSite
-     *
-     * @return string|null
-     */
     public function getOfficialSite(): ?string
     {
         return $this->officialSite;
     }
 
-    /**
-     * Set officialSite
-     *
-     * @param string|null $officialSite
-     * @return void
-     */
-    public function setOfficialSite(?string $officialSite)
+    public function setOfficialSite(?string $officialSite): void
     {
         $this->officialSite = $officialSite;
     }
 
-    /**
-     * Return rating
-     *
-     * @return integer|null
-     */
     public function getRating(): ?int
     {
         return $this->rating;
     }
 
-    /**
-     * set rating
-     *
-     * @param integer|null $rating
-     * @return void
-     */
-    public function setRating(?int $rating)
+    public function setRating(?int $rating): void
     {
         $this->rating = $rating;
     }
 
     /**
-     * Return universal
-     *
      * @return int[]|null
      */
     public function getUniversal(): ?array
@@ -431,19 +292,14 @@ class Title
     }
 
     /**
-     * Set universal
-     *
      * @param int[]|null $universal
-     * @return void
      */
-    public function setUniversal(?array $universal)
+    public function setUniversal(?array $universal): void
     {
         $this->universal = $universal;
     }
 
     /**
-     * Return campaigns
-     *
      * @return Collection<int, Campaign>
      */
     public function getCampaigns(): Collection
@@ -452,8 +308,6 @@ class Title
     }
 
     /**
-     * Return trailers
-     *
      * @return Collection<int, Trailer>
      */
     public function getTrailers(): Collection

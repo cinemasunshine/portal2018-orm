@@ -86,9 +86,6 @@ class MainBanner
      */
     protected $theaters;
 
-    /**
-     * constructor
-     */
     public function __construct()
     {
         $this->pages        = new ArrayCollection();
@@ -96,103 +93,52 @@ class MainBanner
         $this->theaters     = new ArrayCollection();
     }
 
-    /**
-     * Return id
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return image
-     *
-     * @return File
-     */
     public function getImage(): File
     {
         return $this->image;
     }
 
-    /**
-     * Set image
-     *
-     * @param File $image
-     * @return void
-     */
-    public function setImage(File $image)
+    public function setImage(File $image): void
     {
         $this->image = $image;
     }
 
-    /**
-     * Return name
-     *
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * Set name
-     *
-     * @param string $name
-     * @return void
-     */
-    public function setName(string $name)
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-    /**
-     * Return linkType
-     *
-     * @return integer
-     */
     public function getLinkType(): int
     {
         return $this->linkType;
     }
 
-    /**
-     * Set linkType
-     *
-     * @param integer $linkType
-     * @return void
-     */
-    public function setLinkType(int $linkType)
+    public function setLinkType(int $linkType): void
     {
         $this->linkType = $linkType;
     }
 
-    /**
-     * Return linkUrl
-     *
-     * @return string|null
-     */
     public function getLinkUrl(): ?string
     {
         return $this->linkUrl;
     }
 
-    /**
-     * Set linkUrl
-     *
-     * @param string|null $linkUrl
-     * @return void
-     */
-    public function setLinkUrl(?string $linkUrl)
+    public function setLinkUrl(?string $linkUrl): void
     {
         $this->linkUrl = $linkUrl;
     }
 
     /**
-     * Return pages
-     *
      * @return Collection<int, PageMainBanner>
      */
     public function getPages(): Collection
@@ -201,8 +147,6 @@ class MainBanner
     }
 
     /**
-     * Return specialSites
-     *
      * @return Collection<int, SpecialSiteMainBanner>
      */
     public function getSpecialSites(): Collection
@@ -211,8 +155,6 @@ class MainBanner
     }
 
     /**
-     * Return theaters
-     *
      * @return Collection<int, TheaterMainBanner>
      */
     public function getTheaters(): Collection

@@ -11,14 +11,9 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
-/**
- * TheaterMainBanner test
- */
 final class TheaterMainBannerTest extends TestCase
 {
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return TheaterMainBanner&MockObject
      */
@@ -28,23 +23,17 @@ final class TheaterMainBannerTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<TheaterMainBanner>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(TheaterMainBanner::class);
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 26;
 
@@ -59,13 +48,9 @@ final class TheaterMainBannerTest extends TestCase
     }
 
     /**
-     * test getMainBanner
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetMainBanner()
+    public function testGetMainBanner(): void
     {
         $mainBanner = new MainBanner();
 
@@ -80,13 +65,9 @@ final class TheaterMainBannerTest extends TestCase
     }
 
     /**
-     * test setMainBanner
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetMainBanner()
+    public function testSetMainBanner(): void
     {
         $mainBanner = new MainBanner();
 
@@ -102,13 +83,9 @@ final class TheaterMainBannerTest extends TestCase
     }
 
     /**
-     * test getTheater
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetTheater()
+    public function testGetTheater(): void
     {
         $theater = new Theater(9);
 
@@ -123,13 +100,9 @@ final class TheaterMainBannerTest extends TestCase
     }
 
     /**
-     * test setTheater
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetTheater()
+    public function testSetTheater(): void
     {
         $theater = new Theater(9);
 
@@ -145,13 +118,9 @@ final class TheaterMainBannerTest extends TestCase
     }
 
     /**
-     * test getDisplayOrder
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetDisplayOrder()
+    public function testGetDisplayOrder(): void
     {
         $displayOrder = 8;
 
@@ -166,13 +135,9 @@ final class TheaterMainBannerTest extends TestCase
     }
 
     /**
-     * test setDisplayOrder
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetDisplayOrder()
+    public function testSetDisplayOrder(): void
     {
         $displayOrder = 8;
 

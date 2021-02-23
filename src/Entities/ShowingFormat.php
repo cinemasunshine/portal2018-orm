@@ -79,96 +79,47 @@ class ShowingFormat
      */
     protected $voice;
 
-    /**
-     * Return id
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return schedule
-     *
-     * @return Schedule
-     */
     public function getSchedule(): Schedule
     {
         return $this->schedule;
     }
 
-    /**
-     * Set schedule
-     *
-     * @param Schedule $schedule
-     * @return void
-     */
-    public function setSchedule(Schedule $schedule)
+    public function setSchedule(Schedule $schedule): void
     {
         $this->schedule = $schedule;
     }
 
-    /**
-     * Return system
-     *
-     * @return integer
-     */
     public function getSystem(): int
     {
         return $this->system;
     }
 
-    /**
-     * Set system
-     *
-     * @param integer $system
-     * @return void
-     */
-    public function setSystem(int $system)
+    public function setSystem(int $system): void
     {
         $this->system = $system;
     }
 
-    /**
-     * Return sound
-     *
-     * @return integer
-     */
     public function getSound(): int
     {
         return $this->sound;
     }
 
-    /**
-     * Set sound
-     *
-     * @param integer $sound
-     * @return void
-     */
-    public function setSound(int $sound)
+    public function setSound(int $sound): void
     {
         $this->sound = $sound;
     }
 
-    /**
-     * Return voice
-     *
-     * @return integer
-     */
     public function getVoice(): int
     {
         return $this->voice;
     }
 
-    /**
-     * Set voice
-     *
-     * @param integer $voice
-     * @return void
-     */
-    public function setVoice(int $voice)
+    public function setVoice(int $voice): void
     {
         $this->voice = $voice;
     }

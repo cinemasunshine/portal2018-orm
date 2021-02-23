@@ -83,33 +83,20 @@ class TitleRanking
      */
     protected $rank5Title;
 
-    /**
-     * Return id
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return fromDate
-     *
-     * @return DateTime|null
-     */
     public function getFromDate(): ?DateTime
     {
         return $this->fromDate;
     }
 
     /**
-     * Set fromDate
-     *
      * @param DateTime|string|null $fromDate
-     * @return void
      */
-    public function setFromDate($fromDate)
+    public function setFromDate($fromDate): void
     {
         if (is_null($fromDate) || $fromDate instanceof DateTime) {
             $this->fromDate = $fromDate;
@@ -120,23 +107,15 @@ class TitleRanking
         }
     }
 
-    /**
-     * Return toDate
-     *
-     * @return DateTime|null
-     */
     public function getToDate(): ?DateTime
     {
         return $this->toDate;
     }
 
     /**
-     * Set toDate
-     *
      * @param DateTime|string|null $toDate
-     * @return void
      */
-    public function setToDate($toDate)
+    public function setToDate($toDate): void
     {
         if (is_null($toDate) || $toDate instanceof DateTime) {
             $this->toDate = $toDate;
@@ -147,107 +126,52 @@ class TitleRanking
         }
     }
 
-    /**
-     * Return rank1Title
-     *
-     * @return Title|null
-     */
     public function getRank1Title(): ?Title
     {
         return $this->rank1Title;
     }
 
-    /**
-     * Set rank1Title
-     *
-     * @param Title|null $rank1Title
-     * @return void
-     */
-    public function setRank1Title(?Title $rank1Title)
+    public function setRank1Title(?Title $rank1Title): void
     {
         $this->rank1Title = $rank1Title;
     }
 
-    /**
-     * Return rank2Title
-     *
-     * @return Title|null
-     */
     public function getRank2Title(): ?Title
     {
         return $this->rank2Title;
     }
 
-    /**
-     * Set rank2Title
-     *
-     * @param Title|null $rank2Title
-     * @return void
-     */
-    public function setRank2Title(?Title $rank2Title)
+    public function setRank2Title(?Title $rank2Title): void
     {
         $this->rank2Title = $rank2Title;
     }
 
-    /**
-     * Return rank3Title
-     *
-     * @return Title|null
-     */
     public function getRank3Title(): ?Title
     {
         return $this->rank3Title;
     }
 
-    /**
-     * Set rank3Title
-     *
-     * @param Title|null $rank3Title
-     * @return void
-     */
-    public function setRank3Title(?Title $rank3Title)
+    public function setRank3Title(?Title $rank3Title): void
     {
         $this->rank3Title = $rank3Title;
     }
 
-    /**
-     * Return rank4Title
-     *
-     * @return Title|null
-     */
     public function getRank4Title(): ?Title
     {
         return $this->rank4Title;
     }
 
-    /**
-     * Set rank4Title
-     *
-     * @param Title|null $rank4Title
-     * @return void
-     */
-    public function setRank4Title(?Title $rank4Title)
+    public function setRank4Title(?Title $rank4Title): void
     {
         $this->rank4Title = $rank4Title;
     }
 
-    /**
-     * Return rank5Title
-     *
-     * @return Title|null
-     */
     public function getRank5Title(): ?Title
     {
         return $this->rank5Title;
     }
 
-    /**
-     * Set rank5Title
-     *
-     * @param Title|null $rank5Title
-     * @return void
-     */
-    public function setRank5Title(?Title $rank5Title)
+    public function setRank5Title(?Title $rank5Title): void
     {
         $this->rank5Title = $rank5Title;
     }

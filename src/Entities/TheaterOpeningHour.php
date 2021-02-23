@@ -31,10 +31,7 @@ class TheaterOpeningHour
     protected $time;
 
     /**
-     * Create this entity
-     *
      * @param array{type:int,from_date:string,to_date:string|null,time:string} $data
-     * @return self
      */
     public static function create(array $data): self
     {
@@ -47,53 +44,31 @@ class TheaterOpeningHour
         return $entity;
     }
 
-    /**
-     * constructor
-     */
     protected function __construct()
     {
     }
 
-    /**
-     * Return type
-     *
-     * @return integer
-     */
     public function getType(): int
     {
         return $this->type;
     }
 
-    /**
-     * Set type
-     *
-     * @param integer $type
-     * @return void
-     */
-    public function setType(int $type)
+    public function setType(int $type): void
     {
         $this->type = $type;
     }
 
-    /**
-     * Return fromDate
-     *
-     * @return DateTime
-     */
     public function getFromDate(): DateTime
     {
         return $this->fromDate;
     }
 
     /**
-     * Set fromDate
-     *
      * @param DateTime|string $fromDate
-     * @return void
      *
      * @throws InvalidArgumentException
      */
-    public function setFromDate($fromDate)
+    public function setFromDate($fromDate): void
     {
         if ($fromDate instanceof DateTime) {
             $this->fromDate = $fromDate;
@@ -104,25 +79,17 @@ class TheaterOpeningHour
         }
     }
 
-    /**
-     * Return toDate
-     *
-     * @return DateTime|null
-     */
     public function getToDate(): ?DateTime
     {
         return $this->toDate;
     }
 
     /**
-     * Set toDate
-     *
      * @param DateTime|string|null $toDate
-     * @return void
      *
      * @throws InvalidArgumentException
      */
-    public function setToDate($toDate)
+    public function setToDate($toDate): void
     {
         if (is_null($toDate) || $toDate instanceof DateTime) {
             $this->toDate = $toDate;
@@ -133,25 +100,17 @@ class TheaterOpeningHour
         }
     }
 
-    /**
-     * Return time
-     *
-     * @return DateTime
-     */
     public function getTime(): DateTime
     {
         return $this->time;
     }
 
     /**
-     * Set time
-     *
      * @param DateTime|string $time
-     * @return void
      *
      * @throws InvalidArgumentException
      */
-    public function setTime($time)
+    public function setTime($time): void
     {
         if ($time instanceof DateTime) {
             $this->time = $time;
@@ -163,8 +122,6 @@ class TheaterOpeningHour
     }
 
     /**
-     * Entity to array
-     *
      * @return array{type:int,from_date:string,to_date:string|null,time:string}
      */
     public function toArray(): array

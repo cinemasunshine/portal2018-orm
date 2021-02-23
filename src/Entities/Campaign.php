@@ -100,9 +100,6 @@ class Campaign
      */
     protected $theaters;
 
-    /**
-     * constructor
-     */
     public function __construct()
     {
         $this->pages        = new ArrayCollection();
@@ -110,98 +107,52 @@ class Campaign
         $this->theaters     = new ArrayCollection();
     }
 
-    /**
-     * Return id
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return title
-     *
-     * @return Title|null
-     */
     public function getTitle(): ?Title
     {
         return $this->title;
     }
 
-    /**
-     * Set title
-     *
-     * @param Title|null $title
-     * @return void
-     */
-    public function setTitle(?Title $title)
+    public function setTitle(?Title $title): void
     {
         $this->title = $title;
     }
 
-    /**
-     * Return image
-     *
-     * @return File
-     */
     public function getImage(): File
     {
         return $this->image;
     }
 
-    /**
-     * Set image
-     *
-     * @param File $image
-     * @return void
-     */
-    public function setImage(File $image)
+    public function setImage(File $image): void
     {
         $this->image = $image;
     }
 
-    /**
-     * Return name
-     *
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * Set name
-     *
-     * @param string $name
-     * @return void
-     */
-    public function setName(string $name)
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-    /**
-     * Return startDt
-     *
-     * @return DateTime
-     */
     public function getStartDt(): DateTime
     {
         return $this->startDt;
     }
 
     /**
-     * Set startDt
-     *
      * @param DateTime|string $startDt
-     * @return void
      *
      * @throws InvalidArgumentException
      */
-    public function setStartDt($startDt)
+    public function setStartDt($startDt): void
     {
         if ($startDt instanceof DateTime) {
             $this->startDt = $startDt;
@@ -212,25 +163,17 @@ class Campaign
         }
     }
 
-    /**
-     * Return endDt
-     *
-     * @return DateTime
-     */
     public function getEndDt(): DateTime
     {
         return $this->endDt;
     }
 
     /**
-     * Set endDt
-     *
      * @param DateTime|string $endDt
-     * @return void
      *
      * @throws InvalidArgumentException
      */
-    public function setEndDt($endDt)
+    public function setEndDt($endDt): void
     {
         if ($endDt instanceof DateTime) {
             $this->endDt = $endDt;
@@ -241,30 +184,17 @@ class Campaign
         }
     }
 
-    /**
-     * Return url
-     *
-     * @return string
-     */
     public function getUrl(): string
     {
         return $this->url;
     }
 
-    /**
-     * Set url
-     *
-     * @param string $url
-     * @return void
-     */
-    public function setUrl(string $url)
+    public function setUrl(string $url): void
     {
         $this->url = $url;
     }
 
     /**
-     * Return pages
-     *
      * @return Collection<int, PageCampaign>
      */
     public function getPages(): Collection
@@ -273,8 +203,6 @@ class Campaign
     }
 
     /**
-     * Return specialSites
-     *
      * @return Collection<int, SpecialSiteCampaign>
      */
     public function getSpecialSite(): Collection
@@ -283,8 +211,6 @@ class Campaign
     }
 
     /**
-     * Return theaters
-     *
      * @return Collection<int, TheaterCampaign>
      */
     public function getTheaters(): Collection

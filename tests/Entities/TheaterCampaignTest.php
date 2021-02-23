@@ -11,14 +11,9 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
-/**
- * TheaterCampaign test
- */
 final class TheaterCampaignTest extends TestCase
 {
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return TheaterCampaign&MockObject
      */
@@ -28,23 +23,17 @@ final class TheaterCampaignTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<TheaterCampaign>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(TheaterCampaign::class);
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 23;
 
@@ -59,13 +48,9 @@ final class TheaterCampaignTest extends TestCase
     }
 
     /**
-     * test getCampaign
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetCampaign()
+    public function testGetCampaign(): void
     {
         $campaign = new Campaign();
 
@@ -80,13 +65,9 @@ final class TheaterCampaignTest extends TestCase
     }
 
     /**
-     * test setCampaign
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetCampaign()
+    public function testSetCampaign(): void
     {
         $campaign = new Campaign();
 
@@ -102,13 +83,9 @@ final class TheaterCampaignTest extends TestCase
     }
 
     /**
-     * test getTheater
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetTheater()
+    public function testGetTheater(): void
     {
         $theater = new Theater(8);
 
@@ -123,13 +100,9 @@ final class TheaterCampaignTest extends TestCase
     }
 
     /**
-     * test setTheater
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetTheater()
+    public function testSetTheater(): void
     {
         $theater = new Theater(8);
 
@@ -145,13 +118,9 @@ final class TheaterCampaignTest extends TestCase
     }
 
     /**
-     * test getDisplayOrder
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetDisplayOrder()
+    public function testGetDisplayOrder(): void
     {
         $displayOrder = 4;
 
@@ -166,13 +135,9 @@ final class TheaterCampaignTest extends TestCase
     }
 
     /**
-     * test setDisplayOrder
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetDisplayOrder()
+    public function testSetDisplayOrder(): void
     {
         $displayOrder = 4;
 

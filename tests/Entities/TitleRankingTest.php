@@ -12,14 +12,9 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
-/**
- * TitleRanking test
- */
 final class TitleRankingTest extends TestCase
 {
     /**
-     * Create target mock
-     *
      * @return TitleRanking&MockObject
      */
     public function createTargetMock()
@@ -28,8 +23,6 @@ final class TitleRankingTest extends TestCase
     }
 
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return TitleRanking&MockObject
      */
@@ -39,23 +32,17 @@ final class TitleRankingTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<TitleRanking>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(TitleRanking::class);
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 13;
 
@@ -70,13 +57,9 @@ final class TitleRankingTest extends TestCase
     }
 
     /**
-     * test getFromDate
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetFromDate()
+    public function testGetFromDate(): void
     {
         $fromDate = new DateTime();
 
@@ -91,13 +74,9 @@ final class TitleRankingTest extends TestCase
     }
 
     /**
-     * test setFromDate
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetFromDate()
+    public function testSetFromDate(): void
     {
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -128,10 +107,8 @@ final class TitleRankingTest extends TestCase
      * test setFromDate (invalid argument)
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetFromDateInvalidArgument()
+    public function testSetFromDateInvalidArgument(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -142,13 +119,9 @@ final class TitleRankingTest extends TestCase
     }
 
     /**
-     * test getToDate
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetToDate()
+    public function testGetToDate(): void
     {
         $toDate = new DateTime();
 
@@ -163,13 +136,9 @@ final class TitleRankingTest extends TestCase
     }
 
     /**
-     * test setToDate
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetToDate()
+    public function testSetToDate(): void
     {
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -200,10 +169,8 @@ final class TitleRankingTest extends TestCase
      * test setToDate (invalid argument)
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetToDateInvalidArgument()
+    public function testSetToDateInvalidArgument(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -213,14 +180,7 @@ final class TitleRankingTest extends TestCase
         $targetMock->setToDate(123);
     }
 
-    /**
-     * getRankTitle base test
-     *
-     * @param string $method
-     * @param string $property
-     * @return void
-     */
-    protected function baseTestGetRankTitle(string $method, string $property)
+    protected function baseTestGetRankTitle(string $method, string $property): void
     {
         $title = new Title();
 
@@ -234,14 +194,7 @@ final class TitleRankingTest extends TestCase
         $this->assertEquals($title, $targetMock->$method());
     }
 
-    /**
-     * setRankTitle base test
-     *
-     * @param string $method
-     * @param string $property
-     * @return void
-     */
-    protected function baseTestSetRankTitle(string $method, string $property)
+    protected function baseTestSetRankTitle(string $method, string $property): void
     {
         $title = new Title();
 
@@ -257,121 +210,81 @@ final class TitleRankingTest extends TestCase
     }
 
     /**
-     * test getRank1Title
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetRank1Title()
+    public function testGetRank1Title(): void
     {
         $this->baseTestGetRankTitle('getRank1Title', 'rank1Title');
     }
 
     /**
-     * test setRank1Title
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetRank1Title()
+    public function testSetRank1Title(): void
     {
         $this->baseTestSetRankTitle('setRank1Title', 'rank1Title');
     }
 
     /**
-     * test getRank2Title
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetRank2Title()
+    public function testGetRank2Title(): void
     {
         $this->baseTestGetRankTitle('getRank2Title', 'rank2Title');
     }
 
     /**
-     * test setRank2Title
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetRank2Title()
+    public function testSetRank2Title(): void
     {
         $this->baseTestSetRankTitle('setRank2Title', 'rank2Title');
     }
 
     /**
-     * test getRank3Title
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetRank3Title()
+    public function testGetRank3Title(): void
     {
         $this->baseTestGetRankTitle('getRank3Title', 'rank3Title');
     }
 
     /**
-     * test setRank3Title
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetRank3Title()
+    public function testSetRank3Title(): void
     {
         $this->baseTestSetRankTitle('setRank3Title', 'rank3Title');
     }
 
     /**
-     * test getRank4Title
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetRank4Title()
+    public function testGetRank4Title(): void
     {
         $this->baseTestGetRankTitle('getRank4Title', 'rank4Title');
     }
 
     /**
-     * test setRank4Title
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetRank4Title()
+    public function testSetRank4Title(): void
     {
         $this->baseTestSetRankTitle('setRank4Title', 'rank4Title');
     }
 
     /**
-     * test getRank5Title
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetRank5Title()
+    public function testGetRank5Title(): void
     {
         $this->baseTestGetRankTitle('getRank5Title', 'rank5Title');
     }
 
     /**
-     * test setRank5Title
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetRank5Title()
+    public function testSetRank5Title(): void
     {
         $this->baseTestSetRankTitle('setRank5Title', 'rank5Title');
     }

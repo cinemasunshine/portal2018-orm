@@ -10,14 +10,9 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
-/**
- * AdminUser test
- */
 final class AdminUserTest extends TestCase
 {
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return AdminUser&MockObject
      */
@@ -27,23 +22,17 @@ final class AdminUserTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<AdminUser>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(AdminUser::class);
     }
 
     /**
-     * test encryptPassword
-     *
      * @test
-     *
-     * @return void
      */
-    public function testEncryptPassword()
+    public function testEncryptPassword(): void
     {
         $plainPassword = 'password';
 
@@ -54,13 +43,9 @@ final class AdminUserTest extends TestCase
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 11;
 
@@ -75,13 +60,9 @@ final class AdminUserTest extends TestCase
     }
 
     /**
-     * test getName
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetName()
+    public function testGetName(): void
     {
         $name = 'user_name';
 
@@ -96,13 +77,9 @@ final class AdminUserTest extends TestCase
     }
 
     /**
-     * test setName
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetName()
+    public function testSetName(): void
     {
         $name = 'user_name';
 
@@ -118,13 +95,9 @@ final class AdminUserTest extends TestCase
     }
 
     /**
-     * test getDisplayName
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetDisplayName()
+    public function testGetDisplayName(): void
     {
         $displayName = 'user_display_name';
 
@@ -139,13 +112,9 @@ final class AdminUserTest extends TestCase
     }
 
     /**
-     * test setDisplayName
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetDisplayName()
+    public function testSetDisplayName(): void
     {
         $displayName = 'user_display_name';
 
@@ -161,13 +130,9 @@ final class AdminUserTest extends TestCase
     }
 
     /**
-     * test getPassword
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetPassword()
+    public function testGetPassword(): void
     {
         $password = 'password';
 
@@ -182,13 +147,9 @@ final class AdminUserTest extends TestCase
     }
 
     /**
-     * test setPassword
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetPassword()
+    public function testSetPassword(): void
     {
         $password = 'password';
 
@@ -207,13 +168,9 @@ final class AdminUserTest extends TestCase
     }
 
     /**
-     * test getGroup
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetGroup()
+    public function testGetGroup(): void
     {
         $group = 1;
 
@@ -228,13 +185,9 @@ final class AdminUserTest extends TestCase
     }
 
     /**
-     * test setGroup
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetGroup()
+    public function testSetGroup(): void
     {
         $group = 1;
 
@@ -250,13 +203,9 @@ final class AdminUserTest extends TestCase
     }
 
     /**
-     * set getTheater
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetTheater()
+    public function testGetTheater(): void
     {
         $theater = new Theater(11);
 
@@ -271,13 +220,9 @@ final class AdminUserTest extends TestCase
     }
 
     /**
-     * test setTheater
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetTheater()
+    public function testSetTheater(): void
     {
         $theater = new Theater(11);
 

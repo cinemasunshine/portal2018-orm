@@ -50,75 +50,37 @@ class PageCampaign
      */
     protected $displayOrder;
 
-    /**
-     * Return id
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return campaign
-     *
-     * @return Campaign
-     */
     public function getCampaign(): Campaign
     {
         return $this->campaign;
     }
 
-    /**
-     * Set campaign
-     *
-     * @param Campaign $campaign
-     * @return void
-     */
-    public function setCampaign(Campaign $campaign)
+    public function setCampaign(Campaign $campaign): void
     {
         $this->campaign = $campaign;
     }
 
-    /**
-     * Return page
-     *
-     * @return Page
-     */
     public function getPage(): Page
     {
         return $this->page;
     }
 
-    /**
-     * Set page
-     *
-     * @param Page $page
-     * @return void
-     */
-    public function setPage(Page $page)
+    public function setPage(Page $page): void
     {
         $this->page = $page;
     }
 
-    /**
-     * Return displayOrder
-     *
-     * @return integer
-     */
     public function getDisplayOrder(): int
     {
         return $this->displayOrder;
     }
 
-    /**
-     * Set displayOrder
-     *
-     * @param integer $displayOrder
-     * @return void
-     */
-    public function setDisplayOrder(int $displayOrder)
+    public function setDisplayOrder(int $displayOrder): void
     {
         $this->displayOrder = $displayOrder;
     }

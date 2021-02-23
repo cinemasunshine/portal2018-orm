@@ -9,14 +9,9 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
-/**
- * File test
- */
 final class FileTest extends TestCase
 {
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return File&MockObject
      */
@@ -26,23 +21,17 @@ final class FileTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<File>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(File::class);
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 12;
 
@@ -57,13 +46,9 @@ final class FileTest extends TestCase
     }
 
     /**
-     * test getName
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetName()
+    public function testGetName(): void
     {
         $name = 'file_name';
 
@@ -78,13 +63,9 @@ final class FileTest extends TestCase
     }
 
     /**
-     * test setName
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetName()
+    public function testSetName(): void
     {
         $name = 'file_name';
 
@@ -100,13 +81,9 @@ final class FileTest extends TestCase
     }
 
     /**
-     * test getOriginalName
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetOriginalName()
+    public function testGetOriginalName(): void
     {
         $originalName = 'file_original_name';
 
@@ -121,13 +98,9 @@ final class FileTest extends TestCase
     }
 
     /**
-     * test setOriginalName
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetOriginalName()
+    public function testSetOriginalName(): void
     {
         $originalName = 'file_original_name';
 
@@ -143,13 +116,9 @@ final class FileTest extends TestCase
     }
 
     /**
-     * test getMimeType
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetMimeType()
+    public function testGetMimeType(): void
     {
         $mimeType = 'text/plain';
 
@@ -164,13 +133,9 @@ final class FileTest extends TestCase
     }
 
     /**
-     * test setMimeType
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetMimeType()
+    public function testSetMimeType(): void
     {
         $mimeType = 'text/plain';
 
@@ -186,13 +151,9 @@ final class FileTest extends TestCase
     }
 
     /**
-     * test getSize
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetSize()
+    public function testGetSize(): void
     {
         $size = 1234;
 
@@ -207,13 +168,9 @@ final class FileTest extends TestCase
     }
 
     /**
-     * test setSize
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetSize()
+    public function testSetSize(): void
     {
         $size = 1234;
 

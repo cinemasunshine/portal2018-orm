@@ -7,14 +7,9 @@ namespace Tests\Entities\Traits;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
-/**
- * SoftDeleteTrait test
- */
 final class SoftDeleteTraitTest extends TestCase
 {
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return SoftDeleteTraitClass&MockObject
      */
@@ -24,13 +19,9 @@ final class SoftDeleteTraitTest extends TestCase
     }
 
     /**
-     * test getIsDeleted
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetIsDeleted()
+    public function testGetIsDeleted(): void
     {
         $isDeleted = false; // default
 
@@ -40,13 +31,9 @@ final class SoftDeleteTraitTest extends TestCase
     }
 
     /**
-     * test isDeleted
-     *
      * @test
-     *
-     * @return void
      */
-    public function testIsDeleted()
+    public function testIsDeleted(): void
     {
         $isDeleted = true;
 
@@ -60,13 +47,9 @@ final class SoftDeleteTraitTest extends TestCase
     }
 
     /**
-     * test setIsDeleted
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetIsDeleted()
+    public function testSetIsDeleted(): void
     {
         $isDeleted = true;
 

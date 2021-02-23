@@ -50,75 +50,37 @@ class SpecialSiteCampaign
      */
     protected $displayOrder;
 
-    /**
-     * Return id
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return campaign
-     *
-     * @return Campaign
-     */
     public function getCampaign(): Campaign
     {
         return $this->campaign;
     }
 
-    /**
-     * Set campaign
-     *
-     * @param Campaign $campaign
-     * @return void
-     */
-    public function setCampaign(Campaign $campaign)
+    public function setCampaign(Campaign $campaign): void
     {
         $this->campaign = $campaign;
     }
 
-    /**
-     * Return specialSite
-     *
-     * @return SpecialSite
-     */
     public function getSpecialSite(): SpecialSite
     {
         return $this->specialSite;
     }
 
-    /**
-     * Set specialSite
-     *
-     * @param SpecialSite $specialSite
-     * @return void
-     */
-    public function setSpecialSite(SpecialSite $specialSite)
+    public function setSpecialSite(SpecialSite $specialSite): void
     {
         $this->specialSite = $specialSite;
     }
 
-    /**
-     * Return displayOrder
-     *
-     * @return integer
-     */
     public function getDisplayOrder(): int
     {
         return $this->displayOrder;
     }
 
-    /**
-     * Set displayOrder
-     *
-     * @param integer $displayOrder
-     * @return void
-     */
-    public function setDisplayOrder(int $displayOrder)
+    public function setDisplayOrder(int $displayOrder): void
     {
         $this->displayOrder = $displayOrder;
     }

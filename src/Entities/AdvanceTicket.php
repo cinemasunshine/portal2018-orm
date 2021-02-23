@@ -114,56 +114,32 @@ class AdvanceTicket
      */
     protected $specialGiftImage;
 
-    /**
-     * Return id
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return advanceSale
-     *
-     * @return AdvanceSale
-     */
     public function getAdvanceSale(): AdvanceSale
     {
         return $this->advanceSale;
     }
 
-    /**
-     * Set advanceSale
-     *
-     * @param AdvanceSale $advanceSale
-     * @return void
-     */
-    public function setAdvanceSale(AdvanceSale $advanceSale)
+    public function setAdvanceSale(AdvanceSale $advanceSale): void
     {
         $this->advanceSale = $advanceSale;
     }
 
-    /**
-     * Return publishingStartDt
-     *
-     * @return DateTime
-     */
     public function getPublishingStartDt(): DateTime
     {
         return $this->publishingStartDt;
     }
 
     /**
-     * Set publishingStartDt
-     *
      * @param DateTime|string $publishingStartDt
-     * @return void
      *
      * @throws InvalidArgumentException
      */
-    public function setPublishingStartDt($publishingStartDt)
+    public function setPublishingStartDt($publishingStartDt): void
     {
         if ($publishingStartDt instanceof DateTime) {
             $this->publishingStartDt = $publishingStartDt;
@@ -174,25 +150,17 @@ class AdvanceTicket
         }
     }
 
-    /**
-     * Return releaseDt
-     *
-     * @return DateTime
-     */
     public function getReleaseDt(): DateTime
     {
         return $this->releaseDt;
     }
 
     /**
-     * Set releaseDt
-     *
      * @param DateTime|string $releaseDt
-     * @return void
      *
      * @throws InvalidArgumentException
      */
-    public function setReleaseDt($releaseDt)
+    public function setReleaseDt($releaseDt): void
     {
         if ($releaseDt instanceof DateTime) {
             $this->releaseDt = $releaseDt;
@@ -203,161 +171,80 @@ class AdvanceTicket
         }
     }
 
-    /**
-     * Return releaseDtText
-     *
-     * @return string|null
-     */
     public function getReleaseDtText(): ?string
     {
         return $this->releaseDtText;
     }
 
-    /**
-     * Set releaseDtText
-     *
-     * @param string|null $releaseDtText
-     * @return void
-     */
-    public function setReleaseDtText(?string $releaseDtText)
+    public function setReleaseDtText(?string $releaseDtText): void
     {
         $this->releaseDtText = $releaseDtText;
     }
 
-    /**
-     * Return isSalesEnd
-     *
-     * @return boolean
-     */
     public function getIsSalesEnd(): bool
     {
         return $this->isSalesEnd;
     }
 
     /**
-     * Is salse end
-     *
      * alias getIsSalesEnd()
-     *
-     * @return boolean
      */
     public function isSalseEnd(): bool
     {
         return $this->getIsSalesEnd();
     }
 
-    /**
-     * Set isSalesEnd
-     *
-     * @param boolean $isSalesEnd
-     * @return void
-     */
-    public function setIsSalesEnd(bool $isSalesEnd)
+    public function setIsSalesEnd(bool $isSalesEnd): void
     {
         $this->isSalesEnd = $isSalesEnd;
     }
 
-    /**
-     * Return type
-     *
-     * @return integer
-     */
     public function getType(): int
     {
         return $this->type;
     }
 
-    /**
-     * Set type
-     *
-     * @param integer $type
-     * @return void
-     */
-    public function setType(int $type)
+    public function setType(int $type): void
     {
         $this->type = $type;
     }
 
-    /**
-     * Return priceText
-     *
-     * @return string|null
-     */
     public function getPriceText(): ?string
     {
         return $this->priceText;
     }
 
-    /**
-     * Set priceText
-     *
-     * @param string|null $priceText
-     * @return void
-     */
-    public function setPriceText(?string $priceText)
+    public function setPriceText(?string $priceText): void
     {
         $this->priceText = $priceText;
     }
 
-    /**
-     * Return specialGift
-     *
-     * @return string|null
-     */
     public function getSpecialGift(): ?string
     {
         return $this->specialGift;
     }
 
-    /**
-     * Set specialGift
-     *
-     * @param string|null $specialGift
-     * @return void
-     */
-    public function setSpecialGift(?string $specialGift)
+    public function setSpecialGift(?string $specialGift): void
     {
         $this->specialGift = $specialGift;
     }
 
-    /**
-     * Return specialGiftStock
-     *
-     * @return integer|null
-     */
     public function getSpecialGiftStock(): ?int
     {
         return $this->specialGiftStock;
     }
 
-    /**
-     * Set specialGiftStock
-     *
-     * @param integer|null $specialGiftStock
-     * @return void
-     */
-    public function setSpecialGiftStock(?int $specialGiftStock)
+    public function setSpecialGiftStock(?int $specialGiftStock): void
     {
         $this->specialGiftStock = $specialGiftStock;
     }
 
-    /**
-     * Return specialGiftImage
-     *
-     * @return File|null
-     */
     public function getSpecialGiftImage(): ?File
     {
         return $this->specialGiftImage;
     }
 
-    /**
-     * Set specialGiftImage
-     *
-     * @param File|null $specialGiftImage
-     * @return void
-     */
-    public function setSpecialGiftImage(?File $specialGiftImage)
+    public function setSpecialGiftImage(?File $specialGiftImage): void
     {
         $this->specialGiftImage = $specialGiftImage;
     }

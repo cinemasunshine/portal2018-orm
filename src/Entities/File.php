@@ -55,96 +55,47 @@ class File
      */
     protected $size;
 
-    /**
-     * Return id
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return name
-     *
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * Set name
-     *
-     * @param string $name
-     * @return void
-     */
-    public function setName(string $name)
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-    /**
-     * Return originalName
-     *
-     * @return string
-     */
     public function getOriginalName(): string
     {
         return $this->originalName;
     }
 
-    /**
-     * Set originalName
-     *
-     * @param string $originalName
-     * @return void
-     */
-    public function setOriginalName(string $originalName)
+    public function setOriginalName(string $originalName): void
     {
         $this->originalName = $originalName;
     }
 
-    /**
-     * Return mimeType
-     *
-     * @return string
-     */
     public function getMimeType(): string
     {
         return $this->mimeType;
     }
 
-    /**
-     * Set mimeType
-     *
-     * @param string $mimeType
-     * @return void
-     */
-    public function setMimeType(string $mimeType)
+    public function setMimeType(string $mimeType): void
     {
         $this->mimeType = $mimeType;
     }
 
-    /**
-     * Return size
-     *
-     * @return integer
-     */
     public function getSize(): int
     {
         return $this->size;
     }
 
-    /**
-     * Set size
-     *
-     * @param integer $size
-     * @return void
-     */
-    public function setSize(int $size)
+    public function setSize(int $size): void
     {
         $this->size = $size;
     }

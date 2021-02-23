@@ -12,14 +12,9 @@ use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use ReflectionMethod;
 
-/**
- * MainBanner test
- */
 final class MainBannerTest extends TestCase
 {
     /**
-     * Create target mock
-     *
      * @return MainBanner&MockObject
      */
     public function createTargetMock()
@@ -28,8 +23,6 @@ final class MainBannerTest extends TestCase
     }
 
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return MainBanner&MockObject
      */
@@ -39,23 +32,17 @@ final class MainBannerTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<MainBanner>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(MainBanner::class);
     }
 
     /**
-     * test construct
-     *
      * @test
-     *
-     * @return void
      */
-    public function testConstruct()
+    public function testConstruct(): void
     {
         $targetMock = $this->createTargetMock();
         $targetRef  = $this->createTargetReflection();
@@ -87,13 +74,9 @@ final class MainBannerTest extends TestCase
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 23;
 
@@ -108,13 +91,9 @@ final class MainBannerTest extends TestCase
     }
 
     /**
-     * test getImage
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetImage()
+    public function testGetImage(): void
     {
         $image = new File();
 
@@ -129,13 +108,9 @@ final class MainBannerTest extends TestCase
     }
 
     /**
-     * test setImage
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetImage()
+    public function testSetImage(): void
     {
         $image = new File();
 
@@ -151,13 +126,9 @@ final class MainBannerTest extends TestCase
     }
 
     /**
-     * test getName
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetName()
+    public function testGetName(): void
     {
         $name = 'main_banner_name';
 
@@ -172,13 +143,9 @@ final class MainBannerTest extends TestCase
     }
 
     /**
-     * test setName
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetName()
+    public function testSetName(): void
     {
         $name = 'main_banner_name';
 
@@ -194,13 +161,9 @@ final class MainBannerTest extends TestCase
     }
 
     /**
-     * test getLinkType
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetLinkType()
+    public function testGetLinkType(): void
     {
         $linkType = 2;
 
@@ -215,13 +178,9 @@ final class MainBannerTest extends TestCase
     }
 
     /**
-     * test setLinkType
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetLinkType()
+    public function testSetLinkType(): void
     {
         $linkType = 2;
 
@@ -237,13 +196,9 @@ final class MainBannerTest extends TestCase
     }
 
     /**
-     * test getLinkUrl
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetLinkUrl()
+    public function testGetLinkUrl(): void
     {
         $linkUrl = 'https://example.com';
 
@@ -258,13 +213,9 @@ final class MainBannerTest extends TestCase
     }
 
     /**
-     * test setLinkUrl
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetLinkUrl()
+    public function testSetLinkUrl(): void
     {
         $linkUrl = 'https://example.com';
 
@@ -280,13 +231,9 @@ final class MainBannerTest extends TestCase
     }
 
     /**
-     * test getPages
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetPages()
+    public function testGetPages(): void
     {
         $pages = new ArrayCollection();
 
@@ -301,13 +248,9 @@ final class MainBannerTest extends TestCase
     }
 
     /**
-     * test getSpecialSites
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetSpecialSites()
+    public function testGetSpecialSites(): void
     {
         $specialSites = new ArrayCollection();
 
@@ -322,13 +265,9 @@ final class MainBannerTest extends TestCase
     }
 
     /**
-     * test getTheaters
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetTheaters()
+    public function testGetTheaters(): void
     {
         $theaters = new ArrayCollection();
 

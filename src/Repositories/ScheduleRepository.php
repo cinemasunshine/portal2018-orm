@@ -14,22 +14,12 @@ use Doctrine\ORM\QueryBuilder;
  */
 class ScheduleRepository extends EntityRepository
 {
-    /**
-     * @param QueryBuilder $qb
-     * @param string       $alias
-     * @return void
-     */
-    protected function addActiveQuery(QueryBuilder $qb, string $alias)
+    protected function addActiveQuery(QueryBuilder $qb, string $alias): void
     {
         $qb->andWhere(sprintf('%s.isDeleted = false', $alias));
     }
 
-    /**
-     * @param QueryBuilder $qb
-     * @param string       $alias
-     * @return void
-     */
-    protected function addPublicQuery(QueryBuilder $qb, string $alias)
+    protected function addPublicQuery(QueryBuilder $qb, string $alias): void
     {
         $this->addActiveQuery($qb, $alias);
 
@@ -38,12 +28,7 @@ class ScheduleRepository extends EntityRepository
             ->andWhere(sprintf('%s.publicEndDt > CURRENT_TIMESTAMP()', $alias));
     }
 
-    /**
-     * @param QueryBuilder $qb
-     * @param string       $alias
-     * @return void
-     */
-    protected function addNowShowingQuery(QueryBuilder $qb, string $alias)
+    protected function addNowShowingQuery(QueryBuilder $qb, string $alias): void
     {
         $this->addPublicQuery($qb, $alias);
 
@@ -52,12 +37,7 @@ class ScheduleRepository extends EntityRepository
             ->orderBy(sprintf('%s.startDate', $alias), 'DESC');
     }
 
-    /**
-     * @param QueryBuilder $qb
-     * @param string       $alias
-     * @return void
-     */
-    protected function addComingSoonQuery(QueryBuilder $qb, string $alias)
+    protected function addComingSoonQuery(QueryBuilder $qb, string $alias): void
     {
         $this->addPublicQuery($qb, $alias);
 

@@ -43,54 +43,27 @@ class PageTrailer
      */
     protected $page;
 
-    /**
-     * Return id
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return trailer
-     *
-     * @return Trailer
-     */
     public function getTrailer(): Trailer
     {
         return $this->trailer;
     }
 
-    /**
-     * Set trailer
-     *
-     * @param Trailer $trailer
-     * @return void
-     */
-    public function setTrailer(Trailer $trailer)
+    public function setTrailer(Trailer $trailer): void
     {
         $this->trailer = $trailer;
     }
 
-    /**
-     * Return page
-     *
-     * @return Page
-     */
     public function getPage(): Page
     {
         return $this->page;
     }
 
-    /**
-     * Set page
-     *
-     * @param Page $page
-     * @return void
-     */
-    public function setPage(Page $page)
+    public function setPage(Page $page): void
     {
         $this->page = $page;
     }

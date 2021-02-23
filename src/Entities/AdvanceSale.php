@@ -72,85 +72,47 @@ class AdvanceSale
      */
     protected $advanceTickets;
 
-    /**
-     * constructor
-     */
     public function __construct()
     {
         $this->advanceTickets = new ArrayCollection();
     }
 
-    /**
-     * Return id
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return theater
-     *
-     * @return Theater
-     */
     public function getTheater(): Theater
     {
         return $this->theater;
     }
 
-    /**
-     * Set theater
-     *
-     * @param Theater $theater
-     * @return void
-     */
-    public function setTheater(Theater $theater)
+    public function setTheater(Theater $theater): void
     {
         $this->theater = $theater;
     }
 
-    /**
-     * Return title
-     *
-     * @return Title
-     */
     public function getTitle(): Title
     {
         return $this->title;
     }
 
-    /**
-     * Set title
-     *
-     * @param Title $title
-     * @return void
-     */
-    public function setTitle(Title $title)
+    public function setTitle(Title $title): void
     {
         $this->title = $title;
     }
 
-    /**
-     * Return publishingExpectedDate
-     *
-     * @return DateTime|null
-     */
     public function getPublishingExpectedDate(): ?DateTime
     {
         return $this->publishingExpectedDate;
     }
 
     /**
-     * Set publishingExpectedDate
-     *
      * @param DateTime|string|null $publishingExpectedDate
-     * @return void
      *
      * @throws InvalidArgumentException
      */
-    public function setPublishingExpectedDate($publishingExpectedDate)
+    public function setPublishingExpectedDate($publishingExpectedDate): void
     {
         if (is_null($publishingExpectedDate) || $publishingExpectedDate instanceof DateTime) {
             $this->publishingExpectedDate = $publishingExpectedDate;
@@ -161,30 +123,17 @@ class AdvanceSale
         }
     }
 
-    /**
-     * Return publishingExpectedDateText
-     *
-     * @return string|null
-     */
     public function getPublishingExpectedDateText(): ?string
     {
         return $this->publishingExpectedDateText;
     }
 
-    /**
-     * Set publishingExpectedDateText
-     *
-     * @param string|null $publishingExpectedDateText
-     * @return void
-     */
-    public function setPublishingExpectedDateText(?string $publishingExpectedDateText)
+    public function setPublishingExpectedDateText(?string $publishingExpectedDateText): void
     {
         $this->publishingExpectedDateText = $publishingExpectedDateText;
     }
 
     /**
-     * Return advanceTickets
-     *
      * @return Collection<int, AdvanceTicket>
      */
     public function getAdvanceTickets(): Collection

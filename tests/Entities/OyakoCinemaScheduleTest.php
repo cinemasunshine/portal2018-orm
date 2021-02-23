@@ -14,14 +14,9 @@ use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use ReflectionMethod;
 
-/**
- * OyakoCinemaSchedule test
- */
 final class OyakoCinemaScheduleTest extends TestCase
 {
     /**
-     * Create target mock
-     *
      * @return OyakoCinemaSchedule&MockObject
      */
     public function createTargetMock()
@@ -30,8 +25,6 @@ final class OyakoCinemaScheduleTest extends TestCase
     }
 
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return OyakoCinemaSchedule&MockObject
      */
@@ -41,23 +34,17 @@ final class OyakoCinemaScheduleTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<OyakoCinemaSchedule>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(OyakoCinemaSchedule::class);
     }
 
     /**
-     * test construct
-     *
      * @test
-     *
-     * @return void
      */
-    public function testConstruct()
+    public function testConstruct(): void
     {
         $targetMock = $this->createTargetMock();
         $targetRef  = $this->createTargetReflection();
@@ -75,13 +62,9 @@ final class OyakoCinemaScheduleTest extends TestCase
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 20;
 
@@ -96,13 +79,9 @@ final class OyakoCinemaScheduleTest extends TestCase
     }
 
     /**
-     * test getOyakoCinemaTitle
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetOyakoCinemaTitle()
+    public function testGetOyakoCinemaTitle(): void
     {
         $oyakoCinemaTitle = new OyakoCinemaTitle();
 
@@ -117,13 +96,9 @@ final class OyakoCinemaScheduleTest extends TestCase
     }
 
     /**
-     * test setOyakoCinemaTitle
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetOyakoCinemaTitle()
+    public function testSetOyakoCinemaTitle(): void
     {
         $oyakoCinemaTitle = new OyakoCinemaTitle();
 
@@ -139,13 +114,9 @@ final class OyakoCinemaScheduleTest extends TestCase
     }
 
     /**
-     * test getDate
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetDate()
+    public function testGetDate(): void
     {
         $date = new DateTime();
 
@@ -160,13 +131,9 @@ final class OyakoCinemaScheduleTest extends TestCase
     }
 
     /**
-     * test setDate
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetDate()
+    public function testSetDate(): void
     {
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -194,10 +161,8 @@ final class OyakoCinemaScheduleTest extends TestCase
      * test setDate (invalid argument)
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetDateInvalidArgument()
+    public function testSetDateInvalidArgument(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -208,13 +173,9 @@ final class OyakoCinemaScheduleTest extends TestCase
     }
 
     /**
-     * test getOyakoCinemaTheaters
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetOyakoCinemaTheaters()
+    public function testGetOyakoCinemaTheaters(): void
     {
         $oyakoCinemaTheaters = new ArrayCollection();
 

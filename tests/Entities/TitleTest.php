@@ -14,14 +14,9 @@ use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use ReflectionMethod;
 
-/**
- * Title test
- */
 final class TitleTest extends TestCase
 {
     /**
-     * Create target mock
-     *
      * @return Title&MockObject
      */
     public function createTargetMock()
@@ -30,8 +25,6 @@ final class TitleTest extends TestCase
     }
 
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return Title&MockObject
      */
@@ -41,23 +34,17 @@ final class TitleTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<Title>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(Title::class);
     }
 
     /**
-     * test construct
-     *
      * @test
-     *
-     * @return void
      */
-    public function testConstruct()
+    public function testConstruct(): void
     {
         $targetMock = $this->createTargetMock();
         $targetRef  = $this->createTargetReflection();
@@ -82,13 +69,9 @@ final class TitleTest extends TestCase
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 12;
 
@@ -106,10 +89,8 @@ final class TitleTest extends TestCase
      * test getImage
      *
      * @test
-     *
-     * @return void
      */
-    public function testGetImage()
+    public function testGetImage(): void
     {
         $image = new File();
 
@@ -127,10 +108,8 @@ final class TitleTest extends TestCase
      * test setImage
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetImage()
+    public function testSetImage(): void
     {
         $image = new File();
 
@@ -149,10 +128,8 @@ final class TitleTest extends TestCase
      * test getName
      *
      * @test
-     *
-     * @return void
      */
-    public function testGetName()
+    public function testGetName(): void
     {
         $name = 'title_name';
 
@@ -170,10 +147,8 @@ final class TitleTest extends TestCase
      * test setName
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetName()
+    public function testSetName(): void
     {
         $name = 'title_name';
 
@@ -192,10 +167,8 @@ final class TitleTest extends TestCase
      * test getNameKana
      *
      * @test
-     *
-     * @return void
      */
-    public function testGetNameKana()
+    public function testGetNameKana(): void
     {
         $nameKana = 'title_name_kana';
 
@@ -213,10 +186,8 @@ final class TitleTest extends TestCase
      * test setNameKana
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetNameKana()
+    public function testSetNameKana(): void
     {
         $nameKana = 'title_name_kana';
 
@@ -235,10 +206,8 @@ final class TitleTest extends TestCase
      * test getNameOriginal
      *
      * @test
-     *
-     * @return void
      */
-    public function testGetNameOriginal()
+    public function testGetNameOriginal(): void
     {
         $nameOriginal = 'title_name_original';
 
@@ -256,10 +225,8 @@ final class TitleTest extends TestCase
      * test setNameOriginal
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetNameOriginal()
+    public function testSetNameOriginal(): void
     {
         $nameOriginal = 'title_name_original';
 
@@ -278,10 +245,8 @@ final class TitleTest extends TestCase
      * test getCredit
      *
      * @test
-     *
-     * @return void
      */
-    public function testGetCredit()
+    public function testGetCredit(): void
     {
         $credit = 'title_credit';
 
@@ -299,10 +264,8 @@ final class TitleTest extends TestCase
      * test setCredit
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetCredit()
+    public function testSetCredit(): void
     {
         $credit = 'title_credit';
 
@@ -321,10 +284,8 @@ final class TitleTest extends TestCase
      * test getCatchcopy
      *
      * @test
-     *
-     * @return void
      */
-    public function testGetCatchcopy()
+    public function testGetCatchcopy(): void
     {
         $catchcopy = 'title_catchcopy';
 
@@ -342,10 +303,8 @@ final class TitleTest extends TestCase
      * test setCatchcopy
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetCatchcopy()
+    public function testSetCatchcopy(): void
     {
         $catchcopy = 'title_catchcopy';
 
@@ -364,10 +323,8 @@ final class TitleTest extends TestCase
      * test getIntroduction
      *
      * @test
-     *
-     * @return void
      */
-    public function testGetIntroduction()
+    public function testGetIntroduction(): void
     {
         $introduction = 'title_introduction';
 
@@ -385,10 +342,8 @@ final class TitleTest extends TestCase
      * test setIntroduction
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetIntroduction()
+    public function testSetIntroduction(): void
     {
         $introduction = 'title_introduction';
 
@@ -407,10 +362,8 @@ final class TitleTest extends TestCase
      * test getDirector
      *
      * @test
-     *
-     * @return void
      */
-    public function testGetDirector()
+    public function testGetDirector(): void
     {
         $director = 'title_director';
 
@@ -428,10 +381,8 @@ final class TitleTest extends TestCase
      * test setDirector
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetDirector()
+    public function testSetDirector(): void
     {
         $director = 'title_director';
 
@@ -450,10 +401,8 @@ final class TitleTest extends TestCase
      * test getCast
      *
      * @test
-     *
-     * @return void
      */
-    public function testGetCast()
+    public function testGetCast(): void
     {
         $cast = 'title_cast';
 
@@ -471,10 +420,8 @@ final class TitleTest extends TestCase
      * test setCast
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetCast()
+    public function testSetCast(): void
     {
         $cast = 'title_cast';
 
@@ -493,10 +440,8 @@ final class TitleTest extends TestCase
      * test getPublishingExpectedDate
      *
      * @test
-     *
-     * @return void
      */
-    public function testGetPublishingExpectedDate()
+    public function testGetPublishingExpectedDate(): void
     {
         $publishingExpectedDate = new DateTime();
 
@@ -517,10 +462,8 @@ final class TitleTest extends TestCase
      * test setPublishingExpectedDate
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetPublishingExpectedDate()
+    public function testSetPublishingExpectedDate(): void
     {
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -554,10 +497,8 @@ final class TitleTest extends TestCase
      * test setPublishingExpectedDate (invalid argument)
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetPublishingExpectedDateInvalidArgument()
+    public function testSetPublishingExpectedDateInvalidArgument(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -571,10 +512,8 @@ final class TitleTest extends TestCase
      * test getOfficialSite
      *
      * @test
-     *
-     * @return void
      */
-    public function testGetOfficialSite()
+    public function testGetOfficialSite(): void
     {
         $officialSite = 'https://example.com/';
 
@@ -592,10 +531,8 @@ final class TitleTest extends TestCase
      * test setOfficialSite
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetOfficialSite()
+    public function testSetOfficialSite(): void
     {
         $officialSite = 'https://example.com/';
 
@@ -614,10 +551,8 @@ final class TitleTest extends TestCase
      * test getRating
      *
      * @test
-     *
-     * @return void
      */
-    public function testGetRating()
+    public function testGetRating(): void
     {
         $rating = 2;
 
@@ -635,10 +570,8 @@ final class TitleTest extends TestCase
      * test setRating
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetRating()
+    public function testSetRating(): void
     {
         $rating = 2;
 
@@ -657,10 +590,8 @@ final class TitleTest extends TestCase
      * test getUniversal
      *
      * @test
-     *
-     * @return void
      */
-    public function testGetUniversal()
+    public function testGetUniversal(): void
     {
         $universal = [1, 2];
 
@@ -678,10 +609,8 @@ final class TitleTest extends TestCase
      * test setUniversal
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetUniversal()
+    public function testSetUniversal(): void
     {
         $universal = [1, 2];
 
@@ -700,10 +629,8 @@ final class TitleTest extends TestCase
      * test getCampaigns
      *
      * @test
-     *
-     * @return void
      */
-    public function testGetCampaigns()
+    public function testGetCampaigns(): void
     {
         $campaigns = new ArrayCollection();
 
@@ -721,10 +648,8 @@ final class TitleTest extends TestCase
      * test getTrailers
      *
      * @test
-     *
-     * @return void
      */
-    public function testGetTrailers()
+    public function testGetTrailers(): void
     {
         $trailers = new ArrayCollection();
 

@@ -15,14 +15,9 @@ use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use ReflectionMethod;
 
-/**
- * News test
- */
 final class NewsTest extends TestCase
 {
     /**
-     * Create target mock
-     *
      * @return News&MockObject
      */
     public function createTargetMock()
@@ -31,8 +26,6 @@ final class NewsTest extends TestCase
     }
 
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return News&MockObject
      */
@@ -42,23 +35,17 @@ final class NewsTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<News>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(News::class);
     }
 
     /**
-     * test construct
-     *
      * @test
-     *
-     * @return void
      */
-    public function testConstruct()
+    public function testConstruct(): void
     {
         $targetMock = $this->createTargetMock();
         $targetRef  = $this->createTargetReflection();
@@ -90,13 +77,9 @@ final class NewsTest extends TestCase
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 26;
 
@@ -111,13 +94,9 @@ final class NewsTest extends TestCase
     }
 
     /**
-     * test getTitle
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetTitle()
+    public function testGetTitle(): void
     {
         $title = new Title();
 
@@ -132,13 +111,9 @@ final class NewsTest extends TestCase
     }
 
     /**
-     * test setTitle
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetTitle()
+    public function testSetTitle(): void
     {
         $title = new Title();
 
@@ -154,13 +129,9 @@ final class NewsTest extends TestCase
     }
 
     /**
-     * test getImage
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetImage()
+    public function testGetImage(): void
     {
         $image = new File();
 
@@ -175,13 +146,9 @@ final class NewsTest extends TestCase
     }
 
     /**
-     * test setImage
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetImage()
+    public function testSetImage(): void
     {
         $image = new File();
 
@@ -197,13 +164,9 @@ final class NewsTest extends TestCase
     }
 
     /**
-     * test getCategory
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetCategory()
+    public function testGetCategory(): void
     {
         $category = 2;
 
@@ -218,13 +181,9 @@ final class NewsTest extends TestCase
     }
 
     /**
-     * test setCategory
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetCategory()
+    public function testSetCategory(): void
     {
         $category = 2;
 
@@ -240,13 +199,9 @@ final class NewsTest extends TestCase
     }
 
     /**
-     * test getHeadline
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetHeadline()
+    public function testGetHeadline(): void
     {
         $headline = 'news_headline';
 
@@ -261,13 +216,9 @@ final class NewsTest extends TestCase
     }
 
     /**
-     * test setHeadline
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetHeadline()
+    public function testSetHeadline(): void
     {
         $headline = 'news_headline';
 
@@ -283,13 +234,9 @@ final class NewsTest extends TestCase
     }
 
     /**
-     * test getBody
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetBody()
+    public function testGetBody(): void
     {
         $body = 'news_body';
 
@@ -304,13 +251,9 @@ final class NewsTest extends TestCase
     }
 
     /**
-     * test setBody
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetBody()
+    public function testSetBody(): void
     {
         $body = 'news_body';
 
@@ -326,13 +269,9 @@ final class NewsTest extends TestCase
     }
 
     /**
-     * test getStartDt
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetStartDt()
+    public function testGetStartDt(): void
     {
         $startDt = new DateTime();
 
@@ -347,13 +286,9 @@ final class NewsTest extends TestCase
     }
 
     /**
-     * test setStartDt
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetStartDt()
+    public function testSetStartDt(): void
     {
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -381,10 +316,8 @@ final class NewsTest extends TestCase
      * test setStartDt (invalid argument)
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetStartDtInvalidArgument()
+    public function testSetStartDtInvalidArgument(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -395,13 +328,9 @@ final class NewsTest extends TestCase
     }
 
     /**
-     * test getEndDt
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetEndDt()
+    public function testGetEndDt(): void
     {
         $endDt = new DateTime();
 
@@ -416,13 +345,9 @@ final class NewsTest extends TestCase
     }
 
     /**
-     * test setEndDt
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetEndDt()
+    public function testSetEndDt(): void
     {
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -450,10 +375,8 @@ final class NewsTest extends TestCase
      * test setEndDt (invalid argument)
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetEndDtInvalidArgument()
+    public function testSetEndDtInvalidArgument(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -464,13 +387,9 @@ final class NewsTest extends TestCase
     }
 
     /**
-     * test getPages
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetPages()
+    public function testGetPages(): void
     {
         $pages = new ArrayCollection();
 
@@ -485,13 +404,9 @@ final class NewsTest extends TestCase
     }
 
     /**
-     * test getSpecialSites
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetSpecialSites()
+    public function testGetSpecialSites(): void
     {
         $specialSites = new ArrayCollection();
 
@@ -506,13 +421,9 @@ final class NewsTest extends TestCase
     }
 
     /**
-     * test getTheaters
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetTheaters()
+    public function testGetTheaters(): void
     {
         $theaters = new ArrayCollection();
 

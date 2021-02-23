@@ -11,14 +11,9 @@ use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use ReflectionMethod;
 
-/**
- * SpecialSite test
- */
 final class SpecialSiteTest extends TestCase
 {
     /**
-     * Create target mock
-     *
      * @return SpecialSite&MockObject
      */
     public function createTargetMock()
@@ -27,8 +22,6 @@ final class SpecialSiteTest extends TestCase
     }
 
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return SpecialSite&MockObject
      */
@@ -38,23 +31,17 @@ final class SpecialSiteTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<SpecialSite>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(SpecialSite::class);
     }
 
     /**
-     * test construct
-     *
      * @test
-     *
-     * @return void
      */
-    public function testConstruct()
+    public function testConstruct(): void
     {
         $id = 11;
 
@@ -99,13 +86,9 @@ final class SpecialSiteTest extends TestCase
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 12;
 
@@ -120,13 +103,9 @@ final class SpecialSiteTest extends TestCase
     }
 
     /**
-     * test getName
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetName()
+    public function testGetName(): void
     {
         $name = 'special_site_name';
 
@@ -141,13 +120,9 @@ final class SpecialSiteTest extends TestCase
     }
 
     /**
-     * test setName
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetName()
+    public function testSetName(): void
     {
         $name = 'special_site_name';
 
@@ -163,13 +138,9 @@ final class SpecialSiteTest extends TestCase
     }
 
     /**
-     * test getNameJa
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGatNameJa()
+    public function testGatNameJa(): void
     {
         $nameJa = 'special_site_name_ja';
 
@@ -184,13 +155,9 @@ final class SpecialSiteTest extends TestCase
     }
 
     /**
-     * test setNameJa
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetNameJa()
+    public function testSetNameJa(): void
     {
         $nameJa = 'special_site_name_ja';
 
@@ -206,13 +173,9 @@ final class SpecialSiteTest extends TestCase
     }
 
     /**
-     * test getTheaters
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetTheaters()
+    public function testGetTheaters(): void
     {
         $theaters = new ArrayCollection();
 
@@ -227,13 +190,9 @@ final class SpecialSiteTest extends TestCase
     }
 
     /**
-     * test getCampaigns
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetCampaigns()
+    public function testGetCampaigns(): void
     {
         $campaigns = new ArrayCollection();
 
@@ -248,13 +207,9 @@ final class SpecialSiteTest extends TestCase
     }
 
     /**
-     * test getMainBanners
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetMainBanners()
+    public function testGetMainBanners(): void
     {
         $mainBanners = new ArrayCollection();
 
@@ -269,13 +224,9 @@ final class SpecialSiteTest extends TestCase
     }
 
     /**
-     * test getNewsList
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetNewsList()
+    public function testGetNewsList(): void
     {
         $newsList = new ArrayCollection();
 

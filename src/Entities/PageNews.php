@@ -50,75 +50,37 @@ class PageNews
      */
     protected $displayOrder;
 
-    /**
-     * Return id
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return news
-     *
-     * @return News
-     */
     public function getNews(): News
     {
         return $this->news;
     }
 
-    /**
-     * Set news
-     *
-     * @param News $news
-     * @return void
-     */
-    public function setNews(News $news)
+    public function setNews(News $news): void
     {
         $this->news = $news;
     }
 
-    /**
-     * Return page
-     *
-     * @return Page
-     */
     public function getPage(): Page
     {
         return $this->page;
     }
 
-    /**
-     * Set page
-     *
-     * @param Page $page
-     * @return void
-     */
-    public function setPage(Page $page)
+    public function setPage(Page $page): void
     {
         $this->page = $page;
     }
 
-    /**
-     * Return displayOrder
-     *
-     * @return integer
-     */
     public function getDisplayOrder(): int
     {
         return $this->displayOrder;
     }
 
-    /**
-     * Set displayOrder
-     *
-     * @param integer $displayOrder
-     * @return void
-     */
-    public function setDisplayOrder(int $displayOrder)
+    public function setDisplayOrder(int $displayOrder): void
     {
         $this->displayOrder = $displayOrder;
     }

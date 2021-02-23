@@ -11,14 +11,9 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
-/**
- * PageCampaign test
- */
 final class PageCampaignTest extends TestCase
 {
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return PageCampaign&MockObject
      */
@@ -28,23 +23,17 @@ final class PageCampaignTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<PageCampaign>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(PageCampaign::class);
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 22;
 
@@ -59,13 +48,9 @@ final class PageCampaignTest extends TestCase
     }
 
     /**
-     * test getCampaign
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetCampaign()
+    public function testGetCampaign(): void
     {
         $campaign = new Campaign();
 
@@ -80,13 +65,9 @@ final class PageCampaignTest extends TestCase
     }
 
     /**
-     * test setCampaign
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetCampaign()
+    public function testSetCampaign(): void
     {
         $campaign = new Campaign();
 
@@ -102,13 +83,9 @@ final class PageCampaignTest extends TestCase
     }
 
     /**
-     * test getPage
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetPage()
+    public function testGetPage(): void
     {
         $page = new Page(5);
 
@@ -123,13 +100,9 @@ final class PageCampaignTest extends TestCase
     }
 
     /**
-     * test setPage
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetPage()
+    public function testSetPage(): void
     {
         $page = new Page(5);
 
@@ -145,13 +118,9 @@ final class PageCampaignTest extends TestCase
     }
 
     /**
-     * test getDisplayOrder
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetDisplayOrder()
+    public function testGetDisplayOrder(): void
     {
         $displayOrder = 2;
 
@@ -166,13 +135,9 @@ final class PageCampaignTest extends TestCase
     }
 
     /**
-     * test setDisplayOrder
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetDisplayOrder()
+    public function testSetDisplayOrder(): void
     {
         $displayOrder = 2;
 

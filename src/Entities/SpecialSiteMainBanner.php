@@ -50,75 +50,37 @@ class SpecialSiteMainBanner
      */
     protected $displayOrder;
 
-    /**
-     * Return int
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return mainBanner
-     *
-     * @return MainBanner
-     */
     public function getMainBanner(): MainBanner
     {
         return $this->mainBanner;
     }
 
-    /**
-     * Set mainBanner
-     *
-     * @param MainBanner $mainBanner
-     * @return void
-     */
-    public function setMainBanner(MainBanner $mainBanner)
+    public function setMainBanner(MainBanner $mainBanner): void
     {
         $this->mainBanner = $mainBanner;
     }
 
-    /**
-     * Return specialSite
-     *
-     * @return SpecialSite
-     */
     public function getSpecialSite(): SpecialSite
     {
         return $this->specialSite;
     }
 
-    /**
-     * Set specialSite
-     *
-     * @param SpecialSite $specialSite
-     * @return void
-     */
-    public function setSpecialSite(SpecialSite $specialSite)
+    public function setSpecialSite(SpecialSite $specialSite): void
     {
         $this->specialSite = $specialSite;
     }
 
-    /**
-     * Return displayOrder
-     *
-     * @return integer
-     */
     public function getDisplayOrder(): int
     {
         return $this->displayOrder;
     }
 
-    /**
-     * Set displayOrder
-     *
-     * @param integer $displayOrder
-     * @return void
-     */
-    public function setDisplayOrder(int $displayOrder)
+    public function setDisplayOrder(int $displayOrder): void
     {
         $this->displayOrder = $displayOrder;
     }

@@ -14,14 +14,9 @@ use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use ReflectionMethod;
 
-/**
- * Schedule test
- */
 final class ScheduleTest extends TestCase
 {
     /**
-     * Create target mock
-     *
      * @return Schedule&MockObject
      */
     public function createTargetMock()
@@ -30,8 +25,6 @@ final class ScheduleTest extends TestCase
     }
 
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return Schedule&MockObject
      */
@@ -41,23 +34,17 @@ final class ScheduleTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<Schedule>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(Schedule::class);
     }
 
     /**
-     * test construct
-     *
      * @test
-     *
-     * @return void
      */
-    public function testConstruct()
+    public function testConstruct(): void
     {
         $targetMock = $this->createTargetMock();
         $targetRef  = $this->createTargetReflection();
@@ -82,13 +69,9 @@ final class ScheduleTest extends TestCase
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 8;
 
@@ -103,13 +86,9 @@ final class ScheduleTest extends TestCase
     }
 
     /**
-     * test getTitle
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetTitle()
+    public function testGetTitle(): void
     {
         $title = new Title();
 
@@ -124,13 +103,9 @@ final class ScheduleTest extends TestCase
     }
 
     /**
-     * test setTitle
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetTitle()
+    public function testSetTitle(): void
     {
         $title = new Title();
 
@@ -146,13 +121,9 @@ final class ScheduleTest extends TestCase
     }
 
     /**
-     * test getStartDate
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetStartDate()
+    public function testGetStartDate(): void
     {
         $startDate = new DateTime();
 
@@ -167,13 +138,9 @@ final class ScheduleTest extends TestCase
     }
 
     /**
-     * test setStartDate
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetStartDate()
+    public function testSetStartDate(): void
     {
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -201,10 +168,8 @@ final class ScheduleTest extends TestCase
      * test setStartDate (invalid argument)
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetStartDateInvalidArgument()
+    public function testSetStartDateInvalidArgument(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -215,13 +180,9 @@ final class ScheduleTest extends TestCase
     }
 
     /**
-     * test getEndDate
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetEndDate()
+    public function testGetEndDate(): void
     {
         $endDate = new DateTime();
 
@@ -236,13 +197,9 @@ final class ScheduleTest extends TestCase
     }
 
     /**
-     * test setEndDate
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetEndDate()
+    public function testSetEndDate(): void
     {
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -270,10 +227,8 @@ final class ScheduleTest extends TestCase
      * test setEndDate (invalid argument)
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetEndDateInvalidArgument()
+    public function testSetEndDateInvalidArgument(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -284,13 +239,9 @@ final class ScheduleTest extends TestCase
     }
 
     /**
-     * test getPublicStartDt
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetPublicStartDt()
+    public function testGetPublicStartDt(): void
     {
         $publicStartDt = new DateTime();
 
@@ -305,13 +256,9 @@ final class ScheduleTest extends TestCase
     }
 
     /**
-     * test setPublicStartDt
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetPublicStartDt()
+    public function testSetPublicStartDt(): void
     {
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -339,10 +286,8 @@ final class ScheduleTest extends TestCase
      * test setPublicStartDt (invalid argument)
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetPublicStartDtInvalidArgument()
+    public function testSetPublicStartDtInvalidArgument(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -353,13 +298,9 @@ final class ScheduleTest extends TestCase
     }
 
     /**
-     * test getPublicEndDt
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetPublicEndDt()
+    public function testGetPublicEndDt(): void
     {
         $publicEndDt = new DateTime();
 
@@ -374,13 +315,9 @@ final class ScheduleTest extends TestCase
     }
 
     /**
-     * test setPublicEndDt
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetPublicEndDt()
+    public function testSetPublicEndDt(): void
     {
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -408,10 +345,8 @@ final class ScheduleTest extends TestCase
      * test setPublicEndDt (invalid argument)
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetPublicEndDtInvalidArgument()
+    public function testSetPublicEndDtInvalidArgument(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -422,13 +357,9 @@ final class ScheduleTest extends TestCase
     }
 
     /**
-     * test getRemark
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetRemark()
+    public function testGetRemark(): void
     {
         $remark = 'schedule_remark';
 
@@ -443,13 +374,9 @@ final class ScheduleTest extends TestCase
     }
 
     /**
-     * test setRemark
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetRemark()
+    public function testSetRemark(): void
     {
         $remark = 'schedule_remark';
 
@@ -465,13 +392,9 @@ final class ScheduleTest extends TestCase
     }
 
     /**
-     * test getShowingFormats
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetShowingFormats()
+    public function testGetShowingFormats(): void
     {
         $showingFormats = new ArrayCollection();
 
@@ -486,13 +409,9 @@ final class ScheduleTest extends TestCase
     }
 
     /**
-     * test setShowingFormats
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetShowingFormats()
+    public function testSetShowingFormats(): void
     {
         $showingFormats = new ArrayCollection();
 
@@ -508,13 +427,9 @@ final class ScheduleTest extends TestCase
     }
 
     /**
-     * test getShowingTheaters
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetShowingTheaters()
+    public function testGetShowingTheaters(): void
     {
         $showingTheaters = new ArrayCollection();
 
@@ -529,13 +444,9 @@ final class ScheduleTest extends TestCase
     }
 
     /**
-     * test setShowingTheaters
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetShowingTheaters()
+    public function testSetShowingTheaters(): void
     {
         $showingTheaters = new ArrayCollection();
 

@@ -8,14 +8,9 @@ use Cinemasunshine\ORM\Entities\AdminUser;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
-/**
- * SavedUserTrait test
- */
 final class SavedUserTraitTest extends TestCase
 {
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return SavedUserTraitClass&MockObject
      */
@@ -25,13 +20,9 @@ final class SavedUserTraitTest extends TestCase
     }
 
     /**
-     * test getCreatedUser
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetCreatedUser()
+    public function testGetCreatedUser(): void
     {
         $createdUser = new AdminUser();
 
@@ -42,13 +33,9 @@ final class SavedUserTraitTest extends TestCase
     }
 
     /**
-     * test setCreatedUser
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetCreatedUser()
+    public function testSetCreatedUser(): void
     {
         $createdUser = new AdminUser();
 
@@ -59,13 +46,9 @@ final class SavedUserTraitTest extends TestCase
     }
 
     /**
-     * test getUpdatedUser
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetUpdatedUser()
+    public function testGetUpdatedUser(): void
     {
         $updatedUser = new AdminUser();
 
@@ -76,13 +59,9 @@ final class SavedUserTraitTest extends TestCase
     }
 
     /**
-     * test setUpdatedUser
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetUpdatedUser()
+    public function testSetUpdatedUser(): void
     {
         $updatedUser = new AdminUser();
 

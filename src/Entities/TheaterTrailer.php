@@ -43,54 +43,27 @@ class TheaterTrailer
      */
     protected $theater;
 
-    /**
-     * Return id
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return trailer
-     *
-     * @return Trailer
-     */
     public function getTrailer(): Trailer
     {
         return $this->trailer;
     }
 
-    /**
-     * Set trailer
-     *
-     * @param Trailer $trailer
-     * @return void
-     */
-    public function setTrailer(Trailer $trailer)
+    public function setTrailer(Trailer $trailer): void
     {
         $this->trailer = $trailer;
     }
 
-    /**
-     * Return theater
-     *
-     * @return Theater
-     */
     public function getTheater(): Theater
     {
         return $this->theater;
     }
 
-    /**
-     * Set theater
-     *
-     * @param Theater $theater
-     * @return void
-     */
-    public function setTheater(Theater $theater)
+    public function setTheater(Theater $theater): void
     {
         $this->theater = $theater;
     }

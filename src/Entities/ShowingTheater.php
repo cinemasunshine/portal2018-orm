@@ -43,54 +43,27 @@ class ShowingTheater
      */
     protected $theater;
 
-    /**
-     * Return id
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return schedule
-     *
-     * @return Schedule
-     */
     public function getSchedule(): Schedule
     {
         return $this->schedule;
     }
 
-    /**
-     * Set schedule
-     *
-     * @param Schedule $schedule
-     * @return void
-     */
-    public function setSchedule(Schedule $schedule)
+    public function setSchedule(Schedule $schedule): void
     {
         $this->schedule = $schedule;
     }
 
-    /**
-     * Return theater
-     *
-     * @return Theater
-     */
     public function getTheater(): Theater
     {
         return $this->theater;
     }
 
-    /**
-     * Set theater
-     *
-     * @param Theater $theater
-     * @return void
-     */
-    public function setTheater(Theater $theater)
+    public function setTheater(Theater $theater): void
     {
         $this->theater = $theater;
     }

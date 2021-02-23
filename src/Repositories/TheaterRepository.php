@@ -14,12 +14,7 @@ use Doctrine\ORM\QueryBuilder;
  */
 class TheaterRepository extends EntityRepository
 {
-    /**
-     * @param QueryBuilder $qb
-     * @param string       $alias
-     * @return void
-     */
-    protected function addActiveQuery(QueryBuilder $qb, string $alias)
+    protected function addActiveQuery(QueryBuilder $qb, string $alias): void
     {
         $qb->andWhere(sprintf('%s.isDeleted = false', $alias));
     }
