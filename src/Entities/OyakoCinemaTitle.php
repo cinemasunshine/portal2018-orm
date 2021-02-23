@@ -59,69 +59,37 @@ class OyakoCinemaTitle
      */
     protected $oyakoCinemaSchedules;
 
-    /**
-     * constructor
-     */
     public function __construct()
     {
         $this->oyakoCinemaSchedules = new ArrayCollection();
     }
 
-    /**
-     * Return id
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return title
-     *
-     * @return Title
-     */
     public function getTitle(): Title
     {
         return $this->title;
     }
 
-    /**
-     * Set title
-     *
-     * @param Title $title
-     * @return void
-     */
-    public function setTitle(Title $title)
+    public function setTitle(Title $title): void
     {
         $this->title = $title;
     }
 
-    /**
-     * Return titleUrl
-     *
-     * @return string
-     */
     public function getTitleUrl(): string
     {
         return $this->titleUrl;
     }
 
-    /**
-     * Set titleUrl
-     *
-     * @param string $titleUrl
-     * @return void
-     */
-    public function setTitleUrl(string $titleUrl)
+    public function setTitleUrl(string $titleUrl): void
     {
         $this->titleUrl = $titleUrl;
     }
 
     /**
-     * Return oyakoCinemaSchedules
-     *
      * @return Collection<int, OyakoCinemaSchedule>
      */
     public function getOyakoCinemaSchedules(): Collection

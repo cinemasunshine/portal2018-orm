@@ -13,14 +13,9 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
-/**
- * AdvanceTicket test
- */
 final class AdvanceTicketTest extends TestCase
 {
     /**
-     * Create target mock
-     *
      * @return AdvanceTicket&MockObject
      */
     public function createTargetMock()
@@ -29,8 +24,6 @@ final class AdvanceTicketTest extends TestCase
     }
 
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return AdvanceTicket&MockObject
      */
@@ -40,23 +33,17 @@ final class AdvanceTicketTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<AdvanceTicket>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(AdvanceTicket::class);
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 19;
 
@@ -71,13 +58,9 @@ final class AdvanceTicketTest extends TestCase
     }
 
     /**
-     * test getAdvanceSale
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetAdvanceSale()
+    public function testGetAdvanceSale(): void
     {
         $advanceSale = new AdvanceSale();
 
@@ -92,13 +75,9 @@ final class AdvanceTicketTest extends TestCase
     }
 
     /**
-     * test setAdvanceSale
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetAdvanceSale()
+    public function testSetAdvanceSale(): void
     {
         $advanceSale = new AdvanceSale();
 
@@ -114,13 +93,9 @@ final class AdvanceTicketTest extends TestCase
     }
 
     /**
-     * test getPublishingStartDt
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetPublishingStartDt()
+    public function testGetPublishingStartDt(): void
     {
         $publishingStartDt = new DateTime();
 
@@ -135,13 +110,9 @@ final class AdvanceTicketTest extends TestCase
     }
 
     /**
-     * test setPublishingStartDt
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetPublishingStartDt()
+    public function testSetPublishingStartDt(): void
     {
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -169,10 +140,8 @@ final class AdvanceTicketTest extends TestCase
      * test setPublishingStartDt (invalid argument)
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetPublishingStartDtInvalidArgument()
+    public function testSetPublishingStartDtInvalidArgument(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -183,13 +152,9 @@ final class AdvanceTicketTest extends TestCase
     }
 
     /**
-     * test getReleaseDt
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetReleaseDt()
+    public function testGetReleaseDt(): void
     {
         $releaseDt = new DateTime();
 
@@ -204,13 +169,9 @@ final class AdvanceTicketTest extends TestCase
     }
 
     /**
-     * test setReleaseDt
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetReleaseDt()
+    public function testSetReleaseDt(): void
     {
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -238,10 +199,8 @@ final class AdvanceTicketTest extends TestCase
      * test setReleaseDt (invalid argument)
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetReleaseDtInvalidArgument()
+    public function testSetReleaseDtInvalidArgument(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -252,13 +211,9 @@ final class AdvanceTicketTest extends TestCase
     }
 
     /**
-     * test getReleaseDtText
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetReleaseDtText()
+    public function testGetReleaseDtText(): void
     {
         $releaseDtText = 'release_dt_text';
 
@@ -273,13 +228,9 @@ final class AdvanceTicketTest extends TestCase
     }
 
     /**
-     * test setReleaseDtText
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetReleaseDtText()
+    public function testSetReleaseDtText(): void
     {
         $releaseDtText = 'release_dt_text';
 
@@ -295,13 +246,9 @@ final class AdvanceTicketTest extends TestCase
     }
 
     /**
-     * test getIsSalesEnd
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetIsSalesEnd()
+    public function testGetIsSalesEnd(): void
     {
         $isSalesEnd = true;
 
@@ -316,13 +263,9 @@ final class AdvanceTicketTest extends TestCase
     }
 
     /**
-     * test isSalseEnd
-     *
      * @test
-     *
-     * @return void
      */
-    public function testIsSalseEnd()
+    public function testIsSalseEnd(): void
     {
         $isSalesEnd = true;
 
@@ -336,13 +279,9 @@ final class AdvanceTicketTest extends TestCase
     }
 
     /**
-     * test setIsSalesEnd
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetIsSalesEnd()
+    public function testSetIsSalesEnd(): void
     {
         $isSalesEnd = true;
 
@@ -358,13 +297,9 @@ final class AdvanceTicketTest extends TestCase
     }
 
     /**
-     * test getType
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetType()
+    public function testGetType(): void
     {
         $type = 3;
 
@@ -379,13 +314,9 @@ final class AdvanceTicketTest extends TestCase
     }
 
     /**
-     * test setType
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetType()
+    public function testSetType(): void
     {
         $type = 3;
 
@@ -401,13 +332,9 @@ final class AdvanceTicketTest extends TestCase
     }
 
     /**
-     * test getPriceText
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetPriceText()
+    public function testGetPriceText(): void
     {
         $priceText = '2,500';
 
@@ -422,13 +349,9 @@ final class AdvanceTicketTest extends TestCase
     }
 
     /**
-     * test setPriceText
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetPriceText()
+    public function testSetPriceText(): void
     {
         $priceText = '2,500';
 
@@ -444,13 +367,9 @@ final class AdvanceTicketTest extends TestCase
     }
 
     /**
-     * test getSpecialGift
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetSpecialGift()
+    public function testGetSpecialGift(): void
     {
         $specialGift = 'special_gift';
 
@@ -465,13 +384,9 @@ final class AdvanceTicketTest extends TestCase
     }
 
     /**
-     * test setSpecialGift
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetSpecialGift()
+    public function testSetSpecialGift(): void
     {
         $specialGift = 'special_gift';
 
@@ -487,13 +402,9 @@ final class AdvanceTicketTest extends TestCase
     }
 
     /**
-     * test getSpecialGiftStock
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetSpecialGiftStock()
+    public function testGetSpecialGiftStock(): void
     {
         $specialGiftStock = 4;
 
@@ -508,13 +419,9 @@ final class AdvanceTicketTest extends TestCase
     }
 
     /**
-     * test setSpecialGiftStock
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetSpecialGiftStock()
+    public function testSetSpecialGiftStock(): void
     {
         $specialGiftStock = 4;
 
@@ -530,13 +437,9 @@ final class AdvanceTicketTest extends TestCase
     }
 
     /**
-     * test getSpecialGiftImage
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetSpecialGiftImage()
+    public function testGetSpecialGiftImage(): void
     {
         $specialGiftImage = new File();
 
@@ -551,13 +454,9 @@ final class AdvanceTicketTest extends TestCase
     }
 
     /**
-     * test setSpecialGiftImage
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetSpecialGiftImage()
+    public function testSetSpecialGiftImage(): void
     {
         $specialGiftImage = new File();
 

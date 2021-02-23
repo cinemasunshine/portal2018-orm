@@ -7,9 +7,6 @@ namespace Cinemasunshine\ORM\Entities\Traits;
 use DateTime;
 use InvalidArgumentException;
 
-/**
- * Timestampable trait
- */
 trait TimestampableTrait
 {
     /**
@@ -26,25 +23,17 @@ trait TimestampableTrait
      */
     protected $updatedAt;
 
-    /**
-     * Return createdAt
-     *
-     * @return DateTime
-     */
     public function getCreatedAt(): DateTime
     {
         return $this->createdAt;
     }
 
     /**
-     * Set createdAt
-     *
      * @param DateTime|string $createdAt
-     * @return void
      *
      * @throws InvalidArgumentException
      */
-    public function setCreatedAt($createdAt)
+    public function setCreatedAt($createdAt): void
     {
         if ($createdAt instanceof DateTime) {
             $this->createdAt = $createdAt;
@@ -55,25 +44,17 @@ trait TimestampableTrait
         }
     }
 
-    /**
-     * Return updatedAt
-     *
-     * @return DateTime
-     */
     public function getUpdatedAt(): DateTime
     {
         return $this->updatedAt;
     }
 
     /**
-     * Set updatedAt
-     *
      * @param DateTime|string $updatedAt
-     * @return void
      *
      * @throws InvalidArgumentException
      */
-    public function setUpdatedAt($updatedAt)
+    public function setUpdatedAt($updatedAt): void
     {
         if ($updatedAt instanceof DateTime) {
             $this->updatedAt = $updatedAt;
@@ -85,26 +66,18 @@ trait TimestampableTrait
     }
 
     /**
-     * PrePersist Event
-     *
      * @ORM\PrePersist
-     *
-     * @return void
      */
-    public function prePersistTimestamp()
+    public function prePersistTimestamp(): void
     {
         $this->setCreatedAt('now');
         $this->setUpdatedAt('now');
     }
 
     /**
-     * update
-     *
      * @ORM\PreUpdate
-     *
-     * @return void
      */
-    public function updateTimestamp()
+    public function updateTimestamp(): void
     {
         $this->setUpdatedAt('now');
     }

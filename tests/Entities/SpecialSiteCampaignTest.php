@@ -11,14 +11,9 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
-/**
- * SpecialSiteCampaign test
- */
 final class SpecialSiteCampaignTest extends TestCase
 {
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return SpecialSiteCampaign&MockObject
      */
@@ -28,23 +23,17 @@ final class SpecialSiteCampaignTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<SpecialSiteCampaign>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(SpecialSiteCampaign::class);
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 22;
 
@@ -59,13 +48,9 @@ final class SpecialSiteCampaignTest extends TestCase
     }
 
     /**
-     * test getCampaign
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetCampaign()
+    public function testGetCampaign(): void
     {
         $campaign = new Campaign();
 
@@ -80,13 +65,9 @@ final class SpecialSiteCampaignTest extends TestCase
     }
 
     /**
-     * test setCampaign
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetCampaign()
+    public function testSetCampaign(): void
     {
         $campaign = new Campaign();
 
@@ -102,13 +83,9 @@ final class SpecialSiteCampaignTest extends TestCase
     }
 
     /**
-     * test getSpecialSite
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetSpecialSite()
+    public function testGetSpecialSite(): void
     {
         $specialSite = new SpecialSite(3);
 
@@ -123,13 +100,9 @@ final class SpecialSiteCampaignTest extends TestCase
     }
 
     /**
-     * test setSpecialSite
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetSpecialSite()
+    public function testSetSpecialSite(): void
     {
         $specialSite = new SpecialSite(3);
 
@@ -145,13 +118,9 @@ final class SpecialSiteCampaignTest extends TestCase
     }
 
     /**
-     * test getDisplayOrder
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetDisplayOrder()
+    public function testGetDisplayOrder(): void
     {
         $displayOrder = 3;
 
@@ -166,13 +135,9 @@ final class SpecialSiteCampaignTest extends TestCase
     }
 
     /**
-     * test setDisplayOrder
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetDisplayOrder()
+    public function testSetDisplayOrder(): void
     {
         $displayOrder = 3;
 

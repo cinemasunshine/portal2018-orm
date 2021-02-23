@@ -115,9 +115,6 @@ class News
      */
     protected $theaters;
 
-    /**
-     * construct
-     */
     public function __construct()
     {
         $this->pages        = new ArrayCollection();
@@ -125,140 +122,72 @@ class News
         $this->theaters     = new ArrayCollection();
     }
 
-    /**
-     * Return id
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return title
-     *
-     * @return Title|null
-     */
     public function getTitle(): ?Title
     {
         return $this->title;
     }
 
-    /**
-     * Set title
-     *
-     * @param Title|null $title
-     * @return void
-     */
-    public function setTitle(?Title $title)
+    public function setTitle(?Title $title): void
     {
         $this->title = $title;
     }
 
-    /**
-     * Return image
-     *
-     * @return File|null
-     */
     public function getImage(): ?File
     {
         return $this->image;
     }
 
-    /**
-     * Set image
-     *
-     * @param File|null $image
-     * @return void
-     */
-    public function setImage(?File $image)
+    public function setImage(?File $image): void
     {
         $this->image = $image;
     }
 
-    /**
-     * Return category
-     *
-     * @return integer
-     */
     public function getCategory(): int
     {
         return $this->category;
     }
 
-    /**
-     * Set category
-     *
-     * @param integer $category
-     * @return void
-     */
-    public function setCategory(int $category)
+    public function setCategory(int $category): void
     {
         $this->category = $category;
     }
 
-    /**
-     * Return headline
-     *
-     * @return string
-     */
     public function getHeadline(): string
     {
         return $this->headline;
     }
 
-    /**
-     * Set headline
-     *
-     * @param string $headline
-     * @return void
-     */
-    public function setHeadline(string $headline)
+    public function setHeadline(string $headline): void
     {
         $this->headline = $headline;
     }
 
-    /**
-     * Return body
-     *
-     * @return string
-     */
     public function getBody(): string
     {
         return $this->body;
     }
 
-    /**
-     * Set body
-     *
-     * @param string $body
-     * @return void
-     */
-    public function setBody(string $body)
+    public function setBody(string $body): void
     {
         $this->body = $body;
     }
 
-    /**
-     * Return startDt
-     *
-     * @return DateTime
-     */
     public function getStartDt(): DateTime
     {
         return $this->startDt;
     }
 
     /**
-     * Set startDt
-     *
      * @param DateTime|string $startDt
-     * @return void
      *
      * @throws InvalidArgumentException
      */
-    public function setStartDt($startDt)
+    public function setStartDt($startDt): void
     {
         if ($startDt instanceof DateTime) {
             $this->startDt = $startDt;
@@ -269,25 +198,17 @@ class News
         }
     }
 
-    /**
-     * Return endDt
-     *
-     * @return DateTime
-     */
     public function getEndDt(): DateTime
     {
         return $this->endDt;
     }
 
     /**
-     * Set endDt
-     *
      * @param DateTime|string $endDt
-     * @return void
      *
      * @throws InvalidArgumentException
      */
-    public function setEndDt($endDt)
+    public function setEndDt($endDt): void
     {
         if ($endDt instanceof DateTime) {
             $this->endDt = $endDt;
@@ -299,8 +220,6 @@ class News
     }
 
     /**
-     * Return pages
-     *
      * @return Collection<int, PageNews>
      */
     public function getPages(): Collection
@@ -309,8 +228,6 @@ class News
     }
 
     /**
-     * Return specialSites
-     *
      * @return Collection<int, SpecialSiteNews>
      */
     public function getSpecialSites(): Collection
@@ -319,8 +236,6 @@ class News
     }
 
     /**
-     * Return theaters
-     *
      * @return Collection<int, TheaterNews>
      */
     public function getTheaters(): Collection

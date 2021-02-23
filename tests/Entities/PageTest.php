@@ -11,14 +11,9 @@ use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use ReflectionMethod;
 
-/**
- * Page test
- */
 final class PageTest extends TestCase
 {
     /**
-     * Create target mock
-     *
      * @return Page&MockObject
      */
     public function createTargetMock()
@@ -27,8 +22,6 @@ final class PageTest extends TestCase
     }
 
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return Page&MockObject
      */
@@ -38,23 +31,17 @@ final class PageTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<Page>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(Page::class);
     }
 
     /**
-     * test construct
-     *
      * @test
-     *
-     * @return void
      */
-    public function testConstruct()
+    public function testConstruct(): void
     {
         $id = 11;
 
@@ -92,13 +79,9 @@ final class PageTest extends TestCase
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 12;
 
@@ -113,13 +96,9 @@ final class PageTest extends TestCase
     }
 
     /**
-     * test getName
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetName()
+    public function testGetName(): void
     {
         $name = 'page_name';
 
@@ -134,13 +113,9 @@ final class PageTest extends TestCase
     }
 
     /**
-     * test setName
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetName()
+    public function testSetName(): void
     {
         $name = 'page_name';
 
@@ -156,13 +131,9 @@ final class PageTest extends TestCase
     }
 
     /**
-     * test getNameJa
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGatNameJa()
+    public function testGatNameJa(): void
     {
         $nameJa = 'page_name_ja';
 
@@ -177,13 +148,9 @@ final class PageTest extends TestCase
     }
 
     /**
-     * test setNameJa
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetNameJa()
+    public function testSetNameJa(): void
     {
         $nameJa = 'page_name_ja';
 
@@ -199,13 +166,9 @@ final class PageTest extends TestCase
     }
 
     /**
-     * test getCampaigns
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetCampaigns()
+    public function testGetCampaigns(): void
     {
         $campaigns = new ArrayCollection();
 
@@ -220,13 +183,9 @@ final class PageTest extends TestCase
     }
 
     /**
-     * test getMainBanners
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetMainBanners()
+    public function testGetMainBanners(): void
     {
         $mainBanners = new ArrayCollection();
 
@@ -241,13 +200,9 @@ final class PageTest extends TestCase
     }
 
     /**
-     * test getNewsList
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetNewsList()
+    public function testGetNewsList(): void
     {
         $newsList = new ArrayCollection();
 

@@ -9,14 +9,9 @@ use InvalidArgumentException;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
-/**
- * TimestampableTrait test
- */
 final class TimestampableTraitTest extends TestCase
 {
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return TimestampableTraitClass&MockObject
      */
@@ -26,13 +21,9 @@ final class TimestampableTraitTest extends TestCase
     }
 
     /**
-     * test getCreatedAt
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetCreatedAt()
+    public function testGetCreatedAt(): void
     {
         $createdAt = new DateTime('2020/01/01 10:00:00');
 
@@ -43,13 +34,9 @@ final class TimestampableTraitTest extends TestCase
     }
 
     /**
-     * test setCreatedAt
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetCreatedAt()
+    public function testSetCreatedAt(): void
     {
         $createdAt = new DateTime('2020/01/01 10:00:00');
 
@@ -63,10 +50,8 @@ final class TimestampableTraitTest extends TestCase
      * test setCreatedAt (invalid argument)
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetCreatedAtInvalidArgument()
+    public function testSetCreatedAtInvalidArgument(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -77,13 +62,9 @@ final class TimestampableTraitTest extends TestCase
     }
 
     /**
-     * test getUpdatedAt
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetUpdatedAt()
+    public function testGetUpdatedAt(): void
     {
         $updatedAt = new DateTime('2020/01/01 10:00:00');
 
@@ -94,13 +75,9 @@ final class TimestampableTraitTest extends TestCase
     }
 
     /**
-     * test getUpdatedAt
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetUpdatedAt()
+    public function testSetUpdatedAt(): void
     {
         $updatedAt = new DateTime('2020/01/01 10:00:00');
 
@@ -114,10 +91,8 @@ final class TimestampableTraitTest extends TestCase
      * test setUpdatedAt (invalid argument)
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetUpdatedAtInvalidArgument()
+    public function testSetUpdatedAtInvalidArgument(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -128,11 +103,9 @@ final class TimestampableTraitTest extends TestCase
     }
 
     /**
-     * test prePersistTimestamp
-     *
-     * @return void
+     * @test
      */
-    public function testPrePersistTimestamp()
+    public function testPrePersistTimestamp(): void
     {
         $targetMock = $this->createTargetPartialMock([
             'setCreatedAt',
@@ -142,31 +115,26 @@ final class TimestampableTraitTest extends TestCase
         $targetMock
             ->expects($this->once())
             ->method('setCreatedAt')
-            ->with($this->equalTo('now'))
-            ->willReturn(true);
+            ->with($this->equalTo('now'));
 
         $targetMock
             ->expects($this->once())
             ->method('setUpdatedAt')
-            ->with($this->equalTo('now'))
-            ->willReturn(true);
+            ->with($this->equalTo('now'));
 
         $targetMock->prePersistTimestamp();
     }
 
     /**
-     * test updateTimestamp
-     *
-     * @return void
+     * @test
      */
-    public function testUpdateTimestamp()
+    public function testUpdateTimestamp(): void
     {
         $targetMock = $this->createTargetPartialMock(['setUpdatedAt']);
         $targetMock
             ->expects($this->once())
             ->method('setUpdatedAt')
-            ->with($this->equalTo('now'))
-            ->willReturn(true);
+            ->with($this->equalTo('now'));
 
         $targetMock->updateTimestamp();
     }

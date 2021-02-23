@@ -145,11 +145,6 @@ class Theater
      */
     protected $newsList;
 
-    /**
-     * constructor
-     *
-     * @param int $id
-     */
     public function __construct(int $id)
     {
         $this->id           = $id;
@@ -160,176 +155,87 @@ class Theater
         $this->newsList     = new ArrayCollection();
     }
 
-    /**
-     * Return id
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return name
-     *
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * Set name
-     *
-     * @param string $name
-     * @return void
-     */
-    public function setName(string $name)
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-    /**
-     * Return nameJa
-     *
-     * @return string
-     */
     public function getNameJa(): string
     {
         return $this->nameJa;
     }
 
-    /**
-     * Set nameJa
-     *
-     * @param string $nameJa
-     * @return void
-     */
-    public function setNameJa(string $nameJa)
+    public function setNameJa(string $nameJa): void
     {
         $this->nameJa = $nameJa;
     }
 
-    /**
-     * Return area
-     *
-     * @return integer
-     */
     public function getArea(): int
     {
         return $this->area;
     }
 
-    /**
-     * Set area
-     *
-     * @param integer $area
-     * @return void
-     */
-    public function setArea(int $area)
+    public function setArea(int $area): void
     {
         $this->area = $area;
     }
 
-    /**
-     * Return masterVersion
-     *
-     * @return integer
-     */
     public function getMasterVersion(): int
     {
         return $this->masterVersion;
     }
 
-    /**
-     * set masterVersion
-     *
-     * @param integer $masterVersion
-     * @return void
-     */
-    public function setMasterVersion(int $masterVersion)
+    public function setMasterVersion(int $masterVersion): void
     {
         $this->masterVersion = $masterVersion;
     }
 
-    /**
-     * Return masterCode
-     *
-     * @return string|null
-     */
     public function getMasterCode(): ?string
     {
         return $this->masterCode;
     }
 
-    /**
-     * Set masterCode
-     *
-     * @param string|null $masterCode
-     * @return void
-     */
-    public function setMasterCode(?string $masterCode)
+    public function setMasterCode(?string $masterCode): void
     {
         $this->masterCode = $masterCode;
     }
 
-    /**
-     * Return displayOrder
-     *
-     * @return integer
-     */
     public function getDisplayOrder(): int
     {
         return $this->displayOrder;
     }
 
-    /**
-     * Set displayOrder
-     *
-     * @param integer $displayOrder
-     * @return void
-     */
-    public function setDisplayOrder(int $displayOrder)
+    public function setDisplayOrder(int $displayOrder): void
     {
         $this->displayOrder = $displayOrder;
     }
 
-    /**
-     * Return status
-     *
-     * @return integer
-     */
     public function getStatus(): int
     {
         return $this->status;
     }
 
-    /**
-     * Set status
-     *
-     * @param integer $status
-     * @return void
-     */
-    public function setStatus(int $status)
+    public function setStatus(int $status): void
     {
         $this->status = $status;
     }
 
-    /**
-     * Return meta
-     *
-     * @return TheaterMeta|null
-     */
     public function getMeta(): ?TheaterMeta
     {
         return $this->meta;
     }
 
     /**
-     * Return adminUsers
-     *
      * @return Collection<int, AdminUser>
      */
     public function getAdminUsers(): Collection
@@ -338,8 +244,6 @@ class Theater
     }
 
     /**
-     * Return specialSites
-     *
      * @return Collection<int, SpecialSite>
      */
     public function getSpecialSites(): Collection
@@ -348,8 +252,6 @@ class Theater
     }
 
     /**
-     * Return campaigns
-     *
      * @return Collection<int, TheaterCampaign>
      */
     public function getCampaigns(): Collection
@@ -358,8 +260,6 @@ class Theater
     }
 
     /**
-     * Return mainBanners
-     *
      * @return Collection<int, TheaterMainBanner>
      */
     public function getMainBanners(): Collection
@@ -368,8 +268,6 @@ class Theater
     }
 
     /**
-     * Return newsList
-     *
      * @return Collection<int, TheaterNews>
      */
     public function getNewsList(): Collection

@@ -69,11 +69,6 @@ class Page
      */
     protected $newsList;
 
-    /**
-     * constructor
-     *
-     * @param int $id
-     */
     public function __construct(int $id)
     {
         $this->id          = $id;
@@ -82,61 +77,32 @@ class Page
         $this->newsList    = new ArrayCollection();
     }
 
-    /**
-     * Return id
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return name
-     *
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * Set name
-     *
-     * @param string $name
-     * @return void
-     */
-    public function setName(string $name)
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-    /**
-     * Return nameJa
-     *
-     * @return string
-     */
     public function getNameJa(): string
     {
         return $this->nameJa;
     }
 
-    /**
-     * Set nameJa
-     *
-     * @param string $nameJa
-     * @return void
-     */
-    public function setNameJa(string $nameJa)
+    public function setNameJa(string $nameJa): void
     {
         $this->nameJa = $nameJa;
     }
 
     /**
-     * Return campaigns
-     *
      * @return Collection<int, PageCampaign>
      */
     public function getCampaigns(): Collection
@@ -145,8 +111,6 @@ class Page
     }
 
     /**
-     * Return mainBanners
-     *
      * @return Collection<int, PageMainBanner>
      */
     public function getMainBanners(): Collection
@@ -155,8 +119,6 @@ class Page
     }
 
     /**
-     * Return newsList
-     *
      * @return Collection<int, PageNews>
      */
     public function getNewsList(): Collection

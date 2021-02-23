@@ -15,14 +15,9 @@ use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use ReflectionMethod;
 
-/**
- * Campaign test
- */
 final class CampaignTest extends TestCase
 {
     /**
-     * Create target mock
-     *
      * @return Campaign&MockObject
      */
     public function createTargetMock()
@@ -31,8 +26,6 @@ final class CampaignTest extends TestCase
     }
 
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return Campaign&MockObject
      */
@@ -42,23 +35,17 @@ final class CampaignTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<Campaign>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(Campaign::class);
     }
 
     /**
-     * test construct
-     *
      * @test
-     *
-     * @return void
      */
-    public function testConstruct()
+    public function testConstruct(): void
     {
         $targetMock = $this->createTargetMock();
         $targetRef  = $this->createTargetReflection();
@@ -90,13 +77,9 @@ final class CampaignTest extends TestCase
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 21;
 
@@ -111,13 +94,9 @@ final class CampaignTest extends TestCase
     }
 
     /**
-     * test getTitle
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetTitle()
+    public function testGetTitle(): void
     {
         $title = new Title();
 
@@ -132,13 +111,9 @@ final class CampaignTest extends TestCase
     }
 
     /**
-     * test setTitle
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetTitle()
+    public function testSetTitle(): void
     {
         $title = new Title();
 
@@ -154,13 +129,9 @@ final class CampaignTest extends TestCase
     }
 
     /**
-     * test getImage
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetImage()
+    public function testGetImage(): void
     {
         $image = new File();
 
@@ -175,13 +146,9 @@ final class CampaignTest extends TestCase
     }
 
     /**
-     * test setImage
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetImage()
+    public function testSetImage(): void
     {
         $image = new File();
 
@@ -197,13 +164,9 @@ final class CampaignTest extends TestCase
     }
 
     /**
-     * test getName
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetName()
+    public function testGetName(): void
     {
         $name = 'campaign_name';
 
@@ -218,13 +181,9 @@ final class CampaignTest extends TestCase
     }
 
     /**
-     * test setName
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetName()
+    public function testSetName(): void
     {
         $name = 'campaign_name';
 
@@ -240,13 +199,9 @@ final class CampaignTest extends TestCase
     }
 
     /**
-     * test getStartDt
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetStartDt()
+    public function testGetStartDt(): void
     {
         $startDt = new DateTime();
 
@@ -261,13 +216,9 @@ final class CampaignTest extends TestCase
     }
 
     /**
-     * test setStartDt
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetStartDt()
+    public function testSetStartDt(): void
     {
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -295,10 +246,8 @@ final class CampaignTest extends TestCase
      * test setStartDt (invalid argument)
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetStartDtInvalidArgument()
+    public function testSetStartDtInvalidArgument(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -309,13 +258,9 @@ final class CampaignTest extends TestCase
     }
 
     /**
-     * test getEndDt
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetEndDt()
+    public function testGetEndDt(): void
     {
         $endDt = new DateTime();
 
@@ -330,13 +275,9 @@ final class CampaignTest extends TestCase
     }
 
     /**
-     * test setEndDt
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetEndDt()
+    public function testSetEndDt(): void
     {
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -364,10 +305,8 @@ final class CampaignTest extends TestCase
      * test setEndDt (invalid argument)
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetEndDtInvalidArgument()
+    public function testSetEndDtInvalidArgument(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -378,13 +317,9 @@ final class CampaignTest extends TestCase
     }
 
     /**
-     * test getUrl
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetUrl()
+    public function testGetUrl(): void
     {
         $url = 'https://example.com';
 
@@ -399,13 +334,9 @@ final class CampaignTest extends TestCase
     }
 
     /**
-     * test setUrl
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetUrl()
+    public function testSetUrl(): void
     {
         $url = 'https://example.com';
 
@@ -421,13 +352,9 @@ final class CampaignTest extends TestCase
     }
 
     /**
-     * test getPages
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetPages()
+    public function testGetPages(): void
     {
         $pages = new ArrayCollection();
 
@@ -442,13 +369,9 @@ final class CampaignTest extends TestCase
     }
 
     /**
-     * test getSpecialSite
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetSpecialSite()
+    public function testGetSpecialSite(): void
     {
         $specialSites = new ArrayCollection();
 
@@ -463,13 +386,9 @@ final class CampaignTest extends TestCase
     }
 
     /**
-     * test getTheaters
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetTheaters()
+    public function testGetTheaters(): void
     {
         $theaters = new ArrayCollection();
 

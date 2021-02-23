@@ -12,14 +12,9 @@ use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use ReflectionMethod;
 
-/**
- * TheaterMeta test
- */
 final class TheaterMetaTest extends TestCase
 {
     /**
-     * Create target mock
-     *
      * @return TheaterMeta&MockObject
      */
     public function createTargetMock()
@@ -28,8 +23,6 @@ final class TheaterMetaTest extends TestCase
     }
 
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return TheaterMeta&MockObject
      */
@@ -39,23 +32,17 @@ final class TheaterMetaTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<TheaterMeta>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(TheaterMeta::class);
     }
 
     /**
-     * test construct
-     *
      * @test
-     *
-     * @return void
      */
-    public function testConstruct()
+    public function testConstruct(): void
     {
         $targetMock = $this->createTargetMock();
         $targetRef  = $this->createTargetReflection();
@@ -71,13 +58,9 @@ final class TheaterMetaTest extends TestCase
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 12;
 
@@ -92,13 +75,9 @@ final class TheaterMetaTest extends TestCase
     }
 
     /**
-     * test getTheater
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetTheater()
+    public function testGetTheater(): void
     {
         $theater = new Theater(11);
 
@@ -113,13 +92,9 @@ final class TheaterMetaTest extends TestCase
     }
 
     /**
-     * test setTheater
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetTheater()
+    public function testSetTheater(): void
     {
         $theater = new Theater(11);
 
@@ -135,13 +110,9 @@ final class TheaterMetaTest extends TestCase
     }
 
     /**
-     * test getOpeningHours
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetOpeningHours()
+    public function testGetOpeningHours(): void
     {
         $openingHours = [
             [
@@ -174,13 +145,9 @@ final class TheaterMetaTest extends TestCase
     }
 
     /**
-     * test setOpeningHours
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetOpeningHours()
+    public function testSetOpeningHours(): void
     {
         $data = [
             [
@@ -215,13 +182,9 @@ final class TheaterMetaTest extends TestCase
     }
 
     /**
-     * test getTwitter
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetTwitter()
+    public function testGetTwitter(): void
     {
         $twitter = 'TwitterJP';
 
@@ -236,13 +199,9 @@ final class TheaterMetaTest extends TestCase
     }
 
     /**
-     * test setTwitter
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetTwitter()
+    public function testSetTwitter(): void
     {
         $twitter = 'TwitterJP';
 
@@ -258,13 +217,9 @@ final class TheaterMetaTest extends TestCase
     }
 
     /**
-     * test getFacebook
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetFacebook()
+    public function testGetFacebook(): void
     {
         $facebook = 'facebook';
 
@@ -279,13 +234,9 @@ final class TheaterMetaTest extends TestCase
     }
 
     /**
-     * test setFacebook
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetFacebook()
+    public function testSetFacebook(): void
     {
         $facebook = 'facebook';
 
@@ -301,13 +252,9 @@ final class TheaterMetaTest extends TestCase
     }
 
     /**
-     * test getOyakoCinemaUrl
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetOyakoCinemaUrl()
+    public function testGetOyakoCinemaUrl(): void
     {
         $oyakoCinemaUrl = 'https://example.com/';
 
@@ -322,13 +269,9 @@ final class TheaterMetaTest extends TestCase
     }
 
     /**
-     * test setOyakoCinemaUrl
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetOyakoCinemaUrl()
+    public function testSetOyakoCinemaUrl(): void
     {
         $oyakoCinemaUrl = 'https://example.com/';
 

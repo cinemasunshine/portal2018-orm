@@ -54,64 +54,37 @@ class OyakoCinemaSchedule
      */
     protected $oyakoCinemaTheaters;
 
-    /**
-     * constructor
-     */
     public function __construct()
     {
         $this->oyakoCinemaTheaters = new ArrayCollection();
     }
 
-    /**
-     * Return id
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return oyakoCinemaTitle
-     *
-     * @return OyakoCinemaTitle
-     */
     public function getOyakoCinemaTitle(): OyakoCinemaTitle
     {
         return $this->oyakoCinemaTitle;
     }
 
-    /**
-     * Set oyakoCinemaTitle
-     *
-     * @param OyakoCinemaTitle $oyakoCinemaTitle
-     * @return void
-     */
-    public function setOyakoCinemaTitle(OyakoCinemaTitle $oyakoCinemaTitle)
+    public function setOyakoCinemaTitle(OyakoCinemaTitle $oyakoCinemaTitle): void
     {
         $this->oyakoCinemaTitle = $oyakoCinemaTitle;
     }
 
-    /**
-     * Return date
-     *
-     * @return DateTime
-     */
     public function getDate(): DateTime
     {
         return $this->date;
     }
 
     /**
-     * set date
-     *
      * @param DateTime|string $date
-     * @return void
      *
      * @throws InvalidArgumentException
      */
-    public function setDate($date)
+    public function setDate($date): void
     {
         if ($date instanceof DateTime) {
             $this->date = $date;
@@ -123,8 +96,6 @@ class OyakoCinemaSchedule
     }
 
     /**
-     * Return oyakoCinemaTheaters
-     *
      * @return Collection<int, OyakoCinemaTheater>
      */
     public function getOyakoCinemaTheaters(): Collection

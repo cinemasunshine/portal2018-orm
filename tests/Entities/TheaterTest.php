@@ -12,14 +12,9 @@ use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use ReflectionMethod;
 
-/**
- * Theater test
- */
 final class TheaterTest extends TestCase
 {
     /**
-     * Create target mock
-     *
      * @return Theater&MockObject
      */
     public function createTargetMock()
@@ -28,8 +23,6 @@ final class TheaterTest extends TestCase
     }
 
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return Theater&MockObject
      */
@@ -39,23 +32,17 @@ final class TheaterTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<Theater>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(Theater::class);
     }
 
     /**
-     * test construct
-     *
      * @test
-     *
-     * @return void
      */
-    public function testConstruct()
+    public function testConstruct(): void
     {
         $id = 11;
 
@@ -107,13 +94,9 @@ final class TheaterTest extends TestCase
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 12;
 
@@ -128,13 +111,9 @@ final class TheaterTest extends TestCase
     }
 
     /**
-     * test getName
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetName()
+    public function testGetName(): void
     {
         $name = 'theater_name';
 
@@ -149,13 +128,9 @@ final class TheaterTest extends TestCase
     }
 
     /**
-     * test setName
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetName()
+    public function testSetName(): void
     {
         $name = 'theater_name';
 
@@ -171,13 +146,9 @@ final class TheaterTest extends TestCase
     }
 
     /**
-     * test getNameJa
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGatNameJa()
+    public function testGatNameJa(): void
     {
         $nameJa = 'theater_name_ja';
 
@@ -192,13 +163,9 @@ final class TheaterTest extends TestCase
     }
 
     /**
-     * test setNameJa
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetNameJa()
+    public function testSetNameJa(): void
     {
         $nameJa = 'theater_name_ja';
 
@@ -214,13 +181,9 @@ final class TheaterTest extends TestCase
     }
 
     /**
-     * test getArea
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetArea()
+    public function testGetArea(): void
     {
         $area = 1;
 
@@ -235,11 +198,9 @@ final class TheaterTest extends TestCase
     }
 
     /**
-     * test setArea
-     *
-     * @return void
+     * @test
      */
-    public function testSetArea()
+    public function testSetArea(): void
     {
         $area = 1;
 
@@ -255,13 +216,9 @@ final class TheaterTest extends TestCase
     }
 
     /**
-     * test getMasterVersion
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetMasterVersion()
+    public function testGetMasterVersion(): void
     {
         $masterVersion = 1;
 
@@ -276,13 +233,9 @@ final class TheaterTest extends TestCase
     }
 
     /**
-     * test setMasterVersion
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetMasterVersion()
+    public function testSetMasterVersion(): void
     {
         $masterVersion = 1;
 
@@ -298,13 +251,9 @@ final class TheaterTest extends TestCase
     }
 
     /**
-     * test getMasterCode
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetMasterCode()
+    public function testGetMasterCode(): void
     {
         $masterCode = '111';
 
@@ -319,13 +268,9 @@ final class TheaterTest extends TestCase
     }
 
     /**
-     * test setMasterCode
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetMasterCode()
+    public function testSetMasterCode(): void
     {
         $masterCode = '111';
 
@@ -341,13 +286,9 @@ final class TheaterTest extends TestCase
     }
 
     /**
-     * test getDisplayOrder
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetDisplayOrder()
+    public function testGetDisplayOrder(): void
     {
         $displayOrder = 3;
 
@@ -362,13 +303,9 @@ final class TheaterTest extends TestCase
     }
 
     /**
-     * test setDisplayOrder
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetDisplayOrder()
+    public function testSetDisplayOrder(): void
     {
         $displayOrder = 3;
 
@@ -384,13 +321,9 @@ final class TheaterTest extends TestCase
     }
 
     /**
-     * test getStatus
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetStatus()
+    public function testGetStatus(): void
     {
         $status = 2;
 
@@ -405,13 +338,9 @@ final class TheaterTest extends TestCase
     }
 
     /**
-     * test setStatus
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetStatus()
+    public function testSetStatus(): void
     {
         $status = 2;
 
@@ -427,13 +356,9 @@ final class TheaterTest extends TestCase
     }
 
     /**
-     * test getMeta
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetMeta()
+    public function testGetMeta(): void
     {
         $meta = new TheaterMeta();
 
@@ -448,13 +373,9 @@ final class TheaterTest extends TestCase
     }
 
     /**
-     * test getAdminUsers
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetAdminUsers()
+    public function testGetAdminUsers(): void
     {
         $adminUsers = new ArrayCollection();
 
@@ -469,13 +390,9 @@ final class TheaterTest extends TestCase
     }
 
     /**
-     * test getSpecialSites
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetSpecialSites()
+    public function testGetSpecialSites(): void
     {
         $specialSites = new ArrayCollection();
 
@@ -490,13 +407,9 @@ final class TheaterTest extends TestCase
     }
 
     /**
-     * test getCampaigns
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetCampaigns()
+    public function testGetCampaigns(): void
     {
         $campaigns = new ArrayCollection();
 
@@ -511,13 +424,9 @@ final class TheaterTest extends TestCase
     }
 
     /**
-     * test getMainBanners
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetMainBanners()
+    public function testGetMainBanners(): void
     {
         $mainBanners = new ArrayCollection();
 
@@ -532,13 +441,9 @@ final class TheaterTest extends TestCase
     }
 
     /**
-     * test getNewsList
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetNewsList()
+    public function testGetNewsList(): void
     {
         $newsList = new ArrayCollection();
 

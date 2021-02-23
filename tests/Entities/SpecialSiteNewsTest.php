@@ -11,14 +11,9 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
-/**
- * SpecialSiteNews test
- */
 final class SpecialSiteNewsTest extends TestCase
 {
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return SpecialSiteNews&MockObject
      */
@@ -28,23 +23,17 @@ final class SpecialSiteNewsTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<SpecialSiteNews>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(SpecialSiteNews::class);
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 27;
 
@@ -59,13 +48,9 @@ final class SpecialSiteNewsTest extends TestCase
     }
 
     /**
-     * test getNews
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetNews()
+    public function testGetNews(): void
     {
         $news = new News();
 
@@ -80,13 +65,9 @@ final class SpecialSiteNewsTest extends TestCase
     }
 
     /**
-     * test setNews
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetNews()
+    public function testSetNews(): void
     {
         $news = new News();
 
@@ -102,13 +83,9 @@ final class SpecialSiteNewsTest extends TestCase
     }
 
     /**
-     * test getSpecialSite
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetSpecialSite()
+    public function testGetSpecialSite(): void
     {
         $specialSite = new SpecialSite(3);
 
@@ -123,13 +100,9 @@ final class SpecialSiteNewsTest extends TestCase
     }
 
     /**
-     * test setSpecialSite
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetSpecialSite()
+    public function testSetSpecialSite(): void
     {
         $specialSite = new SpecialSite(3);
 
@@ -145,13 +118,9 @@ final class SpecialSiteNewsTest extends TestCase
     }
 
     /**
-     * test getDisplayOrder
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetDisplayOrder()
+    public function testGetDisplayOrder(): void
     {
         $displayOrder = 9;
 
@@ -166,13 +135,9 @@ final class SpecialSiteNewsTest extends TestCase
     }
 
     /**
-     * test setDisplayOrder
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetDisplayOrder()
+    public function testSetDisplayOrder(): void
     {
         $displayOrder = 9;
 

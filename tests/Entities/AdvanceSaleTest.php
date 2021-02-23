@@ -15,14 +15,9 @@ use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use ReflectionMethod;
 
-/**
- * AdvanceSale test
- */
 final class AdvanceSaleTest extends TestCase
 {
     /**
-     * Create target mock
-     *
      * @return AdvanceSale&MockObject
      */
     public function createTargetMock()
@@ -31,8 +26,6 @@ final class AdvanceSaleTest extends TestCase
     }
 
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return AdvanceSale&MockObject
      */
@@ -42,23 +35,17 @@ final class AdvanceSaleTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<AdvanceSale>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(AdvanceSale::class);
     }
 
     /**
-     * test construct
-     *
      * @test
-     *
-     * @return void
      */
-    public function testConstruct()
+    public function testConstruct(): void
     {
         $targetMock = $this->createTargetMock();
         $targetRef  = $this->createTargetReflection();
@@ -76,13 +63,9 @@ final class AdvanceSaleTest extends TestCase
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 17;
 
@@ -97,13 +80,9 @@ final class AdvanceSaleTest extends TestCase
     }
 
     /**
-     * test getTheater
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetTheater()
+    public function testGetTheater(): void
     {
         $theater = new Theater(6);
 
@@ -118,13 +97,9 @@ final class AdvanceSaleTest extends TestCase
     }
 
     /**
-     * test setTheater
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetTheater()
+    public function testSetTheater(): void
     {
         $theater = new Theater(6);
 
@@ -140,13 +115,9 @@ final class AdvanceSaleTest extends TestCase
     }
 
     /**
-     * test getTitle
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetTitle()
+    public function testGetTitle(): void
     {
         $title = new Title();
 
@@ -161,13 +132,9 @@ final class AdvanceSaleTest extends TestCase
     }
 
     /**
-     * test setTitle
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetTitle()
+    public function testSetTitle(): void
     {
         $title = new Title();
 
@@ -183,13 +150,9 @@ final class AdvanceSaleTest extends TestCase
     }
 
     /**
-     * test getPublishingExpectedDate
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetPublishingExpectedDate()
+    public function testGetPublishingExpectedDate(): void
     {
         $publishingExpectedDate = new DateTime();
 
@@ -204,13 +167,9 @@ final class AdvanceSaleTest extends TestCase
     }
 
     /**
-     * test setPublishingExpectedDate
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetPublishingExpectedDate()
+    public function testSetPublishingExpectedDate(): void
     {
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -241,10 +200,8 @@ final class AdvanceSaleTest extends TestCase
      * test setPublishingExpectedDate (invalid argument)
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetPublishingExpectedDateInvalidArgument()
+    public function testSetPublishingExpectedDateInvalidArgument(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -255,17 +212,15 @@ final class AdvanceSaleTest extends TestCase
     }
 
     /**
-     * test getPublishingExpectedDateText
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetPublishingExpectedDateText()
+    public function testGetPublishingExpectedDateText(): void
     {
-        $publishingExpectedDateText            = 'date_text';
-        $targetMock                            = $this->createTargetPartialMock([]);
-        $targetRef                             = $this->createTargetReflection();
+        $publishingExpectedDateText = 'date_text';
+
+        $targetMock = $this->createTargetPartialMock([]);
+        $targetRef  = $this->createTargetReflection();
+
         $publishingExpectedDateTextPropertyRef = $targetRef->getProperty('publishingExpectedDateText');
         $publishingExpectedDateTextPropertyRef->setAccessible(true);
         $publishingExpectedDateTextPropertyRef->setValue($targetMock, $publishingExpectedDateText);
@@ -274,19 +229,17 @@ final class AdvanceSaleTest extends TestCase
     }
 
     /**
-     * test setPublishingExpectedDateText
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetPublishingExpectedDateText()
+    public function testSetPublishingExpectedDateText(): void
     {
         $publishingExpectedDateText = 'date_text';
-        $targetMock                 = $this->createTargetPartialMock([]);
+
+        $targetMock = $this->createTargetPartialMock([]);
         $targetMock->setPublishingExpectedDateText($publishingExpectedDateText);
 
-        $targetRef                             = $this->createTargetReflection();
+        $targetRef = $this->createTargetReflection();
+
         $publishingExpectedDateTextPropertyRef = $targetRef->getProperty('publishingExpectedDateText');
         $publishingExpectedDateTextPropertyRef->setAccessible(true);
 
@@ -294,17 +247,15 @@ final class AdvanceSaleTest extends TestCase
     }
 
     /**
-     * test getAdvanceTickets
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetAdvanceTickets()
+    public function testGetAdvanceTickets(): void
     {
-        $advanceTickets            = new ArrayCollection();
-        $targetMock                = $this->createTargetPartialMock([]);
-        $targetRef                 = $this->createTargetReflection();
+        $advanceTickets = new ArrayCollection();
+
+        $targetMock = $this->createTargetPartialMock([]);
+        $targetRef  = $this->createTargetReflection();
+
         $advanceTicketsPropertyRef = $targetRef->getProperty('advanceTickets');
         $advanceTicketsPropertyRef->setAccessible(true);
         $advanceTicketsPropertyRef->setValue($targetMock, $advanceTickets);

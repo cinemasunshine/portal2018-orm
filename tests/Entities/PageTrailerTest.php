@@ -11,14 +11,9 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
-/**
- * PageTrailer test
- */
 final class PageTrailerTest extends TestCase
 {
     /**
-     * Create target mock
-     *
      * @return PageTrailer&MockObject
      */
     public function createTargetMock()
@@ -27,8 +22,6 @@ final class PageTrailerTest extends TestCase
     }
 
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return PageTrailer&MockObject
      */
@@ -38,23 +31,17 @@ final class PageTrailerTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<PageTrailer>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(PageTrailer::class);
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 16;
 
@@ -69,13 +56,9 @@ final class PageTrailerTest extends TestCase
     }
 
     /**
-     * test getTrailer
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetTrailer()
+    public function testGetTrailer(): void
     {
         $trailer = new Trailer();
 
@@ -90,13 +73,9 @@ final class PageTrailerTest extends TestCase
     }
 
     /**
-     * test setTrailer
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetTrailer()
+    public function testSetTrailer(): void
     {
         $trailer = new Trailer();
 
@@ -112,13 +91,9 @@ final class PageTrailerTest extends TestCase
     }
 
     /**
-     * test getPage
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetPage()
+    public function testGetPage(): void
     {
         $page = new Page(2);
 
@@ -133,13 +108,9 @@ final class PageTrailerTest extends TestCase
     }
 
     /**
-     * test setPage
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetPage()
+    public function testSetPage(): void
     {
         $page = new Page(2);
 

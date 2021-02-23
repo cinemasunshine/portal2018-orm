@@ -76,11 +76,6 @@ class SpecialSite
      */
     protected $newsList;
 
-    /**
-     * constructor
-     *
-     * @param int $id
-     */
     public function __construct(int $id)
     {
         $this->id          = $id;
@@ -90,61 +85,32 @@ class SpecialSite
         $this->newsList    = new ArrayCollection();
     }
 
-    /**
-     * Return id
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return name
-     *
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * Set name
-     *
-     * @param string $name
-     * @return void
-     */
-    public function setName(string $name)
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-    /**
-     * Return nameJa
-     *
-     * @return string
-     */
     public function getNameJa(): string
     {
         return $this->nameJa;
     }
 
-    /**
-     * Set nameJa
-     *
-     * @param string $nameJa
-     * @return void
-     */
-    public function setNameJa(string $nameJa)
+    public function setNameJa(string $nameJa): void
     {
         $this->nameJa = $nameJa;
     }
 
     /**
-     * Return theaters
-     *
      * @return Collection<int, Theater>
      */
     public function getTheaters(): Collection
@@ -153,8 +119,6 @@ class SpecialSite
     }
 
     /**
-     * Return campaigns
-     *
      * @return Collection<int, SpecialSiteCampaign>
      */
     public function getCampaigns(): Collection
@@ -163,8 +127,6 @@ class SpecialSite
     }
 
     /**
-     * Return  mainBanners
-     *
      * @return Collection<int, SpecialSiteMainBanner>
      */
     public function getMainBanners(): Collection
@@ -173,8 +135,6 @@ class SpecialSite
     }
 
     /**
-     * Return newsList
-     *
      * @return Collection<int, SpecialSiteNews>
      */
     public function getNewsList(): Collection

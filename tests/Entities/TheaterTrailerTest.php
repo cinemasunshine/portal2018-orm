@@ -11,14 +11,9 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
-/**
- * TheaterTrailer test
- */
 final class TheaterTrailerTest extends TestCase
 {
     /**
-     * Create target mock
-     *
      * @return TheaterTrailer&MockObject
      */
     public function createTargetMock()
@@ -27,8 +22,6 @@ final class TheaterTrailerTest extends TestCase
     }
 
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return TheaterTrailer&MockObject
      */
@@ -38,23 +31,17 @@ final class TheaterTrailerTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<TheaterTrailer>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(TheaterTrailer::class);
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 14;
 
@@ -69,13 +56,9 @@ final class TheaterTrailerTest extends TestCase
     }
 
     /**
-     * test getTrailer
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetTrailer()
+    public function testGetTrailer(): void
     {
         $trailer = new Trailer();
 
@@ -90,13 +73,9 @@ final class TheaterTrailerTest extends TestCase
     }
 
     /**
-     * test setTrailer
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetTrailer()
+    public function testSetTrailer(): void
     {
         $trailer = new Trailer();
 
@@ -112,13 +91,9 @@ final class TheaterTrailerTest extends TestCase
     }
 
     /**
-     * test getTheater
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetTheater()
+    public function testGetTheater(): void
     {
         $theater = new Theater(5);
 
@@ -133,13 +108,9 @@ final class TheaterTrailerTest extends TestCase
     }
 
     /**
-     * test setTheater
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetTheater()
+    public function testSetTheater(): void
     {
         $theater = new Theater(5);
 

@@ -91,9 +91,6 @@ class Trailer
      */
     protected $theaterTrailers;
 
-    /**
-     * constructor
-     */
     public function __construct()
     {
         $this->pageTrailers        = new ArrayCollection();
@@ -101,124 +98,62 @@ class Trailer
         $this->theaterTrailers     = new ArrayCollection();
     }
 
-    /**
-     * Return id
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return title
-     *
-     * @return Title|null
-     */
     public function getTitle(): ?Title
     {
         return $this->title;
     }
 
-    /**
-     * Set title
-     *
-     * @param Title|null $title
-     * @return void
-     */
-    public function setTitle(?Title $title)
+    public function setTitle(?Title $title): void
     {
         $this->title = $title;
     }
 
-    /**
-     * Return name
-     *
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * Set name
-     *
-     * @param string $name
-     * @return void
-     */
-    public function setName(string $name)
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-    /**
-     * Return youtube
-     *
-     * @return string
-     */
     public function getYoutube(): string
     {
         return $this->youtube;
     }
 
-    /**
-     * Set youtube
-     *
-     * @param string $youtube
-     * @return void
-     */
-    public function setYoutube(string $youtube)
+    public function setYoutube(string $youtube): void
     {
         $this->youtube = $youtube;
     }
 
-    /**
-     * Return bannerImage
-     *
-     * @return File
-     */
     public function getBannerImage(): File
     {
         return $this->bannerImage;
     }
 
-    /**
-     * Set bannerImage
-     *
-     * @param File $bannerImage
-     * @return void
-     */
-    public function setBannerImage(File $bannerImage)
+    public function setBannerImage(File $bannerImage): void
     {
         $this->bannerImage = $bannerImage;
     }
 
-    /**
-     * Return bannerLinkUrl
-     *
-     * @return string
-     */
     public function getBannerLinkUrl(): string
     {
         return $this->bannerLinkUrl;
     }
 
-    /**
-     * set bannerLinkUrl
-     *
-     * @param string $bannerLinkUrl
-     * @return void
-     */
-    public function setBannerLinkUrl(string $bannerLinkUrl)
+    public function setBannerLinkUrl(string $bannerLinkUrl): void
     {
         $this->bannerLinkUrl = $bannerLinkUrl;
     }
 
     /**
-     * Return pageTrailers
-     *
      * @return Collection<int, PageTrailer>
      */
     public function getPageTrailers(): Collection
@@ -227,19 +162,14 @@ class Trailer
     }
 
     /**
-     * Set pageTrailers
-     *
      * @param Collection<int, PageTrailer> $pageTrailers
-     * @return void
      */
-    public function setPageTrailers(Collection $pageTrailers)
+    public function setPageTrailers(Collection $pageTrailers): void
     {
         $this->pageTrailers = $pageTrailers;
     }
 
     /**
-     * Return specialSiteTrailers
-     *
      * @return Collection<int, SpecialSiteTrailer>
      */
     public function getSpecialSiteTrailers(): Collection
@@ -248,19 +178,14 @@ class Trailer
     }
 
     /**
-     * Set specialSiteTrailers
-     *
      * @param Collection<int, SpecialSiteTrailer> $specialSiteTrailers
-     * @return void
      */
-    public function setSpecialSiteTrailers(Collection $specialSiteTrailers)
+    public function setSpecialSiteTrailers(Collection $specialSiteTrailers): void
     {
         $this->specialSiteTrailers = $specialSiteTrailers;
     }
 
     /**
-     * Return theaterTrailers
-     *
      * @return Collection<int, TheaterTrailer>
      */
     public function getTheaterTrailers(): Collection
@@ -269,12 +194,9 @@ class Trailer
     }
 
     /**
-     * Set theaterTrailers
-     *
      * @param Collection<int, TheaterTrailer> $theaterTrailers
-     * @return void
      */
-    public function setTheaterTrailers(Collection $theaterTrailers)
+    public function setTheaterTrailers(Collection $theaterTrailers): void
     {
         $this->theaterTrailers = $theaterTrailers;
     }

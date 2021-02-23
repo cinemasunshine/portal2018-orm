@@ -10,14 +10,9 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
-/**
- * ShowingFormat test
- */
 final class ShowingFormatTest extends TestCase
 {
     /**
-     * Create target mock
-     *
      * @return ShowingFormat&MockObject
      */
     public function createTargetMock()
@@ -26,8 +21,6 @@ final class ShowingFormatTest extends TestCase
     }
 
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return ShowingFormat&MockObject
      */
@@ -37,23 +30,17 @@ final class ShowingFormatTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<ShowingFormat>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(ShowingFormat::class);
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 14;
 
@@ -68,13 +55,9 @@ final class ShowingFormatTest extends TestCase
     }
 
     /**
-     * test getSchedule
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetSchedule()
+    public function testGetSchedule(): void
     {
         $schedule = new Schedule();
 
@@ -89,13 +72,9 @@ final class ShowingFormatTest extends TestCase
     }
 
     /**
-     * test setSchedule
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetSchedule()
+    public function testSetSchedule(): void
     {
         $schedule = new Schedule();
 
@@ -111,13 +90,9 @@ final class ShowingFormatTest extends TestCase
     }
 
     /**
-     * test getSystem
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetSystem()
+    public function testGetSystem(): void
     {
         $system = 2;
 
@@ -132,13 +107,9 @@ final class ShowingFormatTest extends TestCase
     }
 
     /**
-     * test setSystem
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetSystem()
+    public function testSetSystem(): void
     {
         $system = 2;
 
@@ -154,13 +125,9 @@ final class ShowingFormatTest extends TestCase
     }
 
     /**
-     * test getSound
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetSound()
+    public function testGetSound(): void
     {
         $sound = 3;
 
@@ -175,13 +142,9 @@ final class ShowingFormatTest extends TestCase
     }
 
     /**
-     * test setSound
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetSound()
+    public function testSetSound(): void
     {
         $sound = 3;
 
@@ -197,13 +160,9 @@ final class ShowingFormatTest extends TestCase
     }
 
     /**
-     * test getVoice
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetVoice()
+    public function testGetVoice(): void
     {
         $voice = 4;
 
@@ -218,13 +177,9 @@ final class ShowingFormatTest extends TestCase
     }
 
     /**
-     * test setVoice
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetVoice()
+    public function testSetVoice(): void
     {
         $voice = 4;
 

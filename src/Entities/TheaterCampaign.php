@@ -50,75 +50,37 @@ class TheaterCampaign
      */
     protected $displayOrder;
 
-    /**
-     * Return id
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return campaign
-     *
-     * @return Campaign
-     */
     public function getCampaign(): Campaign
     {
         return $this->campaign;
     }
 
-    /**
-     * Set campaign
-     *
-     * @param Campaign $campaign
-     * @return void
-     */
-    public function setCampaign(Campaign $campaign)
+    public function setCampaign(Campaign $campaign): void
     {
         $this->campaign = $campaign;
     }
 
-    /**
-     * Return theater
-     *
-     * @return Theater
-     */
     public function getTheater(): Theater
     {
         return $this->theater;
     }
 
-    /**
-     * Set theater
-     *
-     * @param Theater $theater
-     * @return void
-     */
-    public function setTheater(Theater $theater)
+    public function setTheater(Theater $theater): void
     {
         $this->theater = $theater;
     }
 
-    /**
-     * Return displayOrder
-     *
-     * @return integer
-     */
     public function getDisplayOrder(): int
     {
         return $this->displayOrder;
     }
 
-    /**
-     * Set displayOrder
-     *
-     * @param integer $displayOrder
-     * @return void
-     */
-    public function setDisplayOrder(int $displayOrder)
+    public function setDisplayOrder(int $displayOrder): void
     {
         $this->displayOrder = $displayOrder;
     }

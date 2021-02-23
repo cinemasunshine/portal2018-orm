@@ -33,7 +33,7 @@ final class ScheduleRepositoryTest extends TestCase
     /**
      * @return ReflectionClass<ScheduleRepository>
      */
-    protected function createTargetReflection()
+    protected function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(ScheduleRepository::class);
     }
@@ -48,10 +48,8 @@ final class ScheduleRepositoryTest extends TestCase
 
     /**
      * @test
-     *
-     * @return void
      */
-    public function testAddActiveQuery()
+    public function testAddActiveQuery(): void
     {
         $alias = 'test';
 
@@ -73,10 +71,8 @@ final class ScheduleRepositoryTest extends TestCase
 
     /**
      * @test
-     *
-     * @return void
      */
-    public function testAddPublicQuery()
+    public function testAddPublicQuery(): void
     {
         $alias = 'test';
 
@@ -105,10 +101,8 @@ final class ScheduleRepositoryTest extends TestCase
 
     /**
      * @test
-     *
-     * @return void
      */
-    public function testAddNowShowingQuery()
+    public function testAddNowShowingQuery(): void
     {
         $alias = 'test';
 
@@ -139,10 +133,8 @@ final class ScheduleRepositoryTest extends TestCase
 
     /**
      * @test
-     *
-     * @return void
      */
-    public function testAddComingSoonQuery()
+    public function testAddComingSoonQuery(): void
     {
         $alias = 'test';
 

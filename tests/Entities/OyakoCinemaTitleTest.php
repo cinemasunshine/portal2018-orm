@@ -12,14 +12,9 @@ use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 use ReflectionMethod;
 
-/**
- * OyakoCinemaTitle test
- */
 final class OyakoCinemaTitleTest extends TestCase
 {
     /**
-     * Create target mock
-     *
      * @return OyakoCinemaTitle&MockObject
      */
     public function createTargetMock()
@@ -28,8 +23,6 @@ final class OyakoCinemaTitleTest extends TestCase
     }
 
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return OyakoCinemaTitle&MockObject
      */
@@ -39,23 +32,17 @@ final class OyakoCinemaTitleTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<OyakoCinemaTitle>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(OyakoCinemaTitle::class);
     }
 
     /**
-     * test construct
-     *
      * @test
-     *
-     * @return void
      */
-    public function testConstruct()
+    public function testConstruct(): void
     {
         $targetMock = $this->createTargetMock();
         $targetRef  = $this->createTargetReflection();
@@ -73,13 +60,9 @@ final class OyakoCinemaTitleTest extends TestCase
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 19;
 
@@ -94,13 +77,9 @@ final class OyakoCinemaTitleTest extends TestCase
     }
 
     /**
-     * test getTitle
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetTitle()
+    public function testGetTitle(): void
     {
         $title = new Title();
 
@@ -115,13 +94,9 @@ final class OyakoCinemaTitleTest extends TestCase
     }
 
     /**
-     * test setTitle
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetTitle()
+    public function testSetTitle(): void
     {
         $title = new Title();
 
@@ -137,13 +112,9 @@ final class OyakoCinemaTitleTest extends TestCase
     }
 
     /**
-     * test getTitleUrl
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetTitleUrl()
+    public function testGetTitleUrl(): void
     {
         $titleUrl = 'https://example.com/';
 
@@ -158,13 +129,9 @@ final class OyakoCinemaTitleTest extends TestCase
     }
 
     /**
-     * test setTitleUrl
-     *
      * @test
-     *
-     * @return void
      */
-    public function testsetTitleUrl()
+    public function testsetTitleUrl(): void
     {
         $titleUrl = 'https://example.com/';
 
@@ -180,13 +147,9 @@ final class OyakoCinemaTitleTest extends TestCase
     }
 
     /**
-     * test getOyakoCinemaSchedules
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetOyakoCinemaSchedules()
+    public function testGetOyakoCinemaSchedules(): void
     {
         $oyakoCinemaSchedules = new ArrayCollection();
 

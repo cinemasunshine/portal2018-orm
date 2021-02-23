@@ -11,14 +11,9 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
-/**
- * TheaterOpeningHour test
- */
 final class TheaterOpeningHourTest extends TestCase
 {
     /**
-     * Create target mock
-     *
      * @return TheaterOpeningHour&MockObject
      */
     public function createTargetMock()
@@ -27,8 +22,6 @@ final class TheaterOpeningHourTest extends TestCase
     }
 
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return TheaterOpeningHour&MockObject
      */
@@ -38,23 +31,17 @@ final class TheaterOpeningHourTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<TheaterOpeningHour>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(TheaterOpeningHour::class);
     }
 
     /**
-     * test create
-     *
      * @test
-     *
-     * @return void
      */
-    public function testCreate()
+    public function testCreate(): void
     {
         $type     = 2;
         $fromDate = '2020/01/01';
@@ -99,13 +86,9 @@ final class TheaterOpeningHourTest extends TestCase
     }
 
     /**
-     * test getType
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetType()
+    public function testGetType(): void
     {
         $type = 2;
 
@@ -120,13 +103,9 @@ final class TheaterOpeningHourTest extends TestCase
     }
 
     /**
-     * test setType
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetType()
+    public function testSetType(): void
     {
         $type = 2;
 
@@ -142,13 +121,9 @@ final class TheaterOpeningHourTest extends TestCase
     }
 
     /**
-     * test getFromDate
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetFromDate()
+    public function testGetFromDate(): void
     {
         $fromDate = new DateTime();
 
@@ -163,13 +138,9 @@ final class TheaterOpeningHourTest extends TestCase
     }
 
     /**
-     * test setFromDate
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetFromDate()
+    public function testSetFromDate(): void
     {
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -197,10 +168,8 @@ final class TheaterOpeningHourTest extends TestCase
      * test setFromDate (invalid argument)
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetFromDateInvalidArgument()
+    public function testSetFromDateInvalidArgument(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -211,13 +180,9 @@ final class TheaterOpeningHourTest extends TestCase
     }
 
     /**
-     * test getToDate
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetToDate()
+    public function testGetToDate(): void
     {
         $toDate = new DateTime();
 
@@ -232,13 +197,9 @@ final class TheaterOpeningHourTest extends TestCase
     }
 
     /**
-     * test setToDate
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetToDate()
+    public function testSetToDate(): void
     {
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -269,10 +230,8 @@ final class TheaterOpeningHourTest extends TestCase
      * test setToDate (invalid argument)
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetToDateInvalidArgument()
+    public function testSetToDateInvalidArgument(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -283,13 +242,9 @@ final class TheaterOpeningHourTest extends TestCase
     }
 
     /**
-     * test getTime
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetTime()
+    public function testGetTime(): void
     {
         $time = new DateTime('10:00:00');
 
@@ -304,13 +259,9 @@ final class TheaterOpeningHourTest extends TestCase
     }
 
     /**
-     * test setTime
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetTime()
+    public function testSetTime(): void
     {
         $targetMock = $this->createTargetPartialMock([]);
         $targetRef  = $this->createTargetReflection();
@@ -338,10 +289,8 @@ final class TheaterOpeningHourTest extends TestCase
      * test setTime (invalid argument)
      *
      * @test
-     *
-     * @return void
      */
-    public function testSetTimeInvalidArgument()
+    public function testSetTimeInvalidArgument(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
@@ -352,13 +301,9 @@ final class TheaterOpeningHourTest extends TestCase
     }
 
     /**
-     * test toArray
-     *
      * @test
-     *
-     * @return void
      */
-    public function testToArray()
+    public function testToArray(): void
     {
         $type     = 2;
         $fromDate = new DateTime('2020/01/01');

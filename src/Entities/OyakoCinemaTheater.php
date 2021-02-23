@@ -40,54 +40,27 @@ class OyakoCinemaTheater
      */
     protected $theater;
 
-    /**
-     * Return id
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return oyakoCinemaSchedule
-     *
-     * @return OyakoCinemaSchedule
-     */
     public function getOyakoCinemaSchedule(): OyakoCinemaSchedule
     {
         return $this->oyakoCinemaSchedule;
     }
 
-    /**
-     * Set oyakoCinemaSchedule
-     *
-     * @param OyakoCinemaSchedule $oyakoCinemaSchedule
-     * @return void
-     */
-    public function setOyakoCinemaSchedule(OyakoCinemaSchedule $oyakoCinemaSchedule)
+    public function setOyakoCinemaSchedule(OyakoCinemaSchedule $oyakoCinemaSchedule): void
     {
         $this->oyakoCinemaSchedule = $oyakoCinemaSchedule;
     }
 
-    /**
-     * Return theater
-     *
-     * @return Theater
-     */
     public function getTheater(): Theater
     {
         return $this->theater;
     }
 
-    /**
-     * Set theater
-     *
-     * @param Theater $theater
-     * @return void
-     */
-    public function setTheater(Theater $theater)
+    public function setTheater(Theater $theater): void
     {
         $this->theater = $theater;
     }

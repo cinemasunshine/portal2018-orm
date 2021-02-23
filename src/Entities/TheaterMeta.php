@@ -62,48 +62,27 @@ class TheaterMeta
      */
     protected $oyakoCinemaUrl;
 
-    /**
-     * constructor
-     */
     public function __construct()
     {
         $this->openingHours = [];
     }
 
-    /**
-     * Return id
-     *
-     * @return integer
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return theater
-     *
-     * @return Theater
-     */
     public function getTheater(): Theater
     {
         return $this->theater;
     }
 
-    /**
-     * Set theater
-     *
-     * @param Theater $theater
-     * @return void
-     */
-    public function setTheater(Theater $theater)
+    public function setTheater(Theater $theater): void
     {
         $this->theater = $theater;
     }
 
     /**
-     * Return openingHours
-     *
      * @return TheaterOpeningHour[]
      */
     public function getOpeningHours(): array
@@ -118,12 +97,9 @@ class TheaterMeta
     }
 
     /**
-     * Set openingHours
-     *
      * @param TheaterOpeningHour[] $openingHours
-     * @return void
      */
-    public function setOpeningHours(array $openingHours)
+    public function setOpeningHours(array $openingHours): void
     {
         $this->openingHours = [];
 
@@ -133,65 +109,32 @@ class TheaterMeta
         }
     }
 
-    /**
-     * Return twitter
-     *
-     * @return string|null
-     */
     public function getTwitter(): ?string
     {
         return $this->twitter;
     }
 
-    /**
-     * Set twitter
-     *
-     * @param string|null $twitter
-     * @return void
-     */
-    public function setTwitter(?string $twitter)
+    public function setTwitter(?string $twitter): void
     {
         $this->twitter = $twitter;
     }
 
-    /**
-     * Return facebook
-     *
-     * @return string|null
-     */
     public function getFacebook(): ?string
     {
         return $this->facebook;
     }
 
-    /**
-     * Set facebook
-     *
-     * @param string|null $facebook
-     * @return void
-     */
-    public function setFacebook(?string $facebook)
+    public function setFacebook(?string $facebook): void
     {
         $this->facebook = $facebook;
     }
 
-    /**
-     * Return oyakoCinemaUrl
-     *
-     * @return string|null
-     */
     public function getOyakoCinemaUrl(): ?string
     {
         return $this->oyakoCinemaUrl;
     }
 
-    /**
-     * Set oyakoCinemaUrl
-     *
-     * @param string|null $oyakoCinemaUrl
-     * @return void
-     */
-    public function setOyakoCinemaUrl(?string $oyakoCinemaUrl)
+    public function setOyakoCinemaUrl(?string $oyakoCinemaUrl): void
     {
         $this->oyakoCinemaUrl = $oyakoCinemaUrl;
     }

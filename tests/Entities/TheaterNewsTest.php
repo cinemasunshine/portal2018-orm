@@ -11,14 +11,9 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
-/**
- * TheaterNews test
- */
 final class TheaterNewsTest extends TestCase
 {
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return TheaterNews&MockObject
      */
@@ -28,23 +23,17 @@ final class TheaterNewsTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<TheaterNews>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(TheaterNews::class);
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 30;
 
@@ -59,13 +48,9 @@ final class TheaterNewsTest extends TestCase
     }
 
     /**
-     * test getNews
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetNews()
+    public function testGetNews(): void
     {
         $news = new News();
 
@@ -80,13 +65,9 @@ final class TheaterNewsTest extends TestCase
     }
 
     /**
-     * test setNews
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetNews()
+    public function testSetNews(): void
     {
         $news = new News();
 
@@ -102,13 +83,9 @@ final class TheaterNewsTest extends TestCase
     }
 
     /**
-     * test getTheater
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetTheater()
+    public function testGetTheater(): void
     {
         $theater = new Theater(10);
 
@@ -123,13 +100,9 @@ final class TheaterNewsTest extends TestCase
     }
 
     /**
-     * test setTheater
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetTheater()
+    public function testSetTheater(): void
     {
         $theater = new Theater(10);
 
@@ -145,13 +118,9 @@ final class TheaterNewsTest extends TestCase
     }
 
     /**
-     * test getDisplayOrder
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetDisplayOrder()
+    public function testGetDisplayOrder(): void
     {
         $displayOrder = 8;
 
@@ -166,13 +135,9 @@ final class TheaterNewsTest extends TestCase
     }
 
     /**
-     * test setDisplayOrder
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetDisplayOrder()
+    public function testSetDisplayOrder(): void
     {
         $displayOrder = 8;
 

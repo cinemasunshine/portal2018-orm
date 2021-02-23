@@ -11,14 +11,9 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
-/**
- * PageMainBanner test
- */
 final class PageMainBannerTest extends TestCase
 {
     /**
-     * Create target partial mock
-     *
      * @param string[] $methods
      * @return PageMainBanner&MockObject
      */
@@ -28,23 +23,17 @@ final class PageMainBannerTest extends TestCase
     }
 
     /**
-     * Create target reflection
-     *
      * @return ReflectionClass<PageMainBanner>
      */
-    public function createTargetReflection()
+    public function createTargetReflection(): ReflectionClass
     {
         return new ReflectionClass(PageMainBanner::class);
     }
 
     /**
-     * test getId
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetId()
+    public function testGetId(): void
     {
         $id = 24;
 
@@ -59,13 +48,9 @@ final class PageMainBannerTest extends TestCase
     }
 
     /**
-     * test getMainBanner
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetMainBanner()
+    public function testGetMainBanner(): void
     {
         $mainBanner = new MainBanner();
 
@@ -80,13 +65,9 @@ final class PageMainBannerTest extends TestCase
     }
 
     /**
-     * test setMainBanner
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetMainBanner()
+    public function testSetMainBanner(): void
     {
         $mainBanner = new MainBanner();
 
@@ -102,13 +83,9 @@ final class PageMainBannerTest extends TestCase
     }
 
     /**
-     * test getPage
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetPage()
+    public function testGetPage(): void
     {
         $page = new Page(6);
 
@@ -123,13 +100,9 @@ final class PageMainBannerTest extends TestCase
     }
 
     /**
-     * test setPage
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetPage()
+    public function testSetPage(): void
     {
         $page = new Page(6);
 
@@ -145,13 +118,9 @@ final class PageMainBannerTest extends TestCase
     }
 
     /**
-     * test getDisplayOrder
-     *
      * @test
-     *
-     * @return void
      */
-    public function testGetDisplayOrder()
+    public function testGetDisplayOrder(): void
     {
         $displayOrder = 5;
 
@@ -166,13 +135,9 @@ final class PageMainBannerTest extends TestCase
     }
 
     /**
-     * test setDisplayOrder
-     *
      * @test
-     *
-     * @return void
      */
-    public function testSetDisplayOrder()
+    public function testSetDisplayOrder(): void
     {
         $displayOrder = 5;
 

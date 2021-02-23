@@ -71,9 +71,6 @@ class AdminUser
     protected $theater;
 
     /**
-     * Encrypt password
-     *
-     * @param string $password
      * @return string encrypted password
      *
      * @throws RuntimeException
@@ -89,117 +86,57 @@ class AdminUser
         return $encrypted;
     }
 
-    /**
-     * Return id
-     *
-     * @return int
-     */
     public function getId(): int
     {
         return $this->id;
     }
 
-    /**
-     * Return name
-     *
-     * @return string
-     */
     public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * Set name
-     *
-     * @param string $name
-     * @return void
-     */
-    public function setName(string $name)
+    public function setName(string $name): void
     {
         $this->name = $name;
     }
 
-    /**
-     * Return display name
-     *
-     * @return string
-     */
     public function getDisplayName(): string
     {
         return $this->displayName;
     }
 
-    /**
-     * Set display name
-     *
-     * @param string $displayName
-     * @return void
-     */
-    public function setDisplayName(string $displayName)
+    public function setDisplayName(string $displayName): void
     {
         $this->displayName = $displayName;
     }
 
-    /**
-     * Return password
-     *
-     * @return string
-     */
     public function getPassword(): string
     {
         return $this->password;
     }
 
-    /**
-     * Set password
-     *
-     * @param string $password
-     * @return void
-     */
-    public function setPassword(string $password)
+    public function setPassword(string $password): void
     {
         $this->password = self::encryptPassword($password);
     }
 
-    /**
-     * Return group
-     *
-     * @return integer
-     */
     public function getGroup(): int
     {
         return $this->group;
     }
 
-    /**
-     * Set group
-     *
-     * @param integer $group
-     * @return void
-     */
-    public function setGroup(int $group)
+    public function setGroup(int $group): void
     {
         $this->group = $group;
     }
 
-    /**
-     * Return theater
-     *
-     * @return Theater|null
-     */
     public function getTheater(): ?Theater
     {
         return $this->theater;
     }
 
-    /**
-     * Set theater
-     *
-     * @param Theater|null $theater
-     * @return void
-     */
-    public function setTheater(?Theater $theater)
+    public function setTheater(?Theater $theater): void
     {
         $this->theater = $theater;
     }
