@@ -13,6 +13,10 @@ parameters:
 	ignoreErrors:
 		# https://github.com/phpstan/phpstan/issues/4078
 		-
+			message: "#^Method Tests\\\\Repositories\\\\CampaignRepositoryTest\\:\\:createTargetReflection\\(\\) return type with generic class Cinemasunshine\\\\ORM\\\\Repositories\\\\CampaignRepository does not specify its types\\: TCampaignEntity#"
+			path: tests/Repositories/CampaignRepositoryTest.php
+			count: 1
+		-
 			message: "#^Method Tests\\\\Repositories\\\\PageRepositoryTest\\:\\:createTargetReflection\\(\\) return type with generic class Cinemasunshine\\\\ORM\\\\Repositories\\\\PageRepository does not specify its types\\: TPageEntity#"
 			path: tests/Repositories/PageRepositoryTest.php
 			count: 1
