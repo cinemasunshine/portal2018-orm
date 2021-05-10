@@ -13,8 +13,14 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
+/**
+ * @coversDefaultClass \Cinemasunshine\ORM\Entities\AdvanceTicket
+ */
 final class AdvanceTicketTest extends TestCase
 {
+    /** @var AdvanceTicket */
+    private $advanceTicket;
+
     /**
      * @return AdvanceTicket&MockObject
      */
@@ -41,229 +47,315 @@ final class AdvanceTicketTest extends TestCase
     }
 
     /**
+     * @before
+     */
+    public function setUp(): void
+    {
+        $this->advanceTicket = new AdvanceTicket();
+    }
+
+    /**
+     * @covers ::getId
      * @test
+     * @testdox getIdはプロパティidの値を取得できる
      */
     public function testGetId(): void
     {
         $id = 19;
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $targetRef = $this->createTargetReflection();
 
         $idPropertyRef = $targetRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
-        $idPropertyRef->setValue($targetMock, $id);
+        $idPropertyRef->setValue($this->advanceTicket, $id);
 
-        $this->assertEquals($id, $targetMock->getId());
+        $this->assertEquals($id, $this->advanceTicket->getId());
     }
 
     /**
+     * @covers ::getAdvanceSale
      * @test
+     * @testdox getAdvanceSaleはプロパティadvanceSaleの値を取得できる
      */
     public function testGetAdvanceSale(): void
     {
         $advanceSale = new AdvanceSale();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $targetRef = $this->createTargetReflection();
 
         $advanceSalePropertyRef = $targetRef->getProperty('advanceSale');
         $advanceSalePropertyRef->setAccessible(true);
-        $advanceSalePropertyRef->setValue($targetMock, $advanceSale);
+        $advanceSalePropertyRef->setValue($this->advanceTicket, $advanceSale);
 
-        $this->assertEquals($advanceSale, $targetMock->getAdvanceSale());
+        $this->assertEquals($advanceSale, $this->advanceTicket->getAdvanceSale());
     }
 
     /**
+     * @covers ::setAdvanceSale
      * @test
+     * @testdox setAdvanceSaleはプロパティadvanceSaleにAdvanceSaleオブジェクトをセットできる
      */
     public function testSetAdvanceSale(): void
     {
         $advanceSale = new AdvanceSale();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetMock->setAdvanceSale($advanceSale);
+        $this->advanceTicket->setAdvanceSale($advanceSale);
 
         $targetRef = $this->createTargetReflection();
 
         $advanceSalePropertyRef = $targetRef->getProperty('advanceSale');
         $advanceSalePropertyRef->setAccessible(true);
 
-        $this->assertEquals($advanceSale, $advanceSalePropertyRef->getValue($targetMock));
+        $this->assertEquals($advanceSale, $advanceSalePropertyRef->getValue($this->advanceTicket));
     }
 
     /**
+     * @covers ::getPublishingStartDt
      * @test
+     * @testdox getPublishingStartDtはプロパティpublishingStartDtの値を取得できる
      */
     public function testGetPublishingStartDt(): void
     {
         $publishingStartDt = new DateTime();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $targetRef = $this->createTargetReflection();
 
         $publishingStartDtPropertyRef = $targetRef->getProperty('publishingStartDt');
         $publishingStartDtPropertyRef->setAccessible(true);
-        $publishingStartDtPropertyRef->setValue($targetMock, $publishingStartDt);
+        $publishingStartDtPropertyRef->setValue($this->advanceTicket, $publishingStartDt);
 
-        $this->assertEquals($publishingStartDt, $targetMock->getPublishingStartDt());
+        $this->assertEquals($publishingStartDt, $this->advanceTicket->getPublishingStartDt());
     }
 
     /**
-     * @test
+     * @return array<string,array<int,mixed>>
      */
-    public function testSetPublishingStartDt(): void
+    public function getValidPublishingStartDtDataProvider(): array
     {
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $date = '2020-01-01';
+
+        return [
+            'type DateTime' => [
+                new DateTime($date),
+                $date,
+            ],
+            'type string' => [
+                $date,
+                $date,
+            ],
+        ];
+    }
+
+    /**
+     * @covers ::setPublishingStartDt
+     * @dataProvider getValidPublishingStartDtDataProvider
+     * @test
+     * @testdox setPublishingStartDtはプロパティpublishingStartDtに日付をセットできる
+     *
+     * @param mixed $value
+     */
+    public function testSetPublishingStartDtCaseSetValidValue($value, string $date): void
+    {
+        $targetRef = $this->createTargetReflection();
 
         $publishingStartDtPropertyRef = $targetRef->getProperty('publishingStartDt');
         $publishingStartDtPropertyRef->setAccessible(true);
 
-        $dtObject = new DateTime();
-        $targetMock->setPublishingStartDt($dtObject);
-        $this->assertEquals($dtObject, $publishingStartDtPropertyRef->getValue($targetMock));
+        $this->advanceTicket->setPublishingStartDt($value);
 
-        $dtString = '2020-01-01';
-        $targetMock->setPublishingStartDt($dtString);
-        $this->assertInstanceOf(
-            DateTime::class,
-            $publishingStartDtPropertyRef->getValue($targetMock)
-        );
-        $this->assertEquals(
-            $dtString,
-            $publishingStartDtPropertyRef->getValue($targetMock)->format('Y-m-d')
-        );
+        $propertValue = $publishingStartDtPropertyRef->getValue($this->advanceTicket);
+
+        $this->assertInstanceOf(DateTime::class, $propertValue);
+
+        $this->assertEquals($date, $propertValue->format('Y-m-d'));
     }
 
     /**
-     * test setPublishingStartDt (invalid argument)
-     *
-     * @test
+     * @return array<string,array<mixed>>
      */
-    public function testSetPublishingStartDtInvalidArgument(): void
+    public function getInvalidPublishingStartDtDataProvider(): array
+    {
+        return [
+            'type int' => [20210101],
+            'type array' => [['2021-01-01']],
+            'type null' => [null],
+        ];
+    }
+
+    /**
+     * @covers ::setPublishingStartDt
+     * @dataProvider getInvalidPublishingStartDtDataProvider
+     * @test
+     * @testdox setPublishingStartDtは無効な値をセットできない
+     *
+     * @param mixed $value
+     */
+    public function testSetPublishingStartDtCaseInvalidValue($value): void
     {
         $this->expectException(InvalidArgumentException::class);
 
-        $targetMock = $this->createTargetPartialMock([]);
-
-        /** @phpstan-ignore-next-line */
-        $targetMock->setPublishingStartDt(null);
+        $this->advanceTicket->setPublishingStartDt($value);
     }
 
     /**
+     * @covers ::getReleaseDt
      * @test
+     * @testdox getReleaseDtはプロパティreleaseDtの値を取得できる
      */
     public function testGetReleaseDt(): void
     {
         $releaseDt = new DateTime();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $targetRef = $this->createTargetReflection();
 
         $releaseDtPropertyRef = $targetRef->getProperty('releaseDt');
         $releaseDtPropertyRef->setAccessible(true);
-        $releaseDtPropertyRef->setValue($targetMock, $releaseDt);
+        $releaseDtPropertyRef->setValue($this->advanceTicket, $releaseDt);
 
-        $this->assertEquals($releaseDt, $targetMock->getReleaseDt());
+        $this->assertEquals($releaseDt, $this->advanceTicket->getReleaseDt());
     }
 
     /**
-     * @test
+     * @return array<string,array<int,mixed>>
      */
-    public function testSetReleaseDt(): void
+    public function getValidReleaseDtDataProvider(): array
     {
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $data = '2020-01-01';
+
+        return [
+            'type DateTime' => [
+                new DateTime($data),
+                $data,
+            ],
+            'type string' => [
+                $data,
+                $data,
+            ],
+        ];
+    }
+
+    /**
+     * @covers ::setReleaseDt
+     * @dataProvider getValidReleaseDtDataProvider
+     * @test
+     * @testdox setReleaseDtはプロパティreleaseDtに日付をセットできる
+     *
+     * @param mixed $value
+     */
+    public function testSetReleaseDtCaseValidValue($value, string $date): void
+    {
+        $targetRef = $this->createTargetReflection();
 
         $releaseDtPropertyRef = $targetRef->getProperty('releaseDt');
         $releaseDtPropertyRef->setAccessible(true);
 
-        $dtObject = new DateTime();
-        $targetMock->setReleaseDt($dtObject);
-        $this->assertEquals($dtObject, $releaseDtPropertyRef->getValue($targetMock));
+        $this->advanceTicket->setReleaseDt($value);
 
-        $dtString = '2020-01-01';
-        $targetMock->setReleaseDt($dtString);
-        $this->assertInstanceOf(
-            DateTime::class,
-            $releaseDtPropertyRef->getValue($targetMock)
-        );
-        $this->assertEquals(
-            $dtString,
-            $releaseDtPropertyRef->getValue($targetMock)->format('Y-m-d')
-        );
+        $propertValue = $releaseDtPropertyRef->getValue($this->advanceTicket);
+
+        $this->assertInstanceOf(DateTime::class, $propertValue);
+
+        $this->assertEquals($date, $propertValue->format('Y-m-d'));
     }
 
     /**
-     * test setReleaseDt (invalid argument)
-     *
-     * @test
+     * @return array<string,array<mixed>>
      */
-    public function testSetReleaseDtInvalidArgument(): void
+    public function getInvalidReleaseDtDataProvider(): array
+    {
+        return [
+            'type int' => [20210101],
+            'type array' => [['2021-01-01']],
+            'type null' => [null],
+        ];
+    }
+
+    /**
+     * @covers ::setReleaseDt
+     * @dataProvider getInvalidReleaseDtDataProvider
+     * @test
+     * @testdox setReleaseDtは無効な値をセットできない
+     *
+     * @param mixed $value
+     */
+    public function testSetReleaseDtCaseInvalidValue($value): void
     {
         $this->expectException(InvalidArgumentException::class);
 
-        $targetMock = $this->createTargetPartialMock([]);
-
-        /** @phpstan-ignore-next-line */
-        $targetMock->setReleaseDt(null);
+        $this->advanceTicket->setReleaseDt($value);
     }
 
     /**
+     * @covers ::getReleaseDtText
      * @test
+     * @testdox getReleaseDtTextはプロパティreleaseDtTextの値を取得できる
      */
     public function testGetReleaseDtText(): void
     {
         $releaseDtText = 'release_dt_text';
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $targetRef = $this->createTargetReflection();
 
         $releaseDtTextPropertyRef = $targetRef->getProperty('releaseDtText');
         $releaseDtTextPropertyRef->setAccessible(true);
-        $releaseDtTextPropertyRef->setValue($targetMock, $releaseDtText);
+        $releaseDtTextPropertyRef->setValue($this->advanceTicket, $releaseDtText);
 
-        $this->assertEquals($releaseDtText, $targetMock->getReleaseDtText());
+        $this->assertEquals($releaseDtText, $this->advanceTicket->getReleaseDtText());
     }
 
     /**
-     * @test
+     * @return array<string,array<mixed>>
      */
-    public function testSetReleaseDtText(): void
+    public function getReleaseDtDataProvider(): array
     {
-        $releaseDtText = 'release_dt_text';
+        return [
+            'type string' => ['release_dt_text'],
+            'type null' => [null],
+        ];
+    }
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetMock->setReleaseDtText($releaseDtText);
+    /**
+     * @covers ::setReleaseDtText
+     * @dataProvider getReleaseDtDataProvider
+     * @test
+     * @testdox setReleaseDtTextはプロパティreleaseDtTextに値をセットできる
+     *
+     * @param mixed $value
+     */
+    public function testSetReleaseDtText($value): void
+    {
+        $this->advanceTicket->setReleaseDtText($value);
 
         $targetRef = $this->createTargetReflection();
 
         $releaseDtTextPropertyRef = $targetRef->getProperty('releaseDtText');
         $releaseDtTextPropertyRef->setAccessible(true);
 
-        $this->assertEquals($releaseDtText, $releaseDtTextPropertyRef->getValue($targetMock));
+        $this->assertEquals($value, $releaseDtTextPropertyRef->getValue($this->advanceTicket));
     }
 
     /**
+     * @covers ::getIsSalesEnd
      * @test
+     * @testdox getIsSalesEndはプロパティisSalesEndの値を取得できる
      */
     public function testGetIsSalesEnd(): void
     {
         $isSalesEnd = true;
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $targetRef = $this->createTargetReflection();
 
         $isSalesEndPropertyRef = $targetRef->getProperty('isSalesEnd');
         $isSalesEndPropertyRef->setAccessible(true);
-        $isSalesEndPropertyRef->setValue($targetMock, $isSalesEnd);
+        $isSalesEndPropertyRef->setValue($this->advanceTicket, $isSalesEnd);
 
-        $this->assertEquals($isSalesEnd, $targetMock->getIsSalesEnd());
+        $this->assertEquals($isSalesEnd, $this->advanceTicket->getIsSalesEnd());
     }
 
     /**
+     * @covers ::isSalseEnd
      * @test
+     * @testdox isSalseEndはgetIsSalesEndを実行し、その結果を返す
      */
     public function testIsSalseEnd(): void
     {
@@ -279,195 +371,254 @@ final class AdvanceTicketTest extends TestCase
     }
 
     /**
+     * @covers ::setIsSalesEnd
      * @test
+     * @testdox setIsSalesEndはプロパティisSalesEndにBool値をセットできる
      */
     public function testSetIsSalesEnd(): void
     {
         $isSalesEnd = true;
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetMock->setIsSalesEnd($isSalesEnd);
+        $this->advanceTicket->setIsSalesEnd($isSalesEnd);
 
         $targetRef = $this->createTargetReflection();
 
         $isSalesEndPropertyRef = $targetRef->getProperty('isSalesEnd');
         $isSalesEndPropertyRef->setAccessible(true);
 
-        $this->assertEquals($isSalesEnd, $isSalesEndPropertyRef->getValue($targetMock));
+        $this->assertEquals($isSalesEnd, $isSalesEndPropertyRef->getValue($this->advanceTicket));
     }
 
     /**
+     * @covers ::getType
      * @test
+     * @testdox getTypeはプロパティtypeの値を取得できる
      */
     public function testGetType(): void
     {
         $type = 3;
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $targetRef = $this->createTargetReflection();
 
         $typePropertyRef = $targetRef->getProperty('type');
         $typePropertyRef->setAccessible(true);
-        $typePropertyRef->setValue($targetMock, $type);
+        $typePropertyRef->setValue($this->advanceTicket, $type);
 
-        $this->assertEquals($type, $targetMock->getType());
+        $this->assertEquals($type, $this->advanceTicket->getType());
     }
 
     /**
+     * @covers ::setType
      * @test
+     * @testdox setTypeはプロパティtypeに整数をセットできる
      */
     public function testSetType(): void
     {
         $type = 3;
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetMock->setType($type);
+        $this->advanceTicket->setType($type);
 
         $targetRef = $this->createTargetReflection();
 
         $typePropertyRef = $targetRef->getProperty('type');
         $typePropertyRef->setAccessible(true);
 
-        $this->assertEquals($type, $typePropertyRef->getValue($targetMock));
+        $this->assertEquals($type, $typePropertyRef->getValue($this->advanceTicket));
     }
 
     /**
+     * @covers ::getPriceText
      * @test
+     * @testdox getPriceTextはプロパティpriceTextの値を取得できる
      */
     public function testGetPriceText(): void
     {
         $priceText = '2,500';
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $targetRef = $this->createTargetReflection();
 
         $priceTextPropertyRef = $targetRef->getProperty('priceText');
         $priceTextPropertyRef->setAccessible(true);
-        $priceTextPropertyRef->setValue($targetMock, $priceText);
+        $priceTextPropertyRef->setValue($this->advanceTicket, $priceText);
 
-        $this->assertEquals($priceText, $targetMock->getPriceText());
+        $this->assertEquals($priceText, $this->advanceTicket->getPriceText());
     }
 
     /**
-     * @test
+     * @return array<string,array<mixed>>
      */
-    public function testSetPriceText(): void
+    public function getPriceTextDataProvider(): array
     {
-        $priceText = '2,500';
+        return [
+            'type string' => ['2,500'],
+            'type null' => [null],
+        ];
+    }
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetMock->setPriceText($priceText);
+    /**
+     * @covers ::setPriceText
+     * @dataProvider getPriceTextDataProvider
+     * @test
+     * @testdox setPriceTextはプロパティpriceTextに値をセットできる
+     *
+     * @param mixed $value
+     */
+    public function testSetPriceText($value): void
+    {
+        $this->advanceTicket->setPriceText($value);
 
         $targetRef = $this->createTargetReflection();
 
         $priceTextPropertyRef = $targetRef->getProperty('priceText');
         $priceTextPropertyRef->setAccessible(true);
 
-        $this->assertEquals($priceText, $priceTextPropertyRef->getValue($targetMock));
+        $this->assertEquals($value, $priceTextPropertyRef->getValue($this->advanceTicket));
     }
 
     /**
+     * @covers ::getSpecialGift
      * @test
+     * @testdox getSpecialGiftはプロパティspecialGiftの値を取得できる
      */
     public function testGetSpecialGift(): void
     {
         $specialGift = 'special_gift';
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $targetRef = $this->createTargetReflection();
 
         $specialGiftPropertyRef = $targetRef->getProperty('specialGift');
         $specialGiftPropertyRef->setAccessible(true);
-        $specialGiftPropertyRef->setValue($targetMock, $specialGift);
+        $specialGiftPropertyRef->setValue($this->advanceTicket, $specialGift);
 
-        $this->assertEquals($specialGift, $targetMock->getSpecialGift());
+        $this->assertEquals($specialGift, $this->advanceTicket->getSpecialGift());
     }
 
     /**
-     * @test
+     * @return array<string,array<mixed>>
      */
-    public function testSetSpecialGift(): void
+    public function getSpecialGiftDataProvider(): array
     {
-        $specialGift = 'special_gift';
+        return [
+            'type string' => ['special_gift'],
+            'type null' => [null],
+        ];
+    }
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetMock->setSpecialGift($specialGift);
+    /**
+     * @covers ::setSpecialGift
+     * @dataProvider getSpecialGiftDataProvider
+     * @test
+     * @testdox setSpecialGiftはプロパティspecialGiftに値をセットできる
+     *
+     * @param mixed $value
+     */
+    public function testSetSpecialGift($value): void
+    {
+        $this->advanceTicket->setSpecialGift($value);
 
         $targetRef = $this->createTargetReflection();
 
         $specialGiftPropertyRef = $targetRef->getProperty('specialGift');
         $specialGiftPropertyRef->setAccessible(true);
 
-        $this->assertEquals($specialGift, $specialGiftPropertyRef->getValue($targetMock));
+        $this->assertEquals($value, $specialGiftPropertyRef->getValue($this->advanceTicket));
     }
 
     /**
+     * @covers ::getSpecialGiftStock
      * @test
+     * @testdox getSpecialGiftStockはプロパティspecialGiftStockの値を取得できる
      */
     public function testGetSpecialGiftStock(): void
     {
         $specialGiftStock = 4;
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $targetRef = $this->createTargetReflection();
 
         $specialGiftStockPropertyRef = $targetRef->getProperty('specialGiftStock');
         $specialGiftStockPropertyRef->setAccessible(true);
-        $specialGiftStockPropertyRef->setValue($targetMock, $specialGiftStock);
+        $specialGiftStockPropertyRef->setValue($this->advanceTicket, $specialGiftStock);
 
-        $this->assertEquals($specialGiftStock, $targetMock->getSpecialGiftStock());
+        $this->assertEquals($specialGiftStock, $this->advanceTicket->getSpecialGiftStock());
     }
 
     /**
-     * @test
+     * @return array<string,array<mixed>>
      */
-    public function testSetSpecialGiftStock(): void
+    public function getSpecialGiftStockDataProvider(): array
     {
-        $specialGiftStock = 4;
+        return [
+            'type string' => [4],
+            'type null' => [null],
+        ];
+    }
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetMock->setSpecialGiftStock($specialGiftStock);
+    /**
+     * @covers ::setSpecialGiftStock
+     * @dataProvider getSpecialGiftStockDataProvider
+     * @test
+     * @testdox setSpecialGiftStockはプロパティspecialGiftStockに値をセットできる
+     *
+     * @param mixed $value
+     */
+    public function testSetSpecialGiftStock($value): void
+    {
+        $this->advanceTicket->setSpecialGiftStock($value);
 
         $targetRef = $this->createTargetReflection();
 
         $specialGiftStockPropertyRef = $targetRef->getProperty('specialGiftStock');
         $specialGiftStockPropertyRef->setAccessible(true);
 
-        $this->assertEquals($specialGiftStock, $specialGiftStockPropertyRef->getValue($targetMock));
+        $this->assertEquals($value, $specialGiftStockPropertyRef->getValue($this->advanceTicket));
     }
 
     /**
+     * @covers ::getSpecialGiftImage
      * @test
+     * @testdox getSpecialGiftImageはプロパティspecialGiftImageの値を取得できる
      */
     public function testGetSpecialGiftImage(): void
     {
         $specialGiftImage = new File();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $targetRef = $this->createTargetReflection();
 
         $specialGiftImagePropertyRef = $targetRef->getProperty('specialGiftImage');
         $specialGiftImagePropertyRef->setAccessible(true);
-        $specialGiftImagePropertyRef->setValue($targetMock, $specialGiftImage);
+        $specialGiftImagePropertyRef->setValue($this->advanceTicket, $specialGiftImage);
 
-        $this->assertEquals($specialGiftImage, $targetMock->getSpecialGiftImage());
+        $this->assertEquals($specialGiftImage, $this->advanceTicket->getSpecialGiftImage());
     }
 
     /**
-     * @test
+     * @return array<string,array<mixed>>
      */
-    public function testSetSpecialGiftImage(): void
+    public function getSpecialGiftImageDataProvider(): array
     {
-        $specialGiftImage = new File();
+        return [
+            'type File' => [new File()],
+            'type null' => [null],
+        ];
+    }
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetMock->setSpecialGiftImage($specialGiftImage);
+    /**
+     * @covers ::setSpecialGiftImage
+     * @dataProvider getSpecialGiftImageDataProvider
+     * @test
+     * @testdox setSpecialGiftImageはプロパティspecialGiftImageに値をセットできる
+     *
+     * @param mixed $value
+     */
+    public function testSetSpecialGiftImage($value): void
+    {
+        $this->advanceTicket->setSpecialGiftImage($value);
 
         $targetRef = $this->createTargetReflection();
 
         $specialGiftImagePropertyRef = $targetRef->getProperty('specialGiftImage');
         $specialGiftImagePropertyRef->setAccessible(true);
 
-        $this->assertEquals($specialGiftImage, $specialGiftImagePropertyRef->getValue($targetMock));
+        $this->assertEquals($value, $specialGiftImagePropertyRef->getValue($this->advanceTicket));
     }
 }
