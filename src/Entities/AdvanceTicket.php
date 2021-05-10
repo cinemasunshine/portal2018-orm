@@ -93,6 +93,13 @@ class AdvanceTicket
     protected $priceText;
 
     /**
+     * @ORM\Column(type="string", name="detail_url", nullable=true)
+     *
+     * @var string|null
+     */
+    protected $detailUrl;
+
+    /**
      * @ORM\Column(type="string", name="special_gift", nullable=true)
      *
      * @var string|null
@@ -217,6 +224,16 @@ class AdvanceTicket
     public function setPriceText(?string $priceText): void
     {
         $this->priceText = $priceText;
+    }
+
+    public function getDetailUrl(): ?string
+    {
+        return $this->detailUrl;
+    }
+
+    public function setDetailUrl(?string $detailUrl): void
+    {
+        $this->detailUrl = $detailUrl;
     }
 
     public function getSpecialGift(): ?string

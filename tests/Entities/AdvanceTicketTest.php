@@ -476,6 +476,55 @@ final class AdvanceTicketTest extends TestCase
     }
 
     /**
+     * @covers ::getDetailUrl
+     * @test
+     * @testdox getDetailUrlはプロパティdetailUrlの値を取得できる
+     */
+    public function testGetDetailUrl(): void
+    {
+        $detailUrl = 'https://example.com';
+
+        $targetRef = $this->createTargetReflection();
+
+        $detailUrlPropertyRef = $targetRef->getProperty('detailUrl');
+        $detailUrlPropertyRef->setAccessible(true);
+        $detailUrlPropertyRef->setValue($this->advanceTicket, $detailUrl);
+
+        $this->assertEquals($detailUrl, $this->advanceTicket->getDetailUrl());
+    }
+
+    /**
+     * @return array<string,array<mixed>>
+     */
+    public function getDetailUrlDataProvider(): array
+    {
+        return [
+            'type string' => ['https://example.com'],
+            'type null' => [null],
+        ];
+    }
+
+    /**
+     * @covers ::setDetailUrl
+     * @dataProvider getDetailUrlDataProvider
+     * @test
+     * @testdox setDetailUrlはプロパティdetailUrlに値をセットできる
+     *
+     * @param mixed $value
+     */
+    public function testSetDetailUrl($value): void
+    {
+        $this->advanceTicket->setDetailUrl($value);
+
+        $targetRef = $this->createTargetReflection();
+
+        $detailUrlPropertyRef = $targetRef->getProperty('detailUrl');
+        $detailUrlPropertyRef->setAccessible(true);
+
+        $this->assertEquals($value, $detailUrlPropertyRef->getValue($this->advanceTicket));
+    }
+
+    /**
      * @covers ::getSpecialGift
      * @test
      * @testdox getSpecialGiftはプロパティspecialGiftの値を取得できる
