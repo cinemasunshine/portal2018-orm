@@ -8,366 +8,359 @@ use Cinemasunshine\ORM\Entities\File;
 use Cinemasunshine\ORM\Entities\Title;
 use Cinemasunshine\ORM\Entities\Trailer;
 use Doctrine\Common\Collections\ArrayCollection;
-use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
-use ReflectionMethod;
 
+/**
+ * @coversDefaultClass \Cinemasunshine\ORM\Entities\Trailer
+ */
 final class TrailerTest extends TestCase
 {
-    /**
-     * @return Trailer&MockObject
-     */
-    public function createTargetMock()
-    {
-        return $this->createMock(Trailer::class);
-    }
-
-    /**
-     * @param string[] $methods
-     * @return Trailer&MockObject
-     */
-    public function createTargetPartialMock(array $methods)
-    {
-        return $this->createPartialMock(Trailer::class, $methods);
-    }
+    /** @var Trailer */
+    protected $trailer;
 
     /**
      * @return ReflectionClass<Trailer>
      */
-    public function createTargetReflection(): ReflectionClass
+    protected function createTrailerReflection(): ReflectionClass
     {
         return new ReflectionClass(Trailer::class);
     }
 
     /**
+     * @before
+     */
+    public function setUp(): void
+    {
+        $this->trailer = new Trailer();
+    }
+
+    /**
+     * @covers ::__construct
      * @test
+     * @testdox __constructはプロパティ$pageTrailers、$specialSiteTrailers、$theaterTrailersをArrayCollectionで初期化する
      */
     public function testConstruct(): void
     {
-        $targetMock = $this->createTargetMock();
-        $targetRef  = $this->createTargetReflection();
+        $trailerRef = $this->createTrailerReflection();
 
-        /** @var ReflectionMethod $constructorRef */
-        $constructorRef = $targetRef->getConstructor();
-        $constructorRef->invoke($targetMock);
-
-        $pageTrailersPropertyRef = $targetRef->getProperty('pageTrailers');
+        $pageTrailersPropertyRef = $trailerRef->getProperty('pageTrailers');
         $pageTrailersPropertyRef->setAccessible(true);
         $this->assertInstanceOf(
             ArrayCollection::class,
-            $pageTrailersPropertyRef->getValue($targetMock)
+            $pageTrailersPropertyRef->getValue($this->trailer)
         );
 
-        $specialSiteTrailersPropertyRef = $targetRef->getProperty('specialSiteTrailers');
+        $specialSiteTrailersPropertyRef = $trailerRef->getProperty('specialSiteTrailers');
         $specialSiteTrailersPropertyRef->setAccessible(true);
         $this->assertInstanceOf(
             ArrayCollection::class,
-            $specialSiteTrailersPropertyRef->getValue($targetMock)
+            $specialSiteTrailersPropertyRef->getValue($this->trailer)
         );
 
-        $theaterTrailersPropertyRef = $targetRef->getProperty('theaterTrailers');
+        $theaterTrailersPropertyRef = $trailerRef->getProperty('theaterTrailers');
         $theaterTrailersPropertyRef->setAccessible(true);
         $this->assertInstanceOf(
             ArrayCollection::class,
-            $theaterTrailersPropertyRef->getValue($targetMock)
+            $theaterTrailersPropertyRef->getValue($this->trailer)
         );
     }
 
     /**
+     * @covers ::getId
      * @test
+     * @testdox getIdはプロパティ$idの値を返す
      */
     public function testGetId(): void
     {
         $id = 6;
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $trailerRef = $this->createTrailerReflection();
 
-        $idPropertyRef = $targetRef->getProperty('id');
+        $idPropertyRef = $trailerRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
-        $idPropertyRef->setValue($targetMock, $id);
+        $idPropertyRef->setValue($this->trailer, $id);
 
-        $this->assertEquals($id, $targetMock->getId());
+        $this->assertEquals($id, $this->trailer->getId());
     }
 
     /**
+     * @covers ::getTitle
      * @test
+     * @testdox getTitleはプロパティ$titleの値を返す
      */
     public function testGetTitle(): void
     {
         $title = new Title();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $trailerRef = $this->createTrailerReflection();
 
-        $titlePropertyRef = $targetRef->getProperty('title');
+        $titlePropertyRef = $trailerRef->getProperty('title');
         $titlePropertyRef->setAccessible(true);
-        $titlePropertyRef->setValue($targetMock, $title);
+        $titlePropertyRef->setValue($this->trailer, $title);
 
-        $this->assertEquals($title, $targetMock->getTitle());
+        $this->assertEquals($title, $this->trailer->getTitle());
     }
 
     /**
+     * @covers ::setTitle
      * @test
+     * @testdox setTitleはプロパティ$titleに引数の値をセットする
      */
     public function testSetTitle(): void
     {
-        $title = new Title();
+        $trailerRef = $this->createTrailerReflection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetMock->setTitle($title);
-
-        $targetRef = $this->createTargetReflection();
-
-        $titlePropertyRef = $targetRef->getProperty('title');
+        $titlePropertyRef = $trailerRef->getProperty('title');
         $titlePropertyRef->setAccessible(true);
 
-        $this->assertEquals($title, $titlePropertyRef->getValue($targetMock));
+        $title = new Title();
+        $this->trailer->setTitle($title);
+        $this->assertEquals($title, $titlePropertyRef->getValue($this->trailer));
     }
 
     /**
+     * @covers ::getName
      * @test
+     * @testdox getNameはプロパティ$nameの値を返す
      */
     public function testGetName(): void
     {
         $name = 'trailer_name';
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $trailerRef = $this->createTrailerReflection();
 
-        $namePropertyRef = $targetRef->getProperty('name');
+        $namePropertyRef = $trailerRef->getProperty('name');
         $namePropertyRef->setAccessible(true);
-        $namePropertyRef->setValue($targetMock, $name);
+        $namePropertyRef->setValue($this->trailer, $name);
 
-        $this->assertEquals($name, $targetMock->getName());
+        $this->assertEquals($name, $this->trailer->getName());
     }
 
     /**
+     * @covers ::setName
      * @test
+     * @testdox setNameはプロパティ$nameに引数の値をセットする
      */
     public function testSetName(): void
     {
-        $name = 'trailer_name';
+        $trailerRef = $this->createTrailerReflection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetMock->setName($name);
-
-        $targetRef = $this->createTargetReflection();
-
-        $namePropertyRef = $targetRef->getProperty('name');
+        $namePropertyRef = $trailerRef->getProperty('name');
         $namePropertyRef->setAccessible(true);
 
-        $this->assertEquals($name, $namePropertyRef->getValue($targetMock));
+        $name = 'trailer_name';
+        $this->trailer->setName($name);
+        $this->assertEquals($name, $namePropertyRef->getValue($this->trailer));
     }
 
     /**
+     * @covers ::getYoutube
      * @test
+     * @testdox getYoutubeはプロパティ$youtubeの値を返す
      */
     public function testGetYoutube(): void
     {
         $youtube = 'trainer_youtube';
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $trailerRef = $this->createTrailerReflection();
 
-        $youtubePropertyRef = $targetRef->getProperty('youtube');
+        $youtubePropertyRef = $trailerRef->getProperty('youtube');
         $youtubePropertyRef->setAccessible(true);
-        $youtubePropertyRef->setValue($targetMock, $youtube);
+        $youtubePropertyRef->setValue($this->trailer, $youtube);
 
-        $this->assertEquals($youtube, $targetMock->getYoutube());
+        $this->assertEquals($youtube, $this->trailer->getYoutube());
     }
 
     /**
+     * @covers ::setYoutube
      * @test
+     * @testdox setYoutubeはプロパティ$youtubeに引数の値をセットする
      */
     public function testSetYoutube(): void
     {
-        $youtube = 'trainer_youtube';
+        $trailerRef = $this->createTrailerReflection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetMock->setYoutube($youtube);
-
-        $targetRef = $this->createTargetReflection();
-
-        $youtubePropertyRef = $targetRef->getProperty('youtube');
+        $youtubePropertyRef = $trailerRef->getProperty('youtube');
         $youtubePropertyRef->setAccessible(true);
 
-        $this->assertEquals($youtube, $youtubePropertyRef->getValue($targetMock));
+        $youtube = 'trailer_youtube';
+        $this->trailer->setYoutube($youtube);
+        $this->assertEquals($youtube, $youtubePropertyRef->getValue($this->trailer));
     }
 
     /**
+     * @covers ::getBannerImage
      * @test
+     * @testdox getBannerImageはプロパティ$bannerImageの値を返す
      */
     public function testBannerImage(): void
     {
         $bannerImage = new File();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $trailerRef = $this->createTrailerReflection();
 
-        $bannerImagePropertyRef = $targetRef->getProperty('bannerImage');
+        $bannerImagePropertyRef = $trailerRef->getProperty('bannerImage');
         $bannerImagePropertyRef->setAccessible(true);
-        $bannerImagePropertyRef->setValue($targetMock, $bannerImage);
+        $bannerImagePropertyRef->setValue($this->trailer, $bannerImage);
 
-        $this->assertEquals($bannerImage, $targetMock->getBannerImage());
+        $this->assertEquals($bannerImage, $this->trailer->getBannerImage());
     }
 
     /**
+     * @covers ::setBannerImage
      * @test
+     * @testdox setBannerImageはプロパティ$bannerImageに引数の値をセットする
      */
     public function testSetBannerImage(): void
     {
-        $bannerImage = new File();
+        $trailerRef = $this->createTrailerReflection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetMock->setBannerImage($bannerImage);
-
-        $targetRef = $this->createTargetReflection();
-
-        $bannerImagePropertyRef = $targetRef->getProperty('bannerImage');
+        $bannerImagePropertyRef = $trailerRef->getProperty('bannerImage');
         $bannerImagePropertyRef->setAccessible(true);
 
-        $this->assertEquals($bannerImage, $bannerImagePropertyRef->getValue($targetMock));
+        $bannerImage = new File();
+        $this->trailer->setBannerImage($bannerImage);
+        $this->assertEquals($bannerImage, $bannerImagePropertyRef->getValue($this->trailer));
     }
 
     /**
+     * @covers ::getBannerLinkUrl
      * @test
+     * @testdox getBannerLinkUrlはプロパティ$bannerLinkUrlの値を返す
      */
     public function testGetBannerLinkUrl(): void
     {
         $bannerLinkUrl = 'https://example.com';
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $trailerRef = $this->createTrailerReflection();
 
-        $bannerLinkUrlPropertyRef = $targetRef->getProperty('bannerLinkUrl');
+        $bannerLinkUrlPropertyRef = $trailerRef->getProperty('bannerLinkUrl');
         $bannerLinkUrlPropertyRef->setAccessible(true);
-        $bannerLinkUrlPropertyRef->setValue($targetMock, $bannerLinkUrl);
+        $bannerLinkUrlPropertyRef->setValue($this->trailer, $bannerLinkUrl);
 
-        $this->assertEquals($bannerLinkUrl, $targetMock->getBannerLinkUrl());
+        $this->assertEquals($bannerLinkUrl, $this->trailer->getBannerLinkUrl());
     }
 
     /**
+     * @covers ::setBannerLinkUrl
      * @test
+     * @testdox setBannerLinkUrlはプロパティ$bannerLinkUrlに引数の値をセットする
      */
     public function testSetBannerLinkUrl(): void
     {
-        $bannerLinkUrl = 'https://example.com';
+        $trailerRef = $this->createTrailerReflection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetMock->setBannerLinkUrl($bannerLinkUrl);
-
-        $targetRef = $this->createTargetReflection();
-
-        $bannerLinkUrlPropertyRef = $targetRef->getProperty('bannerLinkUrl');
+        $bannerLinkUrlPropertyRef = $trailerRef->getProperty('bannerLinkUrl');
         $bannerLinkUrlPropertyRef->setAccessible(true);
 
-        $this->assertEquals($bannerLinkUrl, $bannerLinkUrlPropertyRef->getValue($targetMock));
+        $bannerLinkUrl = 'https://example.com';
+        $this->trailer->setBannerLinkUrl($bannerLinkUrl);
+        $this->assertEquals($bannerLinkUrl, $bannerLinkUrlPropertyRef->getValue($this->trailer));
     }
 
     /**
+     * @covers ::getPageTrailers
      * @test
+     * @testdox getPageTrailersはプロパティ$pageTrailersの値を返す
      */
     public function testGetPageTrailers(): void
     {
         $pageTrailers = new ArrayCollection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $trailerRef = $this->createTrailerReflection();
 
-        $pageTrailersPropertyRef = $targetRef->getProperty('pageTrailers');
+        $pageTrailersPropertyRef = $trailerRef->getProperty('pageTrailers');
         $pageTrailersPropertyRef->setAccessible(true);
-        $pageTrailersPropertyRef->setValue($targetMock, $pageTrailers);
+        $pageTrailersPropertyRef->setValue($this->trailer, $pageTrailers);
 
-        $this->assertEquals($pageTrailers, $targetMock->getPageTrailers());
+        $this->assertEquals($pageTrailers, $this->trailer->getPageTrailers());
     }
 
     /**
+     * @covers ::setPageTrailers
      * @test
+     * @testdox setPageTrailersはプロパティ$pageTrailersに引数の値をセットする
      */
     public function testSetPageTrailers(): void
     {
-        $pageTrailers = new ArrayCollection();
+        $trailerRef = $this->createTrailerReflection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetMock->setPageTrailers($pageTrailers);
-
-        $targetRef = $this->createTargetReflection();
-
-        $pageTrailersPropertyRef = $targetRef->getProperty('pageTrailers');
+        $pageTrailersPropertyRef = $trailerRef->getProperty('pageTrailers');
         $pageTrailersPropertyRef->setAccessible(true);
 
-        $this->assertEquals($pageTrailers, $pageTrailersPropertyRef->getValue($targetMock));
+        $pageTrailers = new ArrayCollection();
+        $this->trailer->setPageTrailers($pageTrailers);
+        $this->assertEquals($pageTrailers, $pageTrailersPropertyRef->getValue($this->trailer));
     }
 
     /**
+     * @covers ::getSpecialSiteTrailers
      * @test
+     * @testdox getSpecialSiteTrailersはプロパティ$specialSiteTrailersの値を返す
      */
     public function testGetSpecialSiteTrailers(): void
     {
         $specialSiteTrailers = new ArrayCollection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $trailerRef = $this->createTrailerReflection();
 
-        $specialSiteTrailersPropertyRef = $targetRef->getProperty('specialSiteTrailers');
+        $specialSiteTrailersPropertyRef = $trailerRef->getProperty('specialSiteTrailers');
         $specialSiteTrailersPropertyRef->setAccessible(true);
-        $specialSiteTrailersPropertyRef->setValue($targetMock, $specialSiteTrailers);
+        $specialSiteTrailersPropertyRef->setValue($this->trailer, $specialSiteTrailers);
 
-        $this->assertEquals($specialSiteTrailers, $targetMock->getSpecialSiteTrailers());
+        $this->assertEquals($specialSiteTrailers, $this->trailer->getSpecialSiteTrailers());
     }
 
     /**
+     * @covers ::setSpecialSiteTrailers
      * @test
+     * @testdox setSpecialSiteTrailersはプロパティ$specialSiteTrailersに引数の値をセットする
      */
     public function testSetSpecialSiteTrailers(): void
     {
-        $specialSiteTrailers = new ArrayCollection();
+        $trailerRef = $this->createTrailerReflection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetMock->setSpecialSiteTrailers($specialSiteTrailers);
-
-        $targetRef = $this->createTargetReflection();
-
-        $specialSiteTrailersPropertyRef = $targetRef->getProperty('specialSiteTrailers');
+        $specialSiteTrailersPropertyRef = $trailerRef->getProperty('specialSiteTrailers');
         $specialSiteTrailersPropertyRef->setAccessible(true);
 
-        $this->assertEquals($specialSiteTrailers, $specialSiteTrailersPropertyRef->getValue($targetMock));
+        $specialSiteTrailers = new ArrayCollection();
+        $this->trailer->setSpecialSiteTrailers($specialSiteTrailers);
+        $this->assertEquals($specialSiteTrailers, $specialSiteTrailersPropertyRef->getValue($this->trailer));
     }
 
     /**
+     * @covers ::getTheaterTrailers
      * @test
+     * @testdox getTheaterTrailersはプロパティ$theaterTrailersの値を返す
      */
     public function testGetTheaterTrailers(): void
     {
         $theaterTrailers = new ArrayCollection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $trailerRef = $this->createTrailerReflection();
 
-        $theaterTrailersPropertyRef = $targetRef->getProperty('theaterTrailers');
+        $theaterTrailersPropertyRef = $trailerRef->getProperty('theaterTrailers');
         $theaterTrailersPropertyRef->setAccessible(true);
-        $theaterTrailersPropertyRef->setValue($targetMock, $theaterTrailers);
+        $theaterTrailersPropertyRef->setValue($this->trailer, $theaterTrailers);
 
-        $this->assertEquals($theaterTrailers, $targetMock->getTheaterTrailers());
+        $this->assertEquals($theaterTrailers, $this->trailer->getTheaterTrailers());
     }
 
     /**
+     * @covers ::setTheaterTrailers
      * @test
+     * @testdox setTheaterTrailersはプロパティ$theaterTrailersに引数の値をセットする
      */
     public function testSetTheaterTrailers(): void
     {
-        $theaterTrailers = new ArrayCollection();
+        $trailerRef = $this->createTrailerReflection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetMock->setTheaterTrailers($theaterTrailers);
-
-        $targetRef = $this->createTargetReflection();
-
-        $theaterTrailersPropertyRef = $targetRef->getProperty('theaterTrailers');
+        $theaterTrailersPropertyRef = $trailerRef->getProperty('theaterTrailers');
         $theaterTrailersPropertyRef->setAccessible(true);
 
-        $this->assertEquals($theaterTrailers, $theaterTrailersPropertyRef->getValue($targetMock));
+        $theaterTrailers = new ArrayCollection();
+        $this->trailer->setTheaterTrailers($theaterTrailers);
+        $this->assertEquals($theaterTrailers, $theaterTrailersPropertyRef->getValue($this->trailer));
     }
 }
