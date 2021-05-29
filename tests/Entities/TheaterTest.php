@@ -7,453 +7,449 @@ namespace Tests\Entities;
 use Cinemasunshine\ORM\Entities\Theater;
 use Cinemasunshine\ORM\Entities\TheaterMeta;
 use Doctrine\Common\Collections\ArrayCollection;
-use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
-use ReflectionMethod;
 
 final class TheaterTest extends TestCase
 {
-    /**
-     * @return Theater&MockObject
-     */
-    public function createTargetMock()
-    {
-        return $this->createMock(Theater::class);
-    }
-
-    /**
-     * @param string[] $methods
-     * @return Theater&MockObject
-     */
-    public function createTargetPartialMock(array $methods)
-    {
-        return $this->createPartialMock(Theater::class, $methods);
-    }
+    /** @var Theater */
+    protected $theater;
 
     /**
      * @return ReflectionClass<Theater>
      */
-    public function createTargetReflection(): ReflectionClass
+    public function createTheaterReflection(): ReflectionClass
     {
         return new ReflectionClass(Theater::class);
     }
 
     /**
+     * @before
+     */
+    public function setUp(): void
+    {
+        $this->theater = new Theater(11);
+    }
+
+    /**
+     * @covers ::__construct
      * @test
+     * @testdox __constructはプロパティ$adminUsers、$specialSites、$campaigns、$mainBanners、$newsListをArrayCollectionで初期化する
      */
     public function testConstruct(): void
     {
         $id = 11;
 
-        $targetMock = $this->createTargetMock();
-        $targetRef  = $this->createTargetReflection();
+        $theaterRef = $this->createTheaterReflection();
 
-        /** @var ReflectionMethod $constructorRef */
-        $constructorRef = $targetRef->getConstructor();
-        $constructorRef->invoke($targetMock, $id);
-
-        $idPropertyRef = $targetRef->getProperty('id');
+        $idPropertyRef = $theaterRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
-        $this->assertEquals($id, $idPropertyRef->getValue($targetMock));
+        $this->assertEquals($id, $idPropertyRef->getValue($this->theater));
 
-        $adminUsersPropertyRef = $targetRef->getProperty('adminUsers');
+        $adminUsersPropertyRef = $theaterRef->getProperty('adminUsers');
         $adminUsersPropertyRef->setAccessible(true);
         $this->assertInstanceOf(
             ArrayCollection::class,
-            $adminUsersPropertyRef->getValue($targetMock)
+            $adminUsersPropertyRef->getValue($this->theater)
         );
 
-        $specialSitesPropertyRef = $targetRef->getProperty('specialSites');
+        $specialSitesPropertyRef = $theaterRef->getProperty('specialSites');
         $specialSitesPropertyRef->setAccessible(true);
         $this->assertInstanceOf(
             ArrayCollection::class,
-            $specialSitesPropertyRef->getValue($targetMock)
+            $specialSitesPropertyRef->getValue($this->theater)
         );
 
-        $campaignsPropertyRef = $targetRef->getProperty('campaigns');
+        $campaignsPropertyRef = $theaterRef->getProperty('campaigns');
         $campaignsPropertyRef->setAccessible(true);
         $this->assertInstanceOf(
             ArrayCollection::class,
-            $campaignsPropertyRef->getValue($targetMock)
+            $campaignsPropertyRef->getValue($this->theater)
         );
 
-        $mainBannersPropertyRef = $targetRef->getProperty('mainBanners');
+        $mainBannersPropertyRef = $theaterRef->getProperty('mainBanners');
         $mainBannersPropertyRef->setAccessible(true);
         $this->assertInstanceOf(
             ArrayCollection::class,
-            $mainBannersPropertyRef->getValue($targetMock)
+            $mainBannersPropertyRef->getValue($this->theater)
         );
 
-        $newsListPropertyRef = $targetRef->getProperty('newsList');
+        $newsListPropertyRef = $theaterRef->getProperty('newsList');
         $newsListPropertyRef->setAccessible(true);
         $this->assertInstanceOf(
             ArrayCollection::class,
-            $newsListPropertyRef->getValue($targetMock)
+            $newsListPropertyRef->getValue($this->theater)
         );
     }
 
     /**
+     * @covers ::getId
      * @test
+     * @testdox getIdはプロパティ$idの値を返す
      */
     public function testGetId(): void
     {
         $id = 12;
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $theaterRef = $this->createTheaterReflection();
 
-        $idPropertyRef = $targetRef->getProperty('id');
+        $idPropertyRef = $theaterRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
-        $idPropertyRef->setValue($targetMock, $id);
+        $idPropertyRef->setValue($this->theater, $id);
 
-        $this->assertEquals($id, $targetMock->getId());
+        $this->assertEquals($id, $this->theater->getId());
     }
 
     /**
+     * @covers ::getName
      * @test
+     * @testdox getNameはプロパティ$nameの値を返す
      */
     public function testGetName(): void
     {
         $name = 'theater_name';
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $theaterRef = $this->createTheaterReflection();
 
-        $namePropertyRef = $targetRef->getProperty('name');
+        $namePropertyRef = $theaterRef->getProperty('name');
         $namePropertyRef->setAccessible(true);
-        $namePropertyRef->setValue($targetMock, $name);
+        $namePropertyRef->setValue($this->theater, $name);
 
-        $this->assertEquals($name, $targetMock->getName());
+        $this->assertEquals($name, $this->theater->getName());
     }
 
     /**
+     * @covers ::setName
      * @test
+     * @testdox setNameはプロパティ$nameに引数の値をセットする
      */
     public function testSetName(): void
     {
-        $name = 'theater_name';
+        $theaterRef = $this->createTheaterReflection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetMock->setName($name);
-
-        $targetRef = $this->createTargetReflection();
-
-        $namePropertyRef = $targetRef->getProperty('name');
+        $namePropertyRef = $theaterRef->getProperty('name');
         $namePropertyRef->setAccessible(true);
 
-        $this->assertEquals($name, $namePropertyRef->getValue($targetMock));
+        $name = 'theater_name';
+        $this->theater->setName($name);
+        $this->assertEquals($name, $namePropertyRef->getValue($this->theater));
     }
 
     /**
+     * @covers ::getNameJa
      * @test
+     * @testdox getNameJaはプロパティ$nameの値を返す
      */
     public function testGatNameJa(): void
     {
         $nameJa = 'theater_name_ja';
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $theaterRef = $this->createTheaterReflection();
 
-        $nameJaPropertyRef = $targetRef->getProperty('nameJa');
+        $nameJaPropertyRef = $theaterRef->getProperty('nameJa');
         $nameJaPropertyRef->setAccessible(true);
-        $nameJaPropertyRef->setValue($targetMock, $nameJa);
+        $nameJaPropertyRef->setValue($this->theater, $nameJa);
 
-        $this->assertEquals($nameJa, $targetMock->getNameJa());
+        $this->assertEquals($nameJa, $this->theater->getNameJa());
     }
 
     /**
+     * @covers ::setNameJa
      * @test
+     * @testdox setNameJaはプロパティ$nameJaに引数の値をセットする
      */
     public function testSetNameJa(): void
     {
-        $nameJa = 'theater_name_ja';
+        $theaterRef = $this->createTheaterReflection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetMock->setNameJa($nameJa);
-
-        $targetRef = $this->createTargetReflection();
-
-        $nameJaPropertyRef = $targetRef->getProperty('nameJa');
+        $nameJaPropertyRef = $theaterRef->getProperty('nameJa');
         $nameJaPropertyRef->setAccessible(true);
 
-        $this->assertEquals($nameJa, $nameJaPropertyRef->getValue($targetMock));
+        $nameJa = 'theater_name_ja';
+        $this->theater->setNameJa($nameJa);
+        $this->assertEquals($nameJa, $nameJaPropertyRef->getValue($this->theater));
     }
 
     /**
+     * @covers ::getArea
      * @test
+     * @testdox getAreaはプロパティ$areaの値を返す
      */
     public function testGetArea(): void
     {
         $area = 1;
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $theaterRef = $this->createTheaterReflection();
 
-        $areaPropertyRef = $targetRef->getProperty('area');
+        $areaPropertyRef = $theaterRef->getProperty('area');
         $areaPropertyRef->setAccessible(true);
-        $areaPropertyRef->setValue($targetMock, $area);
+        $areaPropertyRef->setValue($this->theater, $area);
 
-        $this->assertEquals($area, $targetMock->getArea());
+        $this->assertEquals($area, $this->theater->getArea());
     }
 
     /**
+     * @covers ::setArea
      * @test
+     * @testdox setAreaはプロパティ$areaに引数の値をセットする
      */
     public function testSetArea(): void
     {
-        $area = 1;
+        $theaterRef = $this->createTheaterReflection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetMock->setArea($area);
-
-        $targetRef = $this->createTargetReflection();
-
-        $areaPropertyRef = $targetRef->getProperty('area');
+        $areaPropertyRef = $theaterRef->getProperty('area');
         $areaPropertyRef->setAccessible(true);
 
-        $this->assertEquals($area, $areaPropertyRef->getValue($targetMock));
+        $area = 1;
+        $this->theater->setArea($area);
+        $this->assertEquals($area, $areaPropertyRef->getValue($this->theater));
     }
 
     /**
+     * @covers ::getMasterVersion
      * @test
+     * @testdox getMasterVersionはプロパティ$masterVersionの値を返す
      */
     public function testGetMasterVersion(): void
     {
         $masterVersion = 1;
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $theaterRef = $this->createTheaterReflection();
 
-        $masterVersionPropertyRef = $targetRef->getProperty('masterVersion');
+        $masterVersionPropertyRef = $theaterRef->getProperty('masterVersion');
         $masterVersionPropertyRef->setAccessible(true);
-        $masterVersionPropertyRef->setValue($targetMock, $masterVersion);
+        $masterVersionPropertyRef->setValue($this->theater, $masterVersion);
 
-        $this->assertEquals($masterVersion, $targetMock->getMasterVersion());
+        $this->assertEquals($masterVersion, $this->theater->getMasterVersion());
     }
 
     /**
+     * @covers ::setMasterVersion
      * @test
+     * @testdox setMasterVersionはプロパティ$masterVersionに引数の値をセットする
      */
     public function testSetMasterVersion(): void
     {
-        $masterVersion = 1;
+        $theaterRef = $this->createTheaterReflection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetMock->setMasterVersion($masterVersion);
-
-        $targetRef = $this->createTargetReflection();
-
-        $masterVersionPropertyRef = $targetRef->getProperty('masterVersion');
+        $masterVersionPropertyRef = $theaterRef->getProperty('masterVersion');
         $masterVersionPropertyRef->setAccessible(true);
 
-        $this->assertEquals($masterVersion, $masterVersionPropertyRef->getValue($targetMock));
+        $masterVersion = 1;
+        $this->theater->setMasterVersion($masterVersion);
+        $this->assertEquals($masterVersion, $masterVersionPropertyRef->getValue($this->theater));
     }
 
     /**
+     * @covers ::getMasterCode
      * @test
+     * @testdox getMasterCodeはプロパティ$masterCodeの値を返す
      */
     public function testGetMasterCode(): void
     {
         $masterCode = '111';
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $theaterRef = $this->createTheaterReflection();
 
-        $masterCodePropertyRef = $targetRef->getProperty('masterCode');
+        $masterCodePropertyRef = $theaterRef->getProperty('masterCode');
         $masterCodePropertyRef->setAccessible(true);
-        $masterCodePropertyRef->setValue($targetMock, $masterCode);
+        $masterCodePropertyRef->setValue($this->theater, $masterCode);
 
-        $this->assertEquals($masterCode, $targetMock->getMasterCode());
+        $this->assertEquals($masterCode, $this->theater->getMasterCode());
     }
 
     /**
+     * @covers ::setMasterCode
      * @test
+     * @testdox setMasterCodeはプロパティ$masterCodeに引数の値をセットする
      */
     public function testSetMasterCode(): void
     {
-        $masterCode = '111';
+        $theaterRef = $this->createTheaterReflection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetMock->setMasterCode($masterCode);
-
-        $targetRef = $this->createTargetReflection();
-
-        $masterCodePropertyRef = $targetRef->getProperty('masterCode');
+        $masterCodePropertyRef = $theaterRef->getProperty('masterCode');
         $masterCodePropertyRef->setAccessible(true);
 
-        $this->assertEquals($masterCode, $masterCodePropertyRef->getValue($targetMock));
+        $masterCode = '111';
+        $this->theater->setMasterCode($masterCode);
+        $this->assertEquals($masterCode, $masterCodePropertyRef->getValue($this->theater));
     }
 
     /**
+     * @covers ::getDisplayOrder
      * @test
+     * @testdox getDisplayOrderはプロパティ$displayOrderの値を返す
      */
     public function testGetDisplayOrder(): void
     {
         $displayOrder = 3;
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $theaterRef = $this->createTheaterReflection();
 
-        $displayOrderPropertyRef = $targetRef->getProperty('displayOrder');
+        $displayOrderPropertyRef = $theaterRef->getProperty('displayOrder');
         $displayOrderPropertyRef->setAccessible(true);
-        $displayOrderPropertyRef->setValue($targetMock, $displayOrder);
+        $displayOrderPropertyRef->setValue($this->theater, $displayOrder);
 
-        $this->assertEquals($displayOrder, $targetMock->getDisplayOrder());
+        $this->assertEquals($displayOrder, $this->theater->getDisplayOrder());
     }
 
     /**
+     * @covers ::setDisplayOrder
      * @test
+     * @testdox setDisplayOrderはプロパティ$displayOrderに引数の値をセットする
      */
     public function testSetDisplayOrder(): void
     {
-        $displayOrder = 3;
+        $theaterRef = $this->createTheaterReflection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetMock->setDisplayOrder($displayOrder);
-
-        $targetRef = $this->createTargetReflection();
-
-        $displayOrderPropertyRef = $targetRef->getProperty('displayOrder');
+        $displayOrderPropertyRef = $theaterRef->getProperty('displayOrder');
         $displayOrderPropertyRef->setAccessible(true);
 
-        $this->assertEquals($displayOrder, $displayOrderPropertyRef->getValue($targetMock));
+        $displayOrder = 3;
+        $this->theater->setDisplayOrder($displayOrder);
+        $this->assertEquals($displayOrder, $displayOrderPropertyRef->getValue($this->theater));
     }
 
     /**
+     * @covers ::getStatus
      * @test
+     * @testdox getStatusはプロパティ$statusの値を返す
      */
     public function testGetStatus(): void
     {
         $status = 2;
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $theaterRef = $this->createTheaterReflection();
 
-        $statusPropertyRef = $targetRef->getProperty('status');
+        $statusPropertyRef = $theaterRef->getProperty('status');
         $statusPropertyRef->setAccessible(true);
-        $statusPropertyRef->setValue($targetMock, $status);
+        $statusPropertyRef->setValue($this->theater, $status);
 
-        $this->assertEquals($status, $targetMock->getStatus());
+        $this->assertEquals($status, $this->theater->getStatus());
     }
 
     /**
+     * @covers ::setDisplayOrder
      * @test
+     * @testdox setDisplayOrderはプロパティ$displayOrderに引数の値をセットする
      */
     public function testSetStatus(): void
     {
-        $status = 2;
+        $theaterRef = $this->createTheaterReflection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetMock->setStatus($status);
-
-        $targetRef = $this->createTargetReflection();
-
-        $statusPropertyRef = $targetRef->getProperty('status');
+        $statusPropertyRef = $theaterRef->getProperty('status');
         $statusPropertyRef->setAccessible(true);
 
-        $this->assertEquals($status, $statusPropertyRef->getValue($targetMock));
+        $status = 2;
+        $this->theater->setStatus($status);
+        $this->assertEquals($status, $statusPropertyRef->getValue($this->theater));
     }
 
     /**
+     * @covers ::getStatus
      * @test
+     * @testdox getStatusはプロパティ$statusの値を返す
      */
     public function testGetMeta(): void
     {
         $meta = new TheaterMeta();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $theaterRef = $this->createTheaterReflection();
 
-        $metaPropertyRef = $targetRef->getProperty('meta');
+        $metaPropertyRef = $theaterRef->getProperty('meta');
         $metaPropertyRef->setAccessible(true);
-        $metaPropertyRef->setValue($targetMock, $meta);
+        $metaPropertyRef->setValue($this->theater, $meta);
 
-        $this->assertEquals($meta, $targetMock->getMeta());
+        $this->assertEquals($meta, $this->theater->getMeta());
     }
 
     /**
+     * @covers ::getAdminUsers
      * @test
+     * @testdox getAdminUsersはプロパティ$adminUsersの値を返す
      */
     public function testGetAdminUsers(): void
     {
         $adminUsers = new ArrayCollection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $theaterRef = $this->createTheaterReflection();
 
-        $adminUsersPropertyRef = $targetRef->getProperty('adminUsers');
+        $adminUsersPropertyRef = $theaterRef->getProperty('adminUsers');
         $adminUsersPropertyRef->setAccessible(true);
-        $adminUsersPropertyRef->setValue($targetMock, $adminUsers);
+        $adminUsersPropertyRef->setValue($this->theater, $adminUsers);
 
-        $this->assertEquals($adminUsers, $targetMock->getAdminUsers());
+        $this->assertEquals($adminUsers, $this->theater->getAdminUsers());
     }
 
     /**
+     * @covers ::getSpecialSites
      * @test
+     * @testdox getSpecialSitesはプロパティ$specialSitesの値を返す
      */
     public function testGetSpecialSites(): void
     {
         $specialSites = new ArrayCollection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $theaterRef = $this->createTheaterReflection();
 
-        $specialSitesPropertyRef = $targetRef->getProperty('specialSites');
+        $specialSitesPropertyRef = $theaterRef->getProperty('specialSites');
         $specialSitesPropertyRef->setAccessible(true);
-        $specialSitesPropertyRef->setValue($targetMock, $specialSites);
+        $specialSitesPropertyRef->setValue($this->theater, $specialSites);
 
-        $this->assertEquals($specialSites, $targetMock->getSpecialSites());
+        $this->assertEquals($specialSites, $this->theater->getSpecialSites());
     }
 
     /**
+     * @covers ::getSpecialSites
      * @test
+     * @testdox getSpecialSitesはプロパティ$specialSitesの値を返す
      */
     public function testGetCampaigns(): void
     {
         $campaigns = new ArrayCollection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $theaterRef = $this->createTheaterReflection();
 
-        $campaignsPropertyRef = $targetRef->getProperty('campaigns');
+        $campaignsPropertyRef = $theaterRef->getProperty('campaigns');
         $campaignsPropertyRef->setAccessible(true);
-        $campaignsPropertyRef->setValue($targetMock, $campaigns);
+        $campaignsPropertyRef->setValue($this->theater, $campaigns);
 
-        $this->assertEquals($campaigns, $targetMock->getCampaigns());
+        $this->assertEquals($campaigns, $this->theater->getCampaigns());
     }
 
     /**
+     * @covers ::getSpecialSites
      * @test
+     * @testdox getSpecialSitesはプロパティ$specialSitesの値を返す
      */
     public function testGetMainBanners(): void
     {
         $mainBanners = new ArrayCollection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $theaterRef = $this->createTheaterReflection();
 
-        $mainBannersPropertyRef = $targetRef->getProperty('mainBanners');
+        $mainBannersPropertyRef = $theaterRef->getProperty('mainBanners');
         $mainBannersPropertyRef->setAccessible(true);
-        $mainBannersPropertyRef->setValue($targetMock, $mainBanners);
+        $mainBannersPropertyRef->setValue($this->theater, $mainBanners);
 
-        $this->assertEquals($mainBanners, $targetMock->getMainBanners());
+        $this->assertEquals($mainBanners, $this->theater->getMainBanners());
     }
 
     /**
+     * @covers ::getSpecialSites
      * @test
+     * @testdox getSpecialSitesはプロパティ$specialSitesの値を返す
      */
     public function testGetNewsList(): void
     {
         $newsList = new ArrayCollection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $theaterRef = $this->createTheaterReflection();
 
-        $newsListPropertyRef = $targetRef->getProperty('newsList');
+        $newsListPropertyRef = $theaterRef->getProperty('newsList');
         $newsListPropertyRef->setAccessible(true);
-        $newsListPropertyRef->setValue($targetMock, $newsList);
+        $newsListPropertyRef->setValue($this->theater, $newsList);
 
-        $this->assertEquals($newsList, $targetMock->getNewsList());
+        $this->assertEquals($newsList, $this->theater->getNewsList());
     }
 }

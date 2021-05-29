@@ -6,213 +6,207 @@ namespace Tests\Entities;
 
 use Cinemasunshine\ORM\Entities\Page;
 use Doctrine\Common\Collections\ArrayCollection;
-use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
-use ReflectionMethod;
 
+/**
+ * @coversDefaultClass \Cinemasunshine\ORM\Entities\Page
+ */
 final class PageTest extends TestCase
 {
-    /**
-     * @return Page&MockObject
-     */
-    public function createTargetMock()
-    {
-        return $this->createMock(Page::class);
-    }
-
-    /**
-     * @param string[] $methods
-     * @return Page&MockObject
-     */
-    public function createTargetPartialMock(array $methods)
-    {
-        return $this->createPartialMock(Page::class, $methods);
-    }
+    /** @var Page */
+    protected $page;
 
     /**
      * @return ReflectionClass<Page>
      */
-    public function createTargetReflection(): ReflectionClass
+    public function createPageReflection(): ReflectionClass
     {
         return new ReflectionClass(Page::class);
     }
 
     /**
+     * @before
+     */
+    public function setUp(): void
+    {
+        $this->page = new Page(11);
+    }
+
+    /**
+     * @covers ::__construct
      * @test
+     * @testdox __constructはプロパティ$campaigns、$mainBanners、$newsListをArrayCollectionで初期化する
      */
     public function testConstruct(): void
     {
-        $id = 11;
+        $pageRef = $this->createPageReflection();
 
-        $targetMock = $this->createTargetMock();
-        $targetRef  = $this->createTargetReflection();
-
-        /** @var ReflectionMethod $constructorRef */
-        $constructorRef = $targetRef->getConstructor();
-        $constructorRef->invoke($targetMock, $id);
-
-        $idPropertyRef = $targetRef->getProperty('id');
+        $idPropertyRef = $pageRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
-        $this->assertEquals($id, $idPropertyRef->getValue($targetMock));
+        $this->assertEquals(11, $idPropertyRef->getValue($this->page));
 
-        $campaignsPropertyRef = $targetRef->getProperty('campaigns');
+        $campaignsPropertyRef = $pageRef->getProperty('campaigns');
         $campaignsPropertyRef->setAccessible(true);
         $this->assertInstanceOf(
             ArrayCollection::class,
-            $campaignsPropertyRef->getValue($targetMock)
+            $campaignsPropertyRef->getValue($this->page)
         );
 
-        $mainBannersPropertyRef = $targetRef->getProperty('mainBanners');
+        $mainBannersPropertyRef = $pageRef->getProperty('mainBanners');
         $mainBannersPropertyRef->setAccessible(true);
         $this->assertInstanceOf(
             ArrayCollection::class,
-            $mainBannersPropertyRef->getValue($targetMock)
+            $mainBannersPropertyRef->getValue($this->page)
         );
 
-        $newsListPropertyRef = $targetRef->getProperty('newsList');
+        $newsListPropertyRef = $pageRef->getProperty('newsList');
         $newsListPropertyRef->setAccessible(true);
         $this->assertInstanceOf(
             ArrayCollection::class,
-            $newsListPropertyRef->getValue($targetMock)
+            $newsListPropertyRef->getValue($this->page)
         );
     }
 
     /**
+     * @covers ::getId
      * @test
+     * @testdox getIdはプロパティ$idの値を返す
      */
     public function testGetId(): void
     {
         $id = 12;
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $pageRef = $this->createPageReflection();
 
-        $idPropertyRef = $targetRef->getProperty('id');
+        $idPropertyRef = $pageRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
-        $idPropertyRef->setValue($targetMock, $id);
+        $idPropertyRef->setValue($this->page, $id);
 
-        $this->assertEquals($id, $targetMock->getId());
+        $this->assertEquals($id, $this->page->getId());
     }
 
     /**
+     * @covers ::getName
      * @test
+     * @testdox getNameはプロパティ$nameの値を返す
      */
     public function testGetName(): void
     {
         $name = 'page_name';
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $pageRef = $this->createPageReflection();
 
-        $namePropertyRef = $targetRef->getProperty('name');
+        $namePropertyRef = $pageRef->getProperty('name');
         $namePropertyRef->setAccessible(true);
-        $namePropertyRef->setValue($targetMock, $name);
+        $namePropertyRef->setValue($this->page, $name);
 
-        $this->assertEquals($name, $targetMock->getName());
+        $this->assertEquals($name, $this->page->getName());
     }
 
     /**
+     * @covers ::setName
      * @test
+     * @testdox setNameはプロパティ$nameに引数の値をセットする
      */
     public function testSetName(): void
     {
-        $name = 'page_name';
+        $pageRef = $this->createPageReflection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetMock->setName($name);
-
-        $targetRef = $this->createTargetReflection();
-
-        $namePropertyRef = $targetRef->getProperty('name');
+        $namePropertyRef = $pageRef->getProperty('name');
         $namePropertyRef->setAccessible(true);
 
-        $this->assertEquals($name, $namePropertyRef->getValue($targetMock));
+        $name = 'page_name';
+        $this->page->setName($name);
+        $this->assertEquals($name, $namePropertyRef->getValue($this->page));
     }
 
     /**
+     * @covers ::getNameJa
      * @test
+     * @testdox getNameJaはプロパティ$nameの値を返す
      */
     public function testGatNameJa(): void
     {
         $nameJa = 'page_name_ja';
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $pageRef = $this->createPageReflection();
 
-        $nameJaPropertyRef = $targetRef->getProperty('nameJa');
+        $nameJaPropertyRef = $pageRef->getProperty('nameJa');
         $nameJaPropertyRef->setAccessible(true);
-        $nameJaPropertyRef->setValue($targetMock, $nameJa);
+        $nameJaPropertyRef->setValue($this->page, $nameJa);
 
-        $this->assertEquals($nameJa, $targetMock->getNameJa());
+        $this->assertEquals($nameJa, $this->page->getNameJa());
     }
 
     /**
+     * @covers ::setNameJa
      * @test
+     * @testdox setNameJaはプロパティ$nameJaに引数の値をセットする
      */
     public function testSetNameJa(): void
     {
-        $nameJa = 'page_name_ja';
+        $pageRef = $this->createPageReflection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetMock->setNameJa($nameJa);
-
-        $targetRef = $this->createTargetReflection();
-
-        $nameJaPropertyRef = $targetRef->getProperty('nameJa');
+        $nameJaPropertyRef = $pageRef->getProperty('nameJa');
         $nameJaPropertyRef->setAccessible(true);
 
-        $this->assertEquals($nameJa, $nameJaPropertyRef->getValue($targetMock));
+        $nameJa = 'page_name_ja';
+        $this->page->setNameJa($nameJa);
+        $this->assertEquals($nameJa, $nameJaPropertyRef->getValue($this->page));
     }
 
     /**
+     * @covers ::getCampaigns
      * @test
+     * @testdox getCampaignsはプロパティ$campaignsの値を返す
      */
     public function testGetCampaigns(): void
     {
         $campaigns = new ArrayCollection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $pageRef = $this->createPageReflection();
 
-        $campaignsPropertyRef = $targetRef->getProperty('campaigns');
+        $campaignsPropertyRef = $pageRef->getProperty('campaigns');
         $campaignsPropertyRef->setAccessible(true);
-        $campaignsPropertyRef->setValue($targetMock, $campaigns);
+        $campaignsPropertyRef->setValue($this->page, $campaigns);
 
-        $this->assertEquals($campaigns, $targetMock->getCampaigns());
+        $this->assertEquals($campaigns, $this->page->getCampaigns());
     }
 
     /**
+     * @covers ::getMainBanners
      * @test
+     * @testdox getMainBannersはプロパティ$mainBannersの値を返す
      */
     public function testGetMainBanners(): void
     {
         $mainBanners = new ArrayCollection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $pageRef = $this->createPageReflection();
 
-        $mainBannersPropertyRef = $targetRef->getProperty('mainBanners');
+        $mainBannersPropertyRef = $pageRef->getProperty('mainBanners');
         $mainBannersPropertyRef->setAccessible(true);
-        $mainBannersPropertyRef->setValue($targetMock, $mainBanners);
+        $mainBannersPropertyRef->setValue($this->page, $mainBanners);
 
-        $this->assertEquals($mainBanners, $targetMock->getMainBanners());
+        $this->assertEquals($mainBanners, $this->page->getMainBanners());
     }
 
     /**
+     * @covers ::getNewsList
      * @test
+     * @testdox getNewsListはプロパティ$newsListの値を返す
      */
     public function testGetNewsList(): void
     {
         $newsList = new ArrayCollection();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $pageRef = $this->createPageReflection();
 
-        $newsListPropertyRef = $targetRef->getProperty('newsList');
+        $newsListPropertyRef = $pageRef->getProperty('newsList');
         $newsListPropertyRef->setAccessible(true);
-        $newsListPropertyRef->setValue($targetMock, $newsList);
+        $newsListPropertyRef->setValue($this->page, $newsList);
 
-        $this->assertEquals($newsList, $targetMock->getNewsList());
+        $this->assertEquals($newsList, $this->page->getNewsList());
     }
 }
