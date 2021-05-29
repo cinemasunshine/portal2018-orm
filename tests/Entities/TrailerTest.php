@@ -38,31 +38,31 @@ final class TrailerTest extends TestCase
     /**
      * @covers ::__construct
      * @test
-     * @testdox __constructはプロパティ$pageTrailers、$specialSiteTrailers、$theaterTrailersをArrayCollectionで初期化する
+     * @testdox __constructはプロパティ$pages、$specialSites、$theatersをArrayCollectionで初期化する
      */
     public function testConstruct(): void
     {
         $trailerRef = $this->createTrailerReflection();
 
-        $pageTrailersPropertyRef = $trailerRef->getProperty('pageTrailers');
-        $pageTrailersPropertyRef->setAccessible(true);
+        $pagesPropertyRef = $trailerRef->getProperty('pages');
+        $pagesPropertyRef->setAccessible(true);
         $this->assertInstanceOf(
             ArrayCollection::class,
-            $pageTrailersPropertyRef->getValue($this->trailer)
+            $pagesPropertyRef->getValue($this->trailer)
         );
 
-        $specialSiteTrailersPropertyRef = $trailerRef->getProperty('specialSiteTrailers');
-        $specialSiteTrailersPropertyRef->setAccessible(true);
+        $specialSitesPropertyRef = $trailerRef->getProperty('specialSites');
+        $specialSitesPropertyRef->setAccessible(true);
         $this->assertInstanceOf(
             ArrayCollection::class,
-            $specialSiteTrailersPropertyRef->getValue($this->trailer)
+            $specialSitesPropertyRef->getValue($this->trailer)
         );
 
-        $theaterTrailersPropertyRef = $trailerRef->getProperty('theaterTrailers');
-        $theaterTrailersPropertyRef->setAccessible(true);
+        $theatersPropertyRef = $trailerRef->getProperty('theaters');
+        $theatersPropertyRef->setAccessible(true);
         $this->assertInstanceOf(
             ArrayCollection::class,
-            $theaterTrailersPropertyRef->getValue($this->trailer)
+            $theatersPropertyRef->getValue($this->trailer)
         );
     }
 
@@ -260,107 +260,107 @@ final class TrailerTest extends TestCase
     }
 
     /**
-     * @covers ::getPageTrailers
+     * @covers ::getPages
      * @test
-     * @testdox getPageTrailersはプロパティ$pageTrailersの値を返す
+     * @testdox getPagesはプロパティ$pagesの値を返す
      */
-    public function testGetPageTrailers(): void
+    public function testGetPages(): void
     {
-        $pageTrailers = new ArrayCollection();
+        $pages = new ArrayCollection();
 
         $trailerRef = $this->createTrailerReflection();
 
-        $pageTrailersPropertyRef = $trailerRef->getProperty('pageTrailers');
-        $pageTrailersPropertyRef->setAccessible(true);
-        $pageTrailersPropertyRef->setValue($this->trailer, $pageTrailers);
+        $pagesPropertyRef = $trailerRef->getProperty('pages');
+        $pagesPropertyRef->setAccessible(true);
+        $pagesPropertyRef->setValue($this->trailer, $pages);
 
-        $this->assertEquals($pageTrailers, $this->trailer->getPageTrailers());
+        $this->assertEquals($pages, $this->trailer->getPages());
     }
 
     /**
-     * @covers ::setPageTrailers
+     * @covers ::setPages
      * @test
-     * @testdox setPageTrailersはプロパティ$pageTrailersに引数の値をセットする
+     * @testdox setPagesはプロパティ$pagesに引数の値をセットする
      */
-    public function testSetPageTrailers(): void
+    public function testSetPages(): void
     {
         $trailerRef = $this->createTrailerReflection();
 
-        $pageTrailersPropertyRef = $trailerRef->getProperty('pageTrailers');
-        $pageTrailersPropertyRef->setAccessible(true);
+        $pagesPropertyRef = $trailerRef->getProperty('pages');
+        $pagesPropertyRef->setAccessible(true);
 
-        $pageTrailers = new ArrayCollection();
-        $this->trailer->setPageTrailers($pageTrailers);
-        $this->assertEquals($pageTrailers, $pageTrailersPropertyRef->getValue($this->trailer));
+        $pages = new ArrayCollection();
+        $this->trailer->setPages($pages);
+        $this->assertEquals($pages, $pagesPropertyRef->getValue($this->trailer));
     }
 
     /**
-     * @covers ::getSpecialSiteTrailers
+     * @covers ::getSpecialSites
      * @test
-     * @testdox getSpecialSiteTrailersはプロパティ$specialSiteTrailersの値を返す
+     * @testdox getSpecialSitesはプロパティ$specialSitesの値を返す
      */
-    public function testGetSpecialSiteTrailers(): void
+    public function testGetSpecialSites(): void
     {
-        $specialSiteTrailers = new ArrayCollection();
+        $specialSites = new ArrayCollection();
 
         $trailerRef = $this->createTrailerReflection();
 
-        $specialSiteTrailersPropertyRef = $trailerRef->getProperty('specialSiteTrailers');
-        $specialSiteTrailersPropertyRef->setAccessible(true);
-        $specialSiteTrailersPropertyRef->setValue($this->trailer, $specialSiteTrailers);
+        $specialSitesPropertyRef = $trailerRef->getProperty('specialSites');
+        $specialSitesPropertyRef->setAccessible(true);
+        $specialSitesPropertyRef->setValue($this->trailer, $specialSites);
 
-        $this->assertEquals($specialSiteTrailers, $this->trailer->getSpecialSiteTrailers());
+        $this->assertEquals($specialSites, $this->trailer->getSpecialSites());
     }
 
     /**
-     * @covers ::setSpecialSiteTrailers
+     * @covers ::setSpecialSites
      * @test
-     * @testdox setSpecialSiteTrailersはプロパティ$specialSiteTrailersに引数の値をセットする
+     * @testdox setSpecialSitesはプロパティ$specialSitesに引数の値をセットする
      */
-    public function testSetSpecialSiteTrailers(): void
+    public function testSetSpecialSites(): void
     {
         $trailerRef = $this->createTrailerReflection();
 
-        $specialSiteTrailersPropertyRef = $trailerRef->getProperty('specialSiteTrailers');
-        $specialSiteTrailersPropertyRef->setAccessible(true);
+        $specialSitesPropertyRef = $trailerRef->getProperty('specialSites');
+        $specialSitesPropertyRef->setAccessible(true);
 
-        $specialSiteTrailers = new ArrayCollection();
-        $this->trailer->setSpecialSiteTrailers($specialSiteTrailers);
-        $this->assertEquals($specialSiteTrailers, $specialSiteTrailersPropertyRef->getValue($this->trailer));
+        $specialSites = new ArrayCollection();
+        $this->trailer->setSpecialSites($specialSites);
+        $this->assertEquals($specialSites, $specialSitesPropertyRef->getValue($this->trailer));
     }
 
     /**
-     * @covers ::getTheaterTrailers
+     * @covers ::getTheaters
      * @test
-     * @testdox getTheaterTrailersはプロパティ$theaterTrailersの値を返す
+     * @testdox getTheatersはプロパティ$theatersの値を返す
      */
-    public function testGetTheaterTrailers(): void
+    public function testGetTheaters(): void
     {
-        $theaterTrailers = new ArrayCollection();
+        $theaters = new ArrayCollection();
 
         $trailerRef = $this->createTrailerReflection();
 
-        $theaterTrailersPropertyRef = $trailerRef->getProperty('theaterTrailers');
-        $theaterTrailersPropertyRef->setAccessible(true);
-        $theaterTrailersPropertyRef->setValue($this->trailer, $theaterTrailers);
+        $theatersPropertyRef = $trailerRef->getProperty('theaters');
+        $theatersPropertyRef->setAccessible(true);
+        $theatersPropertyRef->setValue($this->trailer, $theaters);
 
-        $this->assertEquals($theaterTrailers, $this->trailer->getTheaterTrailers());
+        $this->assertEquals($theaters, $this->trailer->getTheaters());
     }
 
     /**
-     * @covers ::setTheaterTrailers
+     * @covers ::setTheaters
      * @test
-     * @testdox setTheaterTrailersはプロパティ$theaterTrailersに引数の値をセットする
+     * @testdox setTheatersはプロパティ$theatersに引数の値をセットする
      */
     public function testSetTheaterTrailers(): void
     {
         $trailerRef = $this->createTrailerReflection();
 
-        $theaterTrailersPropertyRef = $trailerRef->getProperty('theaterTrailers');
-        $theaterTrailersPropertyRef->setAccessible(true);
+        $theatersPropertyRef = $trailerRef->getProperty('theaters');
+        $theatersPropertyRef->setAccessible(true);
 
         $theaterTrailers = new ArrayCollection();
-        $this->trailer->setTheaterTrailers($theaterTrailers);
-        $this->assertEquals($theaterTrailers, $theaterTrailersPropertyRef->getValue($this->trailer));
+        $this->trailer->setTheaters($theaterTrailers);
+        $this->assertEquals($theaterTrailers, $theatersPropertyRef->getValue($this->trailer));
     }
 }
