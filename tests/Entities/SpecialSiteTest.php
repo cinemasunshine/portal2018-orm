@@ -33,7 +33,7 @@ final class SpecialSiteTest extends TestCase
     /**
      * @covers ::__construct
      * @test
-     * @testdox __constructはプロパティ$theaters、$campaigns、$mainBanners、$newsListをArrayCollectionで初期化する
+     * @testdox __constructはプロパティ$theaters、$campaigns、$mainBanners、$newsList、$trailersをArrayCollectionで初期化する
      */
     public function testConstruct(): void
     {
@@ -71,6 +71,13 @@ final class SpecialSiteTest extends TestCase
         $this->assertInstanceOf(
             ArrayCollection::class,
             $newsListPropertyRef->getValue($this->specialSite)
+        );
+
+        $trailersPropertyRef = $specialSiteRef->getProperty('trailers');
+        $trailersPropertyRef->setAccessible(true);
+        $this->assertInstanceOf(
+            ArrayCollection::class,
+            $trailersPropertyRef->getValue($this->specialSite)
         );
     }
 
@@ -232,5 +239,23 @@ final class SpecialSiteTest extends TestCase
         $newsListPropertyRef->setValue($this->specialSite, $newsList);
 
         $this->assertEquals($newsList, $this->specialSite->getNewsList());
+    }
+
+    /**
+     * @covers ::getTrailers
+     * @test
+     * @testdox getTrailersはプロパティ$newsListの値を返す
+     */
+    public function testGetTrailers(): void
+    {
+        $trailers = new ArrayCollection();
+
+        $specialSiteRef = $this->createSpecialSiteReflection();
+
+        $trailersPropertyRef = $specialSiteRef->getProperty('trailers');
+        $trailersPropertyRef->setAccessible(true);
+        $trailersPropertyRef->setValue($this->specialSite, $trailers);
+
+        $this->assertEquals($trailers, $this->specialSite->getTrailers());
     }
 }

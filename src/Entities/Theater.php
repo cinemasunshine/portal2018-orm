@@ -11,8 +11,6 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Theater entity
- *
  * @ORM\MappedSuperclass
  * @ORM\Table(name="theater", options={"collate"="utf8mb4_general_ci"})
  * @ORM\HasLifecycleCallbacks
@@ -145,6 +143,14 @@ class Theater
      */
     protected $newsList;
 
+    /**
+     * @ORM\OneToMany(targetEntity="TheaterTrailer", mappedBy="theater", orphanRemoval=true)
+     * @ORM\OrderBy({"displayOrder" = "ASC"})
+     *
+     * @var Collection<int, TheaterTrailer>
+     */
+    protected $trailers;
+
     public function __construct(int $id)
     {
         $this->id           = $id;
@@ -153,6 +159,7 @@ class Theater
         $this->campaigns    = new ArrayCollection();
         $this->mainBanners  = new ArrayCollection();
         $this->newsList     = new ArrayCollection();
+        $this->trailers     = new ArrayCollection();
     }
 
     public function getId(): int
@@ -273,5 +280,13 @@ class Theater
     public function getNewsList(): Collection
     {
         return $this->newsList;
+    }
+
+    /**
+     * @return Collection<int, TheaterTrailer>
+     */
+    public function getTrailers(): Collection
+    {
+        return $this->trailers;
     }
 }

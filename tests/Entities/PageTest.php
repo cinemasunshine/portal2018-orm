@@ -36,7 +36,7 @@ final class PageTest extends TestCase
     /**
      * @covers ::__construct
      * @test
-     * @testdox __constructはプロパティ$campaigns、$mainBanners、$newsListをArrayCollectionで初期化する
+     * @testdox __constructはプロパティ$campaigns、$mainBanners、$newsList、$trailersをArrayCollectionで初期化する
      */
     public function testConstruct(): void
     {
@@ -65,6 +65,13 @@ final class PageTest extends TestCase
         $this->assertInstanceOf(
             ArrayCollection::class,
             $newsListPropertyRef->getValue($this->page)
+        );
+
+        $trailersPropertyRef = $pageRef->getProperty('trailers');
+        $trailersPropertyRef->setAccessible(true);
+        $this->assertInstanceOf(
+            ArrayCollection::class,
+            $trailersPropertyRef->getValue($this->page)
         );
     }
 
@@ -208,5 +215,23 @@ final class PageTest extends TestCase
         $newsListPropertyRef->setValue($this->page, $newsList);
 
         $this->assertEquals($newsList, $this->page->getNewsList());
+    }
+
+    /**
+     * @covers ::getTrailers
+     * @test
+     * @testdox getTrailersはプロパティ$trailersの値を返す
+     */
+    public function testGetTrailers(): void
+    {
+        $trailers = new ArrayCollection();
+
+        $pageRef = $this->createPageReflection();
+
+        $trailersPropertyRef = $pageRef->getProperty('trailers');
+        $trailersPropertyRef->setAccessible(true);
+        $trailersPropertyRef->setValue($this->page, $trailers);
+
+        $this->assertEquals($trailers, $this->page->getTrailers());
     }
 }
