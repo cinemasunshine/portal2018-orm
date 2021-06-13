@@ -12,8 +12,14 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
+/**
+ * @coversDefaultClass \Cinemasunshine\ORM\Entities\TitleRanking
+ */
 final class TitleRankingTest extends TestCase
 {
+    /** @var TitleRanking */
+    protected $titleRanking;
+
     /**
      * @return TitleRanking&MockObject
      */
@@ -34,183 +40,212 @@ final class TitleRankingTest extends TestCase
     /**
      * @return ReflectionClass<TitleRanking>
      */
-    public function createTargetReflection(): ReflectionClass
+    protected function createTitleRankingReflection(): ReflectionClass
     {
         return new ReflectionClass(TitleRanking::class);
     }
 
     /**
+     * @before
+     */
+    public function setUp(): void
+    {
+        $this->titleRanking = new TitleRanking();
+    }
+
+    /**
+     * @covers ::getId
      * @test
+     * @testdox getIdはプロパティidの値を返す
      */
     public function testGetId(): void
     {
         $id = 13;
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $titleRankingRef = $this->createTitleRankingReflection();
 
-        $idPropertyRef = $targetRef->getProperty('id');
+        $idPropertyRef = $titleRankingRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
-        $idPropertyRef->setValue($targetMock, $id);
+        $idPropertyRef->setValue($this->titleRanking, $id);
 
-        $this->assertEquals($id, $targetMock->getId());
+        $this->assertEquals($id, $this->titleRanking->getId());
     }
 
     /**
+     * @covers ::getFromDate
      * @test
+     * @testdox getFromDateはプロパティfromDateの値を返す
      */
     public function testGetFromDate(): void
     {
         $fromDate = new DateTime();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $titleRankingRef = $this->createTitleRankingReflection();
 
-        $fromDatePropertyRef = $targetRef->getProperty('fromDate');
+        $fromDatePropertyRef = $titleRankingRef->getProperty('fromDate');
         $fromDatePropertyRef->setAccessible(true);
-        $fromDatePropertyRef->setValue($targetMock, $fromDate);
+        $fromDatePropertyRef->setValue($this->titleRanking, $fromDate);
 
-        $this->assertEquals($fromDate, $targetMock->getFromDate());
+        $this->assertEquals($fromDate, $this->titleRanking->getFromDate());
     }
 
     /**
-     * @test
+     * @return array<string,array{mixed,?string}>
      */
-    public function testSetFromDate(): void
+    public function setFromDateDataProvider(): array
     {
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $date = '2021-06-01';
 
-        $fromDatePropertyRef = $targetRef->getProperty('fromDate');
-        $fromDatePropertyRef->setAccessible(true);
-
-        $targetMock->setFromDate(null);
-        $this->assertEquals(null, $fromDatePropertyRef->getValue($targetMock));
-
-        $dtObject = new DateTime();
-        $targetMock->setFromDate($dtObject);
-        $this->assertEquals($dtObject, $fromDatePropertyRef->getValue($targetMock));
-
-        $dtString = '2020-01-01';
-        $targetMock->setFromDate($dtString);
-        $this->assertInstanceOf(
-            DateTime::class,
-            $fromDatePropertyRef->getValue($targetMock)
-        );
-        $this->assertEquals(
-            $dtString,
-            $fromDatePropertyRef->getValue($targetMock)->format('Y-m-d')
-        );
+        return [
+            'set null' => [null, null],
+            'set string' => [$date, $date],
+            'set DateTime' => [new DateTime($date), $date],
+        ];
     }
 
     /**
-     * test setFromDate (invalid argument)
-     *
+     * @covers ::setFromDate
+     * @dataProvider setFromDateDataProvider
      * @test
+     * @testdox setFromDateはプロパティfromDateにDateTimeオブジェクトかnullをセットする
+     *
+     * @param mixed $arg
      */
-    public function testSetFromDateInvalidArgument(): void
+    public function testSetFromDateCaseValidArgument($arg, ?string $date): void
+    {
+        $titleRankingRef = $this->createTitleRankingReflection();
+
+        $fromDatePropertyRef = $titleRankingRef->getProperty('fromDate');
+        $fromDatePropertyRef->setAccessible(true);
+
+        $this->titleRanking->setFromDate($arg);
+
+        $fromDatePropertyValue = $fromDatePropertyRef->getValue($this->titleRanking);
+
+        if (is_null($arg)) {
+            $this->assertNull($fromDatePropertyValue);
+        } else {
+            $this->assertInstanceOf(DateTime::class, $fromDatePropertyValue);
+            $this->assertEquals($date, $fromDatePropertyValue->format('Y-m-d'));
+        }
+    }
+
+    /**
+     * @covers ::setFromDate
+     * @test
+     * @testdox setFromDateは引数が無効な場合、例外をthrowする
+     */
+    public function testSetFromDateCaseInvalidArgument(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
-        $targetMock = $this->createTargetPartialMock([]);
-
         /** @phpstan-ignore-next-line */
-        $targetMock->setFromDate(123);
+        $this->titleRanking->setFromDate(123);
     }
 
     /**
+     * @covers ::getToDate
      * @test
+     * @testdox getToDateはプロパティtoDateの値を返す
      */
     public function testGetToDate(): void
     {
         $toDate = new DateTime();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $titleRankingRef = $this->createTitleRankingReflection();
 
-        $toDatePropertyRef = $targetRef->getProperty('toDate');
+        $toDatePropertyRef = $titleRankingRef->getProperty('toDate');
         $toDatePropertyRef->setAccessible(true);
-        $toDatePropertyRef->setValue($targetMock, $toDate);
+        $toDatePropertyRef->setValue($this->titleRanking, $toDate);
 
-        $this->assertEquals($toDate, $targetMock->getToDate());
+        $this->assertEquals($toDate, $this->titleRanking->getToDate());
     }
 
     /**
-     * @test
+     * @return array<string,array{mixed,?string}>
      */
-    public function testSetToDate(): void
+    public function setToDateDataProvider(): array
     {
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $date = '2021-06-01';
 
-        $toDatePropertyRef = $targetRef->getProperty('toDate');
-        $toDatePropertyRef->setAccessible(true);
-
-        $targetMock->setToDate(null);
-        $this->assertEquals(null, $toDatePropertyRef->getValue($targetMock));
-
-        $dtObject = new DateTime();
-        $targetMock->setToDate($dtObject);
-        $this->assertEquals($dtObject, $toDatePropertyRef->getValue($targetMock));
-
-        $dtString = '2020-01-01';
-        $targetMock->setToDate($dtString);
-        $this->assertInstanceOf(
-            DateTime::class,
-            $toDatePropertyRef->getValue($targetMock)
-        );
-        $this->assertEquals(
-            $dtString,
-            $toDatePropertyRef->getValue($targetMock)->format('Y-m-d')
-        );
+        return [
+            'set null' => [null, null],
+            'set string' => [$date, $date],
+            'set DateTime' => [new DateTime($date), $date],
+        ];
     }
 
     /**
-     * test setToDate (invalid argument)
-     *
+     * @covers ::setToDate
+     * @dataProvider setToDateDataProvider
      * @test
+     * @testdox setToDateはプロパティtoDateにDateTimeオブジェクトかnullをセットする
+     *
+     * @param mixed $arg
+     */
+    public function testSetToDate($arg, ?string $date): void
+    {
+        $titleRankingRef = $this->createTitleRankingReflection();
+
+        $toDatePropertyRef = $titleRankingRef->getProperty('toDate');
+        $toDatePropertyRef->setAccessible(true);
+
+        $this->titleRanking->setToDate($arg);
+
+        $toDatePropertyValue = $toDatePropertyRef->getValue($this->titleRanking);
+
+        if (is_null($arg)) {
+            $this->assertNull($toDatePropertyValue);
+        } else {
+            $this->assertInstanceOf(DateTime::class, $toDatePropertyValue);
+            $this->assertEquals($date, $toDatePropertyValue->format('Y-m-d'));
+        }
+    }
+
+    /**
+     * @covers ::setToDate
+     * @test
+     * @testdox setToDateは引数が無効な場合、例外をthrowする
      */
     public function testSetToDateInvalidArgument(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
-        $targetMock = $this->createTargetPartialMock([]);
-
         /** @phpstan-ignore-next-line */
-        $targetMock->setToDate(123);
+        $this->titleRanking->setToDate(123);
     }
 
     protected function baseTestGetRankTitle(string $method, string $property): void
     {
         $title = new Title();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $titleRankingRef = $this->createTitleRankingReflection();
 
-        $propertyRef = $targetRef->getProperty($property);
+        $propertyRef = $titleRankingRef->getProperty($property);
         $propertyRef->setAccessible(true);
-        $propertyRef->setValue($targetMock, $title);
+        $propertyRef->setValue($this->titleRanking, $title);
 
-        $this->assertEquals($title, $targetMock->$method());
+        $this->assertEquals($title, $this->titleRanking->$method());
     }
 
     protected function baseTestSetRankTitle(string $method, string $property): void
     {
         $title = new Title();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetMock->$method($title);
+        $this->titleRanking->$method($title);
 
-        $targetRef = $this->createTargetReflection();
+        $titleRankingRef = $this->createTitleRankingReflection();
 
-        $propertyRef = $targetRef->getProperty($property);
+        $propertyRef = $titleRankingRef->getProperty($property);
         $propertyRef->setAccessible(true);
 
-        $this->assertEquals($title, $propertyRef->getValue($targetMock));
+        $this->assertEquals($title, $propertyRef->getValue($this->titleRanking));
     }
 
     /**
+     * @covers ::getRank1Title
      * @test
+     * @testdox getRank1Titleはプロパティrank1Titleの値を返す
      */
     public function testGetRank1Title(): void
     {
@@ -218,7 +253,9 @@ final class TitleRankingTest extends TestCase
     }
 
     /**
+     * @covers ::setRank1Title
      * @test
+     * @testdox setRank1Titleはプロパティrank1Titleに引数の値をセットする
      */
     public function testSetRank1Title(): void
     {
@@ -226,7 +263,9 @@ final class TitleRankingTest extends TestCase
     }
 
     /**
+     * @covers ::getRank2Title
      * @test
+     * @testdox getRank2Titleはプロパティrank2Titleの値を返す
      */
     public function testGetRank2Title(): void
     {
@@ -234,7 +273,9 @@ final class TitleRankingTest extends TestCase
     }
 
     /**
+     * @covers ::setRank2Title
      * @test
+     * @testdox setRank2Titleはプロパティrank2Titleに引数の値をセットする
      */
     public function testSetRank2Title(): void
     {
@@ -242,7 +283,9 @@ final class TitleRankingTest extends TestCase
     }
 
     /**
+     * @covers ::getRank3Title
      * @test
+     * @testdox getRank3Titleはプロパティrank3Titleの値を返す
      */
     public function testGetRank3Title(): void
     {
@@ -250,7 +293,9 @@ final class TitleRankingTest extends TestCase
     }
 
     /**
+     * @covers ::setRank3Title
      * @test
+     * @testdox setRank3Titleはプロパティrank3Titleに引数の値をセットする
      */
     public function testSetRank3Title(): void
     {
@@ -258,7 +303,9 @@ final class TitleRankingTest extends TestCase
     }
 
     /**
+     * @covers ::getRank4Title
      * @test
+     * @testdox getRank4Titleはプロパティrank4Titleの値を返す
      */
     public function testGetRank4Title(): void
     {
@@ -266,7 +313,9 @@ final class TitleRankingTest extends TestCase
     }
 
     /**
+     * @covers ::setRank4Title
      * @test
+     * @testdox setRank4Titleはプロパティrank4Titleに引数の値をセットする
      */
     public function testSetRank4Title(): void
     {
@@ -274,7 +323,9 @@ final class TitleRankingTest extends TestCase
     }
 
     /**
+     * @covers ::getRank5Title
      * @test
+     * @testdox getRank5Titleはプロパティrank5Titleの値を返す
      */
     public function testGetRank5Title(): void
     {
@@ -282,7 +333,9 @@ final class TitleRankingTest extends TestCase
     }
 
     /**
+     * @covers ::setRank5Title
      * @test
+     * @testdox setRank5Titleはプロパティrank5Titleに引数の値をセットする
      */
     public function testSetRank5Title(): void
     {
