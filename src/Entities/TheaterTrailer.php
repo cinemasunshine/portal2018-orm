@@ -28,7 +28,7 @@ class TheaterTrailer
     protected $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Trailer")
+     * @ORM\ManyToOne(targetEntity="Trailer", inversedBy="theaters")
      * @ORM\JoinColumn(name="trailer_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      *
      * @var Trailer
@@ -36,7 +36,7 @@ class TheaterTrailer
     protected $trailer;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Theater")
+     * @ORM\ManyToOne(targetEntity="Theater", inversedBy="trailers")
      * @ORM\JoinColumn(name="theater_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      *
      * @var Theater
