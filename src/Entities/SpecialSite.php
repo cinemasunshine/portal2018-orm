@@ -76,7 +76,6 @@ class SpecialSite
 
     /**
      * @ORM\OneToMany(targetEntity="SpecialSiteTrailer", mappedBy="specialSite", orphanRemoval=true)
-     * @ORM\OrderBy({"displayOrder" = "ASC"})
      *
      * @var Collection<int, SpecialSiteTrailer>
      */

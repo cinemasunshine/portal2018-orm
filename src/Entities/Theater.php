@@ -145,7 +145,6 @@ class Theater
 
     /**
      * @ORM\OneToMany(targetEntity="TheaterTrailer", mappedBy="theater", orphanRemoval=true)
-     * @ORM\OrderBy({"displayOrder" = "ASC"})
      *
      * @var Collection<int, TheaterTrailer>
      */

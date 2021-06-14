@@ -69,7 +69,6 @@ class Page
 
     /**
      * @ORM\OneToMany(targetEntity="PageTrailer", mappedBy="page", orphanRemoval=true)
-     * @ORM\OrderBy({"displayOrder" = "ASC"})
      *
      * @var Collection<int, PageTrailer>
      */
