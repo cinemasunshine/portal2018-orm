@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace Tests\Entities;
 
-use Cinemasunshine\ORM\Entities\Title;
 use Cinemasunshine\ORM\Entities\TitleRanking;
 use DateTime;
+use Doctrine\Common\Collections\ArrayCollection;
 use InvalidArgumentException;
-use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
@@ -19,23 +18,6 @@ final class TitleRankingTest extends TestCase
 {
     /** @var TitleRanking */
     protected $titleRanking;
-
-    /**
-     * @return TitleRanking&MockObject
-     */
-    public function createTargetMock()
-    {
-        return $this->createMock(TitleRanking::class);
-    }
-
-    /**
-     * @param string[] $methods
-     * @return TitleRanking&MockObject
-     */
-    public function createTargetPartialMock(array $methods)
-    {
-        return $this->createPartialMock(TitleRanking::class, $methods);
-    }
 
     /**
      * @return ReflectionClass<TitleRanking>
@@ -51,6 +33,24 @@ final class TitleRankingTest extends TestCase
     public function setUp(): void
     {
         $this->titleRanking = new TitleRanking();
+    }
+
+    /**
+     * @covers ::__construct
+     * @test
+     * @testdox __constructはプロパティranksをArrayCollectionで初期化する
+     */
+    public function testConstruct(): void
+    {
+        $titleRankingRef = $this->createTitleRankingReflection();
+
+        $ranksPropertyRef = $titleRankingRef->getProperty('ranks');
+        $ranksPropertyRef->setAccessible(true);
+
+        $this->assertInstanceOf(
+            ArrayCollection::class,
+            $ranksPropertyRef->getValue($this->titleRanking)
+        );
     }
 
     /**
@@ -215,130 +215,21 @@ final class TitleRankingTest extends TestCase
         $this->titleRanking->setToDate(123);
     }
 
-    protected function baseTestGetRankTitle(string $method, string $property): void
+    /**
+     * @covers ::getRanks
+     * @test
+     * @testdox getRanksはプロパティranksの値を返す
+     */
+    public function testGetRanks(): void
     {
-        $title = new Title();
+        $ranks = new ArrayCollection();
 
         $titleRankingRef = $this->createTitleRankingReflection();
 
-        $propertyRef = $titleRankingRef->getProperty($property);
-        $propertyRef->setAccessible(true);
-        $propertyRef->setValue($this->titleRanking, $title);
+        $ranksPropertyRef = $titleRankingRef->getProperty('ranks');
+        $ranksPropertyRef->setAccessible(true);
+        $ranksPropertyRef->setValue($this->titleRanking, $ranks);
 
-        $this->assertEquals($title, $this->titleRanking->$method());
-    }
-
-    protected function baseTestSetRankTitle(string $method, string $property): void
-    {
-        $title = new Title();
-
-        $this->titleRanking->$method($title);
-
-        $titleRankingRef = $this->createTitleRankingReflection();
-
-        $propertyRef = $titleRankingRef->getProperty($property);
-        $propertyRef->setAccessible(true);
-
-        $this->assertEquals($title, $propertyRef->getValue($this->titleRanking));
-    }
-
-    /**
-     * @covers ::getRank1Title
-     * @test
-     * @testdox getRank1Titleはプロパティrank1Titleの値を返す
-     */
-    public function testGetRank1Title(): void
-    {
-        $this->baseTestGetRankTitle('getRank1Title', 'rank1Title');
-    }
-
-    /**
-     * @covers ::setRank1Title
-     * @test
-     * @testdox setRank1Titleはプロパティrank1Titleに引数の値をセットする
-     */
-    public function testSetRank1Title(): void
-    {
-        $this->baseTestSetRankTitle('setRank1Title', 'rank1Title');
-    }
-
-    /**
-     * @covers ::getRank2Title
-     * @test
-     * @testdox getRank2Titleはプロパティrank2Titleの値を返す
-     */
-    public function testGetRank2Title(): void
-    {
-        $this->baseTestGetRankTitle('getRank2Title', 'rank2Title');
-    }
-
-    /**
-     * @covers ::setRank2Title
-     * @test
-     * @testdox setRank2Titleはプロパティrank2Titleに引数の値をセットする
-     */
-    public function testSetRank2Title(): void
-    {
-        $this->baseTestSetRankTitle('setRank2Title', 'rank2Title');
-    }
-
-    /**
-     * @covers ::getRank3Title
-     * @test
-     * @testdox getRank3Titleはプロパティrank3Titleの値を返す
-     */
-    public function testGetRank3Title(): void
-    {
-        $this->baseTestGetRankTitle('getRank3Title', 'rank3Title');
-    }
-
-    /**
-     * @covers ::setRank3Title
-     * @test
-     * @testdox setRank3Titleはプロパティrank3Titleに引数の値をセットする
-     */
-    public function testSetRank3Title(): void
-    {
-        $this->baseTestSetRankTitle('setRank3Title', 'rank3Title');
-    }
-
-    /**
-     * @covers ::getRank4Title
-     * @test
-     * @testdox getRank4Titleはプロパティrank4Titleの値を返す
-     */
-    public function testGetRank4Title(): void
-    {
-        $this->baseTestGetRankTitle('getRank4Title', 'rank4Title');
-    }
-
-    /**
-     * @covers ::setRank4Title
-     * @test
-     * @testdox setRank4Titleはプロパティrank4Titleに引数の値をセットする
-     */
-    public function testSetRank4Title(): void
-    {
-        $this->baseTestSetRankTitle('setRank4Title', 'rank4Title');
-    }
-
-    /**
-     * @covers ::getRank5Title
-     * @test
-     * @testdox getRank5Titleはプロパティrank5Titleの値を返す
-     */
-    public function testGetRank5Title(): void
-    {
-        $this->baseTestGetRankTitle('getRank5Title', 'rank5Title');
-    }
-
-    /**
-     * @covers ::setRank5Title
-     * @test
-     * @testdox setRank5Titleはプロパティrank5Titleに引数の値をセットする
-     */
-    public function testSetRank5Title(): void
-    {
-        $this->baseTestSetRankTitle('setRank5Title', 'rank5Title');
+        $this->assertEquals($ranks, $this->titleRanking->getRanks());
     }
 }
