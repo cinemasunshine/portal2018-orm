@@ -28,7 +28,7 @@ class SpecialSiteTrailer
     protected $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Trailer")
+     * @ORM\ManyToOne(targetEntity="Trailer", inversedBy="specialSites")
      * @ORM\JoinColumn(name="trailer_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      *
      * @var Trailer
@@ -36,7 +36,7 @@ class SpecialSiteTrailer
     protected $trailer;
 
     /**
-     * @ORM\ManyToOne(targetEntity="SpecialSite")
+     * @ORM\ManyToOne(targetEntity="SpecialSite", inversedBy="trailers")
      * @ORM\JoinColumn(name="special_site_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      *
      * @var SpecialSite

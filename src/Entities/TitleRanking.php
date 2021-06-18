@@ -6,6 +6,8 @@ namespace Cinemasunshine\ORM\Entities;
 
 use Cinemasunshine\ORM\Entities\Traits\TimestampableTrait;
 use DateTime;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use InvalidArgumentException;
 
@@ -44,44 +46,16 @@ class TitleRanking
     protected $toDate;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Title")
-     * @ORM\JoinColumn(name="rank1_title_id", referencedColumnName="id", nullable=true, onDelete="RESTRICT")
+     * @ORM\OneToMany(targetEntity="TitleRankingRank", mappedBy="ranking", indexBy="id")
      *
-     * @var Title|null
+     * @var Collection<int, TitleRankingRank>
      */
-    protected $rank1Title;
+    protected $ranks;
 
-    /**
-     * @ORM\ManyToOne(targetEntity="Title")
-     * @ORM\JoinColumn(name="rank2_title_id", referencedColumnName="id", nullable=true, onDelete="RESTRICT")
-     *
-     * @var Title|null
-     */
-    protected $rank2Title;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="Title")
-     * @ORM\JoinColumn(name="rank3_title_id", referencedColumnName="id", nullable=true, onDelete="RESTRICT")
-     *
-     * @var Title|null
-     */
-    protected $rank3Title;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="Title")
-     * @ORM\JoinColumn(name="rank4_title_id", referencedColumnName="id", nullable=true, onDelete="RESTRICT")
-     *
-     * @var Title|null
-     */
-    protected $rank4Title;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="Title")
-     * @ORM\JoinColumn(name="rank5_title_id", referencedColumnName="id", nullable=true, onDelete="RESTRICT")
-     *
-     * @var Title|null
-     */
-    protected $rank5Title;
+    public function __construct()
+    {
+        $this->ranks = new ArrayCollection();
+    }
 
     public function getId(): int
     {
@@ -126,53 +100,11 @@ class TitleRanking
         }
     }
 
-    public function getRank1Title(): ?Title
+    /**
+     * @return Collection<int, TitleRankingRank>
+     */
+    public function getRanks(): Collection
     {
-        return $this->rank1Title;
-    }
-
-    public function setRank1Title(?Title $rank1Title): void
-    {
-        $this->rank1Title = $rank1Title;
-    }
-
-    public function getRank2Title(): ?Title
-    {
-        return $this->rank2Title;
-    }
-
-    public function setRank2Title(?Title $rank2Title): void
-    {
-        $this->rank2Title = $rank2Title;
-    }
-
-    public function getRank3Title(): ?Title
-    {
-        return $this->rank3Title;
-    }
-
-    public function setRank3Title(?Title $rank3Title): void
-    {
-        $this->rank3Title = $rank3Title;
-    }
-
-    public function getRank4Title(): ?Title
-    {
-        return $this->rank4Title;
-    }
-
-    public function setRank4Title(?Title $rank4Title): void
-    {
-        $this->rank4Title = $rank4Title;
-    }
-
-    public function getRank5Title(): ?Title
-    {
-        return $this->rank5Title;
-    }
-
-    public function setRank5Title(?Title $rank5Title): void
-    {
-        $this->rank5Title = $rank5Title;
+        return $this->ranks;
     }
 }

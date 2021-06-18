@@ -12,8 +12,6 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Trailer entity
- *
  * @ORM\MappedSuperclass
  * @ORM\Table(name="trailer", options={"collate"="utf8mb4_general_ci"})
  * @ORM\HasLifecycleCallbacks
@@ -75,27 +73,27 @@ class Trailer
      *
      * @var Collection<int, PageTrailer>
      */
-    protected $pageTrailers;
+    protected $pages;
 
     /**
      * @ORM\OneToMany(targetEntity="SpecialSiteTrailer", mappedBy="trailer", orphanRemoval=true)
      *
      * @var Collection<int, SpecialSiteTrailer>
      */
-    protected $specialSiteTrailers;
+    protected $specialSites;
 
     /**
      * @ORM\OneToMany(targetEntity="TheaterTrailer", mappedBy="trailer", orphanRemoval=true)
      *
      * @var Collection<int, TheaterTrailer>
      */
-    protected $theaterTrailers;
+    protected $theaters;
 
     public function __construct()
     {
-        $this->pageTrailers        = new ArrayCollection();
-        $this->specialSiteTrailers = new ArrayCollection();
-        $this->theaterTrailers     = new ArrayCollection();
+        $this->pages        = new ArrayCollection();
+        $this->specialSites = new ArrayCollection();
+        $this->theaters     = new ArrayCollection();
     }
 
     public function getId(): int
@@ -156,48 +154,48 @@ class Trailer
     /**
      * @return Collection<int, PageTrailer>
      */
-    public function getPageTrailers(): Collection
+    public function getPages(): Collection
     {
-        return $this->pageTrailers;
+        return $this->pages;
     }
 
     /**
-     * @param Collection<int, PageTrailer> $pageTrailers
+     * @param Collection<int, PageTrailer> $pages
      */
-    public function setPageTrailers(Collection $pageTrailers): void
+    public function setPages(Collection $pages): void
     {
-        $this->pageTrailers = $pageTrailers;
+        $this->pages = $pages;
     }
 
     /**
      * @return Collection<int, SpecialSiteTrailer>
      */
-    public function getSpecialSiteTrailers(): Collection
+    public function getSpecialSites(): Collection
     {
-        return $this->specialSiteTrailers;
+        return $this->specialSites;
     }
 
     /**
-     * @param Collection<int, SpecialSiteTrailer> $specialSiteTrailers
+     * @param Collection<int, SpecialSiteTrailer> $specialSites
      */
-    public function setSpecialSiteTrailers(Collection $specialSiteTrailers): void
+    public function setSpecialSites(Collection $specialSites): void
     {
-        $this->specialSiteTrailers = $specialSiteTrailers;
+        $this->specialSites = $specialSites;
     }
 
     /**
      * @return Collection<int, TheaterTrailer>
      */
-    public function getTheaterTrailers(): Collection
+    public function getTheaters(): Collection
     {
-        return $this->theaterTrailers;
+        return $this->theaters;
     }
 
     /**
-     * @param Collection<int, TheaterTrailer> $theaterTrailers
+     * @param Collection<int, TheaterTrailer> $theaters
      */
-    public function setTheaterTrailers(Collection $theaterTrailers): void
+    public function setTheaters(Collection $theaters): void
     {
-        $this->theaterTrailers = $theaterTrailers;
+        $this->theaters = $theaters;
     }
 }

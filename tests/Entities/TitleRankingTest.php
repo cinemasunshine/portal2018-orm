@@ -4,288 +4,232 @@ declare(strict_types=1);
 
 namespace Tests\Entities;
 
-use Cinemasunshine\ORM\Entities\Title;
 use Cinemasunshine\ORM\Entities\TitleRanking;
 use DateTime;
+use Doctrine\Common\Collections\ArrayCollection;
 use InvalidArgumentException;
-use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
+/**
+ * @coversDefaultClass \Cinemasunshine\ORM\Entities\TitleRanking
+ */
 final class TitleRankingTest extends TestCase
 {
-    /**
-     * @return TitleRanking&MockObject
-     */
-    public function createTargetMock()
-    {
-        return $this->createMock(TitleRanking::class);
-    }
-
-    /**
-     * @param string[] $methods
-     * @return TitleRanking&MockObject
-     */
-    public function createTargetPartialMock(array $methods)
-    {
-        return $this->createPartialMock(TitleRanking::class, $methods);
-    }
+    /** @var TitleRanking */
+    protected $titleRanking;
 
     /**
      * @return ReflectionClass<TitleRanking>
      */
-    public function createTargetReflection(): ReflectionClass
+    protected function createTitleRankingReflection(): ReflectionClass
     {
         return new ReflectionClass(TitleRanking::class);
     }
 
     /**
+     * @before
+     */
+    public function setUp(): void
+    {
+        $this->titleRanking = new TitleRanking();
+    }
+
+    /**
+     * @covers ::__construct
      * @test
+     * @testdox __constructはプロパティranksをArrayCollectionで初期化する
+     */
+    public function testConstruct(): void
+    {
+        $titleRankingRef = $this->createTitleRankingReflection();
+
+        $ranksPropertyRef = $titleRankingRef->getProperty('ranks');
+        $ranksPropertyRef->setAccessible(true);
+
+        $this->assertInstanceOf(
+            ArrayCollection::class,
+            $ranksPropertyRef->getValue($this->titleRanking)
+        );
+    }
+
+    /**
+     * @covers ::getId
+     * @test
+     * @testdox getIdはプロパティidの値を返す
      */
     public function testGetId(): void
     {
         $id = 13;
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $titleRankingRef = $this->createTitleRankingReflection();
 
-        $idPropertyRef = $targetRef->getProperty('id');
+        $idPropertyRef = $titleRankingRef->getProperty('id');
         $idPropertyRef->setAccessible(true);
-        $idPropertyRef->setValue($targetMock, $id);
+        $idPropertyRef->setValue($this->titleRanking, $id);
 
-        $this->assertEquals($id, $targetMock->getId());
+        $this->assertEquals($id, $this->titleRanking->getId());
     }
 
     /**
+     * @covers ::getFromDate
      * @test
+     * @testdox getFromDateはプロパティfromDateの値を返す
      */
     public function testGetFromDate(): void
     {
         $fromDate = new DateTime();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $titleRankingRef = $this->createTitleRankingReflection();
 
-        $fromDatePropertyRef = $targetRef->getProperty('fromDate');
+        $fromDatePropertyRef = $titleRankingRef->getProperty('fromDate');
         $fromDatePropertyRef->setAccessible(true);
-        $fromDatePropertyRef->setValue($targetMock, $fromDate);
+        $fromDatePropertyRef->setValue($this->titleRanking, $fromDate);
 
-        $this->assertEquals($fromDate, $targetMock->getFromDate());
+        $this->assertEquals($fromDate, $this->titleRanking->getFromDate());
     }
 
     /**
-     * @test
+     * @return array<string,array{mixed,?string}>
      */
-    public function testSetFromDate(): void
+    public function setFromDateDataProvider(): array
     {
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $date = '2021-06-01';
 
-        $fromDatePropertyRef = $targetRef->getProperty('fromDate');
-        $fromDatePropertyRef->setAccessible(true);
-
-        $targetMock->setFromDate(null);
-        $this->assertEquals(null, $fromDatePropertyRef->getValue($targetMock));
-
-        $dtObject = new DateTime();
-        $targetMock->setFromDate($dtObject);
-        $this->assertEquals($dtObject, $fromDatePropertyRef->getValue($targetMock));
-
-        $dtString = '2020-01-01';
-        $targetMock->setFromDate($dtString);
-        $this->assertInstanceOf(
-            DateTime::class,
-            $fromDatePropertyRef->getValue($targetMock)
-        );
-        $this->assertEquals(
-            $dtString,
-            $fromDatePropertyRef->getValue($targetMock)->format('Y-m-d')
-        );
+        return [
+            'set null' => [null, null],
+            'set string' => [$date, $date],
+            'set DateTime' => [new DateTime($date), $date],
+        ];
     }
 
     /**
-     * test setFromDate (invalid argument)
-     *
+     * @covers ::setFromDate
+     * @dataProvider setFromDateDataProvider
      * @test
+     * @testdox setFromDateはプロパティfromDateにDateTimeオブジェクトかnullをセットする
+     *
+     * @param mixed $arg
      */
-    public function testSetFromDateInvalidArgument(): void
+    public function testSetFromDateCaseValidArgument($arg, ?string $date): void
+    {
+        $titleRankingRef = $this->createTitleRankingReflection();
+
+        $fromDatePropertyRef = $titleRankingRef->getProperty('fromDate');
+        $fromDatePropertyRef->setAccessible(true);
+
+        $this->titleRanking->setFromDate($arg);
+
+        $fromDatePropertyValue = $fromDatePropertyRef->getValue($this->titleRanking);
+
+        if (is_null($arg)) {
+            $this->assertNull($fromDatePropertyValue);
+        } else {
+            $this->assertInstanceOf(DateTime::class, $fromDatePropertyValue);
+            $this->assertEquals($date, $fromDatePropertyValue->format('Y-m-d'));
+        }
+    }
+
+    /**
+     * @covers ::setFromDate
+     * @test
+     * @testdox setFromDateは引数が無効な場合、例外をthrowする
+     */
+    public function testSetFromDateCaseInvalidArgument(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
-        $targetMock = $this->createTargetPartialMock([]);
-
         /** @phpstan-ignore-next-line */
-        $targetMock->setFromDate(123);
+        $this->titleRanking->setFromDate(123);
     }
 
     /**
+     * @covers ::getToDate
      * @test
+     * @testdox getToDateはプロパティtoDateの値を返す
      */
     public function testGetToDate(): void
     {
         $toDate = new DateTime();
 
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $titleRankingRef = $this->createTitleRankingReflection();
 
-        $toDatePropertyRef = $targetRef->getProperty('toDate');
+        $toDatePropertyRef = $titleRankingRef->getProperty('toDate');
         $toDatePropertyRef->setAccessible(true);
-        $toDatePropertyRef->setValue($targetMock, $toDate);
+        $toDatePropertyRef->setValue($this->titleRanking, $toDate);
 
-        $this->assertEquals($toDate, $targetMock->getToDate());
+        $this->assertEquals($toDate, $this->titleRanking->getToDate());
     }
 
     /**
-     * @test
+     * @return array<string,array{mixed,?string}>
      */
-    public function testSetToDate(): void
+    public function setToDateDataProvider(): array
     {
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
+        $date = '2021-06-01';
 
-        $toDatePropertyRef = $targetRef->getProperty('toDate');
-        $toDatePropertyRef->setAccessible(true);
-
-        $targetMock->setToDate(null);
-        $this->assertEquals(null, $toDatePropertyRef->getValue($targetMock));
-
-        $dtObject = new DateTime();
-        $targetMock->setToDate($dtObject);
-        $this->assertEquals($dtObject, $toDatePropertyRef->getValue($targetMock));
-
-        $dtString = '2020-01-01';
-        $targetMock->setToDate($dtString);
-        $this->assertInstanceOf(
-            DateTime::class,
-            $toDatePropertyRef->getValue($targetMock)
-        );
-        $this->assertEquals(
-            $dtString,
-            $toDatePropertyRef->getValue($targetMock)->format('Y-m-d')
-        );
+        return [
+            'set null' => [null, null],
+            'set string' => [$date, $date],
+            'set DateTime' => [new DateTime($date), $date],
+        ];
     }
 
     /**
-     * test setToDate (invalid argument)
-     *
+     * @covers ::setToDate
+     * @dataProvider setToDateDataProvider
      * @test
+     * @testdox setToDateはプロパティtoDateにDateTimeオブジェクトかnullをセットする
+     *
+     * @param mixed $arg
+     */
+    public function testSetToDate($arg, ?string $date): void
+    {
+        $titleRankingRef = $this->createTitleRankingReflection();
+
+        $toDatePropertyRef = $titleRankingRef->getProperty('toDate');
+        $toDatePropertyRef->setAccessible(true);
+
+        $this->titleRanking->setToDate($arg);
+
+        $toDatePropertyValue = $toDatePropertyRef->getValue($this->titleRanking);
+
+        if (is_null($arg)) {
+            $this->assertNull($toDatePropertyValue);
+        } else {
+            $this->assertInstanceOf(DateTime::class, $toDatePropertyValue);
+            $this->assertEquals($date, $toDatePropertyValue->format('Y-m-d'));
+        }
+    }
+
+    /**
+     * @covers ::setToDate
+     * @test
+     * @testdox setToDateは引数が無効な場合、例外をthrowする
      */
     public function testSetToDateInvalidArgument(): void
     {
         $this->expectException(InvalidArgumentException::class);
 
-        $targetMock = $this->createTargetPartialMock([]);
-
         /** @phpstan-ignore-next-line */
-        $targetMock->setToDate(123);
-    }
-
-    protected function baseTestGetRankTitle(string $method, string $property): void
-    {
-        $title = new Title();
-
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetRef  = $this->createTargetReflection();
-
-        $propertyRef = $targetRef->getProperty($property);
-        $propertyRef->setAccessible(true);
-        $propertyRef->setValue($targetMock, $title);
-
-        $this->assertEquals($title, $targetMock->$method());
-    }
-
-    protected function baseTestSetRankTitle(string $method, string $property): void
-    {
-        $title = new Title();
-
-        $targetMock = $this->createTargetPartialMock([]);
-        $targetMock->$method($title);
-
-        $targetRef = $this->createTargetReflection();
-
-        $propertyRef = $targetRef->getProperty($property);
-        $propertyRef->setAccessible(true);
-
-        $this->assertEquals($title, $propertyRef->getValue($targetMock));
+        $this->titleRanking->setToDate(123);
     }
 
     /**
+     * @covers ::getRanks
      * @test
+     * @testdox getRanksはプロパティranksの値を返す
      */
-    public function testGetRank1Title(): void
+    public function testGetRanks(): void
     {
-        $this->baseTestGetRankTitle('getRank1Title', 'rank1Title');
-    }
+        $ranks = new ArrayCollection();
 
-    /**
-     * @test
-     */
-    public function testSetRank1Title(): void
-    {
-        $this->baseTestSetRankTitle('setRank1Title', 'rank1Title');
-    }
+        $titleRankingRef = $this->createTitleRankingReflection();
 
-    /**
-     * @test
-     */
-    public function testGetRank2Title(): void
-    {
-        $this->baseTestGetRankTitle('getRank2Title', 'rank2Title');
-    }
+        $ranksPropertyRef = $titleRankingRef->getProperty('ranks');
+        $ranksPropertyRef->setAccessible(true);
+        $ranksPropertyRef->setValue($this->titleRanking, $ranks);
 
-    /**
-     * @test
-     */
-    public function testSetRank2Title(): void
-    {
-        $this->baseTestSetRankTitle('setRank2Title', 'rank2Title');
-    }
-
-    /**
-     * @test
-     */
-    public function testGetRank3Title(): void
-    {
-        $this->baseTestGetRankTitle('getRank3Title', 'rank3Title');
-    }
-
-    /**
-     * @test
-     */
-    public function testSetRank3Title(): void
-    {
-        $this->baseTestSetRankTitle('setRank3Title', 'rank3Title');
-    }
-
-    /**
-     * @test
-     */
-    public function testGetRank4Title(): void
-    {
-        $this->baseTestGetRankTitle('getRank4Title', 'rank4Title');
-    }
-
-    /**
-     * @test
-     */
-    public function testSetRank4Title(): void
-    {
-        $this->baseTestSetRankTitle('setRank4Title', 'rank4Title');
-    }
-
-    /**
-     * @test
-     */
-    public function testGetRank5Title(): void
-    {
-        $this->baseTestGetRankTitle('getRank5Title', 'rank5Title');
-    }
-
-    /**
-     * @test
-     */
-    public function testSetRank5Title(): void
-    {
-        $this->baseTestSetRankTitle('setRank5Title', 'rank5Title');
+        $this->assertEquals($ranks, $this->titleRanking->getRanks());
     }
 }

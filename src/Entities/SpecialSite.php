@@ -11,8 +11,6 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * SpecialSite entity
- *
  * @ORM\MappedSuperclass
  * @ORM\Table(name="special_site", options={"collate"="utf8mb4_general_ci"})
  * @ORM\HasLifecycleCallbacks
@@ -76,6 +74,13 @@ class SpecialSite
      */
     protected $newsList;
 
+    /**
+     * @ORM\OneToMany(targetEntity="SpecialSiteTrailer", mappedBy="specialSite", orphanRemoval=true)
+     *
+     * @var Collection<int, SpecialSiteTrailer>
+     */
+    protected $trailers;
+
     public function __construct(int $id)
     {
         $this->id          = $id;
@@ -83,6 +88,7 @@ class SpecialSite
         $this->campaigns   = new ArrayCollection();
         $this->mainBanners = new ArrayCollection();
         $this->newsList    = new ArrayCollection();
+        $this->trailers    = new ArrayCollection();
     }
 
     public function getId(): int
@@ -140,5 +146,13 @@ class SpecialSite
     public function getNewsList(): Collection
     {
         return $this->newsList;
+    }
+
+    /**
+     * @return Collection<int, SpecialSiteTrailer>
+     */
+    public function getTrailers(): Collection
+    {
+        return $this->trailers;
     }
 }

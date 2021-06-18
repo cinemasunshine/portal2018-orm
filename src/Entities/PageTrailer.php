@@ -28,7 +28,7 @@ class PageTrailer
     protected $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Trailer")
+     * @ORM\ManyToOne(targetEntity="Trailer", inversedBy="pages")
      * @ORM\JoinColumn(name="trailer_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      *
      * @var Trailer
@@ -36,7 +36,7 @@ class PageTrailer
     protected $trailer;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Page")
+     * @ORM\ManyToOne(targetEntity="Page", inversedBy="trailers")
      * @ORM\JoinColumn(name="page_id", referencedColumnName="id", nullable=false, onDelete="CASCADE")
      *
      * @var Page
